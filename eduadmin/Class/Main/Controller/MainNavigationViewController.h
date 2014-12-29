@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainNavigationViewController.h
 //  eduadmin
 //
 //  Created by JieLee on 14/12/30.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MainNavigationViewController : UINavigationController
 
 @end
-
