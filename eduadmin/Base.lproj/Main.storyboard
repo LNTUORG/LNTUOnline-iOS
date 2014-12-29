@@ -14,31 +14,109 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="CyF-xO-vvA" kind="relationship" relationship="rootViewController" id="tLI-1K-OwL"/>
+                        <segue destination="qw1-3L-O9t" kind="relationship" relationship="rootViewController" id="Swh-gj-ZBH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W95-L0-xYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-201" y="454"/>
+            <point key="canvasLocation" x="-4505" y="1254"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="9k6-6S-1mT">
+        <!--Login View Controller-->
+        <scene sceneID="897-E0-h9s">
             <objects>
-                <viewController id="CyF-xO-vvA" sceneMemberID="viewController">
+                <viewController id="qw1-3L-O9t" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Shm-2l-nAT"/>
-                        <viewControllerLayoutGuide type="bottom" id="n55-XK-i8k"/>
+                        <viewControllerLayoutGuide type="top" id="cpP-Qj-2mE"/>
+                        <viewControllerLayoutGuide type="bottom" id="xdX-5w-hYs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jg9-Jo-a0N">
+                    <view key="view" contentMode="scaleToFill" id="2Lr-Sq-otE" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indexIcon" translatesAutoresizingMaskIntoConstraints="NO" id="YHQ-ze-BCn">
+                                <rect key="frame" x="260" y="145" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Mxa-Lc-8bI"/>
+                                    <constraint firstAttribute="width" constant="80" id="onx-iA-3fd"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1a-5J-geR">
+                                <rect key="frame" x="150" y="240" width="300" height="90"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="教务在线学号" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qoO-VG-WZC">
+                                        <rect key="frame" x="0.0" y="8" width="300" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="qw1-3L-O9t" id="qoJ-5z-dXy"/>
+                                        </connections>
+                                    </textField>
+                                    <view alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VSc-q3-Ek0">
+                                        <rect key="frame" x="0.0" y="45" width="300" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="教务在线密码" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YBB-jX-WKU">
+                                        <rect key="frame" x="0.0" y="50" width="300" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="twitter" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="qw1-3L-O9t" id="yUw-TV-LhB"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Ad1-Z0-YUn"/>
+                                    <constraint firstAttribute="height" constant="90" id="a4O-8s-KWn"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGd-pR-ujg">
+                                <rect key="frame" x="180" y="353" width="240" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="D4F-Yt-dK8"/>
+                                    <constraint firstAttribute="width" constant="240" id="r4h-uf-GuH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="login" destination="qw1-3L-O9t" eventType="touchUpInside" id="7cO-ug-G2v"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="YHQ-ze-BCn" secondAttribute="centerX" id="12S-jy-5Kt"/>
+                            <constraint firstAttribute="centerX" secondItem="p1a-5J-geR" secondAttribute="centerX" id="Mne-ib-stG"/>
+                            <constraint firstItem="mGd-pR-ujg" firstAttribute="top" secondItem="p1a-5J-geR" secondAttribute="bottom" constant="23" id="UBH-D8-RHe"/>
+                            <constraint firstAttribute="centerY" secondItem="p1a-5J-geR" secondAttribute="centerY" constant="15" id="f6N-sD-0oS"/>
+                            <constraint firstItem="p1a-5J-geR" firstAttribute="top" secondItem="YHQ-ze-BCn" secondAttribute="bottom" constant="15" id="fiW-tY-EdK"/>
+                            <constraint firstAttribute="centerX" secondItem="mGd-pR-ujg" secondAttribute="centerX" id="qxM-NI-xmn"/>
+                        </constraints>
+                        <connections>
+                            <action selector="existKeyboard" destination="qw1-3L-O9t" eventType="touchDown" id="cBs-30-Tjv"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="GkO-tO-oAv"/>
+                    <navigationItem key="navigationItem" id="8SO-X4-IHd">
+                        <barButtonItem key="rightBarButtonItem" title="紧急故障" id="oWH-ms-bLL"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="loginBtn" destination="mGd-pR-ujg" id="9hQ-n1-H92"/>
+                        <outlet property="pwdText" destination="YBB-jX-WKU" id="uSF-OO-d06"/>
+                        <outlet property="upView" destination="p1a-5J-geR" id="I71-O7-q5e"/>
+                        <outlet property="userNameText" destination="qoO-VG-WZC" id="QCp-m9-8ee"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v9G-8o-aSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ado-v8-9NU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="454"/>
+            <point key="canvasLocation" x="-3746" y="1254"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="indexIcon" width="80" height="80"/>
+    </resources>
 </document>

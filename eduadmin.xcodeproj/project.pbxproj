@@ -41,6 +41,7 @@
 		D58E1D371A51B9C200B159ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D351A51B9C200B159ED /* AppDelegate.m */; };
 		D58E1D381A51B9C200B159ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D361A51B9C200B159ED /* main.m */; };
 		D58E1D3E1A51BACE00B159ED /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D3C1A51BACE00B159ED /* MainNavigationViewController.m */; };
+		D58E1D451A51BF5900B159ED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D441A51BF5900B159ED /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,8 @@
 		D58E1D361A51B9C200B159ED /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D58E1D3B1A51BACE00B159ED /* MainNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationViewController.h; sourceTree = "<group>"; };
 		D58E1D3C1A51BACE00B159ED /* MainNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
+		D58E1D431A51BF5900B159ED /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D58E1D441A51BF5900B159ED /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				D58E1D391A51BACE00B159ED /* Main */,
+				D58E1D411A51BF2000B159ED /* Login */,
 				D58E1D331A51B9C200B159ED /* Other */,
 			);
 			path = Class;
@@ -340,6 +344,23 @@
 				D58E1CBA1A51B94C00B159ED /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D58E1D411A51BF2000B159ED /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D58E1D421A51BF2000B159ED /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D58E1D421A51BF2000B159ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D58E1D431A51BF5900B159ED /* LoginViewController.h */,
+				D58E1D441A51BF5900B159ED /* LoginViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,6 +493,7 @@
 				D58E1D211A51B98800B159ED /* MBProgressHUD.m in Sources */,
 				D58E1D301A51B98800B159ED /* LJTimeTool.m in Sources */,
 				D58E1D241A51B98800B159ED /* MJFoundation.m in Sources */,
+				D58E1D451A51BF5900B159ED /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
