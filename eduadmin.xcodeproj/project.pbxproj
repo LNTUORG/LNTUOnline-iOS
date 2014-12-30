@@ -42,6 +42,9 @@
 		D58E1D381A51B9C200B159ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D361A51B9C200B159ED /* main.m */; };
 		D58E1D3E1A51BACE00B159ED /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D3C1A51BACE00B159ED /* MainNavigationViewController.m */; };
 		D58E1D451A51BF5900B159ED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D441A51BF5900B159ED /* LoginViewController.m */; };
+		D5F936C11A52EB5200EA112F /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F936C01A52EB5200EA112F /* IndexViewController.m */; };
+		D5F936C61A52ED1B00EA112F /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F936C51A52ED1B00EA112F /* AboutTableViewController.m */; };
+		D5F936C91A52ED7900EA112F /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F936C81A52ED7900EA112F /* JoinViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +131,12 @@
 		D58E1D3C1A51BACE00B159ED /* MainNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
 		D58E1D431A51BF5900B159ED /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D58E1D441A51BF5900B159ED /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D5F936BF1A52EB5200EA112F /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
+		D5F936C01A52EB5200EA112F /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
+		D5F936C41A52ED1B00EA112F /* AboutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewController.h; sourceTree = "<group>"; };
+		D5F936C51A52ED1B00EA112F /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
+		D5F936C71A52ED7900EA112F /* JoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinViewController.h; sourceTree = "<group>"; };
+		D5F936C81A52ED7900EA112F /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +314,8 @@
 			children = (
 				D58E1D391A51BACE00B159ED /* Main */,
 				D58E1D411A51BF2000B159ED /* Login */,
+				D5F936BD1A52EB3600EA112F /* Index */,
+				D5F936C21A52ED0300EA112F /* About */,
 				D58E1D331A51B9C200B159ED /* Other */,
 			);
 			path = Class;
@@ -359,6 +370,42 @@
 			children = (
 				D58E1D431A51BF5900B159ED /* LoginViewController.h */,
 				D58E1D441A51BF5900B159ED /* LoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D5F936BD1A52EB3600EA112F /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				D5F936BE1A52EB3600EA112F /* Controller */,
+			);
+			path = Index;
+			sourceTree = "<group>";
+		};
+		D5F936BE1A52EB3600EA112F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D5F936BF1A52EB5200EA112F /* IndexViewController.h */,
+				D5F936C01A52EB5200EA112F /* IndexViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D5F936C21A52ED0300EA112F /* About */ = {
+			isa = PBXGroup;
+			children = (
+				D5F936C31A52ED0300EA112F /* Controller */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		D5F936C31A52ED0300EA112F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D5F936C41A52ED1B00EA112F /* AboutTableViewController.h */,
+				D5F936C51A52ED1B00EA112F /* AboutTableViewController.m */,
+				D5F936C71A52ED7900EA112F /* JoinViewController.h */,
+				D5F936C81A52ED7900EA112F /* JoinViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -467,9 +514,11 @@
 				D58E1D161A51B98800B159ED /* AFHTTPRequestOperation.m in Sources */,
 				D58E1D261A51B98800B159ED /* MJMember.m in Sources */,
 				D58E1D221A51B98800B159ED /* MJArgument.m in Sources */,
+				D5F936C61A52ED1B00EA112F /* AboutTableViewController.m in Sources */,
 				D58E1D281A51B98800B159ED /* MJType.m in Sources */,
 				D58E1D231A51B98800B159ED /* MJConst.m in Sources */,
 				D58E1D171A51B98800B159ED /* AFHTTPRequestOperationManager.m in Sources */,
+				D5F936C11A52EB5200EA112F /* IndexViewController.m in Sources */,
 				D58E1D191A51B98800B159ED /* AFNetworkReachabilityManager.m in Sources */,
 				D58E1D2D1A51B98800B159ED /* LJDeviceTool.m in Sources */,
 				D58E1D381A51B9C200B159ED /* main.m in Sources */,
@@ -487,6 +536,7 @@
 				D58E1D2B1A51B98800B159ED /* NSObject+MJKeyValue.m in Sources */,
 				D58E1D1C1A51B98800B159ED /* AFURLRequestSerialization.m in Sources */,
 				D58E1D3E1A51BACE00B159ED /* MainNavigationViewController.m in Sources */,
+				D5F936C91A52ED7900EA112F /* JoinViewController.m in Sources */,
 				D58E1D1E1A51B98800B159ED /* AFURLSessionManager.m in Sources */,
 				D58E1D311A51B98800B159ED /* LJUITool.m in Sources */,
 				D58E1D2A1A51B98800B159ED /* NSObject+MJCoding.m in Sources */,
@@ -683,6 +733,7 @@
 				D58E1CD21A51B94C00B159ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D58E1CD31A51B94C00B159ED /* Build configuration list for PBXNativeTarget "eduadminTests" */ = {
 			isa = XCConfigurationList;
@@ -691,6 +742,7 @@
 				D58E1CD51A51B94C00B159ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
