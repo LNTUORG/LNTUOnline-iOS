@@ -12,5 +12,4 @@
 
 - (IBAction)disappear:(id)sender;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-
 @end
