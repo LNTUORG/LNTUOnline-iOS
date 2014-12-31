@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="skill" selectionStyle="default" indentationWidth="10" reuseIdentifier="skill" rowHeight="70" id="KGk-i7-Jjw" customClass="JWSkillTestCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKN-Y8-G3e">
+                        <rect key="frame" x="0.0" y="69" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="q8I-LT-Cg2"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="countdown" translatesAutoresizingMaskIntoConstraints="NO" id="jjC-7G-RE1">
+                        <rect key="frame" x="8" y="37" width="28" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="pAQ-ed-hEE"/>
+                            <constraint firstAttribute="width" constant="28" id="xMa-ra-U4w"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="软件技术基础尽心阿呆是软件技础" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Znh-58-Vfj">
+                        <rect key="frame" x="8" y="8" width="259" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="PoW-yC-FgX"/>
+                            <constraint firstAttribute="width" constant="259" id="usV-K4-9Gl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014-06-17 13:50--15:50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APw-gn-90f">
+                        <rect key="frame" x="39" y="42" width="197" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="OnQ-w4-Sow"/>
+                            <constraint firstAttribute="width" constant="197" id="yWG-IJ-lcl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imf-9v-NB5">
+                        <rect key="frame" x="266" y="0.0" width="54" height="69"/>
+                        <color key="backgroundColor" red="0.8666666666666667" green="0.47058823529411764" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="54" id="tag-R8-zcS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <state key="normal" title="888" backgroundImage="skillScore">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Znh-58-Vfj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="19H-ZM-ZUi"/>
+                    <constraint firstAttribute="trailing" secondItem="hKN-Y8-G3e" secondAttribute="trailing" id="AzB-Pw-WIa"/>
+                    <constraint firstItem="Znh-58-Vfj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="DyR-ot-eTC"/>
+                    <constraint firstItem="jjC-7G-RE1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="IFU-Pb-NYQ"/>
+                    <constraint firstItem="hKN-Y8-G3e" firstAttribute="top" secondItem="Imf-9v-NB5" secondAttribute="bottom" id="Wxf-QC-IFU"/>
+                    <constraint firstAttribute="trailing" secondItem="Imf-9v-NB5" secondAttribute="trailing" id="YXW-t9-SEH"/>
+                    <constraint firstItem="Imf-9v-NB5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bFp-9u-GDr"/>
+                    <constraint firstItem="APw-gn-90f" firstAttribute="top" secondItem="Znh-58-Vfj" secondAttribute="bottom" constant="5" id="cJD-fg-yHG"/>
+                    <constraint firstAttribute="bottom" secondItem="hKN-Y8-G3e" secondAttribute="bottom" id="hCP-pE-95U"/>
+                    <constraint firstItem="APw-gn-90f" firstAttribute="leading" secondItem="jjC-7G-RE1" secondAttribute="trailing" constant="3" id="sev-Kp-Zcb"/>
+                    <constraint firstItem="hKN-Y8-G3e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ss3-DF-GYm"/>
+                    <constraint firstItem="jjC-7G-RE1" firstAttribute="top" secondItem="Znh-58-Vfj" secondAttribute="bottom" id="syl-db-o2e"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="countButton" destination="Imf-9v-NB5" id="fJS-1w-lSW"/>
+                <outlet property="courseLable" destination="Znh-58-Vfj" id="aXr-km-ZZk"/>
+                <outlet property="timeLable" destination="APw-gn-90f" id="S3z-CX-WMD"/>
+            </connections>
+            <point key="canvasLocation" x="305" y="304"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="countdown" width="28" height="32"/>
+        <image name="skillScore" width="48" height="70"/>
+    </resources>
+</document>

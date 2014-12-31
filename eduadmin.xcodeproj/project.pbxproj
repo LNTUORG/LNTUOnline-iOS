@@ -7,6 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D51601E21A541A96003AB6A9 /* SelfInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601E11A541A96003AB6A9 /* SelfInfoTableViewController.m */; };
+		D51601E51A541AEF003AB6A9 /* SelfInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601E41A541AEF003AB6A9 /* SelfInformation.m */; };
+		D51601E81A541BA7003AB6A9 /* EducationExperience.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601E71A541BA7003AB6A9 /* EducationExperience.m */; };
+		D51601EB1A541BB8003AB6A9 /* EntranceExam.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601EA1A541BB8003AB6A9 /* EntranceExam.m */; };
+		D51601EE1A541BC9003AB6A9 /* Family.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601ED1A541BC9003AB6A9 /* Family.m */; };
+		D51601F11A541BDC003AB6A9 /* Title.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601F01A541BDC003AB6A9 /* Title.m */; };
+		D51601F61A541CBB003AB6A9 /* CellItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D51601F21A541CBB003AB6A9 /* CellItem.xib */; };
+		D51601F71A541CBB003AB6A9 /* familyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D51601F31A541CBB003AB6A9 /* familyCell.xib */; };
+		D51601F81A541CBB003AB6A9 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601F51A541CBB003AB6A9 /* HeaderView.m */; };
+		D51601FD1A541CC7003AB6A9 /* CellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601FA1A541CC7003AB6A9 /* CellItem.m */; };
+		D51601FE1A541CC7003AB6A9 /* familyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601FC1A541CC7003AB6A9 /* familyCell.m */; };
+		D51602011A541EFE003AB6A9 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602001A541EFE003AB6A9 /* ScheduleViewController.m */; };
+		D51602041A541F9A003AB6A9 /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602031A541F9A003AB6A9 /* NoticeViewController.m */; };
+		D51602071A54200A003AB6A9 /* UnpassScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602061A54200A003AB6A9 /* UnpassScoreTableViewController.m */; };
+		D516020C1A542035003AB6A9 /* MyGrade.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602091A542035003AB6A9 /* MyGrade.m */; };
+		D516020D1A542035003AB6A9 /* UnpassGrade.m in Sources */ = {isa = PBXBuildFile; fileRef = D516020B1A542035003AB6A9 /* UnpassGrade.m */; };
+		D51602111A542075003AB6A9 /* PartGradeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D516020F1A542075003AB6A9 /* PartGradeCell.m */; };
+		D51602121A542075003AB6A9 /* PartGradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D51602101A542075003AB6A9 /* PartGradeCell.xib */; };
+		D51602151A542109003AB6A9 /* GradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602141A542109003AB6A9 /* GradeViewController.m */; };
+		D51602181A542131003AB6A9 /* RatingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602171A542131003AB6A9 /* RatingInfo.m */; };
+		D516021B1A542158003AB6A9 /* DetailGradeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D516021A1A542158003AB6A9 /* DetailGradeController.m */; };
+		D516021F1A5421D5003AB6A9 /* ExamPlanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D516021D1A5421D5003AB6A9 /* ExamPlanCell.m */; };
+		D51602201A5421D5003AB6A9 /* ExamPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D516021E1A5421D5003AB6A9 /* ExamPlanCell.xib */; };
+		D51602231A5421DC003AB6A9 /* ExamPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602221A5421DC003AB6A9 /* ExamPlan.m */; };
+		D51602261A5421E1003AB6A9 /* ExamPlanTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602251A5421E1003AB6A9 /* ExamPlanTableViewController.m */; };
+		D51602291A54225B003AB6A9 /* SkillTestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602281A54225B003AB6A9 /* SkillTestTableViewController.m */; };
+		D516022C1A54227B003AB6A9 /* SkillTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D516022B1A54227B003AB6A9 /* SkillTest.m */; };
+		D51602301A542285003AB6A9 /* SkillTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D516022E1A542285003AB6A9 /* SkillTestCell.m */; };
+		D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D516022F1A542285003AB6A9 /* SkillTestCell.xib */; };
+		D51602341A542364003AB6A9 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602331A542364003AB6A9 /* FeedbackViewController.m */; };
 		D58E1CBC1A51B94C00B159ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58E1CBA1A51B94C00B159ED /* Main.storyboard */; };
 		D58E1CBE1A51B94C00B159ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58E1CBD1A51B94C00B159ED /* Images.xcassets */; };
 		D58E1CCD1A51B94C00B159ED /* eduadminTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1CCC1A51B94C00B159ED /* eduadminTests.m */; };
@@ -58,6 +88,61 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D51601E01A541A96003AB6A9 /* SelfInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfInfoTableViewController.h; sourceTree = "<group>"; };
+		D51601E11A541A96003AB6A9 /* SelfInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfInfoTableViewController.m; sourceTree = "<group>"; };
+		D51601E31A541AEF003AB6A9 /* SelfInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfInformation.h; sourceTree = "<group>"; };
+		D51601E41A541AEF003AB6A9 /* SelfInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfInformation.m; sourceTree = "<group>"; };
+		D51601E61A541BA7003AB6A9 /* EducationExperience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationExperience.h; sourceTree = "<group>"; };
+		D51601E71A541BA7003AB6A9 /* EducationExperience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationExperience.m; sourceTree = "<group>"; };
+		D51601E91A541BB8003AB6A9 /* EntranceExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntranceExam.h; sourceTree = "<group>"; };
+		D51601EA1A541BB8003AB6A9 /* EntranceExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntranceExam.m; sourceTree = "<group>"; };
+		D51601EC1A541BC9003AB6A9 /* Family.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Family.h; sourceTree = "<group>"; };
+		D51601ED1A541BC9003AB6A9 /* Family.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Family.m; sourceTree = "<group>"; };
+		D51601EF1A541BDC003AB6A9 /* Title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Title.h; sourceTree = "<group>"; };
+		D51601F01A541BDC003AB6A9 /* Title.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Title.m; sourceTree = "<group>"; };
+		D51601F21A541CBB003AB6A9 /* CellItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellItem.xib; sourceTree = "<group>"; };
+		D51601F31A541CBB003AB6A9 /* familyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = familyCell.xib; sourceTree = "<group>"; };
+		D51601F41A541CBB003AB6A9 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		D51601F51A541CBB003AB6A9 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
+		D51601F91A541CC7003AB6A9 /* CellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellItem.h; sourceTree = "<group>"; };
+		D51601FA1A541CC7003AB6A9 /* CellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellItem.m; sourceTree = "<group>"; };
+		D51601FB1A541CC7003AB6A9 /* familyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = familyCell.h; sourceTree = "<group>"; };
+		D51601FC1A541CC7003AB6A9 /* familyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = familyCell.m; sourceTree = "<group>"; };
+		D51601FF1A541EFE003AB6A9 /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
+		D51602001A541EFE003AB6A9 /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
+		D51602021A541F9A003AB6A9 /* NoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
+		D51602031A541F9A003AB6A9 /* NoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeViewController.m; sourceTree = "<group>"; };
+		D51602051A54200A003AB6A9 /* UnpassScoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnpassScoreTableViewController.h; sourceTree = "<group>"; };
+		D51602061A54200A003AB6A9 /* UnpassScoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnpassScoreTableViewController.m; sourceTree = "<group>"; };
+		D51602081A542035003AB6A9 /* MyGrade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGrade.h; sourceTree = "<group>"; };
+		D51602091A542035003AB6A9 /* MyGrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGrade.m; sourceTree = "<group>"; };
+		D516020A1A542035003AB6A9 /* UnpassGrade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnpassGrade.h; sourceTree = "<group>"; };
+		D516020B1A542035003AB6A9 /* UnpassGrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnpassGrade.m; sourceTree = "<group>"; };
+		D516020E1A542075003AB6A9 /* PartGradeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartGradeCell.h; sourceTree = "<group>"; };
+		D516020F1A542075003AB6A9 /* PartGradeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartGradeCell.m; sourceTree = "<group>"; };
+		D51602101A542075003AB6A9 /* PartGradeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartGradeCell.xib; sourceTree = "<group>"; };
+		D51602131A542109003AB6A9 /* GradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradeViewController.h; sourceTree = "<group>"; };
+		D51602141A542109003AB6A9 /* GradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeViewController.m; sourceTree = "<group>"; };
+		D51602161A542131003AB6A9 /* RatingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingInfo.h; sourceTree = "<group>"; };
+		D51602171A542131003AB6A9 /* RatingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingInfo.m; sourceTree = "<group>"; };
+		D51602191A542158003AB6A9 /* DetailGradeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGradeController.h; sourceTree = "<group>"; };
+		D516021A1A542158003AB6A9 /* DetailGradeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGradeController.m; sourceTree = "<group>"; };
+		D516021C1A5421D5003AB6A9 /* ExamPlanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamPlanCell.h; sourceTree = "<group>"; };
+		D516021D1A5421D5003AB6A9 /* ExamPlanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamPlanCell.m; sourceTree = "<group>"; };
+		D516021E1A5421D5003AB6A9 /* ExamPlanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExamPlanCell.xib; sourceTree = "<group>"; };
+		D51602211A5421DC003AB6A9 /* ExamPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamPlan.h; sourceTree = "<group>"; };
+		D51602221A5421DC003AB6A9 /* ExamPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamPlan.m; sourceTree = "<group>"; };
+		D51602241A5421E1003AB6A9 /* ExamPlanTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamPlanTableViewController.h; sourceTree = "<group>"; };
+		D51602251A5421E1003AB6A9 /* ExamPlanTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamPlanTableViewController.m; sourceTree = "<group>"; };
+		D51602271A54225B003AB6A9 /* SkillTestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillTestTableViewController.h; sourceTree = "<group>"; };
+		D51602281A54225B003AB6A9 /* SkillTestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillTestTableViewController.m; sourceTree = "<group>"; };
+		D516022A1A54227B003AB6A9 /* SkillTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillTest.h; sourceTree = "<group>"; };
+		D516022B1A54227B003AB6A9 /* SkillTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillTest.m; sourceTree = "<group>"; };
+		D516022D1A542285003AB6A9 /* SkillTestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillTestCell.h; sourceTree = "<group>"; };
+		D516022E1A542285003AB6A9 /* SkillTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillTestCell.m; sourceTree = "<group>"; };
+		D516022F1A542285003AB6A9 /* SkillTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillTestCell.xib; sourceTree = "<group>"; };
+		D51602321A542364003AB6A9 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		D51602331A542364003AB6A9 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		D58E1CAD1A51B94B00B159ED /* eduadmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eduadmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58E1CB11A51B94B00B159ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D58E1CBB1A51B94C00B159ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +242,253 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D51601C71A5419AA003AB6A9 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				D51601C81A5419AA003AB6A9 /* Controller */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		D51601C81A5419AA003AB6A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D51601FF1A541EFE003AB6A9 /* ScheduleViewController.h */,
+				D51602001A541EFE003AB6A9 /* ScheduleViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D51601C91A5419B3003AB6A9 /* EduNotice */ = {
+			isa = PBXGroup;
+			children = (
+				D51601CA1A5419B3003AB6A9 /* Controller */,
+			);
+			path = EduNotice;
+			sourceTree = "<group>";
+		};
+		D51601CA1A5419B3003AB6A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D51602021A541F9A003AB6A9 /* NoticeViewController.h */,
+				D51602031A541F9A003AB6A9 /* NoticeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D51601CB1A5419BA003AB6A9 /* Unpass */ = {
+			isa = PBXGroup;
+			children = (
+				D51601CC1A5419BA003AB6A9 /* Controller */,
+				D51601CD1A5419BA003AB6A9 /* Model */,
+				D51601CE1A5419BA003AB6A9 /* View */,
+			);
+			path = Unpass;
+			sourceTree = "<group>";
+		};
+		D51601CC1A5419BA003AB6A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D51602051A54200A003AB6A9 /* UnpassScoreTableViewController.h */,
+				D51602061A54200A003AB6A9 /* UnpassScoreTableViewController.m */,
+				D51602191A542158003AB6A9 /* DetailGradeController.h */,
+				D516021A1A542158003AB6A9 /* DetailGradeController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D51601CD1A5419BA003AB6A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D51602081A542035003AB6A9 /* MyGrade.h */,
+				D51602091A542035003AB6A9 /* MyGrade.m */,
+				D516020A1A542035003AB6A9 /* UnpassGrade.h */,
+				D516020B1A542035003AB6A9 /* UnpassGrade.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D51601CE1A5419BA003AB6A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D516020E1A542075003AB6A9 /* PartGradeCell.h */,
+				D516020F1A542075003AB6A9 /* PartGradeCell.m */,
+				D51602101A542075003AB6A9 /* PartGradeCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D51601CF1A5419C9003AB6A9 /* Grade */ = {
+			isa = PBXGroup;
+			children = (
+				D51601D01A5419C9003AB6A9 /* Controller */,
+				D51601D11A5419C9003AB6A9 /* Model */,
+			);
+			path = Grade;
+			sourceTree = "<group>";
+		};
+		D51601D01A5419C9003AB6A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D51602131A542109003AB6A9 /* GradeViewController.h */,
+				D51602141A542109003AB6A9 /* GradeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D51601D11A5419C9003AB6A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D51602161A542131003AB6A9 /* RatingInfo.h */,
+				D51602171A542131003AB6A9 /* RatingInfo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D51601D21A5419DD003AB6A9 /* ExamPlan */ = {
+			isa = PBXGroup;
+			children = (
+				D51601D31A5419DD003AB6A9 /* Controller */,
+				D51601D41A5419DD003AB6A9 /* Model */,
+				D51601D51A5419DD003AB6A9 /* View */,
+			);
+			path = ExamPlan;
+			sourceTree = "<group>";
+		};
+		D51601D31A5419DD003AB6A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D51602241A5421E1003AB6A9 /* ExamPlanTableViewController.h */,
+				D51602251A5421E1003AB6A9 /* ExamPlanTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D51601D41A5419DD003AB6A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D51602211A5421DC003AB6A9 /* ExamPlan.h */,
+				D51602221A5421DC003AB6A9 /* ExamPlan.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D51601D51A5419DD003AB6A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D516021C1A5421D5003AB6A9 /* ExamPlanCell.h */,
+				D516021D1A5421D5003AB6A9 /* ExamPlanCell.m */,
+				D516021E1A5421D5003AB6A9 /* ExamPlanCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D51601D61A5419E5003AB6A9 /* SkillTest */ = {
+			isa = PBXGroup;
+			children = (
+				D51601D71A5419E5003AB6A9 /* Controller */,
+				D51601D81A5419E5003AB6A9 /* Model */,
+				D51601D91A5419E5003AB6A9 /* View */,
+			);
+			path = SkillTest;
+			sourceTree = "<group>";
+		};
+		D51601D71A5419E5003AB6A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D51602271A54225B003AB6A9 /* SkillTestTableViewController.h */,
+				D51602281A54225B003AB6A9 /* SkillTestTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D51601D81A5419E5003AB6A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D516022A1A54227B003AB6A9 /* SkillTest.h */,
+				D516022B1A54227B003AB6A9 /* SkillTest.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D51601D91A5419E5003AB6A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D516022D1A542285003AB6A9 /* SkillTestCell.h */,
+				D516022E1A542285003AB6A9 /* SkillTestCell.m */,
+				D516022F1A542285003AB6A9 /* SkillTestCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D51601DA1A541A30003AB6A9 /* SelfInformation */ = {
+			isa = PBXGroup;
+			children = (
+				D51601DB1A541A30003AB6A9 /* Controller */,
+				D51601DC1A541A30003AB6A9 /* Model */,
+				D51601DD1A541A30003AB6A9 /* View */,
+			);
+			path = SelfInformation;
+			sourceTree = "<group>";
+		};
+		D51601DB1A541A30003AB6A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D51601E01A541A96003AB6A9 /* SelfInfoTableViewController.h */,
+				D51601E11A541A96003AB6A9 /* SelfInfoTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D51601DC1A541A30003AB6A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D51601E31A541AEF003AB6A9 /* SelfInformation.h */,
+				D51601E41A541AEF003AB6A9 /* SelfInformation.m */,
+				D51601E61A541BA7003AB6A9 /* EducationExperience.h */,
+				D51601E71A541BA7003AB6A9 /* EducationExperience.m */,
+				D51601E91A541BB8003AB6A9 /* EntranceExam.h */,
+				D51601EA1A541BB8003AB6A9 /* EntranceExam.m */,
+				D51601EC1A541BC9003AB6A9 /* Family.h */,
+				D51601ED1A541BC9003AB6A9 /* Family.m */,
+				D51601EF1A541BDC003AB6A9 /* Title.h */,
+				D51601F01A541BDC003AB6A9 /* Title.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D51601DD1A541A30003AB6A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D51601F91A541CC7003AB6A9 /* CellItem.h */,
+				D51601FA1A541CC7003AB6A9 /* CellItem.m */,
+				D51601F21A541CBB003AB6A9 /* CellItem.xib */,
+				D51601FB1A541CC7003AB6A9 /* familyCell.h */,
+				D51601FC1A541CC7003AB6A9 /* familyCell.m */,
+				D51601F31A541CBB003AB6A9 /* familyCell.xib */,
+				D51601F41A541CBB003AB6A9 /* HeaderView.h */,
+				D51601F51A541CBB003AB6A9 /* HeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D51601DE1A541A4B003AB6A9 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				D51601DF1A541A4B003AB6A9 /* Controller */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		D51601DF1A541A4B003AB6A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D51602321A542364003AB6A9 /* FeedbackViewController.h */,
+				D51602331A542364003AB6A9 /* FeedbackViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		D58E1CA41A51B94B00B159ED = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +647,14 @@
 				D58E1D391A51BACE00B159ED /* Main */,
 				D58E1D411A51BF2000B159ED /* Login */,
 				D5F936BD1A52EB3600EA112F /* Index */,
+				D51601DA1A541A30003AB6A9 /* SelfInformation */,
+				D51601C71A5419AA003AB6A9 /* Schedule */,
+				D51601C91A5419B3003AB6A9 /* EduNotice */,
+				D51601CB1A5419BA003AB6A9 /* Unpass */,
+				D51601CF1A5419C9003AB6A9 /* Grade */,
+				D51601D21A5419DD003AB6A9 /* ExamPlan */,
+				D51601D61A5419E5003AB6A9 /* SkillTest */,
+				D51601DE1A541A4B003AB6A9 /* Feedback */,
 				D5F936C21A52ED0300EA112F /* About */,
 				D58E1D331A51B9C200B159ED /* Other */,
 			);
@@ -455,7 +795,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = JieLee;
+				ORGANIZATIONNAME = PUPBOSS;
 				TargetAttributes = {
 					D58E1CAC1A51B94B00B159ED = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -490,7 +830,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D51601F61A541CBB003AB6A9 /* CellItem.xib in Resources */,
+				D51602201A5421D5003AB6A9 /* ExamPlanCell.xib in Resources */,
 				D58E1CBC1A51B94C00B159ED /* Main.storyboard in Resources */,
+				D51602121A542075003AB6A9 /* PartGradeCell.xib in Resources */,
+				D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */,
+				D51601F71A541CBB003AB6A9 /* familyCell.xib in Resources */,
 				D58E1D201A51B98800B159ED /* MBProgressHUD.bundle in Resources */,
 				D58E1CBE1A51B94C00B159ED /* Images.xcassets in Resources */,
 			);
@@ -511,25 +856,45 @@
 			buildActionMask = 2147483647;
 			files = (
 				D58E1D251A51B98800B159ED /* MJIvar.m in Sources */,
+				D51601EE1A541BC9003AB6A9 /* Family.m in Sources */,
+				D51602181A542131003AB6A9 /* RatingInfo.m in Sources */,
+				D51601E51A541AEF003AB6A9 /* SelfInformation.m in Sources */,
+				D516021B1A542158003AB6A9 /* DetailGradeController.m in Sources */,
 				D58E1D161A51B98800B159ED /* AFHTTPRequestOperation.m in Sources */,
+				D51601F11A541BDC003AB6A9 /* Title.m in Sources */,
 				D58E1D261A51B98800B159ED /* MJMember.m in Sources */,
+				D516022C1A54227B003AB6A9 /* SkillTest.m in Sources */,
+				D51602071A54200A003AB6A9 /* UnpassScoreTableViewController.m in Sources */,
+				D51602341A542364003AB6A9 /* FeedbackViewController.m in Sources */,
 				D58E1D221A51B98800B159ED /* MJArgument.m in Sources */,
+				D51601E81A541BA7003AB6A9 /* EducationExperience.m in Sources */,
 				D5F936C61A52ED1B00EA112F /* AboutTableViewController.m in Sources */,
 				D58E1D281A51B98800B159ED /* MJType.m in Sources */,
 				D58E1D231A51B98800B159ED /* MJConst.m in Sources */,
+				D516020C1A542035003AB6A9 /* MyGrade.m in Sources */,
 				D58E1D171A51B98800B159ED /* AFHTTPRequestOperationManager.m in Sources */,
 				D5F936C11A52EB5200EA112F /* IndexViewController.m in Sources */,
 				D58E1D191A51B98800B159ED /* AFNetworkReachabilityManager.m in Sources */,
 				D58E1D2D1A51B98800B159ED /* LJDeviceTool.m in Sources */,
+				D516021F1A5421D5003AB6A9 /* ExamPlanCell.m in Sources */,
+				D51602151A542109003AB6A9 /* GradeViewController.m in Sources */,
 				D58E1D381A51B9C200B159ED /* main.m in Sources */,
 				D58E1D291A51B98800B159ED /* MJTypeEncoding.m in Sources */,
 				D58E1D1D1A51B98800B159ED /* AFURLResponseSerialization.m in Sources */,
+				D51601EB1A541BB8003AB6A9 /* EntranceExam.m in Sources */,
 				D58E1D1F1A51B98800B159ED /* MBProgressHUD+LJ.m in Sources */,
 				D58E1D2C1A51B98800B159ED /* NSObject+MJMember.m in Sources */,
 				D58E1D2E1A51B98800B159ED /* LJFileTool.m in Sources */,
+				D51602231A5421DC003AB6A9 /* ExamPlan.m in Sources */,
+				D516020D1A542035003AB6A9 /* UnpassGrade.m in Sources */,
+				D51601E21A541A96003AB6A9 /* SelfInfoTableViewController.m in Sources */,
+				D51602291A54225B003AB6A9 /* SkillTestTableViewController.m in Sources */,
+				D51602011A541EFE003AB6A9 /* ScheduleViewController.m in Sources */,
 				D58E1D2F1A51B98800B159ED /* LJHTTPTool.m in Sources */,
 				D58E1D1B1A51B98800B159ED /* AFURLConnectionOperation.m in Sources */,
 				D58E1D371A51B9C200B159ED /* AppDelegate.m in Sources */,
+				D51602261A5421E1003AB6A9 /* ExamPlanTableViewController.m in Sources */,
+				D51602111A542075003AB6A9 /* PartGradeCell.m in Sources */,
 				D58E1D1A1A51B98800B159ED /* AFSecurityPolicy.m in Sources */,
 				D58E1D181A51B98800B159ED /* AFHTTPSessionManager.m in Sources */,
 				D58E1D271A51B98800B159ED /* MJMethod.m in Sources */,
@@ -537,12 +902,17 @@
 				D58E1D1C1A51B98800B159ED /* AFURLRequestSerialization.m in Sources */,
 				D58E1D3E1A51BACE00B159ED /* MainNavigationViewController.m in Sources */,
 				D5F936C91A52ED7900EA112F /* JoinViewController.m in Sources */,
+				D51602301A542285003AB6A9 /* SkillTestCell.m in Sources */,
 				D58E1D1E1A51B98800B159ED /* AFURLSessionManager.m in Sources */,
 				D58E1D311A51B98800B159ED /* LJUITool.m in Sources */,
 				D58E1D2A1A51B98800B159ED /* NSObject+MJCoding.m in Sources */,
+				D51602041A541F9A003AB6A9 /* NoticeViewController.m in Sources */,
 				D58E1D211A51B98800B159ED /* MBProgressHUD.m in Sources */,
 				D58E1D301A51B98800B159ED /* LJTimeTool.m in Sources */,
+				D51601FD1A541CC7003AB6A9 /* CellItem.m in Sources */,
+				D51601FE1A541CC7003AB6A9 /* familyCell.m in Sources */,
 				D58E1D241A51B98800B159ED /* MJFoundation.m in Sources */,
+				D51601F81A541CBB003AB6A9 /* HeaderView.m in Sources */,
 				D58E1D451A51BF5900B159ED /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
