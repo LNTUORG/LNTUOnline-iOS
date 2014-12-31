@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     NSURL *url = [NSURL URLWithString:wantedURL ];
     
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
