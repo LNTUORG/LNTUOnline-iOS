@@ -27,6 +27,8 @@
     [super viewDidLoad];
     [MBProgressHUD showMessage:waitStr];
     
+    self.averageOfCreditPointInfo.numberOfLines = 0;
+    
     [self getAverageOfCreditPointInfo];
     [self getUnpassCoursesInfo];
 }

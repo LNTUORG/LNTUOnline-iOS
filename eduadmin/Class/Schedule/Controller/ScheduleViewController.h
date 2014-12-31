@@ -10,6 +10,8 @@
 
 @interface ScheduleViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *bigView;
+
 @property (weak, nonatomic) IBOutlet UIScrollView *schScrollView;
 
 @property (weak, nonatomic) IBOutlet UILabel *s1_1;

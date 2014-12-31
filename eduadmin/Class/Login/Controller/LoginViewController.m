@@ -25,8 +25,6 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.userNameText];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.pwdText];
-    [self.loginBtn setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"login"]]];
-    
     
 }
 

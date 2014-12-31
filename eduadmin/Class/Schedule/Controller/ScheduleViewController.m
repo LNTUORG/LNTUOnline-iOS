@@ -24,6 +24,10 @@
     
     //隐藏滚动条
     self.schScrollView.showsHorizontalScrollIndicator = YES;
+    
+    for (UILabel *lable in self.bigView.subviews) {
+        lable.numberOfLines = 0;
+    }
 }
 
 - (void)viewDidLoad {
