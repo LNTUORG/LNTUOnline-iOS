@@ -14,13 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlj-Y2-8fT">
-                        <rect key="frame" x="0.0" y="68" width="320" height="1"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="cLx-Z8-7fp"/>
-                        </constraints>
-                    </view>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="2014-06-17 13:50--15:50" translatesAutoresizingMaskIntoConstraints="NO" id="JIz-S0-nm5">
                         <rect key="frame" x="36" y="22" width="217" height="25"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,7 +43,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zit-VY-mlT">
-                        <rect key="frame" x="272" y="0.0" width="48" height="68"/>
+                        <rect key="frame" x="272" y="0.0" width="48" height="70"/>
                         <color key="backgroundColor" red="0.65098039215686276" green="0.56470588235294117" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="48" id="5cq-fc-Vy5"/>
@@ -75,15 +68,11 @@
                 <constraints>
                     <constraint firstItem="sEl-c8-H9n" firstAttribute="leading" secondItem="fK3-vS-tMx" secondAttribute="leading" constant="8" id="2GD-D2-YeB"/>
                     <constraint firstItem="JIz-S0-nm5" firstAttribute="leading" secondItem="sEl-c8-H9n" secondAttribute="trailing" id="5sg-SH-uRA"/>
-                    <constraint firstAttribute="bottom" secondItem="nlj-Y2-8fT" secondAttribute="bottom" constant="0.5" id="8Av-GR-8BN"/>
                     <constraint firstItem="Bdt-s1-39M" firstAttribute="leading" secondItem="fK3-vS-tMx" secondAttribute="leading" constant="13" id="N7A-aU-SXv"/>
-                    <constraint firstItem="nlj-Y2-8fT" firstAttribute="leading" secondItem="fK3-vS-tMx" secondAttribute="leading" id="NXe-XK-sNQ"/>
                     <constraint firstItem="4L2-B2-5Ae" firstAttribute="top" secondItem="JIz-S0-nm5" secondAttribute="bottom" id="Tfa-Wk-RtS"/>
                     <constraint firstItem="Bdt-s1-39M" firstAttribute="top" secondItem="fK3-vS-tMx" secondAttribute="top" id="Zc9-4B-0fq"/>
-                    <constraint firstAttribute="trailing" secondItem="nlj-Y2-8fT" secondAttribute="trailing" id="cJN-cQ-jRS"/>
                     <constraint firstAttribute="trailing" secondItem="Zit-VY-mlT" secondAttribute="trailing" id="ceo-3b-4cs"/>
                     <constraint firstItem="Zit-VY-mlT" firstAttribute="top" secondItem="fK3-vS-tMx" secondAttribute="top" id="fd7-10-luV"/>
-                    <constraint firstItem="nlj-Y2-8fT" firstAttribute="top" secondItem="Zit-VY-mlT" secondAttribute="bottom" id="hfr-7L-WFE"/>
                     <constraint firstItem="JIz-S0-nm5" firstAttribute="top" secondItem="fK3-vS-tMx" secondAttribute="top" constant="22" id="rYU-2V-WYw"/>
                     <constraint firstItem="4L2-B2-5Ae" firstAttribute="leading" secondItem="sEl-c8-H9n" secondAttribute="trailing" constant="5" id="yqE-In-d17"/>
                     <constraint firstItem="sEl-c8-H9n" firstAttribute="top" secondItem="fK3-vS-tMx" secondAttribute="top" constant="22" id="z4N-Eg-zgi"/>

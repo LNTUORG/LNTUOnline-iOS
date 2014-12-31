@@ -39,6 +39,7 @@
     
     self.tableView.rowHeight = 50;
     self.tableView.sectionHeaderHeight = 44;
+    self.tableView.tableFooterView = [[UIView alloc] init];
     
     NSArray *tempArr = @[@"基本信息",@"高考分数",@"教育经历",@"家庭成员"];
     NSMutableArray *arr = [NSMutableArray array];

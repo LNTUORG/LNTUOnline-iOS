@@ -28,6 +28,7 @@
     [MBProgressHUD showMessage:waitStr];
     
     self.averageOfCreditPointInfo.numberOfLines = 0;
+    self.tableView.tableFooterView = [[UIView alloc] init];
     
     [self getAverageOfCreditPointInfo];
     [self getUnpassCoursesInfo];

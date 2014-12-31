@@ -14,13 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKN-Y8-G3e">
-                        <rect key="frame" x="0.0" y="69" width="320" height="1"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="q8I-LT-Cg2"/>
-                        </constraints>
-                    </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="countdown" translatesAutoresizingMaskIntoConstraints="NO" id="jjC-7G-RE1">
                         <rect key="frame" x="8" y="37" width="28" height="32"/>
                         <constraints>
@@ -48,7 +41,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imf-9v-NB5">
-                        <rect key="frame" x="266" y="0.0" width="54" height="69"/>
+                        <rect key="frame" x="266" y="0.0" width="54" height="70"/>
                         <color key="backgroundColor" red="0.8666666666666667" green="0.47058823529411764" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="54" id="tag-R8-zcS"/>
@@ -62,16 +55,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Znh-58-Vfj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="19H-ZM-ZUi"/>
-                    <constraint firstAttribute="trailing" secondItem="hKN-Y8-G3e" secondAttribute="trailing" id="AzB-Pw-WIa"/>
                     <constraint firstItem="Znh-58-Vfj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="DyR-ot-eTC"/>
                     <constraint firstItem="jjC-7G-RE1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="IFU-Pb-NYQ"/>
-                    <constraint firstItem="hKN-Y8-G3e" firstAttribute="top" secondItem="Imf-9v-NB5" secondAttribute="bottom" id="Wxf-QC-IFU"/>
                     <constraint firstAttribute="trailing" secondItem="Imf-9v-NB5" secondAttribute="trailing" id="YXW-t9-SEH"/>
                     <constraint firstItem="Imf-9v-NB5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bFp-9u-GDr"/>
                     <constraint firstItem="APw-gn-90f" firstAttribute="top" secondItem="Znh-58-Vfj" secondAttribute="bottom" constant="5" id="cJD-fg-yHG"/>
-                    <constraint firstAttribute="bottom" secondItem="hKN-Y8-G3e" secondAttribute="bottom" id="hCP-pE-95U"/>
                     <constraint firstItem="APw-gn-90f" firstAttribute="leading" secondItem="jjC-7G-RE1" secondAttribute="trailing" constant="3" id="sev-Kp-Zcb"/>
-                    <constraint firstItem="hKN-Y8-G3e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ss3-DF-GYm"/>
                     <constraint firstItem="jjC-7G-RE1" firstAttribute="top" secondItem="Znh-58-Vfj" secondAttribute="bottom" id="syl-db-o2e"/>
                 </constraints>
             </tableViewCellContentView>

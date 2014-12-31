@@ -36,20 +36,10 @@
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDO-h9-es5">
-                        <rect key="frame" x="0.0" y="49" width="320" height="1"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="QSf-hM-twg"/>
-                        </constraints>
-                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="centerY" secondItem="gsI-Ol-4Py" secondAttribute="centerY" id="6ge-G2-v80"/>
-                    <constraint firstAttribute="bottom" secondItem="sDO-h9-es5" secondAttribute="bottom" id="7hz-XE-ppr"/>
                     <constraint firstItem="5Qu-LM-zP4" firstAttribute="leading" secondItem="J6u-9o-C7W" secondAttribute="leadingMargin" constant="2" id="G8p-JW-V7p"/>
-                    <constraint firstAttribute="trailing" secondItem="sDO-h9-es5" secondAttribute="trailing" id="Py6-2N-rVj"/>
-                    <constraint firstItem="sDO-h9-es5" firstAttribute="leading" secondItem="J6u-9o-C7W" secondAttribute="leading" id="RUx-Pu-RnZ"/>
                     <constraint firstAttribute="trailingMargin" secondItem="gsI-Ol-4Py" secondAttribute="trailing" constant="2" id="Vsh-ka-HKf"/>
                     <constraint firstAttribute="centerY" secondItem="5Qu-LM-zP4" secondAttribute="centerY" id="gQp-dh-5bq"/>
                 </constraints>

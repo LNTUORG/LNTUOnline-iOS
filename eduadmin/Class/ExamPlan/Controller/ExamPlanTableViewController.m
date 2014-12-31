@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.tableFooterView = [[UIView alloc] init];
+    
     NSString *filePath = [LJFileTool getFilePath:[self getAddress:examPlanFileName]];
     
     NSFileManager *mgr = [NSFileManager defaultManager];
