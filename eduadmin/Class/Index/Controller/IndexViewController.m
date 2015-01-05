@@ -145,6 +145,10 @@
 
 - (IBAction)logout:(id)sender {
     
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def setObject:@"1" forKey:@"flag"];
+    [def synchronize];
+    
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"是否退出登录" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"确定" otherButtonTitles: nil];
     [sheet showInView:self.view];
 }

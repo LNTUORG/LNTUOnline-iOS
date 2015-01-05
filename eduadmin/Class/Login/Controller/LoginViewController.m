@@ -26,6 +26,23 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.userNameText];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.pwdText];
     
+    //标记为刚打开应用
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def setObject:@"0" forKey:@"flag"];
+    [def synchronize];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    if ([[def objectForKey:@"flag"] isEqualToString:@"0"]) {
+        if (self.userNameText.text.length) {
+            [self login];
+        }
+    }
 }
 
 - (void)dealloc
