@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Common.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,35 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    if (IOS8) {
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+        
+        UIUserNotificationSettings *set = [UIUserNotificationSettings settingsForTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:set];
+    }else{
+        
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+         (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    }
+
+    
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSLog(@"%@",deviceToken);
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"%@",error);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
