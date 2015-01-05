@@ -10,7 +10,7 @@
 #import "Common.h"
 #import "MBProgressHUD+LJ.h"
 
-@interface NoticeViewController ()
+@interface NoticeViewController () <UIWebViewDelegate>
 
 @end
 
@@ -39,6 +39,11 @@
     [MBProgressHUD hideHUD];
 }
 
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [MBProgressHUD hideHUD];
+    
+}
 
 - (IBAction)goToSafari:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:noticeURL]];

@@ -716,8 +716,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="您的建议" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaW-id-hIW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的建议" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaW-id-hIW">
                                 <rect key="frame" x="15" y="78" width="68" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="Tfd-iK-GJB"/>
+                                    <constraint firstAttribute="height" constant="21" id="b0T-Hc-ogt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -749,10 +753,12 @@
                             <constraint firstItem="1oH-KO-Eps" firstAttribute="top" secondItem="XZ5-Br-ieX" secondAttribute="bottom" constant="43" id="Cdx-aQ-iJr"/>
                             <constraint firstAttribute="centerX" secondItem="1oH-KO-Eps" secondAttribute="centerX" id="OZe-YH-4wM"/>
                             <constraint firstItem="vo9-lP-SLv" firstAttribute="top" secondItem="1oH-KO-Eps" secondAttribute="bottom" constant="27" id="Ogg-76-pIL"/>
+                            <constraint firstItem="QaW-id-hIW" firstAttribute="leading" secondItem="TLr-IH-9bR" secondAttribute="leading" constant="15" id="XuQ-BR-UCJ"/>
                             <constraint firstItem="TKs-VY-KyU" firstAttribute="leading" secondItem="TLr-IH-9bR" secondAttribute="leadingMargin" constant="14" id="lPw-vr-OGf"/>
                             <constraint firstItem="vo9-lP-SLv" firstAttribute="width" secondItem="1oH-KO-Eps" secondAttribute="width" id="loQ-S2-2Yx"/>
                             <constraint firstAttribute="width" secondItem="1oH-KO-Eps" secondAttribute="width" constant="30" id="ls6-oh-hMc"/>
                             <constraint firstAttribute="centerX" secondItem="vo9-lP-SLv" secondAttribute="centerX" id="npG-Jr-UnM"/>
+                            <constraint firstItem="QaW-id-hIW" firstAttribute="top" secondItem="XZ5-Br-ieX" secondAttribute="bottom" constant="14" id="nuC-fl-A8U"/>
                         </constraints>
                         <connections>
                             <action selector="endEditing" destination="lNk-TO-D7W" eventType="touchDown" id="lJO-G8-HMe"/>
@@ -1771,7 +1777,7 @@
         <image name="x" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="di2-P4-tmb"/>
         <segue reference="K6T-uP-ge0"/>
-        <segue reference="ikN-CD-soS"/>
     </inferredMetricsTieBreakers>
 </document>
