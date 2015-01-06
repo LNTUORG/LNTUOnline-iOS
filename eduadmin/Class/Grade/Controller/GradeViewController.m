@@ -33,13 +33,30 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.gradeView.tableFooterView = [[UIView alloc] init];
-    _yearArr = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%d",(int)[LJTimeTool getCurrentYear]],[NSString stringWithFormat:@"%d",(int)[LJTimeTool getCurrentYear]-1],[NSString stringWithFormat:@"%d",(int)[LJTimeTool getCurrentYear]-2],[NSString stringWithFormat:@"%d",(int)[LJTimeTool getCurrentYear]-3],[NSString stringWithFormat:@"%d",(int)[LJTimeTool getCurrentYear]-4],[NSString stringWithFormat:@"%d",(int)[LJTimeTool getCurrentYear]-5], nil];
+    
+    int year = [LJTimeTool getCurrentYear];
+    
+    if ([LJTimeTool getCurrentMonth]<=3) {
+        year--;
+    }
+    
+    _yearArr = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%d",year],[NSString stringWithFormat:@"%d",year-1],[NSString stringWithFormat:@"%d",year-2],[NSString stringWithFormat:@"%d",year-3],[NSString stringWithFormat:@"%d",year-4],[NSString stringWithFormat:@"%d",year-5], nil];
     _termArr = [NSArray arrayWithObjects:@"1",@"2",nil];
     _rateArr = [NSMutableArray array];
     _year = _yearArr[0];
-    _term = _termArr[0];
     
-    [self getGrade:[NSString stringWithFormat:@"%@grades/allCourseScoresInfo",sinaURL]];
+    if ([LJTimeTool getCurrentMonth]>=5 && [LJTimeTool getCurrentMonth]<11) {
+        _term = _termArr[0];
+    }else{_term = _termArr[1];}
+    
+    
+    
+    self.yearLable.text = [NSString stringWithFormat:@"%@年",_year];
+    if ([_term intValue]==1) {
+        self.termLable.text = @"春";
+    }else{self.termLable.text = @"秋";}
+    
+    [self getGrade:[NSString stringWithFormat:@"%@grades/courseScoresInfo?year=%@&term=%@",sinaURL,_year,_term]];
     
 }
 

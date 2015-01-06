@@ -11,6 +11,8 @@
 
 + (NSInteger)getCurrentYear;
 
++ (NSInteger)getCurrentMonth;
+
 + (NSString *)getCurrentInterval;
 
 + (int)dayNumberSinceDateWithFormat_yyyy_MM_dd:(NSString *)date;

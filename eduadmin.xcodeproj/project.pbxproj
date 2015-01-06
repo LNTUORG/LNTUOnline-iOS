@@ -800,6 +800,11 @@
 					D58E1CAC1A51B94B00B159ED = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = BH46MT8H22;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					D58E1CC51A51B94C00B159ED = {
 						CreatedOnToolsVersion = 6.1.1;

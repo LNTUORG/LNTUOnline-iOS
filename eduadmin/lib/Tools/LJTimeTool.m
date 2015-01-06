@@ -25,6 +25,21 @@
     return [dateComponent year];
 }
 
++ (NSInteger)getCurrentMonth
+{
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags =
+    NSYearCalendarUnit |
+    NSMonthCalendarUnit |
+    NSDayCalendarUnit |
+    NSHourCalendarUnit |
+    NSMinuteCalendarUnit |
+    NSSecondCalendarUnit;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
+    
+    return [dateComponent month];
+}
 
 + (NSString *)getCurrentInterval
 {

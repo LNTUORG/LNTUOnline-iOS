@@ -20,10 +20,31 @@
     // Override point for customization after application launch.
     
     if (IOS8) {
+        
+        UIMutableUserNotificationAction *action = [[UIMutableUserNotificationAction alloc] init];
+        action.identifier = @"action";  //按钮的标示
+        action.title=@"查看";  //按钮的标题
+        action.activationMode = UIUserNotificationActivationModeForeground;  //当点击的时候启动程序
+        //    action.authenticationRequired = YES;
+        //    action.destructive = YES;
+        UIMutableUserNotificationAction *action2 = [[UIMutableUserNotificationAction alloc] init];  //第二按钮
+        action2.identifier = @"action2";
+        action2.title=@"取消";
+        action2.activationMode = UIUserNotificationActivationModeBackground;  //当点击的时候不启动程序，在后台处理
+        action.authenticationRequired = YES;//需要解锁才能处理，如果action.activationMode = UIUserNotificationActivationModeForeground;则这个属性被忽略
+        action.destructive = YES;
+        
+        
+        UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc] init];
+        categorys.identifier = @"alert";//这组动作的唯一标示
+        [categorys setActions:@[action,action2] forContext:(UIUserNotificationActionContextMinimal)];
+        
+        UIUserNotificationSettings *uns = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound) categories:[NSSet setWithObjects:categorys, nil]];
+        
+        [[UIApplication sharedApplication] registerUserNotificationSettings:uns];
+        
         [[UIApplication sharedApplication] registerForRemoteNotifications];
         
-        UIUserNotificationSettings *set = [UIUserNotificationSettings settingsForTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:set];
     }else{
         
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
@@ -36,7 +57,7 @@
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
 {
-    
+    NSLog(@"%@",notificationSettings);
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
@@ -55,8 +76,15 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    
+    
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.fireDate=[NSDate dateWithTimeIntervalSinceNow:5];
+    notification.timeZone=[NSTimeZone defaultTimeZone];
+    notification.alertBody=@"杰哥是天才！！";
+    notification.category = @"alert";
+    [[UIApplication sharedApplication]  scheduleLocalNotification:notification];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
