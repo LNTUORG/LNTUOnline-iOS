@@ -22,13 +22,15 @@
     NSString *str = [NSString stringWithFormat:@"%@月%@日 %@-%@",arr[1],day[0],day[1],arr[4]];
     
     NSArray *date = [plan.time componentsSeparatedByString:@" "];
-    int lastDay = [LJTimeTool dayNumberSinceDateWithFormat_yyyy_MM_dd:date[0]];
+    // 剩余天数
+    NSString *lastDay = [NSString stringWithFormat:@"%d",[LJTimeTool dayNumberSinceDateWithFormat_yyyy_MM_dd:date[0]]];
     
-    if (lastDay<0) {
-        lastDay = 0;
+
+    if ([lastDay intValue]<0) {
+        lastDay = @"...";
     }
     
-    [self.countDate setTitle:[NSString stringWithFormat:@"%d",lastDay] forState:UIControlStateNormal];
+    [self.countDate setTitle:lastDay forState:UIControlStateNormal];
     
     self.timeTextView.text = str;
     self.courseLable.text = plan.course;

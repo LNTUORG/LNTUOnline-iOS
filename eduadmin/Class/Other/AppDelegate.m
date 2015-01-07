@@ -55,6 +55,16 @@
     return YES;
 }
 
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler
+{
+    NSLog(@"%@-------------------%@",identifier,userInfo);
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler
+{
+    NSLog(@"%@-------------------%@",identifier,notification);
+}
+
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
 {
     NSLog(@"%@",notificationSettings);
@@ -84,6 +94,7 @@
     notification.timeZone=[NSTimeZone defaultTimeZone];
     notification.alertBody=@"杰哥是天才！！";
     notification.category = @"alert";
+    notification.applicationIconBadgeNumber = 5;
     [[UIApplication sharedApplication]  scheduleLocalNotification:notification];
 }
 

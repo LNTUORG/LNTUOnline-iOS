@@ -34,13 +34,13 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.gradeView.tableFooterView = [[UIView alloc] init];
     
-    int year = [LJTimeTool getCurrentYear];
+    NSInteger year = [LJTimeTool getCurrentYear];
     
     if ([LJTimeTool getCurrentMonth]<=3) {
         year--;
     }
     
-    _yearArr = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%d",year],[NSString stringWithFormat:@"%d",year-1],[NSString stringWithFormat:@"%d",year-2],[NSString stringWithFormat:@"%d",year-3],[NSString stringWithFormat:@"%d",year-4],[NSString stringWithFormat:@"%d",year-5], nil];
+    _yearArr = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%ld",(long)year],[NSString stringWithFormat:@"%d",year-1],[NSString stringWithFormat:@"%d",year-2],[NSString stringWithFormat:@"%d",year-3],[NSString stringWithFormat:@"%d",year-4],[NSString stringWithFormat:@"%d",year-5], nil];
     _termArr = [NSArray arrayWithObjects:@"1",@"2",nil];
     _rateArr = [NSMutableArray array];
     _year = _yearArr[0];

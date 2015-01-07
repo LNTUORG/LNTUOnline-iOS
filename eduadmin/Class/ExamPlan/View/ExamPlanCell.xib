@@ -27,7 +27,7 @@
                         <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
                     </textView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="countdown" translatesAutoresizingMaskIntoConstraints="NO" id="sEl-c8-H9n">
-                        <rect key="frame" x="8" y="22" width="28" height="32"/>
+                        <rect key="frame" x="8" y="32" width="28" height="32"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="Pcm-Bb-W23"/>
                             <constraint firstAttribute="width" constant="28" id="ca0-Yk-Qam"/>
@@ -75,7 +75,7 @@
                     <constraint firstItem="Zit-VY-mlT" firstAttribute="top" secondItem="fK3-vS-tMx" secondAttribute="top" id="fd7-10-luV"/>
                     <constraint firstItem="JIz-S0-nm5" firstAttribute="top" secondItem="fK3-vS-tMx" secondAttribute="top" constant="22" id="rYU-2V-WYw"/>
                     <constraint firstItem="4L2-B2-5Ae" firstAttribute="leading" secondItem="sEl-c8-H9n" secondAttribute="trailing" constant="5" id="yqE-In-d17"/>
-                    <constraint firstItem="sEl-c8-H9n" firstAttribute="top" secondItem="fK3-vS-tMx" secondAttribute="top" constant="22" id="z4N-Eg-zgi"/>
+                    <constraint firstItem="sEl-c8-H9n" firstAttribute="top" secondItem="fK3-vS-tMx" secondAttribute="top" constant="32" id="z4N-Eg-zgi"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

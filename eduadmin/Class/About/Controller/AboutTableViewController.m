@@ -7,6 +7,7 @@
 //
 
 #import "AboutTableViewController.h"
+#import "ShowWebViewController.h"
 #import "MBProgressHUD+LJ.h"
 #import "Common.h"
 #import "LJTools.h"
@@ -30,7 +31,7 @@
 {
     
     if (indexPath.row == 0) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:PUPBOSSURL]];
+        [self performSegueWithIdentifier:@"about2web" sender:PUPBOSSURL];
     }
     if (indexPath.row == 1) {
         
@@ -59,7 +60,10 @@
         [MBProgressHUD showSuccess:@"已经复制到粘贴板"];
     }
     if (indexPath.row == 3) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:weiboURL]];
+        [self performSegueWithIdentifier:@"about2web" sender:weiboURL];
+    }
+    if (indexPath.row == 4) {
+        [self performSegueWithIdentifier:@"about2web" sender:wantedURL];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -75,6 +79,12 @@
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ShowWebViewController *con = segue.destinationViewController;
+    con.webURL = sender;
 }
 
 @end
