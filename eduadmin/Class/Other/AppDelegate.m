@@ -43,8 +43,6 @@
         
         [[UIApplication sharedApplication] registerUserNotificationSettings:uns];
         
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-        
     }else{
         
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
@@ -67,7 +65,10 @@
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
 {
-    NSLog(@"%@",notificationSettings);
+    if (notificationSettings.types != UIUserNotificationTypeNone) {
+        // 4
+        [application registerForRemoteNotifications];
+    }
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken

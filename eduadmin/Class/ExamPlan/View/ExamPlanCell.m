@@ -26,7 +26,7 @@
     NSString *lastDay = [NSString stringWithFormat:@"%d",[LJTimeTool dayNumberSinceDateWithFormat_yyyy_MM_dd:date[0]]];
     
 
-    if ([lastDay intValue]<0) {
+    if ([lastDay intValue]<=0) {
         lastDay = @"...";
     }
     

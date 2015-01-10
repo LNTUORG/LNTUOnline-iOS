@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jOW-qB-Ta0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jOW-qB-Ta0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -367,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obt-yZ-clI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4529" y="577"/>
+            <point key="canvasLocation" x="-4421" y="577"/>
         </scene>
         <!--个人中心-->
         <scene sceneID="wKn-TV-fVF">
@@ -704,7 +704,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMy-Sc-OIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2972" y="1254"/>
+            <point key="canvasLocation" x="-3032" y="1249"/>
         </scene>
         <!--意见反馈-->
         <scene sceneID="Eq6-NF-f1v">
@@ -979,6 +979,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="gradeView" destination="30O-5c-Keq" id="31F-Z1-lPQ"/>
+                        <outlet property="pickView" destination="qdw-iQ-5Ly" id="UIv-9L-9L9"/>
                         <outlet property="pickerDevice" destination="ybu-vB-5yX" id="sCu-T0-0XO"/>
                         <outlet property="termLable" destination="Stt-rh-cNp" id="iBk-ns-NBU"/>
                         <outlet property="yearLable" destination="I1I-IC-Yb4" id="eRd-ng-ORB"/>
@@ -1768,7 +1769,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51J-2K-bIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1388" y="1254"/>
+            <point key="canvasLocation" x="-1392" y="1249"/>
         </scene>
     </scenes>
     <resources>

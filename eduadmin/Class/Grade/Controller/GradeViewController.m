@@ -16,7 +16,7 @@
 #import "PartGradeCell.h"
 #import "RatingInfo.h"
 
-@interface GradeViewController () <UIAlertViewDelegate>
+@interface GradeViewController () <UIAlertViewDelegate,UIPickerViewDelegate>
 {
     NSArray *_gradeArr;
     NSArray *_yearArr;
@@ -201,6 +201,12 @@
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUD];
         [MBProgressHUD showError:@"已经评课或当前无法评课"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"给个好评吧" message:@"给过老师好评，是不是心情棒棒哒，也给我们个好评吧" delegate:self cancelButtonTitle:@"不，谢谢" otherButtonTitles:@"好哒", nil];
+            [alert show];
+            
+        });
     }];
     
 }

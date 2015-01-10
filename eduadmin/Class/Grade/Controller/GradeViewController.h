@@ -10,6 +10,8 @@
 
 @interface GradeViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIPickerView *pickView;
+
 @property (weak, nonatomic) IBOutlet UIControl *pickerDevice;
 
 @property (weak, nonatomic) IBOutlet UILabel *yearLable;
