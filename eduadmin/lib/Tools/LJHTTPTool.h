@@ -60,6 +60,8 @@
  */
 + (void)getHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id responseHTTP))success failure:(void (^)(NSError *error))failure;
 
++ (void)feedbackError:(NSError *)error;
+
 @end
 
 

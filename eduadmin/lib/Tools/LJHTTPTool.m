@@ -6,6 +6,8 @@
 //
 
 #import "LJHTTPTool.h"
+#import "Common.h"
+#import "LJDeviceTool.h"
 #import "AFNetworking.h"
 
 @implementation LJHTTPTool
@@ -24,6 +26,9 @@
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
           if (failure) {
               failure(error);
+              
+              [self feedbackError:error];
+              
           }
       }];
 }
@@ -43,6 +48,7 @@
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
           if (failure) {
               failure(error);
+              [self feedbackError:error];
           }
       }];
 }
@@ -64,6 +70,7 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {
             failure(error);
+            [self feedbackError:error];
         }
     }];
 }
@@ -82,6 +89,7 @@
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          if (failure) {
              failure(error);
+             [self feedbackError:error];
          }
      }];
 }
@@ -101,8 +109,26 @@
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          if (failure) {
              failure(error);
+             [self feedbackError:error];
          }
      }];
+}
+
++ (void)feedbackError:(NSError *)error
+{
+    NSString *err = [error description];
+    NSDictionary *param = @{@"info": err,
+                            @"platform":@"iOS",
+                            @"version": [LJDeviceTool getCurrentAppBuild],
+                            @"osVer": [NSString stringWithFormat:@"iOS%@",[LJDeviceTool getCurrentSystemVersion]],
+                            @"manufacturer": @"Apple",
+                            @"model": [LJDeviceTool getCurrentDeviceModel]
+                            };
+    
+    [LJHTTPTool postHTTPWithURL:[NSString stringWithFormat:@"%@feedback/crashLog",sinaURL] params:param success:^(id responseHTTP) {
+        
+    } failure:^(NSError *error) {
+    }];
 }
 
 @end
