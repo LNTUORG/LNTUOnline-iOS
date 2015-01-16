@@ -8,6 +8,7 @@
 
 #import "IndexViewController.h"
 #import "MBProgressHUD+LJ.h"
+#import "AFNetworking.h"
 #import "LJTools.h"
 #import "Common.h"
 
@@ -42,7 +43,36 @@
     self.scrollView.contentSize = CGSizeMake(0, self.view.frame.size.height - 63);
     [self getPhotoAndName];
     [self setHelloLableText];
+    
+#pragma mark 推送相关
+    
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
+    if ([def objectForKey:pushTokenNew]) {
+        if (![[def objectForKey:pushTokenOld] isEqualToString:[def objectForKey:pushTokenNew]]) {
+            
+            [self sendTokenToServer];
+        }
+    }
 }
+
+/**
+ *  推送token
+ */
+- (void)sendTokenToServer {
+    
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
+    NSString *url = [NSString stringWithFormat:@"%@deviceToken?userId=%@&deviceToken=%@",tokenURL,[def objectForKey:userNameKey],[def objectForKey:pushTokenNew]];
+    
+    [LJHTTPTool getHTTPWithURL:url params:nil success:^(id responseHTTP) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
+}
+
 
 - (void)setHelloLableText
 {
@@ -69,15 +99,13 @@
 
 - (NSString *)getAddress:(NSString *)fileName {
     
-    NSString *filePath = [LJFileTool getFilePath:loginFileName];
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
-    NSFileManager *mgr = [NSFileManager defaultManager];
+    NSString *str = [def objectForKey:userNameKey];
     
-    if ([mgr fileExistsAtPath:filePath]) {
-        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
-        
-        return [NSString stringWithFormat:@"%@%@",dict[@"userName"],fileName];
-    }else {
+    if (str.length) {
+        return [NSString stringWithFormat:@"%@%@",str,fileName];
+    } else {
         return @"error";
     }
     

@@ -7,6 +7,7 @@
 //
 
 #define sinaURL @"http://lntuonline.sinaapp.com/" // URL
+#define tokenURL @"http://eduadm.sinaapp.com/"
 #define noticeURL @"http://60.18.131.131:11180/academic/jwgg.jsp"
 #define wantedURL @"http://pupboss.com/wanted.html"
 #define PUPBOSSURL @"http://blog.pupboss.com"
@@ -19,7 +20,10 @@
 #define LJQQ @"10771533"
 #define supportMail @"support@pupboss.com"
 
-#define loginFileName @"login.plist"
+#define userNameKey @"userName"
+#define pwdKey @"pwd"
+#define pushTokenOld @"pushTokenOld"
+#define pushTokenNew @"pushTokenNew"
 #define selfInfoFileName @"selfInfo.plist"
 #define scheduleFileName @"schedule.plist"
 #define examPlanFileName @"exam.plist"

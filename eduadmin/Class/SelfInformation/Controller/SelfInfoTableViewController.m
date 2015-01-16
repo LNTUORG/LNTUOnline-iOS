@@ -70,15 +70,13 @@
 
 - (NSString *)getAddress:(NSString *)fileName {
     
-    NSString *filePath = [LJFileTool getFilePath:loginFileName];
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
-    NSFileManager *mgr = [NSFileManager defaultManager];
+    NSString *str = [def objectForKey:userNameKey];
     
-    if ([mgr fileExistsAtPath:filePath]) {
-        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
-        
-        return [NSString stringWithFormat:@"%@%@",dict[@"userName"],fileName];
-    }else {
+    if (str.length) {
+        return [NSString stringWithFormat:@"%@%@",str,fileName];
+    } else {
         return @"error";
     }
     

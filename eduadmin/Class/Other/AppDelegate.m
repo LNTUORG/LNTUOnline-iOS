@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Crashlytics/Crashlytics.h>
 #import "Common.h"
 
 @interface AppDelegate ()
@@ -18,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // 崩溃分析
+    [Crashlytics startWithAPIKey:@"8feec9fc30497fa73685d17f490a7a7cdad6b2a1"];
     
     if (IOS8) {
         
@@ -25,8 +28,6 @@
         action.identifier = @"action";  //按钮的标示
         action.title=@"查看";  //按钮的标题
         action.activationMode = UIUserNotificationActivationModeForeground;  //当点击的时候启动程序
-        //    action.authenticationRequired = YES;
-        //    action.destructive = YES;
         UIMutableUserNotificationAction *action2 = [[UIMutableUserNotificationAction alloc] init];  //第二按钮
         action2.identifier = @"action2";
         action2.title=@"取消";
@@ -53,15 +54,6 @@
     return YES;
 }
 
-- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler
-{
-    NSLog(@"%@-------------------%@",identifier,userInfo);
-}
-
-- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler
-{
-    NSLog(@"%@-------------------%@",identifier,notification);
-}
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
 {
@@ -73,7 +65,20 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    NSLog(@"%@",deviceToken);
+    NSString *getToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    // 从偏好设置读取
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
+    NSString *newToken = [def objectForKey:pushTokenNew];
+    if (newToken.length) {
+        [def setObject:newToken forKey:pushTokenOld];;
+    }
+    
+    // 写入偏好设置
+    [def setObject:getToken forKey:pushTokenNew];
+    [def synchronize];
+    
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
@@ -88,15 +93,6 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     
-    
-    
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.fireDate=[NSDate dateWithTimeIntervalSinceNow:5];
-    notification.timeZone=[NSTimeZone defaultTimeZone];
-    notification.alertBody=@"杰哥是天才！！";
-    notification.category = @"alert";
-    notification.applicationIconBadgeNumber = 5;
-    [[UIApplication sharedApplication]  scheduleLocalNotification:notification];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

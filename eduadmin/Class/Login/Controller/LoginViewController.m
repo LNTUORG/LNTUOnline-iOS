@@ -60,19 +60,16 @@
 - (void)appStart
 {
     
-    NSString *filePath = [LJFileTool getFilePath:loginFileName];
-    
-    NSFileManager *mgr = [NSFileManager defaultManager];
-    
-    if ([mgr fileExistsAtPath:filePath]) {
-        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    if ([def objectForKey:userNameKey]) {
         
-        self.userNameText.text = dict[@"userName"];
-        self.pwdText.text = dict[@"pwd"];
+        self.userNameText.text = [def objectForKey:userNameKey];
+        self.pwdText.text = [def objectForKey:pwdKey];
         self.loginBtn.enabled = YES;
-        
     }
+    
 }
+
 
 // 关闭键盘
 - (IBAction)existKeyboard {
@@ -82,12 +79,16 @@
 // 记住密码
 - (void)recordPwd
 {
-    NSDictionary *dict = @{@"userName": self.userNameText.text,@"pwd": self.pwdText.text};
     
-    [LJFileTool writeToFileContent:dict withFileName:loginFileName];
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def setObject:self.userNameText.text forKey:userNameKey];
+    [def setObject:self.pwdText.text forKey:pwdKey];
+    [def synchronize];
+    
 }
 
 - (IBAction)login {
+    
     [self recordPwd];
     [MBProgressHUD showMessage:waitStr];
     
