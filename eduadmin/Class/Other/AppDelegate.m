@@ -79,7 +79,6 @@
     // 写入偏好设置
     [def setObject:getToken forKey:pushTokenNew];
     [def synchronize];
-    
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
