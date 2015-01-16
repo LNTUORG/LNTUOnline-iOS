@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import <Crashlytics/Crashlytics.h>
 #import "Common.h"
-#import "LJTools.h"
+#import "LJHTTPTool.h"
 
 @interface AppDelegate ()
 
@@ -83,19 +83,7 @@
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-    NSString *err = [error description];
-    NSDictionary *param = @{@"info": err,
-                            @"platform":@"iOS",
-                            @"version": [LJDeviceTool getCurrentAppBuild],
-                            @"osVer": [NSString stringWithFormat:@"iOS%@",[LJDeviceTool getCurrentSystemVersion]],
-                            @"manufacturer": @"Apple",
-                            @"model": [LJDeviceTool getCurrentDeviceModel]
-                            };
-    
-    [LJHTTPTool postHTTPWithURL:[NSString stringWithFormat:@"%@feedback/crashLog",sinaURL] params:param success:^(id responseHTTP) {
-        
-    } failure:^(NSError *error) {
-    }];
+    [LJHTTPTool feedbackError:error];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
