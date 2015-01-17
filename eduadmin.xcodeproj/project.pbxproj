@@ -40,6 +40,7 @@
 		D51602301A542285003AB6A9 /* SkillTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D516022E1A542285003AB6A9 /* SkillTestCell.m */; };
 		D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D516022F1A542285003AB6A9 /* SkillTestCell.xib */; };
 		D51602341A542364003AB6A9 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602331A542364003AB6A9 /* FeedbackViewController.m */; };
+		D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55248B91A6A97730073942F /* StoreKit.framework */; };
 		D56448E11A68300700E5AB85 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56448E01A68300700E5AB85 /* Crashlytics.framework */; };
 		D58E1CBC1A51B94C00B159ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58E1CBA1A51B94C00B159ED /* Main.storyboard */; };
 		D58E1CBE1A51B94C00B159ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58E1CBD1A51B94C00B159ED /* Images.xcassets */; };
@@ -149,6 +150,7 @@
 		D516022F1A542285003AB6A9 /* SkillTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillTestCell.xib; sourceTree = "<group>"; };
 		D51602321A542364003AB6A9 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		D51602331A542364003AB6A9 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		D55248B91A6A97730073942F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D56448E01A68300700E5AB85 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		D58E1CAD1A51B94B00B159ED /* eduadmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eduadmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58E1CB11A51B94B00B159ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D56448E11A68300700E5AB85 /* Crashlytics.framework in Frameworks */,
+				D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +510,7 @@
 		D58E1CA41A51B94B00B159ED = {
 			isa = PBXGroup;
 			children = (
+				D55248B91A6A97730073942F /* StoreKit.framework */,
 				D58E1CAF1A51B94B00B159ED /* eduadmin */,
 				D58E1CC91A51B94C00B159ED /* eduadminTests */,
 				D58E1CAE1A51B94B00B159ED /* Products */,
@@ -809,6 +813,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
 						};
 					};
 					D58E1CC51A51B94C00B159ED = {
@@ -1058,7 +1065,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jie Li (DATL6CC93P)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/eduadmin/lib",
@@ -1067,6 +1075,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1076,7 +1085,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jie Li (BH46MT8H22)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/eduadmin/lib",
@@ -1085,6 +1095,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
