@@ -14,4 +14,7 @@
 
 - (IBAction)close:(id)sender;
 
+
+- (IBAction)restore:(id)sender;
+
 @end

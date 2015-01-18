@@ -32,14 +32,12 @@
 
     [self getProduct];
     
-    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
-    
 }
 
 - (void)getProduct {
     
     if ([SKPaymentQueue canMakePayments]) {
-        // 没有拒绝
+        // 没有意外
         NSSet *set =[NSSet setWithArray:@[@"eduadm_donate_3", @"eduadm_donate_6", @"eduadm_donate_12", @"eduadm_donate_25"]];
         
         SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:set];
@@ -62,8 +60,6 @@
     
     // 添加到队列
     [[SKPaymentQueue defaultQueue] addPayment:payment];
-    
-//    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
     
 }
 
@@ -108,7 +104,7 @@
 
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
 
-    
+    // 处理 id
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     
     // 移除队列
@@ -194,7 +190,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"purchased"];
         
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"donate"];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"purchased"];
         }
         
         cell.textLabel.text = [NSString stringWithFormat:@"已捐赠的项目是￥%@", arr[2]];
@@ -211,15 +207,6 @@
 
     SKProduct *pro = _productArr[indexPath.row];
     
-//    if (![_purchasedArr containsObject:pro.productIdentifier]) {
-//        
-//        [self buyProduct:pro];
-//    }else {
-//        
-//        UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"非常感谢" message:@"此项已经捐赠" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-//        [view show];
-//    
-//    }
     [self buyProduct:pro];
     
 }
@@ -238,5 +225,10 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     [UIApplication sharedApplication].statusBarHidden = NO;
+}
+
+- (IBAction)restore:(id)sender {
+    
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
 }
 @end

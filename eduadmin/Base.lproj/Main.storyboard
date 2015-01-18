@@ -137,6 +137,12 @@
                                         <action selector="close:" destination="091-QU-ePs" id="WZR-EL-dfw"/>
                                     </connections>
                                 </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="9DN-Ug-wqM"/>
+                                <barButtonItem title="恢复以前捐赠" id="Stk-VT-ryf">
+                                    <connections>
+                                        <action selector="restore:" destination="091-QU-ePs" id="n7p-cS-4Qu"/>
+                                    </connections>
+                                </barButtonItem>
                             </items>
                         </toolbar>
                         <view key="tableFooterView" contentMode="scaleToFill" id="RkI-XA-ARb">
