@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jOW-qB-Ta0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jOW-qB-Ta0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -119,6 +119,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ado-v8-9NU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3732" y="1249"/>
+        </scene>
+        <!--Donate Table View Controller-->
+        <scene sceneID="45k-Y8-f2p">
+            <objects>
+                <tableViewController id="091-QU-ePs" customClass="DonateTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="yU6-yD-DBs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="GWO-ZL-dVP">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="关闭" id="QXf-MZ-UXu">
+                                    <connections>
+                                        <action selector="close:" destination="091-QU-ePs" id="WZR-EL-dfw"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="RkI-XA-ARb">
+                            <rect key="frame" x="0.0" y="44" width="600" height="113"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="此项目是一个公益项目，没有盈利模式 甚至连广告都没有 维护此项目，需要一定的投入 在此之前一直是我们在捐赠 为了此项目存活久一些，欢迎新鲜血液的注入 捐一瓶可乐，还是中杯星巴克，你说了算！" translatesAutoresizingMaskIntoConstraints="NO" id="1cV-A3-CTl">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="113"/>
+                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="1cV-A3-CTl" firstAttribute="top" secondItem="RkI-XA-ARb" secondAttribute="top" id="C1X-DZ-acM"/>
+                                <constraint firstItem="1cV-A3-CTl" firstAttribute="leading" secondItem="RkI-XA-ARb" secondAttribute="leading" id="TNE-vV-yFw"/>
+                                <constraint firstAttribute="bottom" secondItem="1cV-A3-CTl" secondAttribute="bottom" id="jEt-u3-Dbu"/>
+                                <constraint firstAttribute="trailing" secondItem="1cV-A3-CTl" secondAttribute="trailing" id="yYq-mn-u76"/>
+                            </constraints>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="091-QU-ePs" id="bCI-xI-HMx"/>
+                            <outlet property="delegate" destination="091-QU-ePs" id="3Vy-zF-UUN"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHr-XL-Y5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3727" y="1955"/>
         </scene>
         <!--关于软件-->
         <scene sceneID="Ikb-6t-gOF">
@@ -627,6 +676,30 @@
                                             <action selector="skillTest" destination="xXI-28-uCV" eventType="touchDown" id="pFN-Nb-ED3"/>
                                         </connections>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-qN-cPe" customClass="UIControl">
+                                        <rect key="frame" x="0.0" y="353" width="600" height="70"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMn-Sm-hFP">
+                                                <rect key="frame" x="230" y="17" width="140" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="k99-rM-Tcs"/>
+                                                    <constraint firstAttribute="width" constant="140" id="re7-hu-N2z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <color key="textColor" red="0.65098039220000004" green="0.56470588239999997" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerX" secondItem="bMn-Sm-hFP" secondAttribute="centerX" id="3qf-Tt-Qyp"/>
+                                            <constraint firstAttribute="centerY" secondItem="bMn-Sm-hFP" secondAttribute="centerY" id="oFG-Kn-4G4"/>
+                                            <constraint firstAttribute="height" constant="70" id="xsv-ec-dOi"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="donate" destination="xXI-28-uCV" eventType="touchUpInside" id="WcY-lo-Vg1"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -639,6 +712,7 @@
                                     <constraint firstItem="NLQ-Nm-Rwx" firstAttribute="leading" secondItem="nev-4Q-1kK" secondAttribute="leading" id="Bkj-LB-6q0"/>
                                     <constraint firstItem="j1D-S8-F4m" firstAttribute="width" secondItem="xLp-UA-KC0" secondAttribute="width" id="EmC-ts-684"/>
                                     <constraint firstItem="RJx-R6-Eh2" firstAttribute="leading" secondItem="NLQ-Nm-Rwx" secondAttribute="trailing" constant="1" id="Esv-hC-C4c"/>
+                                    <constraint firstItem="PCh-qN-cPe" firstAttribute="leading" secondItem="nev-4Q-1kK" secondAttribute="leading" id="F53-tT-T8R"/>
                                     <constraint firstItem="NLQ-Nm-Rwx" firstAttribute="centerX" secondItem="2lh-lc-Bcp" secondAttribute="centerX" id="FTf-Pg-CUa"/>
                                     <constraint firstItem="QId-Qs-Ecr" firstAttribute="top" secondItem="nev-4Q-1kK" secondAttribute="top" constant="-130" id="Je6-3A-pG9"/>
                                     <constraint firstItem="CTV-aq-RgH" firstAttribute="leading" secondItem="nev-4Q-1kK" secondAttribute="leading" id="OnS-fJ-J0f"/>
@@ -654,11 +728,13 @@
                                     <constraint firstItem="NLQ-Nm-Rwx" firstAttribute="width" secondItem="RJx-R6-Eh2" secondAttribute="width" id="gp1-21-K7M"/>
                                     <constraint firstItem="j1D-S8-F4m" firstAttribute="centerX" secondItem="MZj-4s-hnP" secondAttribute="centerX" id="jcf-dh-Nr4"/>
                                     <constraint firstItem="xLp-UA-KC0" firstAttribute="leading" secondItem="CTV-aq-RgH" secondAttribute="trailing" constant="1" id="mPY-qK-JmW"/>
+                                    <constraint firstItem="PCh-qN-cPe" firstAttribute="top" secondItem="wbW-p8-7tX" secondAttribute="bottom" constant="1" id="mcc-1J-xw9"/>
                                     <constraint firstItem="NLQ-Nm-Rwx" firstAttribute="top" secondItem="CTV-aq-RgH" secondAttribute="bottom" constant="1" id="mn9-4A-jDb"/>
                                     <constraint firstItem="RJx-R6-Eh2" firstAttribute="top" secondItem="xLp-UA-KC0" secondAttribute="bottom" constant="1" id="nJh-Eh-BH9"/>
                                     <constraint firstItem="wbW-p8-7tX" firstAttribute="centerX" secondItem="xRO-Gc-yMF" secondAttribute="centerX" id="nag-mL-mri"/>
                                     <constraint firstItem="j1D-S8-F4m" firstAttribute="centerX" secondItem="dyO-AI-mn9" secondAttribute="centerX" id="o0f-j7-QiP"/>
                                     <constraint firstItem="j1D-S8-F4m" firstAttribute="leading" secondItem="xLp-UA-KC0" secondAttribute="trailing" constant="1" id="ocC-gh-ATh"/>
+                                    <constraint firstAttribute="trailing" secondItem="PCh-qN-cPe" secondAttribute="trailing" id="pPO-5X-bfe"/>
                                     <constraint firstItem="xLp-UA-KC0" firstAttribute="top" secondItem="QId-Qs-Ecr" secondAttribute="bottom" constant="1" id="r5o-tl-7LM"/>
                                     <constraint firstItem="RJx-R6-Eh2" firstAttribute="leading" secondItem="NLQ-Nm-Rwx" secondAttribute="trailing" constant="1" id="sTE-Du-LK1"/>
                                     <constraint firstItem="j1D-S8-F4m" firstAttribute="width" secondItem="CTV-aq-RgH" secondAttribute="width" id="skl-Lx-X5E"/>
@@ -700,6 +776,7 @@
                         <segue destination="hfY-k1-urd" kind="show" identifier="main2Grade" id="1Hh-d5-LJx"/>
                         <segue destination="7A0-cS-P8P" kind="show" identifier="main2Exam" id="ie1-Au-vMw"/>
                         <segue destination="B7n-Ql-IZp" kind="show" identifier="main2Skill" id="eB5-rK-nNu"/>
+                        <segue destination="091-QU-ePs" kind="presentation" identifier="main2Donate" id="4bF-S2-i08"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMy-Sc-OIp" userLabel="First Responder" sceneMemberID="firstResponder"/>

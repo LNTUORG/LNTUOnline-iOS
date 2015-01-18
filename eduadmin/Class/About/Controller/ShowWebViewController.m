@@ -12,8 +12,6 @@
 
 @interface ShowWebViewController () <UIWebViewDelegate>
 
-@property (nonatomic, assign) NSInteger lastCount;
-@property (nonatomic, assign) NSInteger nextCount;
 
 @end
 
@@ -24,9 +22,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.lastCount = 0;
-    self.nextCount = 0;
     
     NSURL *url = [NSURL URLWithString:webURL ];
     

@@ -213,6 +213,10 @@
     [self performSegueWithIdentifier:@"main2Skill" sender:nil];
 }
 
+- (IBAction)donate {
+    [self performSegueWithIdentifier:@"main2Donate" sender:nil];
+}
+
 #pragma mark ActionSheet代理方法
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex

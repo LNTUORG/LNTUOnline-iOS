@@ -34,4 +34,6 @@
 
 - (IBAction)skillTest;
 
+- (IBAction)donate;
+
 @end
