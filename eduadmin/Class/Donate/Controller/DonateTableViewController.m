@@ -9,13 +9,11 @@
 #import "DonateTableViewController.h"
 #import "MBProgressHUD+LJ.h"
 #import "Common.h"
-#import "IAPHelper.h"
-#import "IAPShare.h"
 
-@interface DonateTableViewController ()
+@interface DonateTableViewController () <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 {
     NSArray *_productArr;
-    NSArray *_purchasedArr;
+    NSMutableArray *_purchasedArr;
 }
 @end
 
@@ -24,84 +22,124 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _purchasedArr = [NSMutableArray array];
+    
     [MBProgressHUD showMessage:waitStr];
     
     [UIApplication sharedApplication].statusBarHidden = YES;
+    
+    [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
 
     [self getProduct];
+    
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
     
 }
 
 - (void)getProduct {
     
-    if(![IAPShare sharedHelper].iap) {
+    if ([SKPaymentQueue canMakePayments]) {
+        // 没有拒绝
+        NSSet *set =[NSSet setWithArray:@[@"eduadm_donate_3", @"eduadm_donate_6", @"eduadm_donate_12", @"eduadm_donate_25"]];
         
-        NSSet* dataSet = [[NSSet alloc] initWithObjects:@"eduadm_donate_3", @"eduadm_donate_6", @"eduadm_donate_12", @"eduadm_donate_25", nil];
+        SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:set];
         
-        [IAPShare sharedHelper].iap = [[IAPHelper alloc] initWithProductIdentifiers:dataSet];
+        request.delegate = self;
+        [request start];
         
+    }else {
+    
+        UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"访问限制" message:@"您已经禁止应用内购买" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        
+        [view show];
     }
+
+}
+
+- (void)buyProduct:(SKProduct *)product {
     
-    [IAPShare sharedHelper].iap.production = YES;
+    SKPayment *payment = [SKPayment paymentWithProduct:product];
     
-    [[IAPShare sharedHelper].iap requestProductsWithCompletion:^(SKProductsRequest *request, SKProductsResponse *response) {
-        if(response > 0 ) {
-            
-            _productArr = [IAPShare sharedHelper].iap.products;
-            
-            [MBProgressHUD hideHUD];
-            
-            
+    // 添加到队列
+    [[SKPaymentQueue defaultQueue] addPayment:payment];
+    
+//    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+    
+}
+
+#pragma mark - StoreKit
+
+- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
+{
+    _productArr = response.products;
+    
+    [MBProgressHUD hideHUD];
+    [self.tableView reloadData];
+}
+
+- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
+{
+    for (SKPaymentTransaction *trans in transactions) {
+        
+        switch (trans.transactionState) {
+            case SKPaymentTransactionStatePurchased:
+                
+                [self completeTransaction:trans];
+                break;
+                
+            case SKPaymentTransactionStateFailed:
+                
+                [self failedTransaction:trans];
+                break;
+                
+            case SKPaymentTransactionStateRestored:
+                
+                [self restoreTransaction:trans];
+                break;
+                
+                
+            default:
+                break;
         }
         
-        _purchasedArr = [[IAPShare sharedHelper].iap.purchasedProducts allObjects];
-        
-        [self.tableView reloadData];
-    }];
+    }
+
+}
+
+- (void)completeTransaction:(SKPaymentTransaction *)transaction {
+
+    
+    [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
+    
+    // 移除队列
+    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
 
 
-- (void)buyProduct:(SKProduct *)product {
+- (void)restoreTransaction:(SKPaymentTransaction *)transaction {
+    
+    [self provideContentForProductIdentifier:transaction.originalTransaction.payment.productIdentifier];
+    
+    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+}
 
-    [[IAPShare sharedHelper].iap buyProduct:product onCompletion:^(SKPaymentTransaction *transcation) {
+- (void)failedTransaction:(SKPaymentTransaction *)transaction {
+    
+    if (transaction.error.code != SKErrorPaymentCancelled) {
         
-        
-        if(transcation.error)
-        {
-            
-        }
-        else if(transcation.transactionState == SKPaymentTransactionStatePurchased) {
-            
-            NSURLRequest *req = [NSURLRequest requestWithURL:[[NSBundle mainBundle] appStoreReceiptURL]];
-            
-            NSError *error = nil;
-            
-            NSData *data = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:&error];
-            
-            [[IAPShare sharedHelper].iap checkReceipt:data AndSharedSecret:@"929ba143829d45d4ba1c52af726b943c" onCompletion:^(NSString *response, NSError *error) {
-                
-                //Convert JSON String to NSDictionary
-                NSDictionary* rec = [IAPShare toJSON:response];
-                
-                if([rec[@"status"] integerValue]==0)
-                {
-                    NSString *productIdentifier = transcation.payment.productIdentifier;
-                    [[IAPShare sharedHelper].iap provideContent:productIdentifier];
-                    _purchasedArr = [[IAPShare sharedHelper].iap.purchasedProducts allObjects];
-                    [self.tableView reloadData];
-                }
-                else {
-                    
-                }
-            }];
-            
-        }
-        else if(transcation.transactionState == SKPaymentTransactionStateFailed) {
-            
-        }
-        
-    }];
+    }
+    
+    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+}
 
+
+- (void)provideContentForProductIdentifier:(NSString *)productIdentifier {
+
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:productIdentifier];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [_purchasedArr addObject:productIdentifier];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -134,11 +172,18 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"donate"];
         }
         
+        cell.userInteractionEnabled = NO;
+        
         cell.textLabel.text = [NSString stringWithFormat:@"￥%@", pro.price];
         
         cell.detailTextLabel.text = pro.localizedDescription;
         
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        if (![[NSUserDefaults standardUserDefaults] boolForKey:pro.productIdentifier]) {
+            
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.userInteractionEnabled = YES;
+        }
+        
         return cell;
     }else {
         
@@ -163,7 +208,7 @@
 {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+
     SKProduct *pro = _productArr[indexPath.row];
     
 //    if (![_purchasedArr containsObject:pro.productIdentifier]) {
