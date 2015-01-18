@@ -510,7 +510,6 @@
 		D58E1CA41A51B94B00B159ED = {
 			isa = PBXGroup;
 			children = (
-				D55248B91A6A97730073942F /* StoreKit.framework */,
 				D58E1CAF1A51B94B00B159ED /* eduadmin */,
 				D58E1CC91A51B94C00B159ED /* eduadminTests */,
 				D58E1CAE1A51B94B00B159ED /* Products */,
@@ -565,6 +564,7 @@
 		D58E1CD61A51B98800B159ED /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				D55248B91A6A97730073942F /* StoreKit.framework */,
 				D56448E01A68300700E5AB85 /* Crashlytics.framework */,
 				D50C15F51A5A9D6D009ED8B5 /* MBProgressHUD */,
 				D58E1CD71A51B98800B159ED /* AFNetworking */,

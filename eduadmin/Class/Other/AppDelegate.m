@@ -83,7 +83,7 @@
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-#warning 发布之前一定要改
+    
 //    [LJHTTPTool feedbackError:error];
 }
 
