@@ -12,7 +12,7 @@
 #define wantedURL @"http://pupboss.com/wanted.html"
 #define PUPBOSSURL @"http://blog.pupboss.com"
 #define weiboURL @"http://www.weibo.com/yuanjingkeji"
-#define storeURL @"https://appsto.re/cn/hN7B4.i"
+#define storeURL @"https://itunes.apple.com/cn/app/id955004763"
 
 #define waitStr @"正在玩命加载中~~" // 等待提示语
 #define errorStr @"服务器被外星人搬走了o(╯□╰)o" // 错误提示语
