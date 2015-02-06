@@ -26,9 +26,6 @@
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
           if (failure) {
               failure(error);
-              
-              [self feedbackError:error];
-              
           }
       }];
 }
@@ -48,7 +45,6 @@
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
           if (failure) {
               failure(error);
-              [self feedbackError:error];
           }
       }];
 }
@@ -69,9 +65,7 @@
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {
-            failure(error);
-            [self feedbackError:error];
-        }
+            failure(error);        }
     }];
 }
 
@@ -89,7 +83,7 @@
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          if (failure) {
              failure(error);
-             [self feedbackError:error];
+             NSLog(@"%@",error);
          }
      }];
 }
@@ -109,7 +103,6 @@
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          if (failure) {
              failure(error);
-             [self feedbackError:error];
          }
      }];
 }

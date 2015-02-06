@@ -6,11 +6,11 @@
 //  Copyright (c) 2014年 PUPBOSS. All rights reserved.
 //
 
-#define sinaURL @"http://lntuonline.sinaapp.com/" // URL
+#define sinaURL @"http://lntuonline.pupboss.com/" // URL
 #define tokenURL @"http://eduadm.sinaapp.com/"
 #define noticeURL @"http://60.18.131.131:11180/academic/jwgg.jsp"
-#define wantedURL @"http://pupboss.com/wanted.html"
-#define PUPBOSSURL @"http://blog.pupboss.com"
+#define wantedURL @"http://pupboss.com/2014/12/25/i-want-you/"
+#define PUPBOSSURL @"http://pupboss.com"
 #define weiboURL @"http://www.weibo.com/yuanjingkeji"
 #define storeURL @"https://itunes.apple.com/cn/app/id955004763"
 
