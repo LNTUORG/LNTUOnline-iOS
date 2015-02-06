@@ -56,6 +56,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *s7_4;
 @property (weak, nonatomic) IBOutlet UILabel *s7_5;
 
-- (IBAction)refresh:(id)sender;
 
 @end

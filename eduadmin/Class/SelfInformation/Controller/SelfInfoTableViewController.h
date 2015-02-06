@@ -12,6 +12,5 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *personalImg;
 
-- (IBAction)refreshData:(UIBarButtonItem *)sender;
 
 @end

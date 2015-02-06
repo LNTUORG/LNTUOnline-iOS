@@ -10,7 +10,4 @@
 
 @interface ExamPlanTableViewController : UITableViewController
 
-
-- (IBAction)refresh:(id)sender;
-
 @end

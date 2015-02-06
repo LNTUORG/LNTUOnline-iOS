@@ -19,6 +19,7 @@
 #import "MBProgressHUD+LJ.h"
 #import "LJTools.h"
 #import "Common.h"
+#import "MJRefresh.h"
 
 @interface SelfInfoTableViewController () <HeaderViewDelegate>
 
@@ -40,6 +41,14 @@
     self.tableView.rowHeight = 50;
     self.tableView.sectionHeaderHeight = 44;
     self.tableView.tableFooterView = [[UIView alloc] init];
+    
+    // 下拉刷新
+    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"table"];
+    
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    self.tableView.headerPullToRefreshText = @"下拉进行刷新";
+    self.tableView.headerReleaseToRefreshText = @"松开执行刷新";
+    self.tableView.headerRefreshingText = @"正在刷新中...";
     
     NSArray *tempArr = @[@"基本信息",@"高考分数",@"教育经历",@"家庭成员"];
     NSMutableArray *arr = [NSMutableArray array];
@@ -68,6 +77,7 @@
     
 }
 
+
 - (NSString *)getAddress:(NSString *)fileName {
     
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
@@ -90,10 +100,12 @@
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@student/info",sinaURL] params:nil success:^(id responseJSON) {
         [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:selfInfoFileName]];
         [self analyticalData:responseJSON];
+        [self.tableView headerEndRefreshing];
         [MBProgressHUD hideHUD];
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUD];
         [MBProgressHUD showError:errorStr];
+        [self.tableView headerEndRefreshing];
         [self.navigationController popViewControllerAnimated:YES];
     }];
 }
@@ -255,10 +267,6 @@
 - (void)headerViewDidClickNameView:(HeaderView *)headerView
 {
     [self.tableView reloadData];
-}
-
-- (IBAction)refreshData:(UIBarButtonItem *)sender {
-    [self refreshData];
 }
 
 @end

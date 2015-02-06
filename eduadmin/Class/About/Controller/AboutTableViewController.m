@@ -58,8 +58,10 @@
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         pasteboard.string = LJQQ;
         [MBProgressHUD showSuccess:@"已经复制到粘贴板"];
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tencent://QQInterLive/?Cmd=2&Uin=10771533"]];
     }
     if (indexPath.row == 3) {
+        
         [self performSegueWithIdentifier:@"about2web" sender:weiboURL];
     }
     if (indexPath.row == 4) {

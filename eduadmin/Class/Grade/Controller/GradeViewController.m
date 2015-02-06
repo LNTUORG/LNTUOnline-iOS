@@ -15,6 +15,7 @@
 #import "MJExtension.h"
 #import "PartGradeCell.h"
 #import "RatingInfo.h"
+#import "MJRefresh.h"
 
 @interface GradeViewController () <UIAlertViewDelegate,UIPickerViewDelegate>
 {
@@ -49,15 +50,26 @@
         _term = _termArr[0];
     }else{_term = _termArr[1];}
     
-    
-    
     self.yearLable.text = [NSString stringWithFormat:@"%@年",_year];
     if ([_term intValue]==1) {
         self.termLable.text = @"春";
     }else{self.termLable.text = @"秋";}
     
-    [self getGrade:[NSString stringWithFormat:@"%@grades/courseScoresInfo?year=%@&term=%@",sinaURL,_year,_term]];
+    // 下拉刷新
+    [self.gradeView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"table"];
     
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    self.gradeView.headerPullToRefreshText = @"下拉进行刷新";
+    self.gradeView.headerReleaseToRefreshText = @"松开执行刷新";
+    self.gradeView.headerRefreshingText = @"正在刷新中...";
+    
+    [self.gradeView headerBeginRefreshing];
+    
+}
+
+- (void)refreshData {
+    
+    [self getGrade:[NSString stringWithFormat:@"%@grades/courseScoresInfo?year=%@&term=%@",sinaURL,_year,_term]];
 }
 
 - (void)getGrade:(NSString *)url
@@ -66,10 +78,14 @@
     [LJHTTPTool getJSONWithURL:url params:nil success:^(id responseJSON) {
         _gradeArr = [MyGrade objectArrayWithKeyValuesArray:responseJSON];
         [self.gradeView reloadData];
+        
+        [self.gradeView headerEndRefreshing];
         [MBProgressHUD hideHUD];
     } failure:^(NSError *error) {
+        
+        [self.gradeView headerEndRefreshing];
         [MBProgressHUD hideHUD];
-
+        
         [MBProgressHUD showError:nullStr];
     }];
 }

@@ -10,6 +10,7 @@
 #import "MBProgressHUD+LJ.h"
 #import "LJTools.h"
 #import "Common.h"
+#import "MJRefresh.h"
 
 @interface ScheduleViewController ()
 
@@ -34,6 +35,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // 下拉刷新
+    [self.schScrollView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"table"];
+    
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    self.schScrollView.headerPullToRefreshText = @"下拉进行刷新";
+    self.schScrollView.headerReleaseToRefreshText = @"松开执行刷新";
+    self.schScrollView.headerRefreshingText = @"正在刷新中...";
+    
     NSString *filePath = [LJFileTool getFilePath:[self getAddress:scheduleFileName]];
     
     NSFileManager *mgr = [NSFileManager defaultManager];
@@ -43,7 +52,7 @@
         [self showCourses:dict];
         
     }else{
-        [self refreshData];
+        [self.schScrollView headerBeginRefreshing];
     }
     
     //内容尺寸
@@ -73,11 +82,12 @@
         
         [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:scheduleFileName]];
         [self showCourses:responseJSON];
-        
+        [self.schScrollView headerEndRefreshing];
         [MBProgressHUD hideHUD];
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUD];
         [MBProgressHUD showError:nullStr];
+        [self.schScrollView headerEndRefreshing];
         [self.navigationController popViewControllerAnimated:YES];
     }];
 }
@@ -272,10 +282,6 @@
     }else{
         self.s7_5.text = courses[@"7-5"];
     }
-}
-
-- (IBAction)refresh:(id)sender {
-    [self refreshData];
 }
 
 @end
