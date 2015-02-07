@@ -74,17 +74,17 @@
 
 - (void)getGrade:(NSString *)url
 {
-    [MBProgressHUD showMessage:waitStr];
+    
     [LJHTTPTool getJSONWithURL:url params:nil success:^(id responseJSON) {
         _gradeArr = [MyGrade objectArrayWithKeyValuesArray:responseJSON];
         [self.gradeView reloadData];
         
         [self.gradeView headerEndRefreshing];
-        [MBProgressHUD hideHUD];
+        
     } failure:^(NSError *error) {
         
         [self.gradeView headerEndRefreshing];
-        [MBProgressHUD hideHUD];
+        
         
         [MBProgressHUD showError:nullStr];
     }];
@@ -123,11 +123,11 @@
     
     if (component == 0) {
         _year = _yearArr[row];
-        [self getGrade:[NSString stringWithFormat:@"%@grades/courseScoresInfo?year=%@&term=%@",sinaURL,_year,_term]];
+        [self.gradeView headerBeginRefreshing];
         self.yearLable.text = [NSString stringWithFormat:@"%@年",_year];
     }else{
         _term = _termArr[row];
-        [self getGrade:[NSString stringWithFormat:@"%@grades/courseScoresInfo?year=%@&term=%@",sinaURL,_year,_term]];
+        [self.gradeView headerBeginRefreshing];
         if ([_term intValue]==1) {
             self.termLable.text = @"春";
         }else{self.termLable.text = @"秋";}
@@ -188,7 +188,6 @@
 }
 
 - (IBAction)rating:(id)sender {
-    [MBProgressHUD showMessage:waitStr];
     
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@oneKey/info",sinaURL] params:nil success:^(id responseJSON) {
         
@@ -203,7 +202,6 @@
         if (_rateArr.count) {
             [self didRating];
         }else {
-            [MBProgressHUD hideHUD];
             [MBProgressHUD showError:@"已经评课或当前无法评课"];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 
@@ -215,7 +213,6 @@
         
         
     } failure:^(NSError *error) {
-        [MBProgressHUD hideHUD];
         [MBProgressHUD showError:@"已经评课或当前无法评课"];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
@@ -228,8 +225,6 @@
 }
 
 - (void)didRating {
-
-    [MBProgressHUD hideHUD];
     
     for (RatingInfo *info in _rateArr) {
         NSDictionary *param = @{@"url": info.url};

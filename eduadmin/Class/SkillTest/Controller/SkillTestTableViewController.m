@@ -43,16 +43,15 @@
 
 - (void)refreshData {
     
-    [MBProgressHUD showMessage:waitStr];
+    
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@grades/skillTestScoresInfo",sinaURL] params:nil success:^(id responseJSON) {
         
         _skillArr = [SkillTest objectArrayWithKeyValuesArray:responseJSON];
         [self.tableView reloadData];
         [self.tableView headerEndRefreshing];
-        [MBProgressHUD hideHUD];
+        
     } failure:^(NSError *error) {
         
-        [MBProgressHUD hideHUD];
         [MBProgressHUD showError:nullStr];
         [self.tableView headerEndRefreshing];
         [self.navigationController popViewControllerAnimated:YES];

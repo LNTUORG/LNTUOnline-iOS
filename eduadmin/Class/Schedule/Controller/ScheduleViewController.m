@@ -77,15 +77,15 @@
 
 - (void)refreshData
 {
-    [MBProgressHUD showMessage:waitStr];
+    
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@curriculum/info",sinaURL] params:nil success:^(id responseJSON) {
         
         [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:scheduleFileName]];
         [self showCourses:responseJSON];
         [self.schScrollView headerEndRefreshing];
-        [MBProgressHUD hideHUD];
+        
     } failure:^(NSError *error) {
-        [MBProgressHUD hideHUD];
+        
         [MBProgressHUD showError:nullStr];
         [self.schScrollView headerEndRefreshing];
         [self.navigationController popViewControllerAnimated:YES];

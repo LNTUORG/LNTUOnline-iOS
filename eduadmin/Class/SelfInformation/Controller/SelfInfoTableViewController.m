@@ -16,10 +16,10 @@
 #import "familyCell.h"
 #import "CellItem.h"
 #import "HeaderView.h"
-#import "MBProgressHUD+LJ.h"
 #import "LJTools.h"
 #import "Common.h"
 #import "MJRefresh.h"
+#import "MBProgressHUD+LJ.h"
 
 @interface SelfInfoTableViewController () <HeaderViewDelegate>
 
@@ -96,14 +96,14 @@
 
 - (void)refreshData
 {
-    [MBProgressHUD showMessage:waitStr];
+    
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@student/info",sinaURL] params:nil success:^(id responseJSON) {
         [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:selfInfoFileName]];
         [self analyticalData:responseJSON];
         [self.tableView headerEndRefreshing];
-        [MBProgressHUD hideHUD];
+        
     } failure:^(NSError *error) {
-        [MBProgressHUD hideHUD];
+        
         [MBProgressHUD showError:errorStr];
         [self.tableView headerEndRefreshing];
         [self.navigationController popViewControllerAnimated:YES];

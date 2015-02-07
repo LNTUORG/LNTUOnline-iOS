@@ -26,7 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [MBProgressHUD showMessage:waitStr];
     
     self.averageOfCreditPointInfo.numberOfLines = 0;
     self.tableView.tableFooterView = [[UIView alloc] init];
@@ -46,7 +45,6 @@
 - (void)refreshData {
     [self getAverageOfCreditPointInfo];
     [self getUnpassCoursesInfo];
-    [self.tableView headerEndRefreshing];
 }
 
 #pragma mark - Table view data source
@@ -105,10 +103,12 @@
         
         _gradeArr = [UnpassGrade objectArrayWithKeyValuesArray:responseJSON];
         [self.tableView reloadData];
-        [MBProgressHUD hideHUD];
+        [self.tableView headerEndRefreshing];
+        
     } failure:^(NSError *error) {
-        [MBProgressHUD hideHUD];
+        
         [MBProgressHUD showError:@"居然无挂科，你超神了！"];
+        [self.tableView headerEndRefreshing];
     }];
 }
 
