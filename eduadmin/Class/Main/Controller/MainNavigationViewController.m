@@ -7,6 +7,7 @@
 //
 
 #import "MainNavigationViewController.h"
+#import "PushViewController.h"
 
 @interface MainNavigationViewController ()
 
@@ -18,8 +19,12 @@
     [super viewDidLoad];
     
     [NSThread sleepForTimeInterval:0.6f];
-    
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    PushViewController *con = segue.destinationViewController;
+    con.recievedContent = sender;
+}
 
 @end

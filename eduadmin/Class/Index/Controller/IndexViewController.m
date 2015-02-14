@@ -46,8 +46,6 @@
     
 #pragma mark 推送相关
     
-#pragma mark 推送相关
-    
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
 //    NSLog(@"%@--------%@",[def objectForKey:pushTokenNew],[def objectForKey:pushTokenOld]);

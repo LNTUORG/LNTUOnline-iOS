@@ -10,9 +10,14 @@
 #import <Crashlytics/Crashlytics.h>
 #import "Common.h"
 #import "LJHTTPTool.h"
+#import "MainNavigationViewController.h"
+#import "PushViewController.h"
+#import "LJFileTool.h"
 
-@interface AppDelegate ()
-
+@interface AppDelegate () <UIAlertViewDelegate>
+{
+    NSString *_msg;
+}
 @end
 
 @implementation AppDelegate
@@ -22,6 +27,15 @@
     // Override point for customization after application launch.
     // 崩溃分析
     [Crashlytics startWithAPIKey:@"8feec9fc30497fa73685d17f490a7a7cdad6b2a1"];
+    
+    if (launchOptions) {
+        
+        NSString *msg = launchOptions[@"UIApplicationLaunchOptionsRemoteNotificationKey"][@"aps"][@"alert"];
+        
+        _msg = msg;
+        
+        [self.window.rootViewController performSegueWithIdentifier:@"nav2ab" sender:_msg];
+    }
     
     if (IOS8) {
         
@@ -85,6 +99,28 @@
 {
     
 //    [LJHTTPTool feedbackError:error];
+}
+
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    NSString *msg = userInfo[@"aps"][@"alert"];
+    
+    _msg = msg;
+    if (application.applicationState == UIApplicationStateActive) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"新消息" message:_msg delegate:self cancelButtonTitle:@"我不看" otherButtonTitles:@"好的", nil];
+        [alert show];
+    }else {
+        [self.window.rootViewController performSegueWithIdentifier:@"nav2ab" sender:_msg];
+    }
+}
+
+#pragma mark alert代理
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        
+        [self.window.rootViewController performSegueWithIdentifier:@"nav2ab" sender:_msg];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
