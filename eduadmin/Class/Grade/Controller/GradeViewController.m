@@ -58,11 +58,6 @@
     // 下拉刷新
     [self.gradeView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"table"];
     
-    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
-    self.gradeView.headerPullToRefreshText = @"下拉进行刷新";
-    self.gradeView.headerReleaseToRefreshText = @"松开执行刷新";
-    self.gradeView.headerRefreshingText = @"正在刷新中...";
-    
     [self.gradeView headerBeginRefreshing];
     
 }

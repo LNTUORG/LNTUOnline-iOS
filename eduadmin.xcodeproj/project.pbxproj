@@ -50,10 +50,6 @@
 		D57D8C3D1A8475FB001FA546 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D57D8C331A8475FB001FA546 /* UIScrollView+MJExtension.m */; };
 		D57D8C3E1A8475FB001FA546 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = D57D8C351A8475FB001FA546 /* UIScrollView+MJRefresh.m */; };
 		D57D8C3F1A8475FB001FA546 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D57D8C371A8475FB001FA546 /* UIView+MJExtension.m */; };
-		D5850FEA1A6B89A400ABA4EC /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D5850FE31A6B89A400ABA4EC /* IAPHelper.m */; };
-		D5850FEB1A6B89A400ABA4EC /* IAPShare.m in Sources */ = {isa = PBXBuildFile; fileRef = D5850FE51A6B89A400ABA4EC /* IAPShare.m */; };
-		D5850FEC1A6B89A400ABA4EC /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D5850FE71A6B89A400ABA4EC /* NSString+Base64.m */; };
-		D5850FED1A6B89A400ABA4EC /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D5850FE91A6B89A400ABA4EC /* SFHFKeychainUtils.m */; };
 		D58E1CBC1A51B94C00B159ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58E1CBA1A51B94C00B159ED /* Main.storyboard */; };
 		D58E1CBE1A51B94C00B159ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58E1CBD1A51B94C00B159ED /* Images.xcassets */; };
 		D58E1CCD1A51B94C00B159ED /* eduadminTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1CCC1A51B94C00B159ED /* eduadminTests.m */; };
@@ -181,14 +177,6 @@
 		D57D8C351A8475FB001FA546 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		D57D8C361A8475FB001FA546 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		D57D8C371A8475FB001FA546 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
-		D5850FE21A6B89A400ABA4EC /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
-		D5850FE31A6B89A400ABA4EC /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
-		D5850FE41A6B89A400ABA4EC /* IAPShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPShare.h; sourceTree = "<group>"; };
-		D5850FE51A6B89A400ABA4EC /* IAPShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPShare.m; sourceTree = "<group>"; };
-		D5850FE61A6B89A400ABA4EC /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
-		D5850FE71A6B89A400ABA4EC /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
-		D5850FE81A6B89A400ABA4EC /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
-		D5850FE91A6B89A400ABA4EC /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		D58E1CAD1A51B94B00B159ED /* eduadmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eduadmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58E1CB11A51B94B00B159ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D58E1CBB1A51B94C00B159ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -569,21 +557,6 @@
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
-		D5850FE11A6B89A400ABA4EC /* IAPHelper */ = {
-			isa = PBXGroup;
-			children = (
-				D5850FE21A6B89A400ABA4EC /* IAPHelper.h */,
-				D5850FE31A6B89A400ABA4EC /* IAPHelper.m */,
-				D5850FE41A6B89A400ABA4EC /* IAPShare.h */,
-				D5850FE51A6B89A400ABA4EC /* IAPShare.m */,
-				D5850FE61A6B89A400ABA4EC /* NSString+Base64.h */,
-				D5850FE71A6B89A400ABA4EC /* NSString+Base64.m */,
-				D5850FE81A6B89A400ABA4EC /* SFHFKeychainUtils.h */,
-				D5850FE91A6B89A400ABA4EC /* SFHFKeychainUtils.m */,
-			);
-			path = IAPHelper;
-			sourceTree = "<group>";
-		};
 		D58E1CA41A51B94B00B159ED = {
 			isa = PBXGroup;
 			children = (
@@ -648,7 +621,6 @@
 				D58E1CD71A51B98800B159ED /* AFNetworking */,
 				D58E1CF11A51B98800B159ED /* MJExtension */,
 				D58E1D091A51B98800B159ED /* Tools */,
-				D5850FE11A6B89A400ABA4EC /* IAPHelper */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -998,7 +970,6 @@
 				D58E1D261A51B98800B159ED /* MJMember.m in Sources */,
 				D57D8C3F1A8475FB001FA546 /* UIView+MJExtension.m in Sources */,
 				D57D8C3A1A8475FB001FA546 /* MJRefreshConst.m in Sources */,
-				D5850FEB1A6B89A400ABA4EC /* IAPShare.m in Sources */,
 				D516022C1A54227B003AB6A9 /* SkillTest.m in Sources */,
 				D51602071A54200A003AB6A9 /* UnpassScoreTableViewController.m in Sources */,
 				D51602341A542364003AB6A9 /* FeedbackViewController.m in Sources */,
@@ -1021,7 +992,6 @@
 				D51601EB1A541BB8003AB6A9 /* EntranceExam.m in Sources */,
 				D57D8C3D1A8475FB001FA546 /* UIScrollView+MJExtension.m in Sources */,
 				D58E1D2C1A51B98800B159ED /* NSObject+MJMember.m in Sources */,
-				D5850FEA1A6B89A400ABA4EC /* IAPHelper.m in Sources */,
 				D58E1D2E1A51B98800B159ED /* LJFileTool.m in Sources */,
 				D51602231A5421DC003AB6A9 /* ExamPlan.m in Sources */,
 				D516020D1A542035003AB6A9 /* UnpassGrade.m in Sources */,
@@ -1036,7 +1006,6 @@
 				D58E1D1A1A51B98800B159ED /* AFSecurityPolicy.m in Sources */,
 				D58E1D181A51B98800B159ED /* AFHTTPSessionManager.m in Sources */,
 				D58E1D271A51B98800B159ED /* MJMethod.m in Sources */,
-				D5850FEC1A6B89A400ABA4EC /* NSString+Base64.m in Sources */,
 				D58E1D2B1A51B98800B159ED /* NSObject+MJKeyValue.m in Sources */,
 				D58E1D1C1A51B98800B159ED /* AFURLRequestSerialization.m in Sources */,
 				D58E1D3E1A51BACE00B159ED /* MainNavigationViewController.m in Sources */,
@@ -1054,7 +1023,6 @@
 				D57D8C3B1A8475FB001FA546 /* MJRefreshFooterView.m in Sources */,
 				D58E1D241A51B98800B159ED /* MJFoundation.m in Sources */,
 				D50C15FD1A5A9D6D009ED8B5 /* MBProgressHUD.m in Sources */,
-				D5850FED1A6B89A400ABA4EC /* SFHFKeychainUtils.m in Sources */,
 				D50C15FB1A5A9D6D009ED8B5 /* MBProgressHUD+LJ.m in Sources */,
 				D51601F81A541CBB003AB6A9 /* HeaderView.m in Sources */,
 				D58E1D451A51BF5900B159ED /* LoginViewController.m in Sources */,
@@ -1109,7 +1077,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1151,8 +1119,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jie Li (BH46MT8H22)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jie Li (BH46MT8H22)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

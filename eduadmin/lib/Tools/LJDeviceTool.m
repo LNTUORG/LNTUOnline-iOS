@@ -74,6 +74,12 @@
     if ([platform isEqualToString:@"iPad4,4"])   return @"iPad Mini 2G (A1489)";
     if ([platform isEqualToString:@"iPad4,5"])   return @"iPad Mini 2G (A1490)";
     if ([platform isEqualToString:@"iPad4,6"])   return @"iPad Mini 2G (A1491)";
+    if ([platform isEqualToString:@"iPad4,7"])   return @"iPad Mini 3 (A1599)";
+    if ([platform isEqualToString:@"iPad4,8"])   return @"iPad Mini 3 (A1600)";
+    if ([platform isEqualToString:@"iPad4,9"])   return @"iPad Mini 3 (A1601)";
+    
+    if ([platform isEqualToString:@"iPad5,3"])   return @"iPad Air 2 (A1566)";
+    if ([platform isEqualToString:@"iPad5,4"])   return @"iPad Air 2 (A1567)";
     
     if ([platform isEqualToString:@"i386"])      return @"iPhone Simulator";
     if ([platform isEqualToString:@"x86_64"])    return @"iPhone Simulator";
