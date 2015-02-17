@@ -29,8 +29,6 @@
 #define examPlanFileName @"exam.plist"
 #define selfIconFileName @"selfIcon.png"
 
-#define IOS_6 ([[[UIDevice currentDevice] systemVersion] floatValue] <= 7.0f)
-
 // 获得RGB颜色
 #define LJColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
