@@ -31,19 +31,9 @@
 #pragma mark 浏览器代理
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    [MBProgressHUD showMessage:waitStr];
+    [MBProgressHUD showError:@"点击右上角用 Safari 访问"];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    [MBProgressHUD hideHUD];
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
-    [MBProgressHUD hideHUD];
-    
-}
 
 - (IBAction)goToSafari:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:noticeURL]];
