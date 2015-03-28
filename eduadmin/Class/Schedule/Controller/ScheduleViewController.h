@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSTabScrollView.h"
 
-@interface ScheduleViewController : UIViewController
+@interface ScheduleViewController : UIViewController <MSTabScrollViewDelegate>
 
 @end

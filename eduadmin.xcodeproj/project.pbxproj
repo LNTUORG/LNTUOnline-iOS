@@ -42,6 +42,8 @@
 		D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D516022F1A542285003AB6A9 /* SkillTestCell.xib */; };
 		D51602341A542364003AB6A9 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602331A542364003AB6A9 /* FeedbackViewController.m */; };
 		D51C805E1AC6775800A1F3A1 /* libMSPageTab.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D51C805C1AC6775800A1F3A1 /* libMSPageTab.a */; };
+		D51C80651AC679EF00A1F3A1 /* KBView.m in Sources */ = {isa = PBXBuildFile; fileRef = D51C80621AC679EF00A1F3A1 /* KBView.m */; };
+		D51C80661AC679EF00A1F3A1 /* UIView+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D51C80641AC679EF00A1F3A1 /* UIView+Autolayout.m */; };
 		D53E75C61A93996700CBE422 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53E75C51A93996700CBE422 /* Launch Screen.xib */; };
 		D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55248B91A6A97730073942F /* StoreKit.framework */; };
 		D56448E11A68300700E5AB85 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56448E01A68300700E5AB85 /* Crashlytics.framework */; };
@@ -166,6 +168,10 @@
 		D51602331A542364003AB6A9 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		D51C805C1AC6775800A1F3A1 /* libMSPageTab.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMSPageTab.a; sourceTree = "<group>"; };
 		D51C805D1AC6775800A1F3A1 /* MSTabScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTabScrollView.h; sourceTree = "<group>"; };
+		D51C80611AC679EF00A1F3A1 /* KBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBView.h; sourceTree = "<group>"; };
+		D51C80621AC679EF00A1F3A1 /* KBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBView.m; sourceTree = "<group>"; };
+		D51C80631AC679EF00A1F3A1 /* UIView+Autolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Autolayout.h"; sourceTree = "<group>"; };
+		D51C80641AC679EF00A1F3A1 /* UIView+Autolayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Autolayout.m"; sourceTree = "<group>"; };
 		D53E75C51A93996700CBE422 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		D55248B91A6A97730073942F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D56448E01A68300700E5AB85 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -299,6 +305,7 @@
 		D51601C71A5419AA003AB6A9 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				D51C80601AC679D100A1F3A1 /* View */,
 				D51601C81A5419AA003AB6A9 /* Controller */,
 			);
 			path = Schedule;
@@ -550,6 +557,17 @@
 				D51C805D1AC6775800A1F3A1 /* MSTabScrollView.h */,
 			);
 			path = MSPageScrollView;
+			sourceTree = "<group>";
+		};
+		D51C80601AC679D100A1F3A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D51C80611AC679EF00A1F3A1 /* KBView.h */,
+				D51C80621AC679EF00A1F3A1 /* KBView.m */,
+				D51C80631AC679EF00A1F3A1 /* UIView+Autolayout.h */,
+				D51C80641AC679EF00A1F3A1 /* UIView+Autolayout.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D57D8C271A8475FB001FA546 /* MJRefresh */ = {
@@ -1005,6 +1023,7 @@
 				D516020C1A542035003AB6A9 /* MyGrade.m in Sources */,
 				D58E1D171A51B98800B159ED /* AFHTTPRequestOperationManager.m in Sources */,
 				D5F936C11A52EB5200EA112F /* IndexViewController.m in Sources */,
+				D51C80651AC679EF00A1F3A1 /* KBView.m in Sources */,
 				D58E1D191A51B98800B159ED /* AFNetworkReachabilityManager.m in Sources */,
 				D58E1D2D1A51B98800B159ED /* LJDeviceTool.m in Sources */,
 				D516021F1A5421D5003AB6A9 /* ExamPlanCell.m in Sources */,
@@ -1038,6 +1057,7 @@
 				D58E1D1E1A51B98800B159ED /* AFURLSessionManager.m in Sources */,
 				D58E1D311A51B98800B159ED /* LJUITool.m in Sources */,
 				D58E1D2A1A51B98800B159ED /* NSObject+MJCoding.m in Sources */,
+				D51C80661AC679EF00A1F3A1 /* UIView+Autolayout.m in Sources */,
 				D51602041A541F9A003AB6A9 /* NoticeViewController.m in Sources */,
 				D58E1D301A51B98800B159ED /* LJTimeTool.m in Sources */,
 				D51601FD1A541CC7003AB6A9 /* CellItem.m in Sources */,

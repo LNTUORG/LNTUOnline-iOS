@@ -1189,7 +1189,7 @@
             </objects>
             <point key="canvasLocation" x="-2142" y="255"/>
         </scene>
-        <!--我的课表-->
+        <!--Schedule View Controller-->
         <scene sceneID="VEA-Zk-C4o">
             <objects>
                 <viewController id="7F6-Cx-x5P" customClass="ScheduleViewController" sceneMemberID="viewController">
@@ -1202,7 +1202,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="我的课表" id="iWr-3T-dnG"/>
+                    <navigationItem key="navigationItem" id="iWr-3T-dnG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWN-7l-t43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

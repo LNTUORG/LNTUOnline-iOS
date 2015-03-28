@@ -33,3 +33,8 @@
 #define LJColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
 #define IOS8 [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0
+
+
+#define kStatusBarHeight 64
+#define KDevice_Width [[UIScreen mainScreen] bounds].size.width
+#define KDevice_Height [[UIScreen mainScreen] bounds].size.height
