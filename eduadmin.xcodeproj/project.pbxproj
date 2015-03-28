@@ -41,6 +41,7 @@
 		D51602301A542285003AB6A9 /* SkillTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D516022E1A542285003AB6A9 /* SkillTestCell.m */; };
 		D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D516022F1A542285003AB6A9 /* SkillTestCell.xib */; };
 		D51602341A542364003AB6A9 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602331A542364003AB6A9 /* FeedbackViewController.m */; };
+		D51C805E1AC6775800A1F3A1 /* libMSPageTab.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D51C805C1AC6775800A1F3A1 /* libMSPageTab.a */; };
 		D53E75C61A93996700CBE422 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53E75C51A93996700CBE422 /* Launch Screen.xib */; };
 		D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55248B91A6A97730073942F /* StoreKit.framework */; };
 		D56448E11A68300700E5AB85 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56448E01A68300700E5AB85 /* Crashlytics.framework */; };
@@ -163,6 +164,8 @@
 		D516022F1A542285003AB6A9 /* SkillTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillTestCell.xib; sourceTree = "<group>"; };
 		D51602321A542364003AB6A9 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		D51602331A542364003AB6A9 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		D51C805C1AC6775800A1F3A1 /* libMSPageTab.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMSPageTab.a; sourceTree = "<group>"; };
+		D51C805D1AC6775800A1F3A1 /* MSTabScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTabScrollView.h; sourceTree = "<group>"; };
 		D53E75C51A93996700CBE422 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		D55248B91A6A97730073942F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D56448E01A68300700E5AB85 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -267,6 +270,7 @@
 			files = (
 				D56448E11A68300700E5AB85 /* Crashlytics.framework in Frameworks */,
 				D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */,
+				D51C805E1AC6775800A1F3A1 /* libMSPageTab.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +543,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		D51C805B1AC6775800A1F3A1 /* MSPageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				D51C805C1AC6775800A1F3A1 /* libMSPageTab.a */,
+				D51C805D1AC6775800A1F3A1 /* MSTabScrollView.h */,
+			);
+			path = MSPageScrollView;
+			sourceTree = "<group>";
+		};
 		D57D8C271A8475FB001FA546 /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -619,6 +632,7 @@
 		D58E1CD61A51B98800B159ED /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				D51C805B1AC6775800A1F3A1 /* MSPageScrollView */,
 				D57D8C271A8475FB001FA546 /* MJRefresh */,
 				D55248B91A6A97730073942F /* StoreKit.framework */,
 				D56448E01A68300700E5AB85 /* Crashlytics.framework */,
@@ -1163,6 +1177,10 @@
 				INFOPLIST_FILE = eduadmin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/eduadmin/lib/MSPageScrollView",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1183,6 +1201,10 @@
 				INFOPLIST_FILE = eduadmin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/eduadmin/lib/MSPageScrollView",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
