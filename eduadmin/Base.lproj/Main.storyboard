@@ -228,7 +228,13 @@
                             <rect key="frame" x="0.0" y="44" width="600" height="125"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="此项目是一个公益项目，没有盈利模式 甚至连广告都没有 却要处理每天几十万次的请求，高峰期一度瘫痪 维护此项目，需要一定的投入 在此之前一直是我们在捐赠 为了此项目存活久一些，欢迎新鲜血液的注入 捐一瓶可乐，还是中杯星巴克，你说了算！" translatesAutoresizingMaskIntoConstraints="NO" id="1cV-A3-CTl">
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="此项目是一个公益项目，没有盈利模式
+甚至连广告都没有
+却要处理每天几十万次的请求，高峰期一度瘫痪
+维护此项目，需要一定的投入
+在此之前一直是我们在捐赠
+为了此项目存活久一些，欢迎新鲜血液的注入
+捐一瓶可乐，还是中杯星巴克，你说了算！" translatesAutoresizingMaskIntoConstraints="NO" id="1cV-A3-CTl">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="125"/>
                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
