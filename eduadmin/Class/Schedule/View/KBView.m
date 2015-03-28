@@ -36,6 +36,8 @@
             [self addSubview:lable];
         }
         
+        five.textColor = [UIColor whiteColor];
+        
         NSInteger screenWidth = [[UIScreen mainScreen] bounds].size.width / 2;
         
         NSDictionary *metrics = @{@"height":@(screenWidth)};
