@@ -45,11 +45,11 @@
         
         NSArray *constraints1 = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[one(two)]-[two(three)]-[three(four)]-[four(five)]-[five]-|" options:0 metrics:metrics views:views];
         
-        NSArray *constraints2 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[one(160)]-|" options:0 metrics:metrics views:views];
-        NSArray *constraints3 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[two(160)]-|" options:0 metrics:metrics views:views];
-        NSArray *constraints4 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[three(160)]-|" options:0 metrics:metrics views:views];
-        NSArray *constraints5 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[four(160)]-|" options:0 metrics:metrics views:views];
-        NSArray *constraints6 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[five(160)]-|" options:0 metrics:metrics views:views];
+        NSArray *constraints2 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[one(height)]-|" options:0 metrics:metrics views:views];
+        NSArray *constraints3 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[two(height)]-|" options:0 metrics:metrics views:views];
+        NSArray *constraints4 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[three(height)]-|" options:0 metrics:metrics views:views];
+        NSArray *constraints5 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[four(height)]-|" options:0 metrics:metrics views:views];
+        NSArray *constraints6 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[five(height)]-|" options:0 metrics:metrics views:views];
         
         [self addConstraints:constraints1];
         [self addConstraints:constraints2];

@@ -9,6 +9,8 @@
 
 @interface LJTimeTool : NSObject
 
++ (NSInteger)getCurrentWeekDay;
+
 + (NSInteger)getCurrentYear;
 
 + (NSInteger)getCurrentMonth;

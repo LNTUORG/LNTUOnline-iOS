@@ -9,17 +9,21 @@
 
 @implementation LJTimeTool
 
++ (NSInteger)getCurrentWeekDay {
+    
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags = NSCalendarUnitWeekday;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
+    
+    return [dateComponent weekday];
+}
+
 + (NSInteger)getCurrentYear
 {
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSUInteger unitFlags =
-    NSYearCalendarUnit |
-    NSMonthCalendarUnit |
-    NSDayCalendarUnit |
-    NSHourCalendarUnit |
-    NSMinuteCalendarUnit |
-    NSSecondCalendarUnit;
+    NSUInteger unitFlags = NSYearCalendarUnit;
     NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
     
     return [dateComponent year];
@@ -29,13 +33,7 @@
 {
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSUInteger unitFlags =
-    NSYearCalendarUnit |
-    NSMonthCalendarUnit |
-    NSDayCalendarUnit |
-    NSHourCalendarUnit |
-    NSMinuteCalendarUnit |
-    NSSecondCalendarUnit;
+    NSUInteger unitFlags = NSCalendarUnitMonth;
     NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
     
     return [dateComponent month];
@@ -45,13 +43,7 @@
 {
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSUInteger unitFlags =
-    NSYearCalendarUnit |
-    NSMonthCalendarUnit |
-    NSDayCalendarUnit |
-    NSHourCalendarUnit |
-    NSMinuteCalendarUnit |
-    NSSecondCalendarUnit;
+    NSUInteger unitFlags = NSHourCalendarUnit;
     NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
     
     long hour = [dateComponent hour];

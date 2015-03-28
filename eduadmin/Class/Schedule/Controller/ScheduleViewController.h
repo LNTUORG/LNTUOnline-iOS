@@ -10,5 +10,6 @@
 #import "MSTabScrollView.h"
 
 @interface ScheduleViewController : UIViewController <MSTabScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *backImg;
 
 @end

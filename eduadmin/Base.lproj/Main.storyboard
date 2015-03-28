@@ -1214,6 +1214,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iWr-3T-dnG"/>
+                    <connections>
+                        <outlet property="backImg" destination="gqs-sa-xua" id="YXT-k8-EEx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWN-7l-t43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
