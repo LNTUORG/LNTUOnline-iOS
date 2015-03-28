@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = @"sss";
+    self.navigationItem.title = [NSString stringWithFormat:@"第%ld周", [LJTimeTool getCurrentWeek] - 10];
     
     [self createPageScrollView];
     
@@ -113,6 +113,33 @@
                                                superView:self.view];
 }
 
+- (NSString *)getAddress:(NSString *)fileName {
+    
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
+    NSString *str = [def objectForKey:userNameKey];
+    
+    if (str.length) {
+        return [NSString stringWithFormat:@"%@%@",str,fileName];
+    } else {
+        return @"error";
+    }
+}
+
+- (void)refreshData
+{
+    
+    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@curriculum/info",sinaURL] params:nil success:^(id responseJSON) {
+        
+        [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:scheduleFileName]];
+        
+        [self.tabScrollView reloadInputViews];
+    } failure:^(NSError *error) {
+        
+        [MBProgressHUD showError:nullStr];
+    }];
+}
+
 #pragma mark - MSTabScrollViewDelegate
 - (NSInteger)NumberOfTabInTabScrollView:(UIScrollView *)tabScrollView {
     return self.titleArray.count;
@@ -121,12 +148,40 @@
 - (UIView *)tabScrollView:(UIScrollView *)tabScrollView pageViewForTabIndex:(NSInteger)tabIndex {
     
     KBView *pageView = [[KBView alloc] init];
-    if (tabIndex == 4) {
-        pageView = [KBView viewWithArr:@[@"信号与系统\n1-15\n杨会玉\n尔雅楼402", @"数学建模\n1-4\n王磊\n尔雅楼402", @"信号与系统\n1-15\n杨会玉\n尔雅楼402", @"数学建模\n1-4\n王磊\n尔雅楼402", @"信号与系统\n1-15\n杨会玉\n尔雅楼402"]];
+    
+    NSString *filePath = [LJFileTool getFilePath:[self getAddress:scheduleFileName]];
+    
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    
+    NSArray *courseArr = [NSArray array];
+    
+    if ([mgr fileExistsAtPath:filePath]) {
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+        courseArr = [self getCourseArray:dict];
+        
+        pageView = [KBView viewWithArr:courseArr[tabIndex]];
+        
+    }else{
+        [self refreshData];
     }
     
-    
     return pageView;
+}
+
+- (NSArray *)getCourseArray:(NSDictionary *)dict {
+    
+    NSDictionary *courses = dict[@"courses"];
+    
+    NSArray *arr0 = @[courses[@"7-1"], courses[@"7-2"], courses[@"7-3"], courses[@"7-4"], courses[@"7-5"]];
+    NSArray *arr1 = @[courses[@"1-1"], courses[@"1-2"], courses[@"1-3"], courses[@"1-4"], courses[@"1-5"]];
+    NSArray *arr2 = @[courses[@"2-1"], courses[@"2-2"], courses[@"2-3"], courses[@"2-4"], courses[@"2-5"]];
+    NSArray *arr3 = @[courses[@"3-1"], courses[@"3-2"], courses[@"3-3"], courses[@"3-4"], courses[@"3-5"]];
+    NSArray *arr4 = @[courses[@"4-1"], courses[@"4-2"], courses[@"4-3"], courses[@"4-4"], courses[@"4-5"]];
+    NSArray *arr5 = @[courses[@"5-1"], courses[@"5-2"], courses[@"5-3"], courses[@"5-4"], courses[@"5-5"]];
+    NSArray *arr6 = @[courses[@"6-1"], courses[@"6-2"], courses[@"6-3"], courses[@"6-4"], courses[@"6-5"]];
+    
+    NSArray *array = @[arr0, arr1, arr2, arr3, arr4, arr5, arr6];
+    return array;
 }
 
 - (NSString *)tabScrollView:(UIScrollView *)tabScrollView titleForTabIndex:(NSInteger)tabIndex {
@@ -169,4 +224,8 @@
     [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:YES];
 }
 
+- (IBAction)reloadCourse:(id)sender {
+    
+    [self refreshData];
+}
 @end

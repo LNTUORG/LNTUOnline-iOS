@@ -12,4 +12,6 @@
 @interface ScheduleViewController : UIViewController <MSTabScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *backImg;
 
+- (IBAction)reloadCourse:(id)sender;
+
 @end

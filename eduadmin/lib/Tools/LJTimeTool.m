@@ -9,6 +9,16 @@
 
 @implementation LJTimeTool
 
++ (NSInteger)getCurrentWeek {
+    
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags = NSCalendarUnitWeekOfYear;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
+    
+    return [dateComponent weekOfYear];
+}
+
 + (NSInteger)getCurrentWeekDay {
     
     NSDate *now = [NSDate date];

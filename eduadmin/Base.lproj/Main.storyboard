@@ -1213,7 +1213,13 @@
                             <constraint firstItem="gqs-sa-xua" firstAttribute="leading" secondItem="e0P-C6-7mi" secondAttribute="leading" id="rXY-Pb-iTj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="iWr-3T-dnG"/>
+                    <navigationItem key="navigationItem" id="iWr-3T-dnG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="rUx-5m-wjX">
+                            <connections>
+                                <action selector="reloadCourse:" destination="7F6-Cx-x5P" id="0Dw-Kb-ZwI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="backImg" destination="gqs-sa-xua" id="YXT-k8-EEx"/>
                     </connections>
