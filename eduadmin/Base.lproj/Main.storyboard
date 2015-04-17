@@ -1200,7 +1200,23 @@
                     <view key="view" contentMode="scaleToFill" id="e0P-C6-7mi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MmX-pg-fPZ" customClass="iCarousel">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7F6-Cx-x5P" id="Uyb-ok-cCg"/>
+                                    <outlet property="delegate" destination="7F6-Cx-x5P" id="44o-K7-VUo"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MmX-pg-fPZ" firstAttribute="leading" secondItem="e0P-C6-7mi" secondAttribute="leadingMargin" constant="-16" id="FOT-Qr-Akz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MmX-pg-fPZ" secondAttribute="trailing" constant="-16" id="Pk8-Mt-H8S"/>
+                            <constraint firstItem="NAA-E8-zFx" firstAttribute="top" secondItem="MmX-pg-fPZ" secondAttribute="bottom" id="YGJ-D0-ctM"/>
+                            <constraint firstItem="MmX-pg-fPZ" firstAttribute="top" secondItem="34W-XG-3cx" secondAttribute="bottom" id="Zo8-5g-j3o"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iWr-3T-dnG">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="rUx-5m-wjX">
@@ -1209,6 +1225,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="iCaView" destination="MmX-pg-fPZ" id="AWL-hh-1Db"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWN-7l-t43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

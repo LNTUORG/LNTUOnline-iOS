@@ -142,6 +142,7 @@
     NSString *requestURL = [NSString stringWithFormat:@"%@version/beta?platform=ios",sinaURL];
     
     [LJHTTPTool getJSONWithURL:requestURL params:nil success:^(id responseJSON) {
+        
         NSDictionary *dict = [NSDictionary dictionaryWithDictionary:responseJSON];
         self.dict = dict;
         NSString *mesg = [NSString stringWithFormat:@"当前版本为 v%@，有更新的版本%@\n\n%@",app_Version,dict[@"name"],dict[@"message"]];
@@ -156,6 +157,7 @@
         
     } failure:^(NSError *error) {
         
+        NSLog(@"----------%@",error);
     }];
 }
 

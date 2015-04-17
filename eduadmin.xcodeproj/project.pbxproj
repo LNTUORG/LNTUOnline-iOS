@@ -11,6 +11,10 @@
 		D50C15FD1A5A9D6D009ED8B5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D50C15FA1A5A9D6D009ED8B5 /* MBProgressHUD.m */; };
 		D50C16011A5AAA23009ED8B5 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D50C16001A5AAA23009ED8B5 /* MBProgressHUD.bundle */; };
 		D50D823E1AE11AB2001D47DA /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = D50D823D1AE11AB2001D47DA /* iCarousel.m */; };
+		D50D82401AE13FDA001D47DA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50D823F1AE13FDA001D47DA /* QuartzCore.framework */; };
+		D50D82421AE13FEA001D47DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50D82411AE13FEA001D47DA /* CoreGraphics.framework */; };
+		D50D82441AE14065001D47DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50D82431AE14065001D47DA /* UIKit.framework */; };
+		D50D82461AE14076001D47DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50D82451AE14076001D47DA /* Foundation.framework */; };
 		D5131C9B1A8FB85E002539BD /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5131C9A1A8FB85E002539BD /* PushViewController.m */; };
 		D51601E21A541A96003AB6A9 /* SelfInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601E11A541A96003AB6A9 /* SelfInfoTableViewController.m */; };
 		D51601E51A541AEF003AB6A9 /* SelfInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601E41A541AEF003AB6A9 /* SelfInformation.m */; };
@@ -42,8 +46,6 @@
 		D51602301A542285003AB6A9 /* SkillTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D516022E1A542285003AB6A9 /* SkillTestCell.m */; };
 		D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D516022F1A542285003AB6A9 /* SkillTestCell.xib */; };
 		D51602341A542364003AB6A9 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602331A542364003AB6A9 /* FeedbackViewController.m */; };
-		D51C80651AC679EF00A1F3A1 /* KBView.m in Sources */ = {isa = PBXBuildFile; fileRef = D51C80621AC679EF00A1F3A1 /* KBView.m */; };
-		D51C80661AC679EF00A1F3A1 /* UIView+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D51C80641AC679EF00A1F3A1 /* UIView+Autolayout.m */; };
 		D53E75C61A93996700CBE422 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53E75C51A93996700CBE422 /* Launch Screen.xib */; };
 		D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55248B91A6A97730073942F /* StoreKit.framework */; };
 		D56448E11A68300700E5AB85 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56448E01A68300700E5AB85 /* Crashlytics.framework */; };
@@ -111,6 +113,10 @@
 		D50C16001A5AAA23009ED8B5 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		D50D823C1AE11AB2001D47DA /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		D50D823D1AE11AB2001D47DA /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		D50D823F1AE13FDA001D47DA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D50D82411AE13FEA001D47DA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D50D82431AE14065001D47DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D50D82451AE14076001D47DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D5131C991A8FB85E002539BD /* PushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
 		D5131C9A1A8FB85E002539BD /* PushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
 		D51601E01A541A96003AB6A9 /* SelfInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfInfoTableViewController.h; sourceTree = "<group>"; };
@@ -168,10 +174,6 @@
 		D516022F1A542285003AB6A9 /* SkillTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillTestCell.xib; sourceTree = "<group>"; };
 		D51602321A542364003AB6A9 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		D51602331A542364003AB6A9 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
-		D51C80611AC679EF00A1F3A1 /* KBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBView.h; sourceTree = "<group>"; };
-		D51C80621AC679EF00A1F3A1 /* KBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBView.m; sourceTree = "<group>"; };
-		D51C80631AC679EF00A1F3A1 /* UIView+Autolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Autolayout.h"; sourceTree = "<group>"; };
-		D51C80641AC679EF00A1F3A1 /* UIView+Autolayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Autolayout.m"; sourceTree = "<group>"; };
 		D53E75C51A93996700CBE422 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		D55248B91A6A97730073942F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D56448E01A68300700E5AB85 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -274,6 +276,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D50D82461AE14076001D47DA /* Foundation.framework in Frameworks */,
+				D50D82441AE14065001D47DA /* UIKit.framework in Frameworks */,
+				D50D82421AE13FEA001D47DA /* CoreGraphics.framework in Frameworks */,
+				D50D82401AE13FDA001D47DA /* QuartzCore.framework in Frameworks */,
 				D56448E11A68300700E5AB85 /* Crashlytics.framework in Frameworks */,
 				D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */,
 			);
@@ -561,10 +567,6 @@
 		D51C80601AC679D100A1F3A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D51C80611AC679EF00A1F3A1 /* KBView.h */,
-				D51C80621AC679EF00A1F3A1 /* KBView.m */,
-				D51C80631AC679EF00A1F3A1 /* UIView+Autolayout.h */,
-				D51C80641AC679EF00A1F3A1 /* UIView+Autolayout.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -651,6 +653,10 @@
 			children = (
 				D50D823B1AE11AB2001D47DA /* iCarousel */,
 				D57D8C271A8475FB001FA546 /* MJRefresh */,
+				D50D82451AE14076001D47DA /* Foundation.framework */,
+				D50D82431AE14065001D47DA /* UIKit.framework */,
+				D50D82411AE13FEA001D47DA /* CoreGraphics.framework */,
+				D50D823F1AE13FDA001D47DA /* QuartzCore.framework */,
 				D55248B91A6A97730073942F /* StoreKit.framework */,
 				D56448E01A68300700E5AB85 /* Crashlytics.framework */,
 				D50C15F51A5A9D6D009ED8B5 /* MBProgressHUD */,
@@ -1023,7 +1029,6 @@
 				D58E1D171A51B98800B159ED /* AFHTTPRequestOperationManager.m in Sources */,
 				D50D823E1AE11AB2001D47DA /* iCarousel.m in Sources */,
 				D5F936C11A52EB5200EA112F /* IndexViewController.m in Sources */,
-				D51C80651AC679EF00A1F3A1 /* KBView.m in Sources */,
 				D58E1D191A51B98800B159ED /* AFNetworkReachabilityManager.m in Sources */,
 				D58E1D2D1A51B98800B159ED /* LJDeviceTool.m in Sources */,
 				D516021F1A5421D5003AB6A9 /* ExamPlanCell.m in Sources */,
@@ -1057,7 +1062,6 @@
 				D58E1D1E1A51B98800B159ED /* AFURLSessionManager.m in Sources */,
 				D58E1D311A51B98800B159ED /* LJUITool.m in Sources */,
 				D58E1D2A1A51B98800B159ED /* NSObject+MJCoding.m in Sources */,
-				D51C80661AC679EF00A1F3A1 /* UIView+Autolayout.m in Sources */,
 				D51602041A541F9A003AB6A9 /* NoticeViewController.m in Sources */,
 				D58E1D301A51B98800B159ED /* LJTimeTool.m in Sources */,
 				D51601FD1A541CC7003AB6A9 /* CellItem.m in Sources */,
