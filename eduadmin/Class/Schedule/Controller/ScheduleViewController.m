@@ -12,6 +12,8 @@
 #import "Common.h"
 #import "MJRefresh.h"
 #import "iCarousel.h"
+#import "DayClassTableViewCell.h"
+#import "NightClassTableViewCell.h"
 
 @interface ScheduleViewController () <iCarouselDataSource, iCarouselDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -34,7 +36,7 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.iCaView.type = iCarouselTypeInvertedCylinder;
+    self.iCaView.type = iCarouselTypeRotary;
     self.iCaView.pagingEnabled = YES;
     
     self.navigationItem.title = [NSString stringWithFormat:@"第%d周", [LJTimeTool getCurrentWeek] - 10];
@@ -64,22 +66,17 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
-    NSInteger HEIGHT = self.iCaView.frame.size.height - 60;
-    NSInteger WIDTH =self.iCaView.frame.size.width - 40;
+    NSInteger HEIGHT = [UIScreen mainScreen].bounds.size.height - 60 - 64;
+    NSInteger WIDTH = [UIScreen mainScreen].bounds.size.width - 40;
     
-    UITableView *tableView;
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStylePlain];
     
-    if (view) {
-        tableView = view;
-    } else {
-        tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStylePlain];
-        
-        tableView.dataSource = self;
-        tableView.delegate = self;
-        tableView.allowsSelection = NO;
-        
-        tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kbbg"]];
-    }
+    tableView.tag = index;
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    tableView.allowsSelection = NO;
+    tableView.tableFooterView = [[UIView alloc] init];
+    tableView.alwaysBounceVertical = NO;
 
 //    NSString *filePath = [LJFileTool getFilePath:[self getAddress:scheduleFileName]];
 //    
@@ -104,28 +101,63 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    if (!cell)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    if (indexPath.row == 0) {
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"head"];
+        if (!cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"head"];
+        }
+        
+        cell.textLabel.text = [NSString stringWithFormat:@"星期%d", tableView.tag];
+        return cell;
     }
-    cell.backgroundColor = [UIColor clearColor];
-    cell.textLabel.text = @"Hello World";
+    if (indexPath.row == 1) {
+        
+        DayClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"day"];
+        if (!cell) {
+            cell = [DayClassTableViewCell newDayClassCell];
+        }
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_morning"]];
+        return  cell;
+    }
+    if (indexPath.row == 2) {
+        
+        DayClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"day"];
+        if (!cell) {
+            cell = [DayClassTableViewCell newDayClassCell];
+        }
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_afternoon"]];
+        return  cell;
+    }
+    else {
     
-    return cell;
+        NightClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"night"];
+        if (!cell) {
+            cell = [NightClassTableViewCell newNightClassCell];
+        }
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_night"]];
+        return cell;
+    }
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.row == 0) {
         return 44;
-    } else {
-        return 90;
+    }
+    if (indexPath.row == 3) {
+        return 106;
+    }
+    else {
+        
+        return 212;
     }
 }
 

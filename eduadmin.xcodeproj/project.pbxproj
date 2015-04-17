@@ -48,6 +48,12 @@
 		D51602341A542364003AB6A9 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602331A542364003AB6A9 /* FeedbackViewController.m */; };
 		D53E75C61A93996700CBE422 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53E75C51A93996700CBE422 /* Launch Screen.xib */; };
 		D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55248B91A6A97730073942F /* StoreKit.framework */; };
+		D55F55691AE1727900A7FD53 /* DayClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F55671AE1727900A7FD53 /* DayClassTableViewCell.m */; };
+		D55F556A1AE1727900A7FD53 /* DayClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F55681AE1727900A7FD53 /* DayClassTableViewCell.xib */; };
+		D55F556E1AE1728F00A7FD53 /* NightClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F556C1AE1728F00A7FD53 /* NightClassTableViewCell.m */; };
+		D55F556F1AE1728F00A7FD53 /* NightClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */; };
+		D55F55731AE1835900A7FD53 /* DayCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F55721AE1835900A7FD53 /* DayCourse.m */; };
+		D55F55761AE1836600A7FD53 /* NightCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F55751AE1836600A7FD53 /* NightCourse.m */; };
 		D56448E11A68300700E5AB85 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56448E01A68300700E5AB85 /* Crashlytics.framework */; };
 		D57D8C381A8475FB001FA546 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D57D8C281A8475FB001FA546 /* MJRefresh.bundle */; };
 		D57D8C391A8475FB001FA546 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D57D8C2B1A8475FB001FA546 /* MJRefreshBaseView.m */; };
@@ -176,6 +182,16 @@
 		D51602331A542364003AB6A9 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		D53E75C51A93996700CBE422 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		D55248B91A6A97730073942F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D55F55661AE1727900A7FD53 /* DayClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayClassTableViewCell.h; sourceTree = "<group>"; };
+		D55F55671AE1727900A7FD53 /* DayClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayClassTableViewCell.m; sourceTree = "<group>"; };
+		D55F55681AE1727900A7FD53 /* DayClassTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayClassTableViewCell.xib; sourceTree = "<group>"; };
+		D55F556B1AE1728F00A7FD53 /* NightClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NightClassTableViewCell.h; sourceTree = "<group>"; };
+		D55F556C1AE1728F00A7FD53 /* NightClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NightClassTableViewCell.m; sourceTree = "<group>"; };
+		D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NightClassTableViewCell.xib; sourceTree = "<group>"; };
+		D55F55711AE1835900A7FD53 /* DayCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayCourse.h; sourceTree = "<group>"; };
+		D55F55721AE1835900A7FD53 /* DayCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayCourse.m; sourceTree = "<group>"; };
+		D55F55741AE1836600A7FD53 /* NightCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NightCourse.h; sourceTree = "<group>"; };
+		D55F55751AE1836600A7FD53 /* NightCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NightCourse.m; sourceTree = "<group>"; };
 		D56448E01A68300700E5AB85 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		D57D8C281A8475FB001FA546 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		D57D8C291A8475FB001FA546 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
@@ -319,8 +335,9 @@
 		D51601C71A5419AA003AB6A9 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				D51C80601AC679D100A1F3A1 /* View */,
+				D55F55651AE1726D00A7FD53 /* View */,
 				D51601C81A5419AA003AB6A9 /* Controller */,
+				D55F55701AE1831B00A7FD53 /* Model */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -564,11 +581,28 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		D51C80601AC679D100A1F3A1 /* View */ = {
+		D55F55651AE1726D00A7FD53 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D55F55661AE1727900A7FD53 /* DayClassTableViewCell.h */,
+				D55F55671AE1727900A7FD53 /* DayClassTableViewCell.m */,
+				D55F55681AE1727900A7FD53 /* DayClassTableViewCell.xib */,
+				D55F556B1AE1728F00A7FD53 /* NightClassTableViewCell.h */,
+				D55F556C1AE1728F00A7FD53 /* NightClassTableViewCell.m */,
+				D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D55F55701AE1831B00A7FD53 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D55F55711AE1835900A7FD53 /* DayCourse.h */,
+				D55F55721AE1835900A7FD53 /* DayCourse.m */,
+				D55F55741AE1836600A7FD53 /* NightCourse.h */,
+				D55F55751AE1836600A7FD53 /* NightCourse.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D57D8C271A8475FB001FA546 /* MJRefresh */ = {
@@ -969,9 +1003,11 @@
 				D51602121A542075003AB6A9 /* PartGradeCell.xib in Resources */,
 				D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */,
 				D51601F71A541CBB003AB6A9 /* familyCell.xib in Resources */,
+				D55F556A1AE1727900A7FD53 /* DayClassTableViewCell.xib in Resources */,
 				D58E1CBE1A51B94C00B159ED /* Images.xcassets in Resources */,
 				D57D8C381A8475FB001FA546 /* MJRefresh.bundle in Resources */,
 				D53E75C61A93996700CBE422 /* Launch Screen.xib in Resources */,
+				D55F556F1AE1728F00A7FD53 /* NightClassTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1006,6 +1042,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D58E1D251A51B98800B159ED /* MJIvar.m in Sources */,
+				D55F55691AE1727900A7FD53 /* DayClassTableViewCell.m in Sources */,
 				D51601EE1A541BC9003AB6A9 /* Family.m in Sources */,
 				D57D8C3C1A8475FB001FA546 /* MJRefreshHeaderView.m in Sources */,
 				D51602181A542131003AB6A9 /* RatingInfo.m in Sources */,
@@ -1040,6 +1077,7 @@
 				D57D8C3D1A8475FB001FA546 /* UIScrollView+MJExtension.m in Sources */,
 				D58E1D2C1A51B98800B159ED /* NSObject+MJMember.m in Sources */,
 				D58E1D2E1A51B98800B159ED /* LJFileTool.m in Sources */,
+				D55F556E1AE1728F00A7FD53 /* NightClassTableViewCell.m in Sources */,
 				D51602231A5421DC003AB6A9 /* ExamPlan.m in Sources */,
 				D516020D1A542035003AB6A9 /* UnpassGrade.m in Sources */,
 				D51601E21A541A96003AB6A9 /* SelfInfoTableViewController.m in Sources */,
@@ -1048,9 +1086,11 @@
 				D51602011A541EFE003AB6A9 /* ScheduleViewController.m in Sources */,
 				D58E1D2F1A51B98800B159ED /* LJHTTPTool.m in Sources */,
 				D58E1D1B1A51B98800B159ED /* AFURLConnectionOperation.m in Sources */,
+				D55F55731AE1835900A7FD53 /* DayCourse.m in Sources */,
 				D58E1D371A51B9C200B159ED /* AppDelegate.m in Sources */,
 				D51602261A5421E1003AB6A9 /* ExamPlanTableViewController.m in Sources */,
 				D51602111A542075003AB6A9 /* PartGradeCell.m in Sources */,
+				D55F55761AE1836600A7FD53 /* NightCourse.m in Sources */,
 				D58E1D1A1A51B98800B159ED /* AFSecurityPolicy.m in Sources */,
 				D58E1D181A51B98800B159ED /* AFHTTPSessionManager.m in Sources */,
 				D58E1D271A51B98800B159ED /* MJMethod.m in Sources */,
