@@ -40,6 +40,8 @@
     self.iCaView.type = iCarouselTypeRotary;
     self.iCaView.pagingEnabled = YES;
     
+    self.iCaView.currentItemIndex = [LJTimeTool getCurrentWeekDay] - 1;
+    
     self.navigationItem.title = [NSString stringWithFormat:@"第%d周", [LJTimeTool getCurrentWeek] - 10];
     
     self.titleArray = @[@"星期日", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六"];
