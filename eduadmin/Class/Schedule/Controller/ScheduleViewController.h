@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MSTabScrollView.h"
 
-@interface ScheduleViewController : UIViewController <MSTabScrollViewDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *backImg;
+@interface ScheduleViewController : UIViewController
 
 - (IBAction)reloadCourse:(id)sender;
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jOW-qB-Ta0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jOW-qB-Ta0">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -1200,18 +1200,7 @@
                     <view key="view" contentMode="scaleToFill" id="e0P-C6-7mi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kbbg" translatesAutoresizingMaskIntoConstraints="NO" id="gqs-sa-xua">
-                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="NAA-E8-zFx" firstAttribute="top" secondItem="gqs-sa-xua" secondAttribute="bottom" id="CB4-dN-Spf"/>
-                            <constraint firstAttribute="trailing" secondItem="gqs-sa-xua" secondAttribute="trailing" id="Cm6-5d-rEy"/>
-                            <constraint firstItem="gqs-sa-xua" firstAttribute="top" secondItem="34W-XG-3cx" secondAttribute="bottom" constant="44" id="Gk1-sI-xQm"/>
-                            <constraint firstItem="gqs-sa-xua" firstAttribute="leading" secondItem="e0P-C6-7mi" secondAttribute="leading" id="rXY-Pb-iTj"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iWr-3T-dnG">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="rUx-5m-wjX">
@@ -1220,9 +1209,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="backImg" destination="gqs-sa-xua" id="YXT-k8-EEx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWN-7l-t43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1551,7 +1537,6 @@
         <image name="goRight" width="20" height="41"/>
         <image name="gradeBackground" width="277" height="389"/>
         <image name="indexIcon" width="80" height="80"/>
-        <image name="kbbg" width="450" height="750"/>
         <image name="login" width="4" height="4"/>
         <image name="loginMe" width="30" height="30"/>
         <image name="logo_2x" width="131" height="27"/>
