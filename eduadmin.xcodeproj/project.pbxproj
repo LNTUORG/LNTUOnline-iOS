@@ -911,6 +911,7 @@
 				D58E1CA91A51B94B00B159ED /* Sources */,
 				D58E1CAA1A51B94B00B159ED /* Frameworks */,
 				D58E1CAB1A51B94B00B159ED /* Resources */,
+				D56DF0AF1AE19EAB00BEDE9D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1013,6 +1014,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D56DF0AF1AE19EAB00BEDE9D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 8feec9fc30497fa73685d17f490a7a7cdad6b2a1 8df1664dc1bc3830b78c2f7dc2216796333fcc326af81a369aacbf7bec69f778";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D58E1CA91A51B94B00B159ED /* Sources */ = {
