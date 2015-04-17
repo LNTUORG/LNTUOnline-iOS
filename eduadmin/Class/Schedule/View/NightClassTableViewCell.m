@@ -10,6 +10,11 @@
 
 @implementation NightClassTableViewCell
 
+- (void)awakeFromNib {
+
+    self.courseLable.numberOfLines = 0;
+}
+
 - (void)setCourse:(NSString *)course {
     
     _course = course;

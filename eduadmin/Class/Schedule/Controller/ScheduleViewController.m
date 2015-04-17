@@ -14,12 +14,13 @@
 #import "iCarousel.h"
 #import "DayClassTableViewCell.h"
 #import "NightClassTableViewCell.h"
+#import "DayCourse.h"
 
 @interface ScheduleViewController () <iCarouselDataSource, iCarouselDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet iCarousel *iCaView;
 @property (nonatomic, strong) NSArray *titleArray;
-@property (nonatomic, strong) NSArray *timeArr;
+@property (nonatomic, strong) NSArray *courseArray;
 @end
 
 @implementation ScheduleViewController
@@ -41,7 +42,7 @@
     
     self.navigationItem.title = [NSString stringWithFormat:@"第%d周", [LJTimeTool getCurrentWeek] - 10];
     
-    self.timeArr = @[@"第 0 节 08:00-08:45\n第 1 节 08:50-09:35", @"第 2 节 09:55-10:40\n第 3 节 10:45-11:30", @"第 4 节 13:30-14:15\n第 5 节 14:20-15:05", @"第 6 节 15:25-16:10\n第 7 节 16:15-17:00", @"第 8 节 18:30-19:15\n第 9 节 19:20-20:05"];
+    self.titleArray = @[@"星期日", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六"];
 }
 
 - (void)viewDidUnload
@@ -77,22 +78,19 @@
     tableView.allowsSelection = NO;
     tableView.tableFooterView = [[UIView alloc] init];
     tableView.alwaysBounceVertical = NO;
+    tableView.backgroundColor = [UIColor colorWithRed:214/255.0 green:227/255.0 blue:181/255.0 alpha:1];
 
-//    NSString *filePath = [LJFileTool getFilePath:[self getAddress:scheduleFileName]];
-//    
-//    NSFileManager *mgr = [NSFileManager defaultManager];
-//    
-//    NSArray *courseArr = [NSArray array];
-//    
-//    if ([mgr fileExistsAtPath:filePath]) {
-//        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
-//        courseArr = [self getCourseArray:dict];
-//        
-//        dailyView.courses = courseArr;
-//        
-//    }else{
-//        [self refreshData];
-//    }
+    NSString *filePath = [LJFileTool getFilePath:[self getAddress:scheduleFileName]];
+    
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    
+    if ([mgr fileExistsAtPath:filePath]) {
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+        
+        self.courseArray = [self getCourseArray:dict];
+    }else{
+        [self refreshData];
+    }
 
     return tableView;
 }
@@ -114,7 +112,8 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"head"];
         }
         
-        cell.textLabel.text = [NSString stringWithFormat:@"星期%d", tableView.tag];
+        cell.backgroundColor = [UIColor clearColor];
+        cell.textLabel.text = self.titleArray[tableView.tag];
         return cell;
     }
     if (indexPath.row == 1) {
@@ -123,6 +122,9 @@
         if (!cell) {
             cell = [DayClassTableViewCell newDayClassCell];
         }
+        
+        cell.course0 = self.courseArray[tableView.tag][0];
+        cell.course1 = self.courseArray[tableView.tag][1];
         cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_morning"]];
         return  cell;
     }
@@ -132,6 +134,12 @@
         if (!cell) {
             cell = [DayClassTableViewCell newDayClassCell];
         }
+        
+        DayCourse *course = [DayCourse new];
+        course.class0 = self.courseArray[tableView.tag][2];
+        course.class1 = self.courseArray[tableView.tag][3];
+        
+        cell.course = course;
         cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_afternoon"]];
         return  cell;
     }
@@ -141,6 +149,8 @@
         if (!cell) {
             cell = [NightClassTableViewCell newNightClassCell];
         }
+        
+        cell.course = self.courseArray[tableView.tag][4];
         cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_night"]];
         return cell;
     }
@@ -197,6 +207,7 @@
         
         [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:scheduleFileName]];
         
+        [self.iCaView reloadData];
     } failure:^(NSError *error) {
         
         [MBProgressHUD showError:nullStr];

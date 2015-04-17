@@ -10,6 +10,11 @@
 
 @implementation DayClassTableViewCell
 
+- (void)awakeFromNib {
+    
+    self.class1.numberOfLines = 0;
+    self.class0.numberOfLines = 0;
+}
 
 - (void)setCourse0:(NSString *)course0 {
     
