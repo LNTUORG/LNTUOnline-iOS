@@ -53,7 +53,6 @@
 		D55F556E1AE1728F00A7FD53 /* NightClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F556C1AE1728F00A7FD53 /* NightClassTableViewCell.m */; };
 		D55F556F1AE1728F00A7FD53 /* NightClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */; };
 		D55F55731AE1835900A7FD53 /* DayCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F55721AE1835900A7FD53 /* DayCourse.m */; };
-		D55F55761AE1836600A7FD53 /* NightCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F55751AE1836600A7FD53 /* NightCourse.m */; };
 		D56448E11A68300700E5AB85 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56448E01A68300700E5AB85 /* Crashlytics.framework */; };
 		D57D8C381A8475FB001FA546 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D57D8C281A8475FB001FA546 /* MJRefresh.bundle */; };
 		D57D8C391A8475FB001FA546 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D57D8C2B1A8475FB001FA546 /* MJRefreshBaseView.m */; };
@@ -190,8 +189,6 @@
 		D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NightClassTableViewCell.xib; sourceTree = "<group>"; };
 		D55F55711AE1835900A7FD53 /* DayCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayCourse.h; sourceTree = "<group>"; };
 		D55F55721AE1835900A7FD53 /* DayCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayCourse.m; sourceTree = "<group>"; };
-		D55F55741AE1836600A7FD53 /* NightCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NightCourse.h; sourceTree = "<group>"; };
-		D55F55751AE1836600A7FD53 /* NightCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NightCourse.m; sourceTree = "<group>"; };
 		D56448E01A68300700E5AB85 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		D57D8C281A8475FB001FA546 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		D57D8C291A8475FB001FA546 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
@@ -599,8 +596,6 @@
 			children = (
 				D55F55711AE1835900A7FD53 /* DayCourse.h */,
 				D55F55721AE1835900A7FD53 /* DayCourse.m */,
-				D55F55741AE1836600A7FD53 /* NightCourse.h */,
-				D55F55751AE1836600A7FD53 /* NightCourse.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1090,7 +1085,6 @@
 				D58E1D371A51B9C200B159ED /* AppDelegate.m in Sources */,
 				D51602261A5421E1003AB6A9 /* ExamPlanTableViewController.m in Sources */,
 				D51602111A542075003AB6A9 /* PartGradeCell.m in Sources */,
-				D55F55761AE1836600A7FD53 /* NightCourse.m in Sources */,
 				D58E1D1A1A51B98800B159ED /* AFSecurityPolicy.m in Sources */,
 				D58E1D181A51B98800B159ED /* AFHTTPSessionManager.m in Sources */,
 				D58E1D271A51B98800B159ED /* MJMethod.m in Sources */,

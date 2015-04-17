@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DayCourse.h"
 
 @interface DayClassTableViewCell : UITableViewCell
 
@@ -24,6 +25,10 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *class1;
 
+@property (strong, nonatomic) DayCourse *course;
+
+@property (strong, nonatomic) NSString *course0;
+@property (strong, nonatomic) NSString *course1;
 
 + (id)newDayClassCell;
 

@@ -66,8 +66,8 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
-    NSInteger HEIGHT = [UIScreen mainScreen].bounds.size.height - 60 - 64;
-    NSInteger WIDTH = [UIScreen mainScreen].bounds.size.width - 40;
+    NSInteger HEIGHT = [UIScreen mainScreen].bounds.size.height - 40 - 64;
+    NSInteger WIDTH = [UIScreen mainScreen].bounds.size.width - 30;
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStylePlain];
     

@@ -52,43 +52,43 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第0节 08:00-08:45" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZw-By-OXx">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第0节 08:00-08:45" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZw-By-OXx">
                         <rect key="frame" x="0.0" y="45" width="141" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="141" id="7P3-Hf-brD"/>
                             <constraint firstAttribute="height" constant="21" id="Nb6-7j-e9F"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第1节 08:50-09:35" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNd-tC-dHg">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第1节 08:50-09:35" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNd-tC-dHg">
                         <rect key="frame" x="0.0" y="73" width="141" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="5wv-eM-HLr"/>
                             <constraint firstAttribute="width" constant="141" id="vrg-JE-pMt"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第2节 09:55-10:40" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWq-0L-dOb">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第2节 09:55-10:40" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWq-0L-dOb">
                         <rect key="frame" x="0.0" y="137" width="141" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="8Gu-DF-y2K"/>
                             <constraint firstAttribute="width" constant="141" id="a3c-Vq-Zar"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第3节 10:45-11:30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4N-T6-54u">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第3节 10:45-11:30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4N-T6-54u">
                         <rect key="frame" x="0.0" y="166" width="141" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="hv8-qS-96e"/>
                             <constraint firstAttribute="width" constant="141" id="sl7-7g-CL4"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -121,7 +121,7 @@
                 <outlet property="time3" destination="G4N-T6-54u" id="d3r-Le-aV4"/>
                 <outlet property="timeInterval" destination="A9Q-zV-U59" id="bMX-fl-MOb"/>
             </connections>
-            <point key="canvasLocation" x="308" y="333.5"/>
+            <point key="canvasLocation" x="552" y="372.5"/>
         </tableViewCell>
     </objects>
     <resources>

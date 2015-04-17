@@ -10,6 +10,11 @@
 
 @implementation NightClassTableViewCell
 
+- (void)setCourse:(NSString *)course {
+    
+    _course = course;
+    self.courseLable.text = course;
+}
 
 + (id)newNightClassCell {
 

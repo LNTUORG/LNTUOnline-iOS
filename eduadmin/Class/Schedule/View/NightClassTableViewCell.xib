@@ -15,67 +15,70 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="countdown" translatesAutoresizingMaskIntoConstraints="NO" id="PL1-E1-cku">
-                        <rect key="frame" x="10" y="2" width="28" height="32"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="countdown" translatesAutoresizingMaskIntoConstraints="NO" id="BOc-7R-isg">
+                        <rect key="frame" x="12" y="5" width="28" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="28" id="SCR-aT-AIP"/>
-                            <constraint firstAttribute="height" constant="32" id="uHd-CL-Zsn"/>
+                            <constraint firstAttribute="height" constant="32" id="TfS-va-1u0"/>
+                            <constraint firstAttribute="width" constant="28" id="Zsy-21-0XT"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晚上" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvl-gq-aOT">
-                        <rect key="frame" x="42" y="6" width="45" height="25"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晚上" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITl-VM-Mkf">
+                        <rect key="frame" x="46" y="10" width="45" height="25"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="25" id="hIq-nC-WSc"/>
-                            <constraint firstAttribute="width" constant="45" id="uil-bo-YSf"/>
+                            <constraint firstAttribute="width" constant="45" id="fEn-l8-km3"/>
+                            <constraint firstAttribute="height" constant="25" id="w7m-yZ-WGC"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第8节 18:30-19:15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6v-L0-xxM">
-                        <rect key="frame" x="10" y="40" width="141" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第8节 18:30-19:15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nq-ve-R3B">
+                        <rect key="frame" x="0.0" y="45" width="141" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="Qcg-bo-SLF"/>
-                            <constraint firstAttribute="width" constant="141" id="nIS-pt-7w3"/>
+                            <constraint firstAttribute="width" constant="141" id="9pd-gr-QIE"/>
+                            <constraint firstAttribute="height" constant="21" id="Rhv-pV-x2M"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第9节 19:20-20:05" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbg-cX-1a6">
-                        <rect key="frame" x="10" y="68" width="141" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERc-fW-uxk">
+                        <rect key="frame" x="178" y="9" width="142" height="93"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="141" id="MrA-Sz-dM5"/>
-                            <constraint firstAttribute="height" constant="21" id="b8A-vv-yZg"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTC-LT-ikl">
-                        <rect key="frame" x="167" y="8" width="142" height="96"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="96" id="1d8-jX-QUo"/>
-                            <constraint firstAttribute="width" constant="142" id="LDv-hO-EK4"/>
+                            <constraint firstAttribute="width" constant="142" id="s83-kz-fFE"/>
+                            <constraint firstAttribute="height" constant="93" id="vTB-i5-llf"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第9节 19:20-20:05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDh-jP-O19">
+                        <rect key="frame" x="0.0" y="74" width="141" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="uZk-OO-Pbd"/>
+                            <constraint firstAttribute="width" constant="141" id="y9G-3R-ijS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="u6v-L0-xxM" firstAttribute="top" secondItem="PL1-E1-cku" secondAttribute="bottom" constant="6" id="07G-pO-OYs"/>
-                    <constraint firstItem="u6v-L0-xxM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="1L0-4X-jvC"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="eTC-LT-ikl" secondAttribute="trailing" constant="3" id="7fk-tP-Yq6"/>
-                    <constraint firstItem="xvl-gq-aOT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-2" id="TxC-Ue-Cxg"/>
-                    <constraint firstItem="PL1-E1-cku" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="TzN-8r-qqp"/>
-                    <constraint firstItem="sbg-cX-1a6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="dWK-9G-eo3"/>
-                    <constraint firstItem="eTC-LT-ikl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="is7-EC-jkH"/>
-                    <constraint firstItem="sbg-cX-1a6" firstAttribute="top" secondItem="u6v-L0-xxM" secondAttribute="bottom" constant="7" id="l3u-8H-gR4"/>
-                    <constraint firstItem="PL1-E1-cku" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-6" id="tqy-1t-9lI"/>
-                    <constraint firstItem="xvl-gq-aOT" firstAttribute="leading" secondItem="PL1-E1-cku" secondAttribute="trailing" constant="4" id="wt0-h6-n09"/>
+                    <constraint firstItem="BOc-7R-isg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="6N5-cF-AaF"/>
+                    <constraint firstItem="ITl-VM-Mkf" firstAttribute="leading" secondItem="BOc-7R-isg" secondAttribute="trailing" constant="6" id="Qp5-Gs-gbm"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ERc-fW-uxk" secondAttribute="trailing" constant="-8" id="Sof-vs-GIi"/>
+                    <constraint firstItem="ERc-fW-uxk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="a2e-4v-fHC"/>
+                    <constraint firstItem="2nq-ve-R3B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="eSA-9J-aUx"/>
+                    <constraint firstItem="BOc-7R-isg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="gI5-P9-Jgs"/>
+                    <constraint firstItem="ITl-VM-Mkf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="ifN-Us-3t4"/>
+                    <constraint firstItem="zDh-jP-O19" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="l1a-KI-TCo"/>
+                    <constraint firstItem="zDh-jP-O19" firstAttribute="top" secondItem="2nq-ve-R3B" secondAttribute="bottom" constant="8" id="pgU-ST-vMW"/>
+                    <constraint firstItem="2nq-ve-R3B" firstAttribute="top" secondItem="BOc-7R-isg" secondAttribute="bottom" constant="8" id="uEG-Av-Qfs"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="courseLable" destination="ERc-fW-uxk" id="mJV-ha-7H1"/>
+            </connections>
             <point key="canvasLocation" x="320" y="369.5"/>
         </tableViewCell>
     </objects>
