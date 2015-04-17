@@ -53,7 +53,7 @@
 		D55F556E1AE1728F00A7FD53 /* NightClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F556C1AE1728F00A7FD53 /* NightClassTableViewCell.m */; };
 		D55F556F1AE1728F00A7FD53 /* NightClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */; };
 		D55F55731AE1835900A7FD53 /* DayCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F55721AE1835900A7FD53 /* DayCourse.m */; };
-		D56448E11A68300700E5AB85 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56448E01A68300700E5AB85 /* Crashlytics.framework */; };
+		D55F557E1AE193DC00A7FD53 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55F557D1AE193DC00A7FD53 /* Crashlytics.framework */; };
 		D57D8C381A8475FB001FA546 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D57D8C281A8475FB001FA546 /* MJRefresh.bundle */; };
 		D57D8C391A8475FB001FA546 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D57D8C2B1A8475FB001FA546 /* MJRefreshBaseView.m */; };
 		D57D8C3A1A8475FB001FA546 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D57D8C2D1A8475FB001FA546 /* MJRefreshConst.m */; };
@@ -189,7 +189,7 @@
 		D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NightClassTableViewCell.xib; sourceTree = "<group>"; };
 		D55F55711AE1835900A7FD53 /* DayCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayCourse.h; sourceTree = "<group>"; };
 		D55F55721AE1835900A7FD53 /* DayCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayCourse.m; sourceTree = "<group>"; };
-		D56448E01A68300700E5AB85 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		D55F557D1AE193DC00A7FD53 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		D57D8C281A8475FB001FA546 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		D57D8C291A8475FB001FA546 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		D57D8C2A1A8475FB001FA546 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -293,7 +293,7 @@
 				D50D82441AE14065001D47DA /* UIKit.framework in Frameworks */,
 				D50D82421AE13FEA001D47DA /* CoreGraphics.framework in Frameworks */,
 				D50D82401AE13FDA001D47DA /* QuartzCore.framework in Frameworks */,
-				D56448E11A68300700E5AB85 /* Crashlytics.framework in Frameworks */,
+				D55F557E1AE193DC00A7FD53 /* Crashlytics.framework in Frameworks */,
 				D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,12 +682,12 @@
 			children = (
 				D50D823B1AE11AB2001D47DA /* iCarousel */,
 				D57D8C271A8475FB001FA546 /* MJRefresh */,
+				D55F557D1AE193DC00A7FD53 /* Crashlytics.framework */,
 				D50D82451AE14076001D47DA /* Foundation.framework */,
 				D50D82431AE14065001D47DA /* UIKit.framework */,
 				D50D82411AE13FEA001D47DA /* CoreGraphics.framework */,
 				D50D823F1AE13FDA001D47DA /* QuartzCore.framework */,
 				D55248B91A6A97730073942F /* StoreKit.framework */,
-				D56448E01A68300700E5AB85 /* Crashlytics.framework */,
 				D50C15F51A5A9D6D009ED8B5 /* MBProgressHUD */,
 				D58E1CD71A51B98800B159ED /* AFNetworking */,
 				D58E1CF11A51B98800B159ED /* MJExtension */,
@@ -911,7 +911,7 @@
 				D58E1CA91A51B94B00B159ED /* Sources */,
 				D58E1CAA1A51B94B00B159ED /* Frameworks */,
 				D58E1CAB1A51B94B00B159ED /* Resources */,
-				D56448DF1A682F9D00E5AB85 /* ShellScript */,
+				D55F557C1AE193BD00A7FD53 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1016,16 +1016,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D56448DF1A682F9D00E5AB85 /* ShellScript */ = {
+		D55F557C1AE193BD00A7FD53 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Crashlytics.framework/run 8feec9fc30497fa73685d17f490a7a7cdad6b2a1 8df1664dc1bc3830b78c2f7dc2216796333fcc326af81a369aacbf7bec69f778";
 		};
