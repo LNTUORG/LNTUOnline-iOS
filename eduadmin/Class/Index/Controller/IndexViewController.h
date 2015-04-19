@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong) NSDictionary *dict;
 
+@property (strong, nonatomic) NSUserDefaults *def;
+
 - (IBAction)logout:(id)sender;
 
 - (IBAction)myInfo;

@@ -16,6 +16,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn; // 登录按钮
 
+
+- (IBAction)forHelp:(id)sender;
+
 - (IBAction)existKeyboard; // 关闭键盘
 
 - (IBAction)login; //登录事件

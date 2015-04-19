@@ -17,6 +17,11 @@
 
 @implementation LoginViewController
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -26,37 +31,16 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.userNameText];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.pwdText];
     
-    //标记为刚打开应用
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    [def setObject:@"0" forKey:@"flag"];
-    [def synchronize];
-    
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    if ([[def objectForKey:@"flag"] isEqualToString:@"0"]) {
-        if (self.userNameText.text.length) {
-            [self login];
-        }
-    }
-}
 
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-// 按钮状态
+// 按钮状态实时监听
 - (void)textChange
 {
     self.loginBtn.enabled = (self.userNameText.text.length && self.pwdText.text.length);
 }
 
-// 程序启动
+// 程序启动后自动设置账号密码
 - (void)appStart
 {
     
@@ -72,6 +56,11 @@
 
 
 // 关闭键盘
+- (IBAction)forHelp:(id)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://wpa.qq.com/msgrd?v=3&uin=10771533&site=qq&menu=yes"]];
+}
+
 - (IBAction)existKeyboard {
     [self.view endEditing:YES];
 }

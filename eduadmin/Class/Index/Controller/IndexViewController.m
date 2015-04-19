@@ -34,11 +34,7 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    
-    if (![def objectForKey:LOGINTOKEN]) {
-        [self performSegueWithIdentifier:@"index2login" sender:nil];
-    }
+    self.def = [NSUserDefaults standardUserDefaults];
     
     _helloArr = @[@"爱生活不爱黑眼圈,快洗洗睡吧",@"一日之计在于晨,上课可别打瞌睡哦",@"坐等下课吃饭去",@"吃个饱饭睡个美容觉,这真是极好的",@"中午养足了精神吗?让我们一起渡过一个愉快的下午茶时间,不过没有茶喝o(╯□╰)o",@"静能生慧.仰观宇宙之大,俯察品类之盛.宇宙之大,每个生命都在孤寂"];
     [self isNewest];
@@ -48,11 +44,18 @@
     
 #pragma mark 推送相关
     
-    if ([def objectForKey:pushTokenNew]) {
-        if (![[def objectForKey:pushTokenOld] isEqualToString:[def objectForKey:pushTokenNew]]) {
+    if ([self.def objectForKey:pushTokenNew]) {
+        if (![[self.def objectForKey:pushTokenOld] isEqualToString:[self.def objectForKey:pushTokenNew]]) {
             
             [self sendTokenToServer];
         }
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    if (![self.def objectForKey:LOGINTOKEN]) {
+        [self performSegueWithIdentifier:@"index2login" sender:nil];
     }
 }
 
@@ -174,10 +177,6 @@
 
 - (IBAction)logout:(id)sender {
     
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    [def setObject:@"1" forKey:@"flag"];
-    [def synchronize];
-    
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"是否退出登录" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"确定" otherButtonTitles: nil];
     [sheet showInView:self.view];
 }
@@ -219,7 +218,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex != 0) return;
-    [self.navigationController popViewControllerAnimated:YES];
+    [self performSegueWithIdentifier:@"index2login" sender:nil];
 }
 
 @end

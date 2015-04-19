@@ -988,14 +988,14 @@
 /* Begin PBXShellScriptBuildPhase section */
 		D56DF0AF1AE19EAB00BEDE9D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "./Crashlytics.framework/run 8feec9fc30497fa73685d17f490a7a7cdad6b2a1 8df1664dc1bc3830b78c2f7dc2216796333fcc326af81a369aacbf7bec69f778";
 		};
