@@ -204,6 +204,14 @@
 
 - (void)refreshData
 {
+    NSDictionary *param = @{@"year": @"2015", @"term": @"春"};
+    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@class-table/~self", MAINURL] params:param success:^(id responseJSON) {
+        
+        NSLog(@"%@", responseJSON);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+    }];
     
 //    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@curriculum/info",sinaURL] params:nil success:^(id responseJSON) {
 //        

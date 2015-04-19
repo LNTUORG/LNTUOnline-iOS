@@ -20,7 +20,7 @@
 {
     [super viewDidLoad];
     
-    NSURL *url = [NSURL URLWithString:noticeURL];
+    NSURL *url = [NSURL URLWithString:NOTICEURL];
     
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     
@@ -36,7 +36,7 @@
 
 
 - (IBAction)goToSafari:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:noticeURL]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:NOTICEURL]];
 }
 
 @end

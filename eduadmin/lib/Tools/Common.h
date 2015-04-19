@@ -28,9 +28,9 @@
 
 #define TOKENFORNET [[NSUserDefaults standardUserDefaults] objectForKey:LOGINTOKEN]
 
-#define selfInfoFileName @"selfInfo.plist"
-#define scheduleFileName @"schedule.plist"
-#define examPlanFileName @"exam.plist"
+#define selfInfoFileName @"selfInfoV2.plist"
+#define scheduleFileName @"scheduleV2.plist"
+#define examPlanFileName @"examV2.plist"
 #define selfIconFileName @"selfIcon.png"
 
 // 获得RGB颜色
