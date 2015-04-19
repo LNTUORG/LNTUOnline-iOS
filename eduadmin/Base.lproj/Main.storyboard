@@ -197,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ado-v8-9NU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3732" y="1254"/>
+            <point key="canvasLocation" x="-3728" y="1254"/>
         </scene>
         <!--Donate Table View Controller-->
         <scene sceneID="45k-Y8-f2p">
@@ -228,13 +228,7 @@
                             <rect key="frame" x="0.0" y="44" width="600" height="125"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="此项目是一个公益项目，没有盈利模式
-甚至连广告都没有
-却要处理每天几十万次的请求，高峰期一度瘫痪
-维护此项目，需要一定的投入
-在此之前一直是我们在捐赠
-为了此项目存活久一些，欢迎新鲜血液的注入
-捐一瓶可乐，还是中杯星巴克，你说了算！" translatesAutoresizingMaskIntoConstraints="NO" id="1cV-A3-CTl">
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="此项目是一个公益项目，没有盈利模式 甚至连广告都没有 却要处理每天几十万次的请求，高峰期一度瘫痪 维护此项目，需要一定的投入 在此之前一直是我们在捐赠 为了此项目存活久一些，欢迎新鲜血液的注入 捐一瓶可乐，还是中杯星巴克，你说了算！" translatesAutoresizingMaskIntoConstraints="NO" id="1cV-A3-CTl">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="125"/>
                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -258,7 +252,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHr-XL-Y5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3727" y="1955"/>
+            <point key="canvasLocation" x="-3032" y="1935"/>
         </scene>
         <!--关于软件-->
         <scene sceneID="Ikb-6t-gOF">
@@ -507,7 +501,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obt-yZ-clI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4421" y="541"/>
+            <point key="canvasLocation" x="-4737" y="93"/>
         </scene>
         <!--个人中心-->
         <scene sceneID="wKn-TV-fVF">
@@ -1572,7 +1566,7 @@
         <image name="x" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ikN-CD-soS"/>
         <segue reference="QhY-E4-2IG"/>
-        <segue reference="di2-P4-tmb"/>
     </inferredMetricsTieBreakers>
 </document>
