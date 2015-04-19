@@ -88,39 +88,24 @@
 }
 
 - (IBAction)login {
-    
+    [self existKeyboard];
     [self recordPwd];
     [MBProgressHUD showMessage:waitStr];
     
-    NSString *requestURL = [NSString stringWithFormat:@"%@user/login",sinaURL];
+    NSString *requestURL = [NSString stringWithFormat:@"%@account/login", MAINURL];
     NSDictionary *param = @{@"userId": self.userNameText.text,
-                            @"pwd": self.pwdText.text,
-                            @"platform": @"ios",
-                            @"version": [LJDeviceTool getCurrentAppBuild],
-                            @"manufacturer": @"Apple",
-                            @"osVer": [NSString stringWithFormat:@"iOS%@",[LJDeviceTool getCurrentSystemVersion]],
-                            @"model": [LJDeviceTool getCurrentDeviceModel]};
-    
-    
-    [LJHTTPTool postHTTPWithURL:requestURL params:param success:^(id responseHTTP) {
+                            @"password": self.pwdText.text};
+
+    [LJHTTPTool postJSONWithURL:requestURL params:param loginToken:nil success:^(id responseJSON) {
         
-        NSString *flag = [[NSString alloc] initWithData:responseHTTP encoding:NSUTF8StringEncoding];
-        if ([flag isEqualToString:@"OK"]) {
-            
-            [self performSegueWithIdentifier:@"loginToIndex" sender:nil];
-            
-            [MBProgressHUD hideHUD];
-            [MBProgressHUD showSuccess:@"登录成功"];
-            
-        }else{
-            [MBProgressHUD hideHUD];
-            [MBProgressHUD showError:@"用户名或密码错误"];
-        }
-        
+        NSLog(@"=======%@----------------",responseJSON);
+        [MBProgressHUD hideHUD];
+        [MBProgressHUD showSuccess:@"登录成功"];
     } failure:^(NSError *error) {
         
+        NSLog(@"%@",error);
         [MBProgressHUD hideHUD];
-        [MBProgressHUD showError:errorStr];
+        [MBProgressHUD showError:@"用户名或密码错误"];
     }];
     
 }

@@ -80,31 +80,31 @@
 
 - (void)getAverageOfCreditPointInfo
 {
-    [LJHTTPTool getHTTPWithURL:[NSString stringWithFormat:@"%@grades/averageOfCreditPointInfo",sinaURL] params:nil success:^(id responseHTTP) {
-        
-        NSString *response = [[NSString alloc] initWithData:responseHTTP encoding:NSUTF8StringEncoding];
-        
-        //用回车隔开
-        NSArray *result = [response componentsSeparatedByString:@"\n"];
-        self.averageOfCreditPointInfo.text = result[1];
-    } failure:^(NSError *error) {
-        self.averageOfCreditPointInfo.text = errorStr;
-    }];
+//    [LJHTTPTool getHTTPWithURL:[NSString stringWithFormat:@"%@grades/averageOfCreditPointInfo",sinaURL] params:nil success:^(id responseHTTP) {
+//        
+//        NSString *response = [[NSString alloc] initWithData:responseHTTP encoding:NSUTF8StringEncoding];
+//        
+//        //用回车隔开
+//        NSArray *result = [response componentsSeparatedByString:@"\n"];
+//        self.averageOfCreditPointInfo.text = result[1];
+//    } failure:^(NSError *error) {
+//        self.averageOfCreditPointInfo.text = errorStr;
+//    }];
 }
 
 - (void)getUnpassCoursesInfo
 {
-    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@grades/unpassCoursesInfo",sinaURL] params:nil success:^(id responseJSON) {
-        
-        _gradeArr = [UnpassGrade objectArrayWithKeyValuesArray:responseJSON];
-        [self.tableView reloadData];
-        [self.tableView headerEndRefreshing];
-        
-    } failure:^(NSError *error) {
-        
-        [MBProgressHUD showError:@"居然无挂科，你超神了！"];
-        [self.tableView headerEndRefreshing];
-    }];
+//    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@grades/unpassCoursesInfo",sinaURL] params:nil success:^(id responseJSON) {
+//        
+//        _gradeArr = [UnpassGrade objectArrayWithKeyValuesArray:responseJSON];
+//        [self.tableView reloadData];
+//        [self.tableView headerEndRefreshing];
+//        
+//    } failure:^(NSError *error) {
+//        
+//        [MBProgressHUD showError:@"居然无挂科，你超神了！"];
+//        [self.tableView headerEndRefreshing];
+//    }];
 }
 
 @end

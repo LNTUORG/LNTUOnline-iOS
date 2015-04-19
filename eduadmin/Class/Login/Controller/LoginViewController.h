@@ -14,8 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *pwdText; // 密码文本框
 
-@property (weak, nonatomic) IBOutlet UIView *upView; // 上移的 View
-
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn; // 登录按钮
 
 - (IBAction)existKeyboard; // 关闭键盘

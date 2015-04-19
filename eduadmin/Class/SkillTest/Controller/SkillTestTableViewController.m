@@ -39,18 +39,18 @@
 - (void)refreshData {
     
     
-    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@grades/skillTestScoresInfo",sinaURL] params:nil success:^(id responseJSON) {
-        
-        _skillArr = [SkillTest objectArrayWithKeyValuesArray:responseJSON];
-        [self.tableView reloadData];
-        [self.tableView headerEndRefreshing];
-        
-    } failure:^(NSError *error) {
-        
-        [MBProgressHUD showError:nullStr];
-        [self.tableView headerEndRefreshing];
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
+//    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@grades/skillTestScoresInfo",sinaURL] params:nil success:^(id responseJSON) {
+//        
+//        _skillArr = [SkillTest objectArrayWithKeyValuesArray:responseJSON];
+//        [self.tableView reloadData];
+//        [self.tableView headerEndRefreshing];
+//        
+//    } failure:^(NSError *error) {
+//        
+//        [MBProgressHUD showError:nullStr];
+//        [self.tableView headerEndRefreshing];
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }];
 }
 
 #pragma mark - Table view data source

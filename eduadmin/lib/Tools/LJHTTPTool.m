@@ -12,11 +12,14 @@
 
 @implementation LJHTTPTool
 
-+ (void)postJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
++ (void)postJSONWithURL:(NSString *)url params:(NSDictionary *)params loginToken:(NSString *)token success:(void (^)(id))success failure:(void (^)(NSError *))failure
 {
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
+    if (token) {
+        
+        [mgr.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+    }
     // 2.发送请求
     [mgr POST:url parameters:params
       success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -30,10 +33,15 @@
       }];
 }
 
-+ (void)postHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
++ (void)postHTTPWithURL:(NSString *)url params:(NSDictionary *)params loginToken:(NSString *)token success:(void (^)(id))success failure:(void (^)(NSError *))failure
 {
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    if (token) {
+        
+        [mgr.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+    }
+    
     mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
     
     // 2.发送请求
@@ -69,10 +77,15 @@
     }];
 }
 
-+ (void)getJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
++ (void)getJSONWithURL:(NSString *)url params:(NSDictionary *)params loginToken:(NSString *)token success:(void (^)(id))success failure:(void (^)(NSError *))failure
 {
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    if (token) {
+        
+        [mgr.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+    }
     
     // 2.发送请求
     [mgr GET:url parameters:params
@@ -88,10 +101,16 @@
      }];
 }
 
-+ (void)getHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
++ (void)getHTTPWithURL:(NSString *)url params:(NSDictionary *)params loginToken:(NSString *)token success:(void (^)(id))success failure:(void (^)(NSError *))failure
 {
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    if (token) {
+        
+        [mgr.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+    }
+    
     mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
     
     // 2.发送请求
@@ -109,19 +128,19 @@
 
 + (void)feedbackError:(NSError *)error
 {
-    NSString *err = [error description];
-    NSDictionary *param = @{@"info": err,
-                            @"platform":@"iOS",
-                            @"version": [LJDeviceTool getCurrentAppBuild],
-                            @"osVer": [NSString stringWithFormat:@"iOS%@",[LJDeviceTool getCurrentSystemVersion]],
-                            @"manufacturer": @"Apple",
-                            @"model": [LJDeviceTool getCurrentDeviceModel]
-                            };
-    
-    [LJHTTPTool postHTTPWithURL:[NSString stringWithFormat:@"%@feedback/crashLog",sinaURL] params:param success:^(id responseHTTP) {
-        
-    } failure:^(NSError *error) {
-    }];
+//    NSString *err = [error description];
+//    NSDictionary *param = @{@"info": err,
+//                            @"platform":@"iOS",
+//                            @"version": [LJDeviceTool getCurrentAppBuild],
+//                            @"osVer": [NSString stringWithFormat:@"iOS%@",[LJDeviceTool getCurrentSystemVersion]],
+//                            @"manufacturer": @"Apple",
+//                            @"model": [LJDeviceTool getCurrentDeviceModel]
+//                            };
+//    
+//    [LJHTTPTool postHTTPWithURL:[NSString stringWithFormat:@"%@feedback/crashLog",sinaURL] params:param loginToken:nil success:^(id responseHTTP) {
+//        
+//    } failure:^(NSError *error) {
+//    }];
 }
 
 @end

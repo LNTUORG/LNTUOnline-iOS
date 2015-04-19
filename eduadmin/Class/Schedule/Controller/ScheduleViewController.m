@@ -205,15 +205,15 @@
 - (void)refreshData
 {
     
-    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@curriculum/info",sinaURL] params:nil success:^(id responseJSON) {
-        
-        [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:scheduleFileName]];
-        
-        [self.iCaView reloadData];
-    } failure:^(NSError *error) {
-        
-        [MBProgressHUD showError:nullStr];
-    }];
+//    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@curriculum/info",sinaURL] params:nil success:^(id responseJSON) {
+//        
+//        [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:scheduleFileName]];
+//        
+//        [self.iCaView reloadData];
+//    } failure:^(NSError *error) {
+//        
+//        [MBProgressHUD showError:nullStr];
+//    }];
 }
 
 - (IBAction)reloadCourse:(id)sender {

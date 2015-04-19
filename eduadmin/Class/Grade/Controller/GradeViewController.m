@@ -64,25 +64,25 @@
 
 - (void)refreshData {
     
-    [self getGrade:[NSString stringWithFormat:@"%@grades/courseScoresInfo?year=%@&term=%@",sinaURL,_year,_term]];
+//    [self getGrade:[NSString stringWithFormat:@"%@grades/courseScoresInfo?year=%@&term=%@",sinaURL,_year,_term]];
 }
 
 - (void)getGrade:(NSString *)url
 {
     
-    [LJHTTPTool getJSONWithURL:url params:nil success:^(id responseJSON) {
-        _gradeArr = [MyGrade objectArrayWithKeyValuesArray:responseJSON];
-        [self.gradeView reloadData];
-        
-        [self.gradeView headerEndRefreshing];
-        
-    } failure:^(NSError *error) {
-        
-        [self.gradeView headerEndRefreshing];
-        
-        
-        [MBProgressHUD showError:nullStr];
-    }];
+//    [LJHTTPTool getJSONWithURL:url params:nil success:^(id responseJSON) {
+//        _gradeArr = [MyGrade objectArrayWithKeyValuesArray:responseJSON];
+//        [self.gradeView reloadData];
+//        
+//        [self.gradeView headerEndRefreshing];
+//        
+//    } failure:^(NSError *error) {
+//        
+//        [self.gradeView headerEndRefreshing];
+//        
+//        
+//        [MBProgressHUD showError:nullStr];
+//    }];
 }
 
 #pragma mark pickerView 代理方法 and 数据源
@@ -184,65 +184,65 @@
 
 - (IBAction)rating:(id)sender {
     
-    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@oneKey/info",sinaURL] params:nil success:^(id responseJSON) {
-        
-        NSArray *allArr = [RatingInfo objectArrayWithKeyValuesArray:responseJSON];
-        
-        for (RatingInfo *info in allArr) {
-            if (info.url) {
-                [_rateArr addObject:info];
-            }
-        }
-        
-        if (_rateArr.count) {
-            [self didRating];
-        }else {
-            [MBProgressHUD showError:@"已经评课或当前无法评课"];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"给个好评吧" message:@"给过老师好评，是不是心情棒棒哒，也给我们个好评吧" delegate:self cancelButtonTitle:@"不，谢谢" otherButtonTitles:@"好哒", nil];
-                [alert show];
-                
-            });
-        }
-        
-        
-    } failure:^(NSError *error) {
-        [MBProgressHUD showError:@"已经评课或当前无法评课"];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"给个好评吧" message:@"给过老师好评，是不是心情棒棒哒，也给我们个好评吧" delegate:self cancelButtonTitle:@"不，谢谢" otherButtonTitles:@"好哒", nil];
-            [alert show];
-            
-        });
-    }];
+//    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@oneKey/info",sinaURL] params:nil success:^(id responseJSON) {
+//        
+//        NSArray *allArr = [RatingInfo objectArrayWithKeyValuesArray:responseJSON];
+//        
+//        for (RatingInfo *info in allArr) {
+//            if (info.url) {
+//                [_rateArr addObject:info];
+//            }
+//        }
+//        
+//        if (_rateArr.count) {
+//            [self didRating];
+//        }else {
+//            [MBProgressHUD showError:@"已经评课或当前无法评课"];
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                
+//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"给个好评吧" message:@"给过老师好评，是不是心情棒棒哒，也给我们个好评吧" delegate:self cancelButtonTitle:@"不，谢谢" otherButtonTitles:@"好哒", nil];
+//                [alert show];
+//                
+//            });
+//        }
+//        
+//        
+//    } failure:^(NSError *error) {
+//        [MBProgressHUD showError:@"已经评课或当前无法评课"];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"给个好评吧" message:@"给过老师好评，是不是心情棒棒哒，也给我们个好评吧" delegate:self cancelButtonTitle:@"不，谢谢" otherButtonTitles:@"好哒", nil];
+//            [alert show];
+//            
+//        });
+//    }];
     
 }
 
 - (void)didRating {
     
-    for (RatingInfo *info in _rateArr) {
-        NSDictionary *param = @{@"url": info.url};
-        
-        [LJHTTPTool postHTTPWithURL:[NSString stringWithFormat:@"%@oneKey/evaluateOne",sinaURL] params:param success:^(id responseHTTP) {
-            
-            NSString *flag = [[NSString alloc] initWithData:responseHTTP encoding:NSUTF8StringEncoding];
-            if ([flag isEqualToString:@"OK"]){
-                
-                [MBProgressHUD showSuccess:@"成功+1"];
-            }
-            
-        } failure:^(NSError *error) {
-            
-            [MBProgressHUD showError:errorStr];
-        }];
-    }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"给个好评吧" message:@"给过老师好评，是不是心情棒棒哒，也给我们个好评吧" delegate:self cancelButtonTitle:@"不，谢谢" otherButtonTitles:@"好哒", nil];
-        [alert show];
-        
-    });
+//    for (RatingInfo *info in _rateArr) {
+//        NSDictionary *param = @{@"url": info.url};
+//        
+//        [LJHTTPTool postHTTPWithURL:[NSString stringWithFormat:@"%@oneKey/evaluateOne",sinaURL] params:param success:^(id responseHTTP) {
+//            
+//            NSString *flag = [[NSString alloc] initWithData:responseHTTP encoding:NSUTF8StringEncoding];
+//            if ([flag isEqualToString:@"OK"]){
+//                
+//                [MBProgressHUD showSuccess:@"成功+1"];
+//            }
+//            
+//        } failure:^(NSError *error) {
+//            
+//            [MBProgressHUD showError:errorStr];
+//        }];
+//    }
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"给个好评吧" message:@"给过老师好评，是不是心情棒棒哒，也给我们个好评吧" delegate:self cancelButtonTitle:@"不，谢谢" otherButtonTitles:@"好哒", nil];
+//        [alert show];
+//        
+//    });
     
     
 }

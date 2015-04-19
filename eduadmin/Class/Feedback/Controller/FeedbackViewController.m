@@ -43,25 +43,25 @@
 - (IBAction)upload {
     [MBProgressHUD showMessage:waitStr];
     
-    NSDictionary *param = @{@"info":self.infoTextView.text,
-                            @"contact":self.contactTextField.text
-                            };
-    
-    [LJHTTPTool postHTTPWithURL:[NSString stringWithFormat:@"%@feedback/advice",sinaURL] params:param success:^(id responseHTTP) {
-        NSString *flag = [[NSString alloc] initWithData:responseHTTP encoding:NSUTF8StringEncoding];
-        if ([flag isEqualToString:@"OK"]) {
-            
-            [MBProgressHUD hideHUD];
-            [MBProgressHUD showSuccess:@"感谢您的反馈"];
-            
-        }else{
-            [MBProgressHUD hideHUD];
-            [MBProgressHUD showError:@"出现异常"];
-        }
-    } failure:^(NSError *error) {
-        [MBProgressHUD hideHUD];
-        [MBProgressHUD showError:errorStr];
-    }];
+//    NSDictionary *param = @{@"info":self.infoTextView.text,
+//                            @"contact":self.contactTextField.text
+//                            };
+//    
+//    [LJHTTPTool postHTTPWithURL:[NSString stringWithFormat:@"%@feedback/advice",sinaURL] params:param success:^(id responseHTTP) {
+//        NSString *flag = [[NSString alloc] initWithData:responseHTTP encoding:NSUTF8StringEncoding];
+//        if ([flag isEqualToString:@"OK"]) {
+//            
+//            [MBProgressHUD hideHUD];
+//            [MBProgressHUD showSuccess:@"感谢您的反馈"];
+//            
+//        }else{
+//            [MBProgressHUD hideHUD];
+//            [MBProgressHUD showError:@"出现异常"];
+//        }
+//    } failure:^(NSError *error) {
+//        [MBProgressHUD hideHUD];
+//        [MBProgressHUD showError:errorStr];
+//    }];
 }
 
 @end

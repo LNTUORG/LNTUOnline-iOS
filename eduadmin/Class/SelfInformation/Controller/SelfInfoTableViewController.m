@@ -92,17 +92,17 @@
 - (void)refreshData
 {
     
-    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@student/info",sinaURL] params:nil success:^(id responseJSON) {
-        [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:selfInfoFileName]];
-        [self analyticalData:responseJSON];
-        [self.tableView headerEndRefreshing];
-        
-    } failure:^(NSError *error) {
-        
-        [MBProgressHUD showError:errorStr];
-        [self.tableView headerEndRefreshing];
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
+//    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@student/info",sinaURL] params:nil success:^(id responseJSON) {
+//        [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:selfInfoFileName]];
+//        [self analyticalData:responseJSON];
+//        [self.tableView headerEndRefreshing];
+//        
+//    } failure:^(NSError *error) {
+//        
+//        [MBProgressHUD showError:errorStr];
+//        [self.tableView headerEndRefreshing];
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }];
 }
 
 #pragma mark 解析数据

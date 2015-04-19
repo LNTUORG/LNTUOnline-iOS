@@ -6,11 +6,11 @@
 //  Copyright (c) 2014年 PUPBOSS. All rights reserved.
 //
 
-#define sinaURL @"http://lntuonline.pupboss.com/" // URL
-#define tokenURL @"http://eduadm.sinaapp.com/"
-#define noticeURL @"http://60.18.131.131:11180/academic/jwgg.jsp"
-#define wantedURL @"http://pupboss.com/2014/12/25/i-want-you/"
-#define PUPBOSSURL @"http://pupboss.com"
+#define MAINURL @"http://lntuv2.pupboss.com/api/" // 主服务器URL
+#define TOKENURL @"http://eduadm.sinaapp.com/"      // 推送服务器 URL
+#define noticeURL @"http://60.18.131.131:11180/academic/jwgg.jsp"   // 教务在线公告地址
+#define wantedURL @"http://pupboss.com/2014/12/25/i-want-you/"     // 招募地址
+#define PUPBOSSURL @"http://pupboss.com"       //  我的网站
 #define weiboURL @"http://www.weibo.com/yuanjingkeji"
 #define storeURL @"https://itunes.apple.com/cn/app/id955004763"
 
@@ -20,10 +20,13 @@
 #define LJQQ @"10771533"
 #define supportMail @"support@pupboss.com"
 
-#define userNameKey @"userName"
-#define pwdKey @"pwd"
-#define pushTokenOld @"pushTokenOld"
+#define userNameKey @"userName"   // 用户名 key
+#define pwdKey @"pwd"           // 密码 key
+#define pushTokenOld @"pushTokenOld"  // 旧Token key
 #define pushTokenNew @"pushTokenNew"
+#define LOGINTOKEN @"LOGINTOKEN"
+
+
 #define selfInfoFileName @"selfInfo.plist"
 #define scheduleFileName @"schedule.plist"
 #define examPlanFileName @"exam.plist"

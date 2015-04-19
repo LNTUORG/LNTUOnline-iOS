@@ -64,19 +64,19 @@
 - (void)refreshData
 {
     
-    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@examPlan/info",sinaURL] params:nil success:^(id responseJSON) {
-
-        [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:examPlanFileName]];
-        [self analyticalData:responseJSON];
-        [self.tableView headerEndRefreshing];
-        
-        
-    } failure:^(NSError *error) {
-        
-        [MBProgressHUD showError:nullStr];
-        [self.tableView headerEndRefreshing];
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
+//    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@examPlan/info",sinaURL] params:nil success:^(id responseJSON) {
+//
+//        [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:examPlanFileName]];
+//        [self analyticalData:responseJSON];
+//        [self.tableView headerEndRefreshing];
+//        
+//        
+//    } failure:^(NSError *error) {
+//        
+//        [MBProgressHUD showError:nullStr];
+//        [self.tableView headerEndRefreshing];
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }];
 }
 
 - (NSString *)getAddress:(NSString *)fileName {

@@ -15,8 +15,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="qw1-3L-O9t" kind="relationship" relationship="rootViewController" id="Swh-gj-ZBH"/>
                         <segue destination="WPt-nP-ME7" kind="show" identifier="nav2ab" id="83J-P6-Diw"/>
+                        <segue destination="xXI-28-uCV" kind="relationship" relationship="rootViewController" id="Tgz-EF-S0V"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W95-L0-xYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,23 +181,17 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="8SO-X4-IHd">
-                        <barButtonItem key="rightBarButtonItem" title="紧急故障" id="oWH-ms-bLL">
-                            <connections>
-                                <segue destination="KAC-kw-bGT" kind="show" identifier="login2about" id="ikN-CD-soS"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="紧急故障" id="oWH-ms-bLL"/>
                     </navigationItem>
                     <connections>
                         <outlet property="loginBtn" destination="mGd-pR-ujg" id="9hQ-n1-H92"/>
                         <outlet property="pwdText" destination="YBB-jX-WKU" id="uSF-OO-d06"/>
-                        <outlet property="upView" destination="p1a-5J-geR" id="I71-O7-q5e"/>
                         <outlet property="userNameText" destination="qoO-VG-WZC" id="QCp-m9-8ee"/>
-                        <segue destination="xXI-28-uCV" kind="show" identifier="loginToIndex" id="K5l-EL-5HK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ado-v8-9NU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3728" y="1254"/>
+            <point key="canvasLocation" x="-3744" y="2194"/>
         </scene>
         <!--Donate Table View Controller-->
         <scene sceneID="45k-Y8-f2p">
@@ -862,11 +856,12 @@
                         <segue destination="7A0-cS-P8P" kind="show" identifier="main2Exam" id="ie1-Au-vMw"/>
                         <segue destination="B7n-Ql-IZp" kind="show" identifier="main2Skill" id="eB5-rK-nNu"/>
                         <segue destination="091-QU-ePs" kind="presentation" identifier="main2Donate" id="4bF-S2-i08"/>
+                        <segue destination="qw1-3L-O9t" kind="presentation" identifier="index2login" id="86T-0P-xHa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMy-Sc-OIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3032" y="1249"/>
+            <point key="canvasLocation" x="-3744" y="1254"/>
         </scene>
         <!--意见反馈-->
         <scene sceneID="Eq6-NF-f1v">
@@ -1566,7 +1561,6 @@
         <image name="x" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ikN-CD-soS"/>
         <segue reference="QhY-E4-2IG"/>
     </inferredMetricsTieBreakers>
 </document>
