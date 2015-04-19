@@ -9,16 +9,18 @@
 #import "Common.h"
 #import "LJDeviceTool.h"
 #import "AFNetworking.h"
+#import "MBProgressHUD+LJ.h"
 
 @implementation LJHTTPTool
 
-+ (void)postJSONWithURL:(NSString *)url params:(NSDictionary *)params loginToken:(NSString *)token success:(void (^)(id))success failure:(void (^)(NSError *))failure
++ (void)postJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
 {
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    if (token) {
+    
+    if (TOKENFORNET) {
         
-        [mgr.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+        [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
     }
     // 2.发送请求
     [mgr POST:url parameters:params
@@ -29,17 +31,26 @@
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
           if (failure) {
               failure(error);
+              if ([operation.response statusCode] == 401) {
+                  [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
+              }
+              if ([operation.response statusCode] == 400) {
+                  [MBProgressHUD showError:@"用户名密码错误"];
+              }
+              else {
+                  [MBProgressHUD showError:ERRORSTR];
+              }
           }
       }];
 }
 
-+ (void)postHTTPWithURL:(NSString *)url params:(NSDictionary *)params loginToken:(NSString *)token success:(void (^)(id))success failure:(void (^)(NSError *))failure
++ (void)postHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
 {
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    if (token) {
+    if (TOKENFORNET) {
         
-        [mgr.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+        [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
     }
     
     mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -53,6 +64,11 @@
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
           if (failure) {
               failure(error);
+              if ([operation.response statusCode] == 401) {
+                  [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
+              } else {
+                  [MBProgressHUD showError:ERRORSTR];
+              }
           }
       }];
 }
@@ -77,14 +93,14 @@
     }];
 }
 
-+ (void)getJSONWithURL:(NSString *)url params:(NSDictionary *)params loginToken:(NSString *)token success:(void (^)(id))success failure:(void (^)(NSError *))failure
++ (void)getJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *))failure
 {
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
-    if (token) {
+    if (TOKENFORNET) {
         
-        [mgr.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+        [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
     }
     
     // 2.发送请求
@@ -95,20 +111,24 @@
          }
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          if (failure) {
-             failure(error);
-             NSLog(@"%@",error);
+             failure(operation, error);
+             if ([operation.response statusCode] == 401) {
+                 [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
+             } else {
+                 [MBProgressHUD showError:ERRORSTR];
+             }
          }
      }];
 }
 
-+ (void)getHTTPWithURL:(NSString *)url params:(NSDictionary *)params loginToken:(NSString *)token success:(void (^)(id))success failure:(void (^)(NSError *))failure
++ (void)getHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
 {
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
-    if (token) {
+    if (TOKENFORNET) {
         
-        [mgr.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+        [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
     }
     
     mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -122,6 +142,11 @@
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          if (failure) {
              failure(error);
+             if ([operation.response statusCode] == 401) {
+                 [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
+             } else {
+                 [MBProgressHUD showError:ERRORSTR];
+             }
          }
      }];
 }

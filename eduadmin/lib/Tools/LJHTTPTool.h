@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class AFHTTPRequestOperation;
 
 @interface LJHTTPTool : NSObject
 
@@ -17,7 +18,7 @@
  *  @param success 请求成功后的回调
  *  @param failure 请求失败后的回调
  */
-+ (void)postJSONWithURL:(NSString *)url params:(NSDictionary *)params loginToken:(NSString *)token success:(void (^)(id responseJSON))success failure:(void (^)(NSError *error))failure;
++ (void)postJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id responseJSON))success failure:(void (^)(NSError *error))failure;
 
 /**
  *  发送一个POST HTTP请求
@@ -27,7 +28,7 @@
  *  @param success 请求成功后的回调
  *  @param failure 请求失败后的回调
  */
-+ (void)postHTTPWithURL:(NSString *)url params:(NSDictionary *)params loginToken:(NSString *)token success:(void (^)(id responseHTTP))success failure:(void (^)(NSError *error))failure;
++ (void)postHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id responseHTTP))success failure:(void (^)(NSError *error))failure;
 
 /**
  *  发送一个POST请求(上传文件数据)
@@ -48,7 +49,7 @@
  *  @param success 请求成功后的回调
  *  @param failure 请求失败后的回调
  */
-+ (void)getJSONWithURL:(NSString *)url params:(NSDictionary *)params loginToken:(NSString *)token success:(void (^)(id responseJSON))success failure:(void (^)(NSError *error))failure;
++ (void)getJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id responseJSON))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 /**
  *  发送一个GET HTTP请求
@@ -58,7 +59,7 @@
  *  @param success 请求成功后的回调
  *  @param failure 请求失败后的回调
  */
-+ (void)getHTTPWithURL:(NSString *)url params:(NSDictionary *)params loginToken:(NSString *)token success:(void (^)(id responseHTTP))success failure:(void (^)(NSError *error))failure;
++ (void)getHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id responseHTTP))success failure:(void (^)(NSError *error))failure;
 
 + (void)feedbackError:(NSError *)error;
 

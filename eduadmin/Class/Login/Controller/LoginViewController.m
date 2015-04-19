@@ -85,31 +85,23 @@
     NSDictionary *param = @{@"userId": self.userNameText.text,
                             @"password": self.pwdText.text};
 
-    [LJHTTPTool postJSONWithURL:requestURL params:param loginToken:nil success:^(id responseJSON) {
+    [LJHTTPTool postJSONWithURL:requestURL params:param success:^(id responseJSON) {
         
         NSDictionary *dict = [NSDictionary dictionaryWithDictionary:responseJSON];
-        
-        if (dict[@"loginToken"]) {
             
-            [MBProgressHUD hideHUD];
-            [MBProgressHUD showSuccess:@"登录成功"];
-            
-            // 保存 token
-            NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-            [def setObject:dict[@"loginToken"] forKey:LOGINTOKEN];
-            
-            [def synchronize];
-            
-            [self dismissViewControllerAnimated:YES completion:nil];
-            
-        } else {
-            [MBProgressHUD hideHUD];
-            [MBProgressHUD showError:@"密码错误~"];
-        }
-    } failure:^(NSError *error) {
-        
         [MBProgressHUD hideHUD];
-        [MBProgressHUD showError:ERRORSTR];
+        [MBProgressHUD showSuccess:@"登录成功"];
+        
+        // 保存 token
+        NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+        [def setObject:dict[@"loginToken"] forKey:LOGINTOKEN];
+        
+        [def synchronize];
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUD];
     }];
     
 }

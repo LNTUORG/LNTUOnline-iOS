@@ -37,15 +37,14 @@
     self.def = [NSUserDefaults standardUserDefaults];
     
     _helloArr = @[@"爱生活不爱黑眼圈,快洗洗睡吧",@"一日之计在于晨,上课可别打瞌睡哦",@"坐等下课吃饭去",@"吃个饱饭睡个美容觉,这真是极好的",@"中午养足了精神吗?让我们一起渡过一个愉快的下午茶时间,不过没有茶喝o(╯□╰)o",@"静能生慧.仰观宇宙之大,俯察品类之盛.宇宙之大,每个生命都在孤寂"];
-    [self isNewest];
     
     [self getPhotoAndName];
     [self setHelloLableText];
     
 #pragma mark 推送相关
     
-    if ([self.def objectForKey:pushTokenNew]) {
-        if (![[self.def objectForKey:pushTokenOld] isEqualToString:[self.def objectForKey:pushTokenNew]]) {
+    if ([self.def objectForKey:PUSHTOKENNEW]) {
+        if (![[self.def objectForKey:PUSHTOKENOLD] isEqualToString:[self.def objectForKey:PUSHTOKENNEW]]) {
             
             [self sendTokenToServer];
         }
@@ -64,15 +63,14 @@
  */
 - (void)sendTokenToServer {
     
-//    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
-//    NSString *url = [NSString stringWithFormat:@"%@deviceToken?userId=%@&deviceToken=%@",tokenURL,[def objectForKey:userNameKey],[def objectForKey:pushTokenNew]];
-//    
-//    [LJHTTPTool getHTTPWithURL:url params:nil success:^(id responseHTTP) {
-//        
-//    } failure:^(NSError *error) {
-//        
-//    }];
+    NSString *url = [NSString stringWithFormat:@"%@deviceToken?userId=%@&deviceToken=%@",TOKENURL,[self.def objectForKey:USERNAMEKEY],[self.def objectForKey:PUSHTOKENNEW]];
+
+    [LJHTTPTool getHTTPWithURL:url params:nil success:^(id responseHTTP) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
     
 }
 
@@ -116,33 +114,36 @@
 
 - (void)getPhotoAndName
 {
-//    NSString *filePath = [LJFileTool getFilePath:[self getAddress:selfInfoFileName]];
-//    
-//    NSFileManager *mgr = [NSFileManager defaultManager];
-//    
-//    if ([mgr fileExistsAtPath:filePath]) {
-//        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
-//        
-//        self.nameLable.text = [NSString stringWithFormat:@"%@好,%@",[LJTimeTool getCurrentInterval],dict[@"name"]];
-//    }else{
-//        [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@student/info",sinaURL] params:nil success:^(id responseJSON) {
-//            [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:selfInfoFileName]];
-//            NSDictionary *dict = [NSDictionary dictionaryWithDictionary:responseJSON];
-//            
-//            [LJFileTool writeImageToFileName:[self getAddress:selfIconFileName] withImgURL:dict[@"photoUrl"]];
-//            
-//            self.nameLable.text = [NSString stringWithFormat:@"%@好,%@",[LJTimeTool getCurrentInterval],dict[@"name"]];
-//        } failure:^(NSError *error) {
-//            [MBProgressHUD showError:errorStr];
-//        }];
-//    }
+    NSString *filePath = [LJFileTool getFilePath:[self getAddress:selfInfoFileName]];
+
+    NSFileManager *mgr = [NSFileManager defaultManager];
+
+    if ([mgr fileExistsAtPath:filePath]) {
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+        
+        self.nameLable.text = [NSString stringWithFormat:@"%@好,%@",[LJTimeTool getCurrentInterval],dict[@"name"]];
+    } else {
+    
+        [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@student/~self", MAINURL] params:nil success:^(id responseJSON) {
+            
+            [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:selfInfoFileName]];
+            
+            NSDictionary *dict = [NSDictionary dictionaryWithDictionary:responseJSON];
+            [LJFileTool writeImageToFileName:[self getAddress:selfIconFileName] withImgURL:dict[@"photoUrl"]];
+            self.nameLable.text = [NSString stringWithFormat:@"%@好,%@",[LJTimeTool getCurrentInterval],dict[@"name"]];
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+        }];
+
+    }
 }
 
 
 //判断更新
-- (void)isNewest
-{
-    
+//- (void)isNewest
+//{
+
 //    NSString *app_Version = [LJDeviceTool getCurrentAppVersion];
 //    NSString *app_build = [LJDeviceTool getCurrentAppBuild];
 //    
@@ -165,7 +166,7 @@
 //    } failure:^(NSError *error) {
 //        
 //    }];
-}
+//}
 
 #pragma mark alert代理
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
