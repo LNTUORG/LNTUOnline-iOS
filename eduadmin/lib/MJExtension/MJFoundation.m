@@ -8,33 +8,19 @@
 
 #import "MJFoundation.h"
 #import "MJConst.h"
-#import <CoreData/CoreData.h>
 
-static NSSet *_foundationClasses;
+static NSArray *_foundationClasses;
 
 @implementation MJFoundation
 
-+ (void)load
++ (void)initialize
 {
-    _foundationClasses = [NSSet setWithObjects:
-                          [NSObject class],
-                          [NSURL class],
-                          [NSDate class],
-                          [NSNumber class],
-                          [NSDecimalNumber class],
-                          [NSData class],
-                          [NSMutableData class],
-                          [NSArray class],
-                          [NSMutableArray class],
-                          [NSDictionary class],
-                          [NSMutableDictionary class],
-                          [NSManagedObject class],
-                          [NSString class],
-                          [NSMutableString class], nil];
+    _foundationClasses = @[@"NSObject", @"NSNumber",@"NSArray", @"NSURL", @"NSMutableURL",@"NSMutableArray",@"NSData",@"NSMutableData",@"NSDate",@"NSDictionary",@"NSMutableDictionary",@"NSString",@"NSMutableString",@"NSException"];
 }
 
 + (BOOL)isClassFromFoundation:(Class)c
 {
-    return [_foundationClasses containsObject:c];
+//    MJAssertParamNotNil2(c, NO);
+    return [_foundationClasses containsObject:NSStringFromClass(c)];
 }
 @end

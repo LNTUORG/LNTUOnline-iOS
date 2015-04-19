@@ -23,12 +23,6 @@
 
 @interface SelfInfoTableViewController () <HeaderViewDelegate>
 
-{
-    NSArray *_basicInfoChinese; // 基本信息名
-    NSArray *_titles; // 标题
-    NSArray *_basicInfo; // 基本信息值
-    SelfInformation *_imformation;
-}
 
 @end
 
@@ -45,7 +39,7 @@
     // 下拉刷新
     [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"table"];
     
-    NSArray *tempArr = @[@"基本信息",@"高考分数",@"教育经历",@"家庭成员"];
+    NSArray *tempArr = @[@"基本信息", @"高考科目", @"个人简历", @"家庭情况", @"惩处信息"];
     NSMutableArray *arr = [NSMutableArray array];
     
     for (NSString *str in tempArr) {
@@ -53,9 +47,9 @@
         [arr addObject:ti];
     }
     
-    _titles = arr;
+    self.titles = arr;
     
-    _basicInfoChinese = @[@"学号",@"姓名",@"英文名",@"证件类型",@"证件号码",@"性别",@"院系",@"班级",@"考区",@"准考证号",@"外语",@"入学日期",@"毕业日期",@"家庭住址",@"联系电话",@"学籍表号",@"毕业去向",@"国籍",@"籍贯",@"生日",@"政治面貌",@"乘车区间",@"民族",@"专业",@"学生类别",@"高考总分",@"毕业院校",@"录取证号",@"入学方式",@"培养方式",@"邮政编码",@"电子邮箱",@"学生来源",@"备注"];
+    self.basicInfoKey = @[@"学号", @"姓名", @"英文名", @"证件类型", @"证件号码", @"性别", @"院系", @"班级", @"考区", @"准考证号", @"外语", @"入学日期", @"毕业日期", @"家庭住址", @"联系电话", @"学籍表号", @"毕业去向", @"国籍", @"籍贯", @"生日", @"政治面貌", @"乘车区间", @"民族", @"专业", @"学生类别", @"高考总分", @"毕业院校", @"录取证号", @"入学方式", @"培养方式", @"邮政编码", @"电子邮箱", @"学生来源", @"备注"];
     
     
     NSString *filePath = [LJFileTool getFilePath:[self getAddress:selfInfoFileName]];
@@ -80,7 +74,7 @@
     NSString *str = [def objectForKey:USERNAMEKEY];
     
     if (str.length) {
-        return [NSString stringWithFormat:@"%@%@",str,fileName];
+        return [NSString stringWithFormat:@"%@%@", str, fileName];
     } else {
         return @"error";
     }
@@ -111,8 +105,8 @@
     SelfInformation *student = [SelfInformation objectWithKeyValues:json];
     
     //基本信息
-    _basicInfo = @[student.userId,student.name,student.englishName,student.idCardType,student.idCardNum,student.sex,student.college,student.classInfo,student.entranceExamArea,student.entranceExamNum,student.foreignLanguage,student.dateOfAdmission,student.dateOfGraduation,student.homeAddress,student.contactTel,student.studentInfoTableNum,student.whereaboutsAftergraduation,student.nationality,student.birthplace,student.dateOfBirth,student.politicalAffiliation,student.travelRange,student.nation,student.major,student.studentType,student.entranceExamScore,student.graduateSchool,student.admissionNum,student.admissionType,student.educationType,student.zipCode,student.email,student.sourceOfStudent,student.remarks];
-    _imformation = student;
+    self.basicInfoValue = @[json[@"id"], student.name, student.englishName, student.idCardType, student.idCardNum, student.sex, student.college, student.classInfo, student.entranceExamArea, student.entranceExamNum, student.foreignLanguage, student.admissionTime, student.graduationTime, student.homeAddress, student.tel, student.studentInfoTableNum, student.whereaboutsAftergraduation, student.nationality, student.birthplace, student.birthday, student.politicalAffiliation, student.travelRange, student.nation, student.major, student.studentType, student.entranceExamScore, student.graduateSchool, student.admissionNum, student.admissionType, student.educationType, student.zipCode, student.email, student.sourceOfStudent, student.remarks];
+    self.imformation = student;
     
     NSString *filePath = [LJFileTool getFilePath:[self getAddress:selfIconFileName]];
     NSFileManager *mgr = [NSFileManager defaultManager];
@@ -130,7 +124,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return self.titles.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -138,9 +132,9 @@
     Title *title = _titles[section];
     
     if (title.isOpen) {
-        if (section == 0) return _basicInfo.count;
-        if (section == 1) return _imformation.entranceExams.count;
-        if (section == 2) return _imformation.educationExperiences.count * 2;
+        if (section == 0) return self.basicInfoValue.count;
+        if (section == 1) return self.imformation.entranceExams.count;
+        if (section == 2) return self.imformation.educationExperiences.count * 2;
         else return _imformation.familys.count;
     }else{
         return 0;
@@ -164,8 +158,8 @@
             studentInfo = [CellItem newCellItem];
         }
         
-        studentInfo.tName = _basicInfoChinese[indexPath.row];
-        studentInfo.tValue = _basicInfo[indexPath.row];
+        studentInfo.tName = self.basicInfoKey[indexPath.row];
+        studentInfo.tValue = self.basicInfoValue[indexPath.row];
         return studentInfo;
     }
     else if (indexPath.section == 1) {
@@ -198,10 +192,10 @@
         
         EducationExperience *e = _imformation.educationExperiences[x];
         if (flag == 0) {
-            studentInfo.tName =e.dateOfStart;
-            studentInfo.tValue = e.dateOfEnd;
+            studentInfo.tName =e.startTime;
+            studentInfo.tValue = e.endTime;
         }else{
-            studentInfo.tName =e.schoolName;
+            studentInfo.tName =e.schoolInfo;
             studentInfo.tValue = e.witness;
         }
         return studentInfo;

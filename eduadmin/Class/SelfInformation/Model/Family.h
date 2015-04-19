@@ -10,12 +10,12 @@
 
 @interface Family : NSObject
 
-@property (nonatomic,copy) NSString *name; // 姓名
-@property (nonatomic,copy) NSString *relationship; // 关系
-@property (nonatomic,copy) NSString *politicalAffiliation; // 政治面貌
-@property (nonatomic,copy) NSString *job; // 工作
-@property (nonatomic,copy) NSString *post; // 职位
-@property (nonatomic,copy) NSString *workLocation; // 工作地点
-@property (nonatomic,copy) NSString *tel; // 联系电话
+@property (nonatomic, copy) NSString *name; // 姓名
+@property (nonatomic, copy) NSString *relationship; // 关系
+@property (nonatomic, copy) NSString *politicalAffiliation; // 政治面貌
+@property (nonatomic, copy) NSString *job; // 工作
+@property (nonatomic, copy) NSString *post; // 职位
+@property (nonatomic, copy) NSString *workLocation; // 工作地点
+@property (nonatomic, copy) NSString *tel; // 联系电话
 
 @end

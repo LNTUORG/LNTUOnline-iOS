@@ -7,42 +7,28 @@
 //
 
 #import "NSObject+MJCoding.h"
-#import "NSObject+MJProperty.h"
-#import "MJProperty.h"
+#import "NSObject+MJMember.h"
 
 @implementation NSObject (MJCoding)
-
+/**
+ *  编码（将对象写入文件中）
+ */
 - (void)encode:(NSCoder *)encoder
 {
-    NSArray *ignoredCodingPropertyNames = nil;
-    if ([[self class] respondsToSelector:@selector(ignoredCodingPropertyNames)]) {
-        ignoredCodingPropertyNames = [[self class] ignoredCodingPropertyNames];
-    }
-    
-    [[self class] enumeratePropertiesWithBlock:^(MJProperty *property, BOOL *stop) {
-        // 检测是否被忽略
-        if ([ignoredCodingPropertyNames containsObject:property.name]) return;
-        
-        id value = [property valueFromObject:self];
-        if (value == nil) return;
-        [encoder encodeObject:value forKey:property.name];
+    [self enumerateIvarsWithBlock:^(MJIvar *ivar, BOOL *stop) {
+        if (ivar.isSrcClassFromFoundation) return;
+        [encoder encodeObject:ivar.value forKey:ivar.name];
     }];
 }
 
+/**
+ *  解码（从文件中解析对象）
+ */
 - (void)decode:(NSCoder *)decoder
 {
-    NSArray *ignoredCodingPropertyNames = nil;
-    if ([[self class] respondsToSelector:@selector(ignoredCodingPropertyNames)]) {
-        ignoredCodingPropertyNames = [[self class] ignoredCodingPropertyNames];
-    }
-    
-    [[self class] enumeratePropertiesWithBlock:^(MJProperty *property, BOOL *stop) {
-        // 检测是否被忽略
-        if ([ignoredCodingPropertyNames containsObject:property.name]) return;
-        
-        id value = [decoder decodeObjectForKey:property.name];
-        if (value == nil) return;
-        [property setValue:value forObject:self];
+    [self enumerateIvarsWithBlock:^(MJIvar *ivar, BOOL *stop) {
+        if (ivar.isSrcClassFromFoundation) return;
+        ivar.value = [decoder decodeObjectForKey:ivar.name];
     }];
 }
 @end

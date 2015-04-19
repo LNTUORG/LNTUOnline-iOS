@@ -10,7 +10,7 @@
 
 @interface EntranceExam : NSObject
 
-@property (nonatomic,copy) NSString *name; // 科目名
-@property (nonatomic,copy) NSString *score; // 分数
+@property (nonatomic, copy) NSString *name; // 科目名
+@property (nonatomic, copy) NSString *score; // 分数
 
 @end

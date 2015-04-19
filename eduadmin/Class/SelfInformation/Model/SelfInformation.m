@@ -11,12 +11,13 @@
 #import "EntranceExam.h"
 #import "EducationExperience.h"
 #import "Family.h"
+#import "DisciplinaryActions.h"
 
 @implementation SelfInformation
 
 - (NSDictionary *)objectClassInArray
 {
-    return @{@"entranceExams" : [EntranceExam class],@"educationExperiences" : [EducationExperience class],@"familys" : [Family class]};
+    return @{@"entranceExams": [EntranceExam class], @"educationExperiences": [EducationExperience class], @"familys": [Family class], @"disciplinaryActions": [DisciplinaryActions class]};
 }
 
 @end
