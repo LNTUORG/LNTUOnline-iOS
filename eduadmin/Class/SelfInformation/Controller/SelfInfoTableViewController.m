@@ -20,6 +20,7 @@
 #import "Common.h"
 #import "MJRefresh.h"
 #import "MBProgressHUD+LJ.h"
+#import "DisciplinaryActions.h"
 
 @interface SelfInfoTableViewController () <HeaderViewDelegate>
 
@@ -39,7 +40,7 @@
     // 下拉刷新
     [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"table"];
     
-    NSArray *tempArr = @[@"基本信息", @"高考科目", @"个人简历", @"家庭情况", @"惩处信息"];
+    NSArray *tempArr = @[@"基本信息", @"高考科目", @"个人简历", @"家庭情况"];
     NSMutableArray *arr = [NSMutableArray array];
     
     for (NSString *str in tempArr) {
@@ -51,6 +52,7 @@
     
     self.basicInfoKey = @[@"学号", @"姓名", @"英文名", @"证件类型", @"证件号码", @"性别", @"院系", @"班级", @"考区", @"准考证号", @"外语", @"入学日期", @"毕业日期", @"家庭住址", @"联系电话", @"学籍表号", @"毕业去向", @"国籍", @"籍贯", @"生日", @"政治面貌", @"乘车区间", @"民族", @"专业", @"学生类别", @"高考总分", @"毕业院校", @"录取证号", @"入学方式", @"培养方式", @"邮政编码", @"电子邮箱", @"学生来源", @"备注"];
     
+    self.disActKey = @[@"处分等级", @"处分日期", @"处分原因", @"撤销原因", @"状态", @"备注"];
     
     NSString *filePath = [LJFileTool getFilePath:[self getAddress:selfInfoFileName]];
     
@@ -105,8 +107,8 @@
     SelfInformation *student = [SelfInformation objectWithKeyValues:json];
     
     //基本信息
-    self.basicInfoValue = @[json[@"id"], student.name, student.englishName, student.idCardType, student.idCardNum, student.sex, student.college, student.classInfo, student.entranceExamArea, student.entranceExamNum, student.foreignLanguage, student.admissionTime, student.graduationTime, student.homeAddress, student.tel, student.studentInfoTableNum, student.whereaboutsAftergraduation, student.nationality, student.birthplace, student.birthday, student.politicalAffiliation, student.travelRange, student.nation, student.major, student.studentType, student.entranceExamScore, student.graduateSchool, student.admissionNum, student.admissionType, student.educationType, student.zipCode, student.email, student.sourceOfStudent, student.remarks];
-    self.imformation = student;
+    self.basicInfoValue = @[json[@"id"], student.name, student.englishName, student.idCardType, student.idCardNum, student.sex, student.college, student.classInfo, student.entranceExamArea, student.entranceExamNum, student.foreignLanguage, [self transDateToString:student.admissionTime], [self transDateToString: student.graduationTime], student.homeAddress, student.tel, student.studentInfoTableNum, student.whereaboutsAftergraduation, student.nationality, student.birthplace, [self transDateToString:student.birthday], student.politicalAffiliation, student.travelRange, student.nation, student.major, student.studentType, student.entranceExamScore, student.graduateSchool, student.admissionNum, student.admissionType, student.educationType, student.zipCode, student.email, student.sourceOfStudent, student.remarks];
+    self.information = student;
     
     NSString *filePath = [LJFileTool getFilePath:[self getAddress:selfIconFileName]];
     NSFileManager *mgr = [NSFileManager defaultManager];
@@ -133,16 +135,16 @@
     
     if (title.isOpen) {
         if (section == 0) return self.basicInfoValue.count;
-        if (section == 1) return self.imformation.entranceExams.count;
-        if (section == 2) return self.imformation.educationExperiences.count * 2;
-        else return _imformation.familys.count;
-    }else{
+        if (section == 1) return self.information.entranceExams.count;
+        if (section == 2) return self.information.educationExperiences.count * 2;
+        if (section == 3) return self.information.familys.count;
+        else return self.information.disciplinaryActions.count;
+    }else {
         return 0;
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //标识
     static NSString *ID0 = @"cellItem";
     static NSString *ID1 = @"familyCell";
@@ -154,7 +156,7 @@
         //缓存池
         CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0];
         
-        if (studentInfo == nil) {
+        if (!studentInfo) {
             studentInfo = [CellItem newCellItem];
         }
         
@@ -167,12 +169,12 @@
         //缓存池
         CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0];
         
-        if (studentInfo == nil) {
+        if (!studentInfo) {
             studentInfo = [CellItem newCellItem];
         }
         
         
-        EntranceExam *exam = _imformation.entranceExams[indexPath.row];
+        EntranceExam *exam = _information.entranceExams[indexPath.row];
         
         studentInfo.tName =exam.name;
         studentInfo.tValue = exam.score;
@@ -183,17 +185,17 @@
         //缓存池
         CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0];
         
-        if (studentInfo == nil) {
+        if (!studentInfo) {
             studentInfo = [CellItem newCellItem];
         }
         
         NSInteger x = indexPath.row/2;
         NSInteger flag = indexPath.row%2;
         
-        EducationExperience *e = _imformation.educationExperiences[x];
+        EducationExperience *e = _information.educationExperiences[x];
         if (flag == 0) {
-            studentInfo.tName =e.startTime;
-            studentInfo.tValue = e.endTime;
+            studentInfo.tName = [self transDateToString:e.startTime];
+            studentInfo.tValue = [self transDateToString:e.endTime];
         }else{
             studentInfo.tName =e.schoolInfo;
             studentInfo.tValue = e.witness;
@@ -206,11 +208,11 @@
         //缓存池
         familyCell *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID1];
         
-        if (studentInfo == nil) {
+        if (!studentInfo) {
             studentInfo = [familyCell  newFamilyCell];
         }
         
-        Family *f = _imformation.familys[indexPath.row];
+        Family *f = _information.familys[indexPath.row];
         
         studentInfo.tName =f.name;
         studentInfo.tRelationship = f.relationship;
@@ -221,7 +223,7 @@
         studentInfo.tTel = f.tel;
         return studentInfo;
     }
-    else{
+    else {
         
         //缓存池
         CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0];
@@ -256,6 +258,13 @@
 - (void)headerViewDidClickNameView:(HeaderView *)headerView
 {
     [self.tableView reloadData];
+}
+
+- (NSString *)transDateToString:(NSDate *)date {
+    
+    NSArray *arr = [date.description componentsSeparatedByString:@"T"];
+    
+    return arr[0];
 }
 
 @end
