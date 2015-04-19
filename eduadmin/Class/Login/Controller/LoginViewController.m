@@ -98,10 +98,25 @@
 
     [LJHTTPTool postJSONWithURL:requestURL params:param loginToken:nil success:^(id responseJSON) {
         
-        NSLog(@"=======%@----------------",responseJSON);
-        [MBProgressHUD hideHUD];
-        [MBProgressHUD showSuccess:@"登录成功"];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        NSDictionary *dict = [NSDictionary dictionaryWithDictionary:responseJSON];
+        
+        if (dict[@"loginToken"]) {
+            
+            [MBProgressHUD hideHUD];
+            [MBProgressHUD showSuccess:@"登录成功"];
+            
+            // 保存 token
+            NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+            [def setObject:dict[@"loginToken"] forKey:LOGINTOKEN];
+            
+            [def synchronize];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        } else {
+            [MBProgressHUD hideHUD];
+            [MBProgressHUD showError:@"密码错误~"];
+        }
     } failure:^(NSError *error) {
         
         [MBProgressHUD hideHUD];
