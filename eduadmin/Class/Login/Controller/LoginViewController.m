@@ -61,10 +61,10 @@
 {
     
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    if ([def objectForKey:userNameKey]) {
+    if ([def objectForKey:USERNAMEKEY]) {
         
-        self.userNameText.text = [def objectForKey:userNameKey];
-        self.pwdText.text = [def objectForKey:pwdKey];
+        self.userNameText.text = [def objectForKey:USERNAMEKEY];
+        self.pwdText.text = [def objectForKey:PWDKEY];
         self.loginBtn.enabled = YES;
     }
     
@@ -81,8 +81,8 @@
 {
     
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    [def setObject:self.userNameText.text forKey:userNameKey];
-    [def setObject:self.pwdText.text forKey:pwdKey];
+    [def setObject:self.userNameText.text forKey:USERNAMEKEY];
+    [def setObject:self.pwdText.text forKey:PWDKEY];
     [def synchronize];
     
 }
@@ -90,7 +90,7 @@
 - (IBAction)login {
     [self existKeyboard];
     [self recordPwd];
-    [MBProgressHUD showMessage:waitStr];
+    [MBProgressHUD showMessage:WAITSTR];
     
     NSString *requestURL = [NSString stringWithFormat:@"%@account/login", MAINURL];
     NSDictionary *param = @{@"userId": self.userNameText.text,
@@ -101,11 +101,11 @@
         NSLog(@"=======%@----------------",responseJSON);
         [MBProgressHUD hideHUD];
         [MBProgressHUD showSuccess:@"登录成功"];
+        [self dismissViewControllerAnimated:YES completion:nil];
     } failure:^(NSError *error) {
         
-        NSLog(@"%@",error);
         [MBProgressHUD hideHUD];
-        [MBProgressHUD showError:@"用户名或密码错误"];
+        [MBProgressHUD showError:ERRORSTR];
     }];
     
 }

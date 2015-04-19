@@ -77,7 +77,7 @@
     
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
-    NSString *str = [def objectForKey:userNameKey];
+    NSString *str = [def objectForKey:USERNAMEKEY];
     
     if (str.length) {
         return [NSString stringWithFormat:@"%@%@",str,fileName];

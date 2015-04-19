@@ -41,7 +41,7 @@
 }
 
 - (IBAction)upload {
-    [MBProgressHUD showMessage:waitStr];
+    [MBProgressHUD showMessage:WAITSTR];
     
 //    NSDictionary *param = @{@"info":self.infoTextView.text,
 //                            @"contact":self.contactTextField.text

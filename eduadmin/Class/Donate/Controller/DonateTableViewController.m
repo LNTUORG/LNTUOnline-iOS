@@ -24,7 +24,7 @@
     
     _purchasedArr = [NSMutableArray array];
     
-    [MBProgressHUD showMessage:waitStr];
+    [MBProgressHUD showMessage:WAITSTR];
     
     [UIApplication sharedApplication].statusBarHidden = YES;
     
