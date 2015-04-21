@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-@class MyGrade;
-@class UnPassGrade;
 
 @interface DetailGradeController : UIViewController
 

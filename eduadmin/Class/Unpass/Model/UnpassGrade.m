@@ -7,7 +7,14 @@
 //
 
 #import "UnpassGrade.h"
+#import "MJExtension.h"
+#import "UnpassGradeRecord.h"
 
 @implementation UnpassGrade
+
+- (NSDictionary *)objectClassInArray {
+    
+    return @{@"records": [UnpassGradeRecord class]};
+}
 
 @end

@@ -10,16 +10,15 @@
 #import "MBProgressHUD+LJ.h"
 #import "LJTools.h"
 #import "Common.h"
-#import "DetailGradeController.h"
 #import "UnpassGrade.h"
 #import "MJExtension.h"
 #import "PartGradeCell.h"
 #import "MJRefresh.h"
+#import "DetailTableViewController.h"
 
 @interface UnpassScoreTableViewController ()
-{
-    NSArray *_gradeArr;
-}
+
+
 @end
 
 @implementation UnpassScoreTableViewController
@@ -27,7 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.averageOfCreditPointInfo.numberOfLines = 0;
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     // 下拉刷新
@@ -38,7 +36,7 @@
 }
 
 - (void)refreshData {
-    [self getAverageOfCreditPointInfo];
+    
     [self getUnpassCoursesInfo];
 }
 
@@ -65,46 +63,34 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *arr = @[_gradeArr[indexPath.row],@"1"];
+    UnpassGrade *grade = self.gradeArr[indexPath.row];
     
-    [self performSegueWithIdentifier:@"unpass2detail" sender:arr];
+    [self performSegueWithIdentifier:@"unpass2detail" sender:grade.records];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    DetailGradeController *con = segue.destinationViewController;
-    con.arr = sender;
+    DetailTableViewController *con = segue.destinationViewController;
+    con.records = sender;
 }
 
-- (void)getAverageOfCreditPointInfo
-{
-//    [LJHTTPTool getHTTPWithURL:[NSString stringWithFormat:@"%@grades/averageOfCreditPointInfo",sinaURL] params:nil success:^(id responseHTTP) {
-//        
-//        NSString *response = [[NSString alloc] initWithData:responseHTTP encoding:NSUTF8StringEncoding];
-//        
-//        //用回车隔开
-//        NSArray *result = [response componentsSeparatedByString:@"\n"];
-//        self.averageOfCreditPointInfo.text = result[1];
-//    } failure:^(NSError *error) {
-//        self.averageOfCreditPointInfo.text = errorStr;
-//    }];
-}
 
 - (void)getUnpassCoursesInfo
 {
-//    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@grades/unpassCoursesInfo",sinaURL] params:nil success:^(id responseJSON) {
-//        
-//        _gradeArr = [UnpassGrade objectArrayWithKeyValuesArray:responseJSON];
-//        [self.tableView reloadData];
-//        [self.tableView headerEndRefreshing];
-//        
-//    } failure:^(NSError *error) {
-//        
-//        [MBProgressHUD showError:@"居然无挂科，你超神了！"];
-//        [self.tableView headerEndRefreshing];
-//    }];
+    
+    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@unpass-course/~self", MAINURL] params:nil success:^(id responseJSON) {
+        
+        self.gradeArr = [UnpassGrade objectArrayWithKeyValuesArray:responseJSON];
+        [self.tableView reloadData];
+        [self.tableView headerEndRefreshing];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        [MBProgressHUD showError:@"居然无挂科，你超神了！"];
+        [self.tableView headerEndRefreshing];
+    }];
 }
 
 @end

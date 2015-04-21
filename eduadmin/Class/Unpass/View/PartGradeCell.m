@@ -17,34 +17,32 @@
     _unPassGrade = unPassGrade;
     
     self.name.text = unPassGrade.name;
-    self.score.text = unPassGrade.score;
+    self.credit.text = unPassGrade.credit;
     
-    self.score.textColor = [UIColor redColor];
-    
-    self.year.text = unPassGrade.semester;
+    self.selectType.text = unPassGrade.selectType;
 }
 
-- (void)setGrade:(MyGrade *)grade
-{
-    _grade = grade;
-    
-    if ([grade.score isEqualToString:@"良"]||[grade.score isEqualToString:@"中"]||[grade.score isEqualToString:@"及格"]||[grade.score isEqualToString:@"合格"]||[grade.score isEqualToString:@"优秀"]) {
-        self.score.textColor = [UIColor orangeColor];
-    }else if ([grade.score intValue] < 60) {
-        self.score.textColor = [UIColor redColor];
-    }else if([grade.score intValue] <= 80){
-        self.score.textColor = [UIColor orangeColor];
-    }else{
-        self.score.textColor = [UIColor greenColor];
-    }
-    
-    self.name.text = grade.name;
-    self.score.text = grade.score;
-    self.year.text = grade.semester;
+//- (void)setGrade:(MyGrade *)grade
+//{
+//    _grade = grade;
+//    
+//    if ([grade.score isEqualToString:@"良"]||[grade.score isEqualToString:@"中"]||[grade.score isEqualToString:@"及格"]||[grade.score isEqualToString:@"合格"]||[grade.score isEqualToString:@"优秀"]) {
+//        self.score.textColor = [UIColor orangeColor];
+//    }else if ([grade.score intValue] < 60) {
+//        self.score.textColor = [UIColor redColor];
+//    }else if([grade.score intValue] <= 80){
+//        self.score.textColor = [UIColor orangeColor];
+//    }else{
+//        self.score.textColor = [UIColor greenColor];
+//    }
+//    
+//    self.name.text = grade.name;
+//    self.score.text = grade.score;
+//    self.year.text = grade.semester;
+//
+//}
 
-}
-
-+ (id)newPartGradeCell
++ (instancetype)newPartGradeCell
 {
     return [[NSBundle mainBundle] loadNibNamed:@"PartGradeCell" owner:nil options:nil][0];
 }

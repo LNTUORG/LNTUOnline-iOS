@@ -45,6 +45,19 @@
     self.navigationItem.title = [NSString stringWithFormat:@"第%d周", [LJTimeTool getCurrentWeek] - 10];
     
     self.titleArray = @[@"星期日", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六"];
+    
+    
+    NSString *filePath = [LJFileTool getFilePath:[self getAddress:scheduleFileName]];
+    
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    
+    if ([mgr fileExistsAtPath:filePath]) {
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+        
+        self.courseArray = [self getCourseArray:dict];
+    }else{
+        [self refreshData];
+    }
 }
 
 - (void)viewDidUnload
@@ -81,18 +94,6 @@
     tableView.tableFooterView = [[UIView alloc] init];
     tableView.alwaysBounceVertical = NO;
     tableView.backgroundColor = [UIColor colorWithRed:214/255.0 green:227/255.0 blue:181/255.0 alpha:1];
-
-    NSString *filePath = [LJFileTool getFilePath:[self getAddress:scheduleFileName]];
-    
-    NSFileManager *mgr = [NSFileManager defaultManager];
-    
-    if ([mgr fileExistsAtPath:filePath]) {
-        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
-        
-        self.courseArray = [self getCourseArray:dict];
-    }else{
-        [self refreshData];
-    }
 
     return tableView;
 }
@@ -207,21 +208,12 @@
     NSDictionary *param = @{@"year": @"2015", @"term": @"春"};
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@class-table/~self", MAINURL] params:param success:^(id responseJSON) {
         
-        NSLog(@"%@", responseJSON);
-        
+        [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:scheduleFileName]];
+        [self.iCaView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@", error);
+        [MBProgressHUD showError:NULLSTR];
     }];
     
-//    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@curriculum/info",sinaURL] params:nil success:^(id responseJSON) {
-//        
-//        [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:scheduleFileName]];
-//        
-//        [self.iCaView reloadData];
-//    } failure:^(NSError *error) {
-//        
-//        [MBProgressHUD showError:nullStr];
-//    }];
 }
 
 - (IBAction)reloadCourse:(id)sender {

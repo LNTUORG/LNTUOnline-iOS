@@ -10,6 +10,6 @@
 
 @interface UnpassScoreTableViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *averageOfCreditPointInfo;
+@property (strong, nonatomic) NSArray *gradeArr;
 
 @end

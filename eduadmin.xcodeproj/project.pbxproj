@@ -58,6 +58,10 @@
 		D516A84E1AE3C03E00C20941 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D516A8411AE3C03E00C20941 /* NSObject+MJCoding.m */; };
 		D516A84F1AE3C03E00C20941 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D516A8431AE3C03E00C20941 /* NSObject+MJKeyValue.m */; };
 		D516A8501AE3C03E00C20941 /* NSObject+MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = D516A8451AE3C03E00C20941 /* NSObject+MJMember.m */; };
+		D53537581AE5FD0E0025A1E7 /* UnpassGradeRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = D53537571AE5FD0E0025A1E7 /* UnpassGradeRecord.m */; };
+		D535375B1AE604790025A1E7 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D535375A1AE604790025A1E7 /* DetailTableViewController.m */; };
+		D535375F1AE605130025A1E7 /* DetailGradeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D535375D1AE605130025A1E7 /* DetailGradeCell.m */; };
+		D53537601AE605130025A1E7 /* DetailGradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D535375E1AE605130025A1E7 /* DetailGradeCell.xib */; };
 		D53E75C61A93996700CBE422 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53E75C51A93996700CBE422 /* Launch Screen.xib */; };
 		D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55248B91A6A97730073942F /* StoreKit.framework */; };
 		D55F55691AE1727900A7FD53 /* DayClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F55671AE1727900A7FD53 /* DayClassTableViewCell.m */; };
@@ -205,6 +209,13 @@
 		D516A8431AE3C03E00C20941 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
 		D516A8441AE3C03E00C20941 /* NSObject+MJMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJMember.h"; sourceTree = "<group>"; };
 		D516A8451AE3C03E00C20941 /* NSObject+MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJMember.m"; sourceTree = "<group>"; };
+		D53537561AE5FD0E0025A1E7 /* UnpassGradeRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnpassGradeRecord.h; sourceTree = "<group>"; };
+		D53537571AE5FD0E0025A1E7 /* UnpassGradeRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnpassGradeRecord.m; sourceTree = "<group>"; };
+		D53537591AE604790025A1E7 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
+		D535375A1AE604790025A1E7 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
+		D535375C1AE605130025A1E7 /* DetailGradeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGradeCell.h; sourceTree = "<group>"; };
+		D535375D1AE605130025A1E7 /* DetailGradeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGradeCell.m; sourceTree = "<group>"; };
+		D535375E1AE605130025A1E7 /* DetailGradeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailGradeCell.xib; sourceTree = "<group>"; };
 		D53E75C51A93996700CBE422 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		D55248B91A6A97730073942F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D55F55661AE1727900A7FD53 /* DayClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayClassTableViewCell.h; sourceTree = "<group>"; };
@@ -385,6 +396,8 @@
 				D51602061A54200A003AB6A9 /* UnpassScoreTableViewController.m */,
 				D51602191A542158003AB6A9 /* DetailGradeController.h */,
 				D516021A1A542158003AB6A9 /* DetailGradeController.m */,
+				D53537591AE604790025A1E7 /* DetailTableViewController.h */,
+				D535375A1AE604790025A1E7 /* DetailTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -396,6 +409,8 @@
 				D51602091A542035003AB6A9 /* MyGrade.m */,
 				D516020A1A542035003AB6A9 /* UnpassGrade.h */,
 				D516020B1A542035003AB6A9 /* UnpassGrade.m */,
+				D53537561AE5FD0E0025A1E7 /* UnpassGradeRecord.h */,
+				D53537571AE5FD0E0025A1E7 /* UnpassGradeRecord.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -406,6 +421,9 @@
 				D516020E1A542075003AB6A9 /* PartGradeCell.h */,
 				D516020F1A542075003AB6A9 /* PartGradeCell.m */,
 				D51602101A542075003AB6A9 /* PartGradeCell.xib */,
+				D535375C1AE605130025A1E7 /* DetailGradeCell.h */,
+				D535375D1AE605130025A1E7 /* DetailGradeCell.m */,
+				D535375E1AE605130025A1E7 /* DetailGradeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1000,6 +1018,7 @@
 				D50C16011A5AAA23009ED8B5 /* MBProgressHUD.bundle in Resources */,
 				D51602201A5421D5003AB6A9 /* ExamPlanCell.xib in Resources */,
 				D58E1CBC1A51B94C00B159ED /* Main.storyboard in Resources */,
+				D53537601AE605130025A1E7 /* DetailGradeCell.xib in Resources */,
 				D51602121A542075003AB6A9 /* PartGradeCell.xib in Resources */,
 				D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */,
 				D51601F71A541CBB003AB6A9 /* familyCell.xib in Resources */,
@@ -1047,6 +1066,7 @@
 				D51602181A542131003AB6A9 /* RatingInfo.m in Sources */,
 				D51601E51A541AEF003AB6A9 /* SelfInformation.m in Sources */,
 				D516021B1A542158003AB6A9 /* DetailGradeController.m in Sources */,
+				D535375F1AE605130025A1E7 /* DetailGradeCell.m in Sources */,
 				D58E1D161A51B98800B159ED /* AFHTTPRequestOperation.m in Sources */,
 				D51601F11A541BDC003AB6A9 /* Title.m in Sources */,
 				D57D8C3F1A8475FB001FA546 /* UIView+MJExtension.m in Sources */,
@@ -1056,11 +1076,13 @@
 				D516A84C1AE3C03E00C20941 /* MJType.m in Sources */,
 				D51602341A542364003AB6A9 /* FeedbackViewController.m in Sources */,
 				D516A84E1AE3C03E00C20941 /* NSObject+MJCoding.m in Sources */,
+				D535375B1AE604790025A1E7 /* DetailTableViewController.m in Sources */,
 				D51601E81A541BA7003AB6A9 /* EducationExperience.m in Sources */,
 				D516A8501AE3C03E00C20941 /* NSObject+MJMember.m in Sources */,
 				D5F936C61A52ED1B00EA112F /* AboutTableViewController.m in Sources */,
 				D57D8C3E1A8475FB001FA546 /* UIScrollView+MJRefresh.m in Sources */,
 				D516A84A1AE3C03E00C20941 /* MJMember.m in Sources */,
+				D53537581AE5FD0E0025A1E7 /* UnpassGradeRecord.m in Sources */,
 				D516A8471AE3C03E00C20941 /* MJConst.m in Sources */,
 				D516020C1A542035003AB6A9 /* MyGrade.m in Sources */,
 				D58E1D171A51B98800B159ED /* AFHTTPRequestOperationManager.m in Sources */,
