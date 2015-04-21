@@ -24,7 +24,7 @@
 
         
     NSString *i = [NSString stringWithFormat:@"%@",grade.serialNum];
-    NSString *c = [NSString stringWithFormat:@"%f",grade.credit];
+    NSString *c = [NSString stringWithFormat:@"%2.1f",grade.credit];
     
     NSString *s = [NSString stringWithFormat:@"%@年%@", grade.year, grade.term];
     
@@ -38,10 +38,6 @@
     self.remarks.text = grade.remarks;
     self.examType.text = grade.examType;
     self.semester.text = s;
-
-    
-    
-    
 }
 
 @end

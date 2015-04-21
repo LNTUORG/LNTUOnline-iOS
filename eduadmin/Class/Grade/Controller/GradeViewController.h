@@ -18,6 +18,8 @@
 @property (copy, nonatomic) NSString *year;
 @property (copy, nonatomic) NSString *term;
 
+@property (copy, nonatomic) NSString *averageCredit;
+
 @property (weak, nonatomic) IBOutlet UIPickerView *pickView;
 
 @property (weak, nonatomic) IBOutlet UIControl *pickerDevice;

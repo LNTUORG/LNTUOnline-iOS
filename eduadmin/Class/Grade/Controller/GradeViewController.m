@@ -16,7 +16,7 @@
 #import "DetailGradeController.h"
 #import "PartGradeCell.h"
 
-@interface GradeViewController () <UIAlertViewDelegate,UIPickerViewDelegate>
+@interface GradeViewController () <UIAlertViewDelegate, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
 
 @end
@@ -63,24 +63,16 @@
     
 }
 
-- (void)refreshData {
-    
-//    [self getGrade:[NSString stringWithFormat:@"%@grades/courseScoresInfo?year=%@&term=%@",sinaURL,_year,_term]];
-}
-
 - (void)getGradeInfo
 {
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@grades/~self", MAINURL] params:nil success:^(id responseJSON) {
         
         self.allGradeArr = [MyGrade objectArrayWithKeyValuesArray:responseJSON[@"courseScores"]];
         
-        for (MyGrade *grade in self.allGradeArr) {
-            
-            if ([grade.year isEqualToString:self.year] && [grade.term isEqualToString:self.term]) {
-                
-                [self.currentGradeArr addObject:grade];
-            }
-        }
+        NSDictionary *dict = responseJSON[@"averageCredit"];
+        self.averageCredit = dict[@"summary"];
+        
+        [self initTheCurrentScoreArr];
         
         [self.gradeView reloadData];
         [self.gradeView headerEndRefreshing];
@@ -90,6 +82,19 @@
         [MBProgressHUD showError:NULLSTR];
         [self.gradeView headerEndRefreshing];
     }];
+}
+
+- (void)initTheCurrentScoreArr {
+    
+    [self.currentGradeArr removeAllObjects];
+    
+    for (MyGrade *grade in self.allGradeArr) {
+        
+        if ([grade.year isEqualToString:self.year] && [grade.term isEqualToString:self.term]) {
+            
+            [self.currentGradeArr addObject:grade];
+        }
+    }
 }
 
 #pragma mark pickerView 代理方法 and 数据源
@@ -130,18 +135,33 @@
     if (component == 0) {
         
         self.year = self.yearArr[row];
-        [self.gradeView headerBeginRefreshing];
+        
+        [self initTheCurrentScoreArr];
+        [self.gradeView reloadData];
+        
         self.yearLable.text = [NSString stringWithFormat:@"%@年", self.year];
         
     } else {
         
         self.term = self.termArr[row];
-        [self.gradeView headerBeginRefreshing];
+        
+        [self initTheCurrentScoreArr];
+        [self.gradeView reloadData];
         
         self.termLable.text = self.term;
     }
 }
 #pragma mark - Table view data source
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    NSInteger x = ([[UIScreen mainScreen] bounds].size.width - 300)/2;
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x, 8, 300, 25)];
+    label.text = self.averageCredit;
+    label.textAlignment = NSTextAlignmentCenter;
+    return label;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
