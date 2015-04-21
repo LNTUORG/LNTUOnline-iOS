@@ -15,11 +15,13 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *name;
 
+@property (weak, nonatomic) IBOutlet UILabel *creditLable;
+
 @property (weak, nonatomic) IBOutlet UILabel *credit;
 
 @property (weak, nonatomic) IBOutlet UILabel *selectType;
 
-@property (nonatomic, strong) MyGrade *grade;
+@property (nonatomic, strong) MyGrade *myGrade;
 @property (nonatomic, strong) UnpassGrade *unPassGrade;
 
 + (instancetype)newPartGradeCell;

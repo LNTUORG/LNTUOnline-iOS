@@ -13,7 +13,7 @@
 @property (nonatomic, copy) NSString *num; // 课程编号
 @property (nonatomic, copy) NSString *name; // 课程名
 @property (nonatomic, copy) NSString *serialNum; // 课序号
-@property (nonatomic, copy) NSString *credit; // 学分
+@property (nonatomic, assign) float credit; // 学分
 @property (nonatomic, copy) NSString *selectType; // 选课属性
 
 @property (strong, nonatomic) NSArray *records;

@@ -17,30 +17,35 @@
     _unPassGrade = unPassGrade;
     
     self.name.text = unPassGrade.name;
-    self.credit.text = unPassGrade.credit;
+    self.credit.text = [NSString stringWithFormat:@"%2.1f", unPassGrade.credit];
     
     self.selectType.text = unPassGrade.selectType;
 }
 
-//- (void)setGrade:(MyGrade *)grade
-//{
-//    _grade = grade;
-//    
-//    if ([grade.score isEqualToString:@"良"]||[grade.score isEqualToString:@"中"]||[grade.score isEqualToString:@"及格"]||[grade.score isEqualToString:@"合格"]||[grade.score isEqualToString:@"优秀"]) {
-//        self.score.textColor = [UIColor orangeColor];
-//    }else if ([grade.score intValue] < 60) {
-//        self.score.textColor = [UIColor redColor];
-//    }else if([grade.score intValue] <= 80){
-//        self.score.textColor = [UIColor orangeColor];
-//    }else{
-//        self.score.textColor = [UIColor greenColor];
-//    }
-//    
-//    self.name.text = grade.name;
-//    self.score.text = grade.score;
-//    self.year.text = grade.semester;
-//
-//}
+- (void)setMyGrade:(MyGrade *)myGrade {
+
+    _myGrade = myGrade;
+    
+    self.name.text = myGrade.name;
+    
+    self.creditLable.text = @"成绩";
+    
+    self.credit.text = myGrade.score;
+    
+    if ([myGrade.level isEqualToString:@"GREAT"]) {
+        self.credit.textColor = [UIColor greenColor];
+    }
+    else if ([myGrade.level isEqualToString:@"NORMAL"]) {
+        
+        self.credit.textColor = [UIColor orangeColor];
+    }
+    else if ([myGrade.level isEqualToString:@"UNPASS"]) {
+        
+        self.credit.textColor = [UIColor redColor];
+    }
+    
+    self.selectType.text = [NSString stringWithFormat:@"%@年%@", myGrade.year, myGrade.term];
+}
 
 + (instancetype)newPartGradeCell
 {

@@ -54,31 +54,17 @@
     
     self.disActKey = @[@"处分等级", @"处分日期", @"处分原因", @"撤销原因", @"状态", @"备注"];
     
-    NSString *filePath = [LJFileTool getFilePath:[self getAddress:selfInfoFileName]];
+    NSString *filePath = [LJFileTool getFilePath:selfInfoFileName];
     
     NSFileManager *mgr = [NSFileManager defaultManager];
     
     if ([mgr fileExistsAtPath:filePath]) {
+        
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
         [self analyticalData:dict];
         
-    }else{
-        [self refreshData];
-    }
-    
-}
-
-
-- (NSString *)getAddress:(NSString *)fileName {
-    
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    
-    NSString *str = [def objectForKey:USERNAMEKEY];
-    
-    if (str.length) {
-        return [NSString stringWithFormat:@"%@%@", str, fileName];
     } else {
-        return @"error";
+        [self refreshData];
     }
     
 }
@@ -89,7 +75,7 @@
 {
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@student/~self", MAINURL] params:nil success:^(id responseJSON) {
         
-        [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:selfInfoFileName]];
+        [LJFileTool writeToFileContent:responseJSON withFileName:selfInfoFileName];
         
         [self analyticalData:responseJSON];
         [self.tableView headerEndRefreshing];
@@ -108,14 +94,18 @@
     
     //基本信息
     self.basicInfoValue = @[json[@"id"], student.name, student.englishName, student.idCardType, student.idCardNum, student.sex, student.college, student.classInfo, student.entranceExamArea, student.entranceExamNum, student.foreignLanguage, [self transDateToString:student.admissionTime], [self transDateToString: student.graduationTime], student.homeAddress, student.tel, student.studentInfoTableNum, student.whereaboutsAftergraduation, student.nationality, student.birthplace, [self transDateToString:student.birthday], student.politicalAffiliation, student.travelRange, student.nation, student.major, student.studentType, student.entranceExamScore, student.graduateSchool, student.admissionNum, student.admissionType, student.educationType, student.zipCode, student.email, student.sourceOfStudent, student.remarks];
+    
     self.information = student;
     
-    NSString *filePath = [LJFileTool getFilePath:[self getAddress:selfIconFileName]];
+    NSString *filePath = [LJFileTool getFilePath:selfIconFileName];
+    
     NSFileManager *mgr = [NSFileManager defaultManager];
     if ([mgr fileExistsAtPath:filePath]) {
         self.personalImg.image = [UIImage imageWithContentsOfFile:filePath];
-    }else{
-        [LJFileTool writeImageToFileName:[self getAddress:selfIconFileName] withImgURL:student.photoUrl];
+        
+    } else {
+        
+        [LJFileTool writeImageToFileName:selfIconFileName withImgURL:student.photoUrl];
         self.personalImg.image = [UIImage imageWithContentsOfFile:filePath];
     }
     

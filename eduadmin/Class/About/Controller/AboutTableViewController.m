@@ -45,7 +45,7 @@
         NSString *content = [NSString stringWithFormat:@"系统版本: iOS %@ \n设备型号: %@ \n软件版本: %@ \n\n", [LJDeviceTool getCurrentSystemVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentAppVersion]];
         [vc setMessageBody:content isHTML:NO];
         // 设置收件人列表
-        [vc setToRecipients:@[supportMail]];
+        [vc setToRecipients:@[SUPPORTMAIL]];
         
         
         // 设置代理
@@ -62,10 +62,10 @@
     }
     if (indexPath.row == 3) {
         
-        [self performSegueWithIdentifier:@"about2web" sender:weiboURL];
+        [self performSegueWithIdentifier:@"about2web" sender:WEIBOURL];
     }
     if (indexPath.row == 4) {
-        [self performSegueWithIdentifier:@"about2web" sender:wantedURL];
+        [self performSegueWithIdentifier:@"about2web" sender:WANTEDURL];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

@@ -85,13 +85,13 @@
     // 从偏好设置读取
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
-    NSString *newToken = [def objectForKey:pushTokenNew];
+    NSString *newToken = [def objectForKey:PUSHTOKENNEW];
     if (newToken.length) {
-        [def setObject:newToken forKey:pushTokenOld];;
+        [def setObject:newToken forKey:PUSHTOKENOLD];;
     }
     
     // 写入偏好设置
-    [def setObject:getToken forKey:pushTokenNew];
+    [def setObject:getToken forKey:PUSHTOKENNEW];
     [def synchronize];
 }
 

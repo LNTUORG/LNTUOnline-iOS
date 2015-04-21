@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MyGrade;
 
 @interface DetailGradeController : UIViewController
 
@@ -32,7 +33,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *mLable;
 
-@property (nonatomic,strong) NSArray *arr;
+@property (nonatomic, strong) MyGrade *grade;
 
 
 @end

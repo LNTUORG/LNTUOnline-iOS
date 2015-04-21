@@ -10,6 +10,14 @@
 
 @interface GradeViewController : UIViewController
 
+@property (strong, nonatomic) NSArray *allGradeArr;
+@property (strong, nonatomic) NSMutableArray *currentGradeArr;
+@property (strong, nonatomic) NSArray *yearArr;
+@property (strong, nonatomic) NSArray *termArr;
+
+@property (copy, nonatomic) NSString *year;
+@property (copy, nonatomic) NSString *term;
+
 @property (weak, nonatomic) IBOutlet UIPickerView *pickView;
 
 @property (weak, nonatomic) IBOutlet UIControl *pickerDevice;
@@ -21,8 +29,5 @@
 @property (weak, nonatomic) IBOutlet UITableView *gradeView;
 
 - (IBAction)endEditing;
-
-- (IBAction)rating:(id)sender;
-
 
 @end
