@@ -200,6 +200,10 @@
     [self performSegueWithIdentifier:@"main2Donate" sender:nil];
 }
 
+- (IBAction)oneKeyRate {
+    [self performSegueWithIdentifier:@"main2Rate" sender:nil];
+}
+
 #pragma mark ActionSheet代理方法
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex

@@ -38,4 +38,6 @@
 
 - (IBAction)donate;
 
+- (IBAction)oneKeyRate;
+
 @end

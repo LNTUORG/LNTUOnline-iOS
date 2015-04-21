@@ -13,6 +13,6 @@
 @property (nonatomic, copy) NSString *teacher;
 @property (nonatomic, copy) NSString *course;
 @property (nonatomic, copy) NSString *state;
-@property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *evaKey;
 
 @end

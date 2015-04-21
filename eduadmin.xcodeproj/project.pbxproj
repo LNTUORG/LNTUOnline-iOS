@@ -62,7 +62,10 @@
 		D535375B1AE604790025A1E7 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D535375A1AE604790025A1E7 /* DetailTableViewController.m */; };
 		D535375F1AE605130025A1E7 /* DetailGradeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D535375D1AE605130025A1E7 /* DetailGradeCell.m */; };
 		D53537601AE605130025A1E7 /* DetailGradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D535375E1AE605130025A1E7 /* DetailGradeCell.xib */; };
+		D53537671AE63EDB0025A1E7 /* OneKeyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D53537661AE63EDB0025A1E7 /* OneKeyTableViewController.m */; };
 		D53E75C61A93996700CBE422 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53E75C51A93996700CBE422 /* Launch Screen.xib */; };
+		D54CF5021AE6460800252371 /* OneKeyRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D54CF5001AE6460800252371 /* OneKeyRateCell.m */; };
+		D54CF5031AE6460800252371 /* OneKeyRateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54CF5011AE6460800252371 /* OneKeyRateCell.xib */; };
 		D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55248B91A6A97730073942F /* StoreKit.framework */; };
 		D55F55691AE1727900A7FD53 /* DayClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F55671AE1727900A7FD53 /* DayClassTableViewCell.m */; };
 		D55F556A1AE1727900A7FD53 /* DayClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F55681AE1727900A7FD53 /* DayClassTableViewCell.xib */; };
@@ -166,8 +169,8 @@
 		D51602101A542075003AB6A9 /* PartGradeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartGradeCell.xib; sourceTree = "<group>"; };
 		D51602131A542109003AB6A9 /* GradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradeViewController.h; sourceTree = "<group>"; };
 		D51602141A542109003AB6A9 /* GradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeViewController.m; sourceTree = "<group>"; };
-		D51602161A542131003AB6A9 /* RatingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingInfo.h; sourceTree = "<group>"; };
-		D51602171A542131003AB6A9 /* RatingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingInfo.m; sourceTree = "<group>"; };
+		D51602161A542131003AB6A9 /* RatingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RatingInfo.h; path = ../../Grade/Model/RatingInfo.h; sourceTree = "<group>"; };
+		D51602171A542131003AB6A9 /* RatingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RatingInfo.m; path = ../../Grade/Model/RatingInfo.m; sourceTree = "<group>"; };
 		D51602191A542158003AB6A9 /* DetailGradeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailGradeController.h; path = ../../Unpass/Controller/DetailGradeController.h; sourceTree = "<group>"; };
 		D516021A1A542158003AB6A9 /* DetailGradeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailGradeController.m; path = ../../Unpass/Controller/DetailGradeController.m; sourceTree = "<group>"; };
 		D516021C1A5421D5003AB6A9 /* ExamPlanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamPlanCell.h; sourceTree = "<group>"; };
@@ -216,7 +219,12 @@
 		D535375C1AE605130025A1E7 /* DetailGradeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGradeCell.h; sourceTree = "<group>"; };
 		D535375D1AE605130025A1E7 /* DetailGradeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGradeCell.m; sourceTree = "<group>"; };
 		D535375E1AE605130025A1E7 /* DetailGradeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailGradeCell.xib; sourceTree = "<group>"; };
+		D53537651AE63EDB0025A1E7 /* OneKeyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneKeyTableViewController.h; sourceTree = "<group>"; };
+		D53537661AE63EDB0025A1E7 /* OneKeyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneKeyTableViewController.m; sourceTree = "<group>"; };
 		D53E75C51A93996700CBE422 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		D54CF4FF1AE6460800252371 /* OneKeyRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneKeyRateCell.h; sourceTree = "<group>"; };
+		D54CF5001AE6460800252371 /* OneKeyRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneKeyRateCell.m; sourceTree = "<group>"; };
+		D54CF5011AE6460800252371 /* OneKeyRateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneKeyRateCell.xib; sourceTree = "<group>"; };
 		D55248B91A6A97730073942F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D55F55661AE1727900A7FD53 /* DayClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayClassTableViewCell.h; sourceTree = "<group>"; };
 		D55F55671AE1727900A7FD53 /* DayClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayClassTableViewCell.m; sourceTree = "<group>"; };
@@ -449,8 +457,6 @@
 			children = (
 				D51602081A542035003AB6A9 /* MyGrade.h */,
 				D51602091A542035003AB6A9 /* MyGrade.m */,
-				D51602161A542131003AB6A9 /* RatingInfo.h */,
-				D51602171A542131003AB6A9 /* RatingInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -629,6 +635,44 @@
 				D516A8451AE3C03E00C20941 /* NSObject+MJMember.m */,
 			);
 			path = MJExtension;
+			sourceTree = "<group>";
+		};
+		D53537621AE63EB60025A1E7 /* OneKeyRate */ = {
+			isa = PBXGroup;
+			children = (
+				D54CF4FE1AE645FF00252371 /* View */,
+				D53537631AE63EB60025A1E7 /* Controller */,
+				D53537641AE63EB60025A1E7 /* Model */,
+			);
+			path = OneKeyRate;
+			sourceTree = "<group>";
+		};
+		D53537631AE63EB60025A1E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D53537651AE63EDB0025A1E7 /* OneKeyTableViewController.h */,
+				D53537661AE63EDB0025A1E7 /* OneKeyTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D53537641AE63EB60025A1E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D51602161A542131003AB6A9 /* RatingInfo.h */,
+				D51602171A542131003AB6A9 /* RatingInfo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D54CF4FE1AE645FF00252371 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D54CF4FF1AE6460800252371 /* OneKeyRateCell.h */,
+				D54CF5001AE6460800252371 /* OneKeyRateCell.m */,
+				D54CF5011AE6460800252371 /* OneKeyRateCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D55F55651AE1726D00A7FD53 /* View */ = {
@@ -810,6 +854,7 @@
 				D51601DE1A541A4B003AB6A9 /* Feedback */,
 				D5F936C21A52ED0300EA112F /* About */,
 				D5C536131A6BC3A100BD2821 /* Donate */,
+				D53537621AE63EB60025A1E7 /* OneKeyRate */,
 				D58E1D331A51B9C200B159ED /* Other */,
 			);
 			path = Class;
@@ -1016,6 +1061,7 @@
 			files = (
 				D51601F61A541CBB003AB6A9 /* CellItem.xib in Resources */,
 				D50C16011A5AAA23009ED8B5 /* MBProgressHUD.bundle in Resources */,
+				D54CF5031AE6460800252371 /* OneKeyRateCell.xib in Resources */,
 				D51602201A5421D5003AB6A9 /* ExamPlanCell.xib in Resources */,
 				D58E1CBC1A51B94C00B159ED /* Main.storyboard in Resources */,
 				D53537601AE605130025A1E7 /* DetailGradeCell.xib in Resources */,
@@ -1060,6 +1106,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53537671AE63EDB0025A1E7 /* OneKeyTableViewController.m in Sources */,
 				D55F55691AE1727900A7FD53 /* DayClassTableViewCell.m in Sources */,
 				D51601EE1A541BC9003AB6A9 /* Family.m in Sources */,
 				D57D8C3C1A8475FB001FA546 /* MJRefreshHeaderView.m in Sources */,
@@ -1091,6 +1138,7 @@
 				D58E1D191A51B98800B159ED /* AFNetworkReachabilityManager.m in Sources */,
 				D58E1D2D1A51B98800B159ED /* LJDeviceTool.m in Sources */,
 				D516A8481AE3C03E00C20941 /* MJFoundation.m in Sources */,
+				D54CF5021AE6460800252371 /* OneKeyRateCell.m in Sources */,
 				D516021F1A5421D5003AB6A9 /* ExamPlanCell.m in Sources */,
 				D51602151A542109003AB6A9 /* GradeViewController.m in Sources */,
 				D58E1D381A51B9C200B159ED /* main.m in Sources */,

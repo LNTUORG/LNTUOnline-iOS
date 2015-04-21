@@ -58,7 +58,9 @@
 // 关闭键盘
 - (IBAction)forHelp:(id)sender {
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://wpa.qq.com/msgrd?v=3&uin=10771533&site=qq&menu=yes"]];
+    NSString *url = [NSString stringWithFormat:@"http://wpa.qq.com/msgrd?v=3&uin=%@&site=qq&menu=yes", LJQQ];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
 - (IBAction)existKeyboard {

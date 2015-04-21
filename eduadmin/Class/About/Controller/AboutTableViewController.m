@@ -55,10 +55,10 @@
         
     }
     if (indexPath.row == 2) {
-        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        pasteboard.string = LJQQ;
-        [MBProgressHUD showSuccess:@"已经复制到粘贴板"];
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tencent://QQInterLive/?Cmd=2&Uin=10771533"]];
+        
+        NSString *url = [NSString stringWithFormat:@"http://wpa.qq.com/msgrd?v=3&uin=%@&site=qq&menu=yes", LJQQ];
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     }
     if (indexPath.row == 3) {
         

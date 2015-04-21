@@ -19,6 +19,6 @@
 
 @property (nonatomic,strong) SkillTest *sTest;
 
-+ (id)newSkillTestCell;
++ (instancetype)newSkillTestCell;
 
 @end

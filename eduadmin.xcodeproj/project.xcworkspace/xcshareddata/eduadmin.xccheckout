@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>F3446F38-7A2F-49BD-9E71-C7958273F28A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>eduadmin</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2C8470339AB2476A9D0582CA7BBA3BD9E7BC8689</key>
 		<string>https://github.com/pupboss/eduadmin.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>eduadmin.xcodeproj</string>
+	<string>eduadmin.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2C8470339AB2476A9D0582CA7BBA3BD9E7BC8689</key>
