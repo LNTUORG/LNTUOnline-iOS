@@ -42,12 +42,12 @@
     
     self.iCaView.currentItemIndex = [LJTimeTool getCurrentWeekDay] - 1;
     
-    self.navigationItem.title = [NSString stringWithFormat:@"第%d周", [LJTimeTool getCurrentWeek] - 10];
+    self.navigationItem.title = [NSString stringWithFormat:@"第%d周", (int)[LJTimeTool getCurrentWeek] - 10];
     
     self.titleArray = @[@"星期日", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六"];
     
     
-    NSString *filePath = [LJFileTool getFilePath:[self getAddress:scheduleFileName]];
+    NSString *filePath = [LJFileTool getFilePath:scheduleFileName];
     
     NSFileManager *mgr = [NSFileManager defaultManager];
     
@@ -190,30 +190,42 @@
     return array;
 }
 
-- (NSString *)getAddress:(NSString *)fileName {
-    
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    
-    NSString *str = [def objectForKey:USERNAMEKEY];
-    
-    if (str.length) {
-        return [NSString stringWithFormat:@"%@%@",str,fileName];
-    } else {
-        return @"error";
-    }
-}
-
 - (void)refreshData
 {
-    NSDictionary *param = @{@"year": @"2015", @"term": @"春"};
-    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@class-table/~self", MAINURL] params:param success:^(id responseJSON) {
+    [MBProgressHUD showMessage:@"正在获取中"];
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    if ([def objectForKey:USERNAMEKEY]) {
         
-        [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:scheduleFileName]];
-        [self.iCaView reloadData];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [MBProgressHUD showError:NULLSTR];
-    }];
-    
+        NSString *uName = [def objectForKey:USERNAMEKEY];
+        NSString *pwd = [def objectForKey:PWDKEY];
+        
+        NSDictionary *param = @{@"userId": uName,
+                                @"pwd": pwd,
+                                @"platform": @"ios",
+                                @"version": [LJDeviceTool getCurrentAppBuild],
+                                @"manufacturer": @"Apple",
+                                @"osVer": [NSString stringWithFormat:@"iOS%@",[LJDeviceTool getCurrentSystemVersion]],
+                                @"model": [LJDeviceTool getCurrentDeviceModel]};
+        
+        [LJHTTPTool postHTTPWithURL:@"http://lntuonline.pupboss.com/user/login" params:param success:^(id responseHTTP) {
+            
+            [LJHTTPTool getJSONWithURL:@"http://lntuonline.pupboss.com/curriculum/info" params:nil success:^(id responseJSON) {
+                
+                [MBProgressHUD hideHUD];
+                [LJFileTool writeToFileContent:responseJSON withFileName:scheduleFileName];
+                self.courseArray = [self getCourseArray:responseJSON];
+                [self.iCaView reloadData];
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                [MBProgressHUD hideHUD];
+                [MBProgressHUD showError:NULLSTR];
+            }];
+            
+        } failure:^(NSError *error) {
+            [MBProgressHUD hideHUD];
+            [MBProgressHUD showError:NULLSTR];
+        }];
+    }
 }
 
 - (IBAction)reloadCourse:(id)sender {
