@@ -16,9 +16,8 @@
 #import "MJRefresh.h"
 
 @interface ExamPlanTableViewController ()
-{
-    NSArray *_planArr;
-}
+
+
 @end
 
 @implementation ExamPlanTableViewController
@@ -31,7 +30,7 @@
     // 下拉刷新
     [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"table"];
     
-    NSString *filePath = [LJFileTool getFilePath:[self getAddress:examPlanFileName]];
+    NSString *filePath = [LJFileTool getFilePath:examPlanFileName];
     
     NSFileManager *mgr = [NSFileManager defaultManager];
     
@@ -42,21 +41,22 @@
     }else{
         [self.tableView headerBeginRefreshing];
     }
+    
 }
 
 
 #pragma mark 解析数据
 - (void)analyticalData:(id)json
 {
-    _planArr = [ExamPlan objectArrayWithKeyValuesArray:json];
+    self.planArr = [ExamPlan objectArrayWithKeyValuesArray:json];
     
-    NSArray *arr = [_planArr sortedArrayUsingComparator:^NSComparisonResult(ExamPlan *obj1, ExamPlan *obj2) {
+    NSArray *arr = [self.planArr sortedArrayUsingComparator:^NSComparisonResult(ExamPlan *obj1, ExamPlan *obj2) {
         
-        NSComparisonResult result = [obj1.time compare:obj2.time];
+        NSComparisonResult result = [obj1.startTime compare:obj2.startTime];
         return result;
     }];
     
-    _planArr = arr;
+    self.planArr = arr;
     [self.tableView reloadData];
 }
 
@@ -64,33 +64,17 @@
 - (void)refreshData
 {
     
-//    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@examPlan/info",sinaURL] params:nil success:^(id responseJSON) {
-//
-//        [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:examPlanFileName]];
-//        [self analyticalData:responseJSON];
-//        [self.tableView headerEndRefreshing];
-//        
-//        
-//    } failure:^(NSError *error) {
-//        
-//        [MBProgressHUD showError:nullStr];
-//        [self.tableView headerEndRefreshing];
-//        [self.navigationController popViewControllerAnimated:YES];
-//    }];
-}
-
-- (NSString *)getAddress:(NSString *)fileName {
-    
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    
-    NSString *str = [def objectForKey:USERNAMEKEY];
-    
-    if (str.length) {
-        return [NSString stringWithFormat:@"%@%@",str,fileName];
-    } else {
-        return @"error";
-    }
-    
+    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@exam-plan/~self", MAINURL] params:nil success:^(id responseJSON) {
+        
+        [LJFileTool writeToFileContent:responseJSON withFileName:examPlanFileName];
+        [self analyticalData:responseJSON];
+        [self.tableView headerEndRefreshing];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        [MBProgressHUD showError:NULLSTR];
+        [self.tableView headerEndRefreshing];
+    }];
 }
 
 #pragma mark - Table view data source
@@ -103,7 +87,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return _planArr.count;
+    return self.planArr.count;
 }
 
 
@@ -116,7 +100,7 @@
         cell = [ExamPlanCell newExanPlanCell];
     }
     
-    cell.plan = _planArr[indexPath.row];
+    cell.plan = self.planArr[indexPath.row];
     
     return cell;
 }

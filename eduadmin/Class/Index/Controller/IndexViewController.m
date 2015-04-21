@@ -98,23 +98,9 @@
     
 }
 
-- (NSString *)getAddress:(NSString *)fileName {
-    
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    
-    NSString *str = [def objectForKey:USERNAMEKEY];
-    
-    if (str.length) {
-        return [NSString stringWithFormat:@"%@%@",str,fileName];
-    } else {
-        return @"error";
-    }
-    
-}
-
 - (void)getPhotoAndName
 {
-    NSString *filePath = [LJFileTool getFilePath:[self getAddress:selfInfoFileName]];
+    NSString *filePath = [LJFileTool getFilePath:selfInfoFileName];
 
     NSFileManager *mgr = [NSFileManager defaultManager];
 
@@ -126,10 +112,10 @@
     
         [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@student/~self", MAINURL] params:nil success:^(id responseJSON) {
             
-            [LJFileTool writeToFileContent:responseJSON withFileName:[self getAddress:selfInfoFileName]];
+            [LJFileTool writeToFileContent:responseJSON withFileName:selfInfoFileName];
             
             NSDictionary *dict = [NSDictionary dictionaryWithDictionary:responseJSON];
-            [LJFileTool writeImageToFileName:[self getAddress:selfIconFileName] withImgURL:dict[@"photoUrl"]];
+            [LJFileTool writeImageToFileName:selfIconFileName withImgURL:dict[@"photoUrl"]];
             self.nameLable.text = [NSString stringWithFormat:@"%@好,%@",[LJTimeTool getCurrentInterval],dict[@"name"]];
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

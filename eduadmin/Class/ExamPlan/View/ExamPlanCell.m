@@ -17,13 +17,26 @@
 {
     _plan = plan;
     
-    NSArray *arr = [plan.time componentsSeparatedByString:@"-"];
-    NSArray *day = [arr[2] componentsSeparatedByString:@" "];
-    NSString *str = [NSString stringWithFormat:@"%@月%@日 %@-%@",arr[1],day[0],day[1],arr[4]];
+    NSArray *arr = [plan.startTime componentsSeparatedByString:@"-"];
     
-    NSArray *date = [plan.time componentsSeparatedByString:@" "];
+    NSArray *arr2 = [arr[2] componentsSeparatedByString:@"T"];
+    
+    NSArray *arr3 = [arr2[1] componentsSeparatedByString:@"."];
+    
+    NSArray *arr4 = [plan.endTime componentsSeparatedByString:@"T"];
+    
+    NSArray *arr5 = [arr4[1] componentsSeparatedByString:@"."];
+    
+    NSArray *arr6 = [arr3[0] componentsSeparatedByString:@":"];
+    
+    NSArray *arr7 = [arr5[0] componentsSeparatedByString:@":"];
+    
+    NSString *str = [NSString stringWithFormat:@"%@年%@月%@日 %@:%@-%@:%@", arr[0], arr[1], arr2[0], arr6[0], arr6[1], arr7[0], arr7[1]];
+    
+    
+    NSString *date = [NSString stringWithFormat:@"%@-%@-%@", arr[0], arr[1], arr2[0]];
     // 剩余天数
-    NSString *lastDay = [NSString stringWithFormat:@"%d",[LJTimeTool dayNumberSinceDateWithFormat_yyyy_MM_dd:date[0]]];
+    NSString *lastDay = [NSString stringWithFormat:@"%d",[LJTimeTool dayNumberSinceDateWithFormat_yyyy_MM_dd:date]];
     
 
     if ([lastDay intValue]<=0) {
