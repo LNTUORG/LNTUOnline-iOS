@@ -16,9 +16,8 @@
 #import "MJRefresh.h"
 
 @interface SkillTestTableViewController ()
-{
-    NSArray *_skillArr;
-}
+
+
 @end
 
 @implementation SkillTestTableViewController
@@ -38,19 +37,17 @@
 
 - (void)refreshData {
     
-    
-//    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@grades/skillTestScoresInfo",sinaURL] params:nil success:^(id responseJSON) {
-//        
-//        _skillArr = [SkillTest objectArrayWithKeyValuesArray:responseJSON];
-//        [self.tableView reloadData];
-//        [self.tableView headerEndRefreshing];
-//        
-//    } failure:^(NSError *error) {
-//        
-//        [MBProgressHUD showError:nullStr];
-//        [self.tableView headerEndRefreshing];
-//        [self.navigationController popViewControllerAnimated:YES];
-//    }];
+    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@skill-test-score/~self", MAINURL] params:nil success:^(id responseJSON) {
+        
+        self.skillArr = [SkillTest objectArrayWithKeyValuesArray:responseJSON];
+        [self.tableView reloadData];
+        [self.tableView headerEndRefreshing];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        [MBProgressHUD showError:NULLSTR];
+        [self.tableView headerEndRefreshing];
+    }];
 }
 
 #pragma mark - Table view data source
@@ -63,7 +60,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return _skillArr.count;
+    return self.skillArr.count;
 }
 
 
@@ -76,7 +73,7 @@
         cell = [SkillTestCell newSkillTestCell];
     }
     
-    cell.sTest = _skillArr[indexPath.row];
+    cell.sTest = self.skillArr[indexPath.row];
     
     return cell;
 }
