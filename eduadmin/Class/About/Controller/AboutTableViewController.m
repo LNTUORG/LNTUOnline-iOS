@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     self.versionLable.text = [NSString stringWithFormat:@"v%@",[LJDeviceTool getCurrentAppVersion]];
-    self.rightsLable.text = [NSString stringWithFormat:@"Copyright© 2013-%ld PUPBOSS. All Rights Reserved",(long)[LJTimeTool getCurrentYear]];
+    self.rightsLable.text = [NSString stringWithFormat:@"Copyright © 2013-%ld PUPBOSS. All Rights Reserved",(long)[LJTimeTool getCurrentYear]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

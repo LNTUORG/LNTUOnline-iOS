@@ -17,13 +17,14 @@
 #import "DayCourse.h"
 #import "OldClassTableView.h"
 
-@interface ScheduleViewController () <iCarouselDataSource, iCarouselDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ScheduleViewController () <iCarouselDataSource, iCarouselDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) iCarousel *iCaView;
 @property (strong, nonatomic) OldClassTableView *oldView;
 @property (nonatomic, strong) NSArray *titleArray;
 @property (nonatomic, strong) NSArray *courseArray;
 @property (strong, nonatomic) NSDictionary *dict;
+@property (strong, nonatomic) NSUserDefaults *deft;
 
 @end
 
@@ -37,13 +38,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.navigationItem.title = [NSString stringWithFormat:@"第%d周", (int)[LJTimeTool getCurrentWeek] - 10];
     
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    self.deft = [NSUserDefaults standardUserDefaults];
+    
+    if (![self.deft objectForKey:CLASSTABLEMODE]) {
+        
+        [self createNewClassView];
+    } else {
+        
+        [self createOldClassView];
+    }
+    
+    if (![self.deft objectForKey:KNOWOLDCLASSTABLE]) {
+        
+        UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"小 tips" message:@"点击右上角按钮可以按周查看课表" delegate:self cancelButtonTitle:@"我知道了" otherButtonTitles:nil, nil];
+        
+        [view show];
+    }
+}
+
+/**
+ *  新版课表
+ */
+- (void)createNewClassView {
     
     NSString *filePath = [LJFileTool getFilePath:scheduleFileName];
     
@@ -52,22 +73,10 @@
     if ([mgr fileExistsAtPath:filePath]) {
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
         
-        self.dict = dict;
         self.courseArray = [self getCourseArray:dict];
     }else{
         [self refreshData];
     }
-    
-    if (![def objectForKey:CLASSTABLEMODE]) {
-        
-        [self createNewClassView];
-    } else {
-        
-        [self createOldClassView];
-    }
-}
-
-- (void)createNewClassView {
     
     CGRect newFrame = self.view.frame;
     
@@ -90,9 +99,26 @@
     
 }
 
+
+/**
+ *  旧版课表
+ */
 - (void)createOldClassView {
 
+    
     OldClassTableView *oldClassTable = [OldClassTableView newOldClassTable];
+    
+    NSString *filePath = [LJFileTool getFilePath:scheduleFileName];
+    
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    
+    if ([mgr fileExistsAtPath:filePath]) {
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+        
+        self.dict = dict;
+    }else{
+        [self refreshData];
+    }
     
     oldClassTable.dict = self.dict;
     
@@ -112,6 +138,7 @@
 {
     [super viewDidUnload];
     self.iCaView = nil;
+    self.oldView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -241,11 +268,11 @@
 - (void)refreshData
 {
     [MBProgressHUD showMessage:@"正在获取中"];
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    if ([def objectForKey:USERNAMEKEY]) {
+    
+    if ([self.deft objectForKey:USERNAMEKEY]) {
         
-        NSString *uName = [def objectForKey:USERNAMEKEY];
-        NSString *pwd = [def objectForKey:PWDKEY];
+        NSString *uName = [self.deft objectForKey:USERNAMEKEY];
+        NSString *pwd = [self.deft objectForKey:PWDKEY];
         
         NSDictionary *param = @{@"userId": uName,
                                 @"pwd": pwd,
@@ -278,25 +305,21 @@
 
 - (IBAction)reloadCourse:(id)sender {
     
-//    [self refreshData];
     [self animationWithView:self.view WithAnimationTransition:UIViewAnimationTransitionFlipFromLeft];
     
-    
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    
-    if (![def objectForKey:CLASSTABLEMODE]) {
+    if (![self.deft objectForKey:CLASSTABLEMODE]) {
         
         [self.iCaView removeFromSuperview];
         [self createOldClassView];
-        [def setObject:@"1" forKey:CLASSTABLEMODE];
+        [self.deft setObject:@"1" forKey:CLASSTABLEMODE];
     } else {
         
         [self.oldView removeFromSuperview];
         [self createNewClassView];
         
-        [def setObject:nil forKey:CLASSTABLEMODE];
+        [self.deft setObject:nil forKey:CLASSTABLEMODE];
     }
-    [def synchronize];
+    [self.deft synchronize];
     
 }
 
@@ -307,6 +330,15 @@
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationTransition:transition forView:view cache:YES];
     }];
+}
+
+#pragma AlertView Delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 0) {
+        [self.deft setObject:@"1" forKey:KNOWOLDCLASSTABLE];
+    }
 }
 
 @end

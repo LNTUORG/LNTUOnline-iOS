@@ -15,6 +15,7 @@
 @implementation OldClassTableView
 
 - (void)layoutSubviews {
+    [super layoutSubviews];
     
     //内容尺寸
     self.schScrollView.contentSize = CGSizeMake(444,672);

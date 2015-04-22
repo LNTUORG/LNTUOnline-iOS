@@ -24,8 +24,10 @@
 #define PWDKEY @"pwd"           // 密码 key
 #define PUSHTOKENOLD @"pushTokenOld"  // 旧Token key
 #define PUSHTOKENNEW @"pushTokenNew"
+
 #define LOGINTOKEN @"LOGINTOKEN"
 #define CLASSTABLEMODE @"ClassTableMode"
+#define KNOWOLDCLASSTABLE @"KnowOldClassTable"
 
 #define TOKENFORNET [[NSUserDefaults standardUserDefaults] objectForKey:LOGINTOKEN]
 
