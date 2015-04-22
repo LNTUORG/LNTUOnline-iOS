@@ -21,7 +21,7 @@
     self.courseLable.text = course;
 }
 
-+ (id)newNightClassCell {
++ (instancetype)newNightClassCell {
 
     return [[NSBundle mainBundle] loadNibNamed:@"NightClassTableViewCell" owner:nil options:nil][0];
 }

@@ -15,12 +15,16 @@
 #import "DayClassTableViewCell.h"
 #import "NightClassTableViewCell.h"
 #import "DayCourse.h"
+#import "OldClassTableView.h"
 
 @interface ScheduleViewController () <iCarouselDataSource, iCarouselDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) IBOutlet iCarousel *iCaView;
+@property (strong, nonatomic) iCarousel *iCaView;
+@property (strong, nonatomic) OldClassTableView *oldView;
 @property (nonatomic, strong) NSArray *titleArray;
 @property (nonatomic, strong) NSArray *courseArray;
+@property (strong, nonatomic) NSDictionary *dict;
+
 @end
 
 @implementation ScheduleViewController
@@ -37,15 +41,9 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.iCaView.type = iCarouselTypeRotary;
-    self.iCaView.pagingEnabled = YES;
-    
-    self.iCaView.currentItemIndex = [LJTimeTool getCurrentWeekDay] - 1;
-    
     self.navigationItem.title = [NSString stringWithFormat:@"第%d周", (int)[LJTimeTool getCurrentWeek] - 10];
     
-    self.titleArray = @[@"星期日", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六"];
-    
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
     NSString *filePath = [LJFileTool getFilePath:scheduleFileName];
     
@@ -54,10 +52,60 @@
     if ([mgr fileExistsAtPath:filePath]) {
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
         
+        self.dict = dict;
         self.courseArray = [self getCourseArray:dict];
     }else{
         [self refreshData];
     }
+    
+    if (![def objectForKey:CLASSTABLEMODE]) {
+        
+        [self createNewClassView];
+    } else {
+        
+        [self createOldClassView];
+    }
+}
+
+- (void)createNewClassView {
+    
+    CGRect newFrame = self.view.frame;
+    
+    newFrame.origin.y += 64;
+    newFrame.size.height -= 64;
+    
+    self.iCaView = [[iCarousel alloc] initWithFrame:newFrame];
+    
+    self.iCaView.delegate = self;
+    self.iCaView.dataSource = self;
+    self.iCaView.type = iCarouselTypeRotary;
+    self.iCaView.pagingEnabled = YES;
+    self.iCaView.backgroundColor = [UIColor clearColor];
+    
+    self.iCaView.currentItemIndex = [LJTimeTool getCurrentWeekDay] - 1;
+    
+    [self.view addSubview:self.iCaView];
+    
+    self.titleArray = @[@"星期日", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六"];
+    
+}
+
+- (void)createOldClassView {
+
+    OldClassTableView *oldClassTable = [OldClassTableView newOldClassTable];
+    
+    oldClassTable.dict = self.dict;
+    
+    CGRect newFrame = self.view.frame;
+    
+    newFrame.origin.y += 64;
+    newFrame.size.height -= 64;
+    
+    oldClassTable.frame = newFrame;
+    
+    self.oldView = oldClassTable;
+    
+    [self.view addSubview:oldClassTable];
 }
 
 - (void)viewDidUnload
@@ -230,6 +278,35 @@
 
 - (IBAction)reloadCourse:(id)sender {
     
-    [self refreshData];
+//    [self refreshData];
+    [self animationWithView:self.view WithAnimationTransition:UIViewAnimationTransitionFlipFromLeft];
+    
+    
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
+    if (![def objectForKey:CLASSTABLEMODE]) {
+        
+        [self.iCaView removeFromSuperview];
+        [self createOldClassView];
+        [def setObject:@"1" forKey:CLASSTABLEMODE];
+    } else {
+        
+        [self.oldView removeFromSuperview];
+        [self createNewClassView];
+        
+        [def setObject:nil forKey:CLASSTABLEMODE];
+    }
+    [def synchronize];
+    
 }
+
+#pragma UIView实现动画
+- (void) animationWithView : (UIView *)view WithAnimationTransition : (UIViewAnimationTransition) transition
+{
+    [UIView animateWithDuration:0.7f animations:^{
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationTransition:transition forView:view cache:YES];
+    }];
+}
+
 @end

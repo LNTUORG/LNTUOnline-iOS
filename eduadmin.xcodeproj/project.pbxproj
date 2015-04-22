@@ -67,6 +67,8 @@
 		D54CF5021AE6460800252371 /* OneKeyRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D54CF5001AE6460800252371 /* OneKeyRateCell.m */; };
 		D54CF5031AE6460800252371 /* OneKeyRateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54CF5011AE6460800252371 /* OneKeyRateCell.xib */; };
 		D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55248B91A6A97730073942F /* StoreKit.framework */; };
+		D5529D681AE7B2FC00F5A53E /* OldClassTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5529D671AE7B2FC00F5A53E /* OldClassTable.xib */; };
+		D5529D6B1AE7B36700F5A53E /* OldClassTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5529D6A1AE7B36700F5A53E /* OldClassTableView.m */; };
 		D55F55691AE1727900A7FD53 /* DayClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F55671AE1727900A7FD53 /* DayClassTableViewCell.m */; };
 		D55F556A1AE1727900A7FD53 /* DayClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F55681AE1727900A7FD53 /* DayClassTableViewCell.xib */; };
 		D55F556E1AE1728F00A7FD53 /* NightClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F556C1AE1728F00A7FD53 /* NightClassTableViewCell.m */; };
@@ -226,6 +228,9 @@
 		D54CF5001AE6460800252371 /* OneKeyRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneKeyRateCell.m; sourceTree = "<group>"; };
 		D54CF5011AE6460800252371 /* OneKeyRateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneKeyRateCell.xib; sourceTree = "<group>"; };
 		D55248B91A6A97730073942F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D5529D671AE7B2FC00F5A53E /* OldClassTable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OldClassTable.xib; sourceTree = "<group>"; };
+		D5529D691AE7B36700F5A53E /* OldClassTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldClassTableView.h; sourceTree = "<group>"; };
+		D5529D6A1AE7B36700F5A53E /* OldClassTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldClassTableView.m; sourceTree = "<group>"; };
 		D55F55661AE1727900A7FD53 /* DayClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayClassTableViewCell.h; sourceTree = "<group>"; };
 		D55F55671AE1727900A7FD53 /* DayClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayClassTableViewCell.m; sourceTree = "<group>"; };
 		D55F55681AE1727900A7FD53 /* DayClassTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayClassTableViewCell.xib; sourceTree = "<group>"; };
@@ -684,6 +689,9 @@
 				D55F556B1AE1728F00A7FD53 /* NightClassTableViewCell.h */,
 				D55F556C1AE1728F00A7FD53 /* NightClassTableViewCell.m */,
 				D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */,
+				D5529D671AE7B2FC00F5A53E /* OldClassTable.xib */,
+				D5529D691AE7B36700F5A53E /* OldClassTableView.h */,
+				D5529D6A1AE7B36700F5A53E /* OldClassTableView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1067,6 +1075,7 @@
 				D53537601AE605130025A1E7 /* DetailGradeCell.xib in Resources */,
 				D51602121A542075003AB6A9 /* PartGradeCell.xib in Resources */,
 				D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */,
+				D5529D681AE7B2FC00F5A53E /* OldClassTable.xib in Resources */,
 				D51601F71A541CBB003AB6A9 /* familyCell.xib in Resources */,
 				D55F556A1AE1727900A7FD53 /* DayClassTableViewCell.xib in Resources */,
 				D58E1CBE1A51B94C00B159ED /* Images.xcassets in Resources */,
@@ -1173,6 +1182,7 @@
 				D58E1D1E1A51B98800B159ED /* AFURLSessionManager.m in Sources */,
 				D58E1D311A51B98800B159ED /* LJUITool.m in Sources */,
 				D51602041A541F9A003AB6A9 /* NoticeViewController.m in Sources */,
+				D5529D6B1AE7B36700F5A53E /* OldClassTableView.m in Sources */,
 				D58E1D301A51B98800B159ED /* LJTimeTool.m in Sources */,
 				D51601FD1A541CC7003AB6A9 /* CellItem.m in Sources */,
 				D5C536171A6BC3A100BD2821 /* DonateTableViewController.m in Sources */,

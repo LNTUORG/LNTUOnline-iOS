@@ -30,6 +30,6 @@
 @property (strong, nonatomic) NSString *course0;
 @property (strong, nonatomic) NSString *course1;
 
-+ (id)newDayClassCell;
++ (instancetype)newDayClassCell;
 
 @end

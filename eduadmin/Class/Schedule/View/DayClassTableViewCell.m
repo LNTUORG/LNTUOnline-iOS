@@ -43,7 +43,7 @@
     
 }
 
-+ (id)newDayClassCell {
++ (instancetype)newDayClassCell {
     
     return [[NSBundle mainBundle] loadNibNamed:@"DayClassTableViewCell" owner:nil options:nil][0];
 }
