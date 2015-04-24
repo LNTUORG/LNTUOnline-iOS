@@ -73,6 +73,28 @@
     else return @"error";
 }
 
++ (NSInteger)getCurrentClass {
+    
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags = NSHourCalendarUnit;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
+    
+    long hour = [dateComponent hour];
+    if (hour<8) {
+        return 1;
+    } else if (hour>=8&&hour<10) {
+        return 2;
+    } else if (hour>=10&&hour<14) {
+        return 3;
+    } else if (hour>=14&&hour<16) {
+        return 4;
+    } else if (hour>=16&&hour<19) {
+        return 5;
+    }
+    else return 6;
+}
+
 + (int)dayNumberSinceDateWithFormat_yyyy_MM_dd:(NSString *)date
 {
     NSDateFormatter * dm = [[NSDateFormatter alloc]init];

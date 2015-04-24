@@ -19,6 +19,8 @@
 
 + (NSString *)getCurrentInterval;
 
++ (NSInteger)getCurrentClass;
+
 + (int)dayNumberSinceDateWithFormat_yyyy_MM_dd:(NSString *)date;
 
 @end
