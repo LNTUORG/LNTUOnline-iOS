@@ -14,11 +14,19 @@
 
 @implementation PushViewController
 @synthesize recievedContent;
+@synthesize url;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.textView.text = recievedContent;
+    if (url) {
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+        self.textView.text = recievedContent;
+    } else {
+        
+        self.textView.text = recievedContent;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

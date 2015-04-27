@@ -43,6 +43,7 @@
         lastDay = @"...";
     }
     
+    [self.countDate setBackgroundColor:[UIColor lightGrayColor]];
     [self.countDate setTitle:lastDay forState:UIControlStateNormal];
     
     self.timeTextView.text = str;

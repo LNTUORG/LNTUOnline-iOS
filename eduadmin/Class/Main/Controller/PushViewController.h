@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @property (nonatomic, copy) NSString *recievedContent;
+@property (nonatomic, copy) NSString *url;
 
 @end

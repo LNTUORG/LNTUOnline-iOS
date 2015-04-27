@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-4421" y="1158"/>
         </scene>
-        <!--Push View Controller-->
+        <!--推送通知-->
         <scene sceneID="T1p-Im-Z7K">
             <objects>
                 <viewController id="WPt-nP-ME7" customClass="PushViewController" sceneMemberID="viewController">
@@ -92,7 +92,7 @@
                             <constraint firstItem="hxV-ro-K2r" firstAttribute="top" secondItem="rXq-zP-h1Y" secondAttribute="bottom" constant="14" id="wUB-VJ-5ml"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UPI-uU-J5C"/>
+                    <navigationItem key="navigationItem" title="推送通知" id="UPI-uU-J5C"/>
                     <connections>
                         <outlet property="textView" destination="hxV-ro-K2r" id="Thc-sB-hF9"/>
                     </connections>
@@ -909,7 +909,7 @@
             </objects>
             <point key="canvasLocation" x="-3744" y="1158"/>
         </scene>
-        <!--One Key Table View Controller-->
+        <!--一键评课-->
         <scene sceneID="Z3E-Xz-i3y">
             <objects>
                 <tableViewController id="HCz-0G-q47" customClass="OneKeyTableViewController" sceneMemberID="viewController">
@@ -923,6 +923,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="一键评课" id="OZh-FC-9Fu"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ls2-cE-Ldn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1283,7 +1284,7 @@
         <scene sceneID="SZO-2e-yRc">
             <objects>
                 <tableViewController id="7A0-cS-P8P" customClass="ExamPlanTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="RLT-zU-IfU">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" id="RLT-zU-IfU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -18,7 +18,7 @@
 
 @interface AppDelegate () <UIAlertViewDelegate>
 {
-    NSString *_msg;
+    NSMutableArray *_msgs;
 }
 @end
 
@@ -27,16 +27,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     // 崩溃分析
     [Crashlytics startWithAPIKey:@"8feec9fc30497fa73685d17f490a7a7cdad6b2a1"];
     
     if (launchOptions) {
         
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+        
+        _msgs = [NSMutableArray array];
+        
         NSString *msg = launchOptions[@"UIApplicationLaunchOptionsRemoteNotificationKey"][@"aps"][@"alert"];
+        [_msgs addObject:msg];
         
-        _msg = msg;
+        NSString *url = launchOptions[@"UIApplicationLaunchOptionsRemoteNotificationKey"][@"aps"][@"link"];
+        if (url) {
+            [_msgs addObject:url];
+        }
         
-        [self.window.rootViewController performSegueWithIdentifier:@"nav2ab" sender:_msg];
+        [self.window.rootViewController performSegueWithIdentifier:@"nav2ab" sender:_msgs];
     }
     
     if (IOS8) {
@@ -106,14 +115,22 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    NSString *msg = userInfo[@"aps"][@"alert"];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
-    _msg = msg;
+    _msgs = [NSMutableArray array];
+    NSString *msg = userInfo[@"aps"][@"alert"];
+    [_msgs addObject:msg];
+    
+    NSString *url = userInfo[@"aps"][@"link"];
+    if (url) {
+        [_msgs addObject:url];
+    }
+    
     if (application.applicationState == UIApplicationStateActive) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"新消息" message:_msg delegate:self cancelButtonTitle:@"我不看" otherButtonTitles:@"好的", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"新消息" message:_msgs[0] delegate:self cancelButtonTitle:@"我不看" otherButtonTitles:@"好的", nil];
         [alert show];
     }else {
-        [self.window.rootViewController performSegueWithIdentifier:@"nav2ab" sender:_msg];
+        [self.window.rootViewController performSegueWithIdentifier:@"nav2ab" sender:_msgs];
     }
 }
 
@@ -121,7 +138,7 @@
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         
-        [self.window.rootViewController performSegueWithIdentifier:@"nav2ab" sender:_msg];
+        [self.window.rootViewController performSegueWithIdentifier:@"nav2ab" sender:_msgs];
     }
 }
 
@@ -139,7 +156,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -161,7 +178,7 @@
     
     NSString *filePath = [LJFileTool getFilePath:scheduleFileName];
     
-    NSString *key = [NSString stringWithFormat:@"%d-%d", day, classNum];
+    NSString *key = [NSString stringWithFormat:@"%d-%d", (int)day, (int)classNum];
     
     NSFileManager *mgr = [NSFileManager defaultManager];
     
