@@ -19,9 +19,6 @@
 - (void)setCourse0:(NSString *)course0 {
     
     _course0 = course0;
-    
-    NSArray *arr = [course0 componentsSeparatedByString:@"\n"];
-    NSLog(@"%d", arr.count);
     self.class0.text = course0;
 }
 
