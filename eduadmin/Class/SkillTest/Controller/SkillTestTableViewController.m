@@ -26,7 +26,7 @@
     [super viewDidLoad];
     
     // 下拉刷新
-    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"table"];
+    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"skill"];
     
     [self.tableView headerBeginRefreshing];
     

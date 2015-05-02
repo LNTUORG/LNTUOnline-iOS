@@ -14,12 +14,15 @@
     
     _info = info;
     
-    self.nameLabel.text = info.course;
+    self.nameLabel.text = info.name;
     self.teacherLabel.text = info.teacher;
-    self.statusLable.text = info.state;
     
-    if ([info.state isEqualToString:@"已评估"]) {
+    if ([info.done isEqualToString:@"0"]) {
+        self.statusLable.text = @"未评估";
+        self.statusLable.textColor = [UIColor redColor];
+    } else {
         
+        self.statusLable.text = @"已评估";
         self.statusLable.textColor = [UIColor greenColor];
     }
 }

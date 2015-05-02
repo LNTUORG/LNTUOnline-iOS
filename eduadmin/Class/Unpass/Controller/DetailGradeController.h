@@ -23,8 +23,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *testMode;
 
-@property (weak, nonatomic) IBOutlet UILabel *selectType;
-
 @property (weak, nonatomic) IBOutlet UILabel *remarks;
 
 @property (weak, nonatomic) IBOutlet UILabel *examType;

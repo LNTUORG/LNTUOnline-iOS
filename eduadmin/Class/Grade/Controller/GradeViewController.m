@@ -31,7 +31,7 @@
     
     NSInteger year = [LJTimeTool getCurrentYear];
     
-    if ([LJTimeTool getCurrentMonth] <= 5) {
+    if ([LJTimeTool getCurrentMonth] < 5) {
         
         year -= 1;
     }
@@ -57,7 +57,7 @@
 
     
     // 下拉刷新
-    [self.gradeView addHeaderWithTarget:self action:@selector(getGradeInfo) dateKey:@"table"];
+    [self.gradeView addHeaderWithTarget:self action:@selector(getGradeInfo) dateKey:@"grade"];
     
     [self.gradeView headerBeginRefreshing];
     

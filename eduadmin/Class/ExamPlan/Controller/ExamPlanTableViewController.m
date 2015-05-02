@@ -28,7 +28,7 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     // 下拉刷新
-    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"table"];
+    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"examplan"];
     
     NSString *filePath = [LJFileTool getFilePath:examPlanFileName];
     

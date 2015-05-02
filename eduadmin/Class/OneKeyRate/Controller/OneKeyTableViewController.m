@@ -13,6 +13,7 @@
 #import "MBProgressHUD+LJ.h"
 #import "MJExtension.h"
 #import "OneKeyRateCell.h"
+#import "MJRefresh.h"
 
 @interface OneKeyTableViewController () <UIAlertViewDelegate>
 
@@ -25,7 +26,10 @@
     
     self.tableView.tableFooterView = [[UIView alloc] init];
     
-    [self refreshData];
+    // 下拉刷新
+    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"onekey"];
+    
+    [self.tableView headerBeginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,9 +43,11 @@
         
         self.courseArr = [RatingInfo objectArrayWithKeyValuesArray:responseJSON];
         
+        [self.tableView headerEndRefreshing];
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
+        [self.tableView headerEndRefreshing];
         [MBProgressHUD showError:NULLSTR];
     }];
 }
@@ -50,12 +56,14 @@
     
     RatingInfo *info = self.courseArr[indexPath.row];
     
-    if (![info.state isEqualToString:@"已评估"]) {
+    if ([info.done isEqualToString:@"0"]) {
         
         NSDictionary *dict = @{@"evaKey": info.evaKey};
         
-        [LJHTTPTool postJSONWithURL:[NSString stringWithFormat:@"%@course-eva-info/~self", MAINURL] params:dict success:^(id responseJSON) {
+        [LJHTTPTool postJSONWithURL:[NSString stringWithFormat:@"%@course-eva-info/~self/do:eva", MAINURL] params:dict success:^(id responseJSON) {
             
+            info.done = @"1";
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
             [MBProgressHUD showSuccess:@"成功"];
         } failure:^(NSError *error) {
             

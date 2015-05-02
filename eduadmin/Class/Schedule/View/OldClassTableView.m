@@ -32,7 +32,7 @@
 - (void)awakeFromNib {
     
     // 下拉刷新
-    [self.schScrollView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"table"];
+    [self.schScrollView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"classtable"];
     
 }
 

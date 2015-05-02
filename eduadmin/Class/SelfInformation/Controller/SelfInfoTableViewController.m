@@ -38,7 +38,7 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     // 下拉刷新
-    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"table"];
+    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"selfinfo"];
     
     NSArray *tempArr = @[@"基本信息", @"高考科目", @"个人简历", @"家庭情况"];
     NSMutableArray *arr = [NSMutableArray array];
