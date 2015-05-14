@@ -300,6 +300,9 @@
             [MBProgressHUD hideHUD];
             [MBProgressHUD showError:NULLSTR];
         }];
+    } else {
+        [MBProgressHUD hideHUD];
+        [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
     }
 }
 

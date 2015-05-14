@@ -110,6 +110,9 @@
 		D58E1D381A51B9C200B159ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D361A51B9C200B159ED /* main.m */; };
 		D58E1D3E1A51BACE00B159ED /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D3C1A51BACE00B159ED /* MainNavigationViewController.m */; };
 		D58E1D451A51BF5900B159ED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D441A51BF5900B159ED /* LoginViewController.m */; };
+		D592F5001B048D2F00095BA5 /* FresherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D592F4FF1B048D2F00095BA5 /* FresherTableViewController.m */; };
+		D592F5051B04941B00095BA5 /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D592F5031B04941B00095BA5 /* LocationTableViewCell.m */; };
+		D592F5061B04941B00095BA5 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D592F5041B04941B00095BA5 /* LocationTableViewCell.xib */; };
 		D5C536171A6BC3A100BD2821 /* DonateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C536161A6BC3A100BD2821 /* DonateTableViewController.m */; };
 		D5F936C11A52EB5200EA112F /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F936C01A52EB5200EA112F /* IndexViewController.m */; };
 		D5F936C61A52ED1B00EA112F /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F936C51A52ED1B00EA112F /* AboutTableViewController.m */; };
@@ -266,7 +269,7 @@
 		D5380D4C1AEA7FEE004BCD90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5380D4E1AEA7FEE004BCD90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		D5380D501AEA7FEE004BCD90 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D53E75C51A93996700CBE422 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		D53E75C51A93996700CBE422 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "Class/Main/View/Launch Screen.xib"; sourceTree = "<group>"; };
 		D54CF4FF1AE6460800252371 /* OneKeyRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneKeyRateCell.h; sourceTree = "<group>"; };
 		D54CF5001AE6460800252371 /* OneKeyRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneKeyRateCell.m; sourceTree = "<group>"; };
 		D54CF5011AE6460800252371 /* OneKeyRateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneKeyRateCell.xib; sourceTree = "<group>"; };
@@ -344,6 +347,11 @@
 		D58E1D3C1A51BACE00B159ED /* MainNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
 		D58E1D431A51BF5900B159ED /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D58E1D441A51BF5900B159ED /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D592F4FE1B048D2F00095BA5 /* FresherTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FresherTableViewController.h; sourceTree = "<group>"; };
+		D592F4FF1B048D2F00095BA5 /* FresherTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FresherTableViewController.m; sourceTree = "<group>"; };
+		D592F5021B04941B00095BA5 /* LocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTableViewCell.h; sourceTree = "<group>"; };
+		D592F5031B04941B00095BA5 /* LocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTableViewCell.m; sourceTree = "<group>"; };
+		D592F5041B04941B00095BA5 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		D5C536151A6BC3A100BD2821 /* DonateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonateTableViewController.h; sourceTree = "<group>"; };
 		D5C536161A6BC3A100BD2821 /* DonateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonateTableViewController.m; sourceTree = "<group>"; };
 		D5F936BF1A52EB5200EA112F /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
@@ -840,6 +848,7 @@
 		D58E1CAF1A51B94B00B159ED /* eduadmin */ = {
 			isa = PBXGroup;
 			children = (
+				D58E1CBA1A51B94C00B159ED /* Main.storyboard */,
 				D58E1D321A51B9C200B159ED /* Class */,
 				D58E1CB01A51B94B00B159ED /* Supporting Files */,
 			);
@@ -849,9 +858,10 @@
 		D58E1CB01A51B94B00B159ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D58E1CD61A51B98800B159ED /* lib */,
-				D58E1CBD1A51B94C00B159ED /* Images.xcassets */,
 				D58E1CB11A51B94B00B159ED /* Info.plist */,
+				D58E1CBD1A51B94C00B159ED /* Images.xcassets */,
+				D53E75C51A93996700CBE422 /* Launch Screen.xib */,
+				D58E1CD61A51B98800B159ED /* lib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -954,6 +964,7 @@
 				D5F936C21A52ED0300EA112F /* About */,
 				D5C536131A6BC3A100BD2821 /* Donate */,
 				D53537621AE63EB60025A1E7 /* OneKeyRate */,
+				D592F4FC1B048D0D00095BA5 /* Fresher */,
 				D58E1D331A51B9C200B159ED /* Other */,
 			);
 			path = Class;
@@ -992,8 +1003,6 @@
 		D58E1D3D1A51BACE00B159ED /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D58E1CBA1A51B94C00B159ED /* Main.storyboard */,
-				D53E75C51A93996700CBE422 /* Launch Screen.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1013,6 +1022,34 @@
 				D58E1D441A51BF5900B159ED /* LoginViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D592F4FC1B048D0D00095BA5 /* Fresher */ = {
+			isa = PBXGroup;
+			children = (
+				D592F4FD1B048D0D00095BA5 /* Controller */,
+				D592F5011B0493DF00095BA5 /* View */,
+			);
+			path = Fresher;
+			sourceTree = "<group>";
+		};
+		D592F4FD1B048D0D00095BA5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D592F4FE1B048D2F00095BA5 /* FresherTableViewController.h */,
+				D592F4FF1B048D2F00095BA5 /* FresherTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D592F5011B0493DF00095BA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D592F5021B04941B00095BA5 /* LocationTableViewCell.h */,
+				D592F5031B04941B00095BA5 /* LocationTableViewCell.m */,
+				D592F5041B04941B00095BA5 /* LocationTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D5C536131A6BC3A100BD2821 /* Donate */ = {
@@ -1227,6 +1264,7 @@
 				D51602201A5421D5003AB6A9 /* ExamPlanCell.xib in Resources */,
 				D58E1CBC1A51B94C00B159ED /* Main.storyboard in Resources */,
 				D53537601AE605130025A1E7 /* DetailGradeCell.xib in Resources */,
+				D592F5061B04941B00095BA5 /* LocationTableViewCell.xib in Resources */,
 				D51602121A542075003AB6A9 /* PartGradeCell.xib in Resources */,
 				D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */,
 				D5529D681AE7B2FC00F5A53E /* OldClassTable.xib in Resources */,
@@ -1306,6 +1344,7 @@
 				D58E1D171A51B98800B159ED /* AFHTTPRequestOperationManager.m in Sources */,
 				D50D823E1AE11AB2001D47DA /* iCarousel.m in Sources */,
 				D5F936C11A52EB5200EA112F /* IndexViewController.m in Sources */,
+				D592F5001B048D2F00095BA5 /* FresherTableViewController.m in Sources */,
 				D58E1D191A51B98800B159ED /* AFNetworkReachabilityManager.m in Sources */,
 				D58E1D2D1A51B98800B159ED /* LJDeviceTool.m in Sources */,
 				D516A8481AE3C03E00C20941 /* MJFoundation.m in Sources */,
@@ -1352,6 +1391,7 @@
 				D57D8C391A8475FB001FA546 /* MJRefreshBaseView.m in Sources */,
 				D57D8C3B1A8475FB001FA546 /* MJRefreshFooterView.m in Sources */,
 				D50C15FD1A5A9D6D009ED8B5 /* MBProgressHUD.m in Sources */,
+				D592F5051B04941B00095BA5 /* LocationTableViewCell.m in Sources */,
 				D50C15FB1A5A9D6D009ED8B5 /* MBProgressHUD+LJ.m in Sources */,
 				D51601F81A541CBB003AB6A9 /* HeaderView.m in Sources */,
 				D58E1D451A51BF5900B159ED /* LoginViewController.m in Sources */,
@@ -1402,7 +1442,6 @@
 				D58E1CBB1A51B94C00B159ED /* Base */,
 			);
 			name = Main.storyboard;
-			path = ../../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
