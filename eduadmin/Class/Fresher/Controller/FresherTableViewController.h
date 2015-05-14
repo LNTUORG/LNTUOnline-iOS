@@ -10,4 +10,7 @@
 
 @interface FresherTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSArray *schoolArr;
+@property (strong, nonatomic) NSArray *imageArr;
+
 @end

@@ -111,7 +111,7 @@
 		D58E1D3E1A51BACE00B159ED /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D3C1A51BACE00B159ED /* MainNavigationViewController.m */; };
 		D58E1D451A51BF5900B159ED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D441A51BF5900B159ED /* LoginViewController.m */; };
 		D592F5001B048D2F00095BA5 /* FresherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D592F4FF1B048D2F00095BA5 /* FresherTableViewController.m */; };
-		D592F5051B04941B00095BA5 /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D592F5031B04941B00095BA5 /* LocationTableViewCell.m */; };
+		D592F5051B04941B00095BA5 /* SchoolLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D592F5031B04941B00095BA5 /* SchoolLocationCell.m */; };
 		D592F5061B04941B00095BA5 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D592F5041B04941B00095BA5 /* LocationTableViewCell.xib */; };
 		D5C536171A6BC3A100BD2821 /* DonateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C536161A6BC3A100BD2821 /* DonateTableViewController.m */; };
 		D5F936C11A52EB5200EA112F /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F936C01A52EB5200EA112F /* IndexViewController.m */; };
@@ -349,8 +349,8 @@
 		D58E1D441A51BF5900B159ED /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D592F4FE1B048D2F00095BA5 /* FresherTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FresherTableViewController.h; sourceTree = "<group>"; };
 		D592F4FF1B048D2F00095BA5 /* FresherTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FresherTableViewController.m; sourceTree = "<group>"; };
-		D592F5021B04941B00095BA5 /* LocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTableViewCell.h; sourceTree = "<group>"; };
-		D592F5031B04941B00095BA5 /* LocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTableViewCell.m; sourceTree = "<group>"; };
+		D592F5021B04941B00095BA5 /* SchoolLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolLocationCell.h; sourceTree = "<group>"; };
+		D592F5031B04941B00095BA5 /* SchoolLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolLocationCell.m; sourceTree = "<group>"; };
 		D592F5041B04941B00095BA5 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		D5C536151A6BC3A100BD2821 /* DonateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonateTableViewController.h; sourceTree = "<group>"; };
 		D5C536161A6BC3A100BD2821 /* DonateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonateTableViewController.m; sourceTree = "<group>"; };
@@ -1045,8 +1045,8 @@
 		D592F5011B0493DF00095BA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D592F5021B04941B00095BA5 /* LocationTableViewCell.h */,
-				D592F5031B04941B00095BA5 /* LocationTableViewCell.m */,
+				D592F5021B04941B00095BA5 /* SchoolLocationCell.h */,
+				D592F5031B04941B00095BA5 /* SchoolLocationCell.m */,
 				D592F5041B04941B00095BA5 /* LocationTableViewCell.xib */,
 			);
 			path = View;
@@ -1391,7 +1391,7 @@
 				D57D8C391A8475FB001FA546 /* MJRefreshBaseView.m in Sources */,
 				D57D8C3B1A8475FB001FA546 /* MJRefreshFooterView.m in Sources */,
 				D50C15FD1A5A9D6D009ED8B5 /* MBProgressHUD.m in Sources */,
-				D592F5051B04941B00095BA5 /* LocationTableViewCell.m in Sources */,
+				D592F5051B04941B00095BA5 /* SchoolLocationCell.m in Sources */,
 				D50C15FB1A5A9D6D009ED8B5 /* MBProgressHUD+LJ.m in Sources */,
 				D51601F81A541CBB003AB6A9 /* HeaderView.m in Sources */,
 				D58E1D451A51BF5900B159ED /* LoginViewController.m in Sources */,
