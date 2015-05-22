@@ -58,6 +58,8 @@
 		D516A84E1AE3C03E00C20941 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D516A8411AE3C03E00C20941 /* NSObject+MJCoding.m */; };
 		D516A84F1AE3C03E00C20941 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D516A8431AE3C03E00C20941 /* NSObject+MJKeyValue.m */; };
 		D516A8501AE3C03E00C20941 /* NSObject+MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = D516A8451AE3C03E00C20941 /* NSObject+MJMember.m */; };
+		D532242F1B0F6CFA00ED2E87 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D532242E1B0F6CFA00ED2E87 /* Crashlytics.framework */; };
+		D53224311B0F6DE600ED2E87 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53224301B0F6DE600ED2E87 /* Fabric.framework */; };
 		D53537581AE5FD0E0025A1E7 /* UnpassGradeRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = D53537571AE5FD0E0025A1E7 /* UnpassGradeRecord.m */; };
 		D535375B1AE604790025A1E7 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D535375A1AE604790025A1E7 /* DetailTableViewController.m */; };
 		D535375F1AE605130025A1E7 /* DetailGradeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D535375D1AE605130025A1E7 /* DetailGradeCell.m */; };
@@ -80,7 +82,6 @@
 		D55F556E1AE1728F00A7FD53 /* NightClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F556C1AE1728F00A7FD53 /* NightClassTableViewCell.m */; };
 		D55F556F1AE1728F00A7FD53 /* NightClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */; };
 		D55F55731AE1835900A7FD53 /* DayCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F55721AE1835900A7FD53 /* DayCourse.m */; };
-		D55F557E1AE193DC00A7FD53 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55F557D1AE193DC00A7FD53 /* Crashlytics.framework */; };
 		D57D8C381A8475FB001FA546 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D57D8C281A8475FB001FA546 /* MJRefresh.bundle */; };
 		D57D8C391A8475FB001FA546 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D57D8C2B1A8475FB001FA546 /* MJRefreshBaseView.m */; };
 		D57D8C3A1A8475FB001FA546 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D57D8C2D1A8475FB001FA546 /* MJRefreshConst.m */; };
@@ -251,6 +252,8 @@
 		D516A8431AE3C03E00C20941 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
 		D516A8441AE3C03E00C20941 /* NSObject+MJMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJMember.h"; sourceTree = "<group>"; };
 		D516A8451AE3C03E00C20941 /* NSObject+MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJMember.m"; sourceTree = "<group>"; };
+		D532242E1B0F6CFA00ED2E87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		D53224301B0F6DE600ED2E87 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		D53537561AE5FD0E0025A1E7 /* UnpassGradeRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnpassGradeRecord.h; sourceTree = "<group>"; };
 		D53537571AE5FD0E0025A1E7 /* UnpassGradeRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnpassGradeRecord.m; sourceTree = "<group>"; };
 		D53537591AE604790025A1E7 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
@@ -285,7 +288,6 @@
 		D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NightClassTableViewCell.xib; sourceTree = "<group>"; };
 		D55F55711AE1835900A7FD53 /* DayCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayCourse.h; sourceTree = "<group>"; };
 		D55F55721AE1835900A7FD53 /* DayCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayCourse.m; sourceTree = "<group>"; };
-		D55F557D1AE193DC00A7FD53 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		D57D8C281A8475FB001FA546 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		D57D8C291A8475FB001FA546 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		D57D8C2A1A8475FB001FA546 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -374,11 +376,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53224311B0F6DE600ED2E87 /* Fabric.framework in Frameworks */,
 				D50D82461AE14076001D47DA /* Foundation.framework in Frameworks */,
 				D50D82441AE14065001D47DA /* UIKit.framework in Frameworks */,
 				D50D82421AE13FEA001D47DA /* CoreGraphics.framework in Frameworks */,
 				D50D82401AE13FDA001D47DA /* QuartzCore.framework in Frameworks */,
-				D55F557E1AE193DC00A7FD53 /* Crashlytics.framework in Frameworks */,
+				D532242F1B0F6CFA00ED2E87 /* Crashlytics.framework in Frameworks */,
 				D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -889,7 +892,8 @@
 				D516A82E1AE3C03E00C20941 /* MJExtension */,
 				D50D823B1AE11AB2001D47DA /* iCarousel */,
 				D57D8C271A8475FB001FA546 /* MJRefresh */,
-				D55F557D1AE193DC00A7FD53 /* Crashlytics.framework */,
+				D53224301B0F6DE600ED2E87 /* Fabric.framework */,
+				D532242E1B0F6CFA00ED2E87 /* Crashlytics.framework */,
 				D50D82451AE14076001D47DA /* Foundation.framework */,
 				D50D82431AE14065001D47DA /* UIKit.framework */,
 				D50D82411AE13FEA001D47DA /* CoreGraphics.framework */,
@@ -1289,14 +1293,14 @@
 /* Begin PBXShellScriptBuildPhase section */
 		D56DF0AF1AE19EAB00BEDE9D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Crashlytics.framework/run 8feec9fc30497fa73685d17f490a7a7cdad6b2a1 8df1664dc1bc3830b78c2f7dc2216796333fcc326af81a369aacbf7bec69f778";
 		};
@@ -1610,6 +1614,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/eduadmin/lib",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = eduadmin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1631,6 +1636,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/eduadmin/lib",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = eduadmin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

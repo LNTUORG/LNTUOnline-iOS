@@ -69,6 +69,7 @@
 - (void)viewClick
 {
     self.title.open = !self.title.isOpen;
+    
     if ([self.delegate respondsToSelector:@selector(headerViewDidClickNameView:)]) {
         [self.delegate headerViewDidClickNameView:self];
     }
@@ -77,11 +78,15 @@
 
 - (void)didMoveToSuperview
 {
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.1f];
+    
     if (self.title.open) {
         self.nameView.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
-    }else{
+    } else {
         self.nameView.imageView.transform = CGAffineTransformMakeRotation(0);
     }
     
+    [UIView commitAnimations];
 }
 @end
