@@ -58,6 +58,8 @@
 		D516A84E1AE3C03E00C20941 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D516A8411AE3C03E00C20941 /* NSObject+MJCoding.m */; };
 		D516A84F1AE3C03E00C20941 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D516A8431AE3C03E00C20941 /* NSObject+MJKeyValue.m */; };
 		D516A8501AE3C03E00C20941 /* NSObject+MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = D516A8451AE3C03E00C20941 /* NSObject+MJMember.m */; };
+		D532242F1B0F6CFA00ED2E87 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D532242E1B0F6CFA00ED2E87 /* Crashlytics.framework */; };
+		D53224311B0F6DE600ED2E87 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53224301B0F6DE600ED2E87 /* Fabric.framework */; };
 		D53537581AE5FD0E0025A1E7 /* UnpassGradeRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = D53537571AE5FD0E0025A1E7 /* UnpassGradeRecord.m */; };
 		D535375B1AE604790025A1E7 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D535375A1AE604790025A1E7 /* DetailTableViewController.m */; };
 		D535375F1AE605130025A1E7 /* DetailGradeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D535375D1AE605130025A1E7 /* DetailGradeCell.m */; };
@@ -80,7 +82,6 @@
 		D55F556E1AE1728F00A7FD53 /* NightClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F556C1AE1728F00A7FD53 /* NightClassTableViewCell.m */; };
 		D55F556F1AE1728F00A7FD53 /* NightClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */; };
 		D55F55731AE1835900A7FD53 /* DayCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F55721AE1835900A7FD53 /* DayCourse.m */; };
-		D55F557E1AE193DC00A7FD53 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55F557D1AE193DC00A7FD53 /* Crashlytics.framework */; };
 		D57D8C381A8475FB001FA546 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D57D8C281A8475FB001FA546 /* MJRefresh.bundle */; };
 		D57D8C391A8475FB001FA546 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D57D8C2B1A8475FB001FA546 /* MJRefreshBaseView.m */; };
 		D57D8C3A1A8475FB001FA546 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D57D8C2D1A8475FB001FA546 /* MJRefreshConst.m */; };
@@ -110,6 +111,9 @@
 		D58E1D381A51B9C200B159ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D361A51B9C200B159ED /* main.m */; };
 		D58E1D3E1A51BACE00B159ED /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D3C1A51BACE00B159ED /* MainNavigationViewController.m */; };
 		D58E1D451A51BF5900B159ED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58E1D441A51BF5900B159ED /* LoginViewController.m */; };
+		D592F5001B048D2F00095BA5 /* FresherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D592F4FF1B048D2F00095BA5 /* FresherTableViewController.m */; };
+		D592F5051B04941B00095BA5 /* SchoolLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D592F5031B04941B00095BA5 /* SchoolLocationCell.m */; };
+		D592F5061B04941B00095BA5 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D592F5041B04941B00095BA5 /* LocationTableViewCell.xib */; };
 		D5C536171A6BC3A100BD2821 /* DonateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C536161A6BC3A100BD2821 /* DonateTableViewController.m */; };
 		D5F936C11A52EB5200EA112F /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F936C01A52EB5200EA112F /* IndexViewController.m */; };
 		D5F936C61A52ED1B00EA112F /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F936C51A52ED1B00EA112F /* AboutTableViewController.m */; };
@@ -248,6 +252,8 @@
 		D516A8431AE3C03E00C20941 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
 		D516A8441AE3C03E00C20941 /* NSObject+MJMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJMember.h"; sourceTree = "<group>"; };
 		D516A8451AE3C03E00C20941 /* NSObject+MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJMember.m"; sourceTree = "<group>"; };
+		D532242E1B0F6CFA00ED2E87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		D53224301B0F6DE600ED2E87 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		D53537561AE5FD0E0025A1E7 /* UnpassGradeRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnpassGradeRecord.h; sourceTree = "<group>"; };
 		D53537571AE5FD0E0025A1E7 /* UnpassGradeRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnpassGradeRecord.m; sourceTree = "<group>"; };
 		D53537591AE604790025A1E7 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
@@ -266,7 +272,7 @@
 		D5380D4C1AEA7FEE004BCD90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5380D4E1AEA7FEE004BCD90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		D5380D501AEA7FEE004BCD90 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D53E75C51A93996700CBE422 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		D53E75C51A93996700CBE422 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "Class/Main/View/Launch Screen.xib"; sourceTree = "<group>"; };
 		D54CF4FF1AE6460800252371 /* OneKeyRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneKeyRateCell.h; sourceTree = "<group>"; };
 		D54CF5001AE6460800252371 /* OneKeyRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneKeyRateCell.m; sourceTree = "<group>"; };
 		D54CF5011AE6460800252371 /* OneKeyRateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneKeyRateCell.xib; sourceTree = "<group>"; };
@@ -282,7 +288,6 @@
 		D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NightClassTableViewCell.xib; sourceTree = "<group>"; };
 		D55F55711AE1835900A7FD53 /* DayCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayCourse.h; sourceTree = "<group>"; };
 		D55F55721AE1835900A7FD53 /* DayCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayCourse.m; sourceTree = "<group>"; };
-		D55F557D1AE193DC00A7FD53 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		D57D8C281A8475FB001FA546 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		D57D8C291A8475FB001FA546 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		D57D8C2A1A8475FB001FA546 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -344,6 +349,11 @@
 		D58E1D3C1A51BACE00B159ED /* MainNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
 		D58E1D431A51BF5900B159ED /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D58E1D441A51BF5900B159ED /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D592F4FE1B048D2F00095BA5 /* FresherTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FresherTableViewController.h; sourceTree = "<group>"; };
+		D592F4FF1B048D2F00095BA5 /* FresherTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FresherTableViewController.m; sourceTree = "<group>"; };
+		D592F5021B04941B00095BA5 /* SchoolLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolLocationCell.h; sourceTree = "<group>"; };
+		D592F5031B04941B00095BA5 /* SchoolLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolLocationCell.m; sourceTree = "<group>"; };
+		D592F5041B04941B00095BA5 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		D5C536151A6BC3A100BD2821 /* DonateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonateTableViewController.h; sourceTree = "<group>"; };
 		D5C536161A6BC3A100BD2821 /* DonateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonateTableViewController.m; sourceTree = "<group>"; };
 		D5F936BF1A52EB5200EA112F /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
@@ -366,11 +376,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53224311B0F6DE600ED2E87 /* Fabric.framework in Frameworks */,
 				D50D82461AE14076001D47DA /* Foundation.framework in Frameworks */,
 				D50D82441AE14065001D47DA /* UIKit.framework in Frameworks */,
 				D50D82421AE13FEA001D47DA /* CoreGraphics.framework in Frameworks */,
 				D50D82401AE13FDA001D47DA /* QuartzCore.framework in Frameworks */,
-				D55F557E1AE193DC00A7FD53 /* Crashlytics.framework in Frameworks */,
+				D532242F1B0F6CFA00ED2E87 /* Crashlytics.framework in Frameworks */,
 				D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -840,6 +851,7 @@
 		D58E1CAF1A51B94B00B159ED /* eduadmin */ = {
 			isa = PBXGroup;
 			children = (
+				D58E1CBA1A51B94C00B159ED /* Main.storyboard */,
 				D58E1D321A51B9C200B159ED /* Class */,
 				D58E1CB01A51B94B00B159ED /* Supporting Files */,
 			);
@@ -849,9 +861,10 @@
 		D58E1CB01A51B94B00B159ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D58E1CD61A51B98800B159ED /* lib */,
-				D58E1CBD1A51B94C00B159ED /* Images.xcassets */,
 				D58E1CB11A51B94B00B159ED /* Info.plist */,
+				D58E1CBD1A51B94C00B159ED /* Images.xcassets */,
+				D53E75C51A93996700CBE422 /* Launch Screen.xib */,
+				D58E1CD61A51B98800B159ED /* lib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -879,7 +892,8 @@
 				D516A82E1AE3C03E00C20941 /* MJExtension */,
 				D50D823B1AE11AB2001D47DA /* iCarousel */,
 				D57D8C271A8475FB001FA546 /* MJRefresh */,
-				D55F557D1AE193DC00A7FD53 /* Crashlytics.framework */,
+				D53224301B0F6DE600ED2E87 /* Fabric.framework */,
+				D532242E1B0F6CFA00ED2E87 /* Crashlytics.framework */,
 				D50D82451AE14076001D47DA /* Foundation.framework */,
 				D50D82431AE14065001D47DA /* UIKit.framework */,
 				D50D82411AE13FEA001D47DA /* CoreGraphics.framework */,
@@ -954,6 +968,7 @@
 				D5F936C21A52ED0300EA112F /* About */,
 				D5C536131A6BC3A100BD2821 /* Donate */,
 				D53537621AE63EB60025A1E7 /* OneKeyRate */,
+				D592F4FC1B048D0D00095BA5 /* Fresher */,
 				D58E1D331A51B9C200B159ED /* Other */,
 			);
 			path = Class;
@@ -992,8 +1007,6 @@
 		D58E1D3D1A51BACE00B159ED /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D58E1CBA1A51B94C00B159ED /* Main.storyboard */,
-				D53E75C51A93996700CBE422 /* Launch Screen.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1013,6 +1026,34 @@
 				D58E1D441A51BF5900B159ED /* LoginViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D592F4FC1B048D0D00095BA5 /* Fresher */ = {
+			isa = PBXGroup;
+			children = (
+				D592F4FD1B048D0D00095BA5 /* Controller */,
+				D592F5011B0493DF00095BA5 /* View */,
+			);
+			path = Fresher;
+			sourceTree = "<group>";
+		};
+		D592F4FD1B048D0D00095BA5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D592F4FE1B048D2F00095BA5 /* FresherTableViewController.h */,
+				D592F4FF1B048D2F00095BA5 /* FresherTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D592F5011B0493DF00095BA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D592F5021B04941B00095BA5 /* SchoolLocationCell.h */,
+				D592F5031B04941B00095BA5 /* SchoolLocationCell.m */,
+				D592F5041B04941B00095BA5 /* LocationTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D5C536131A6BC3A100BD2821 /* Donate */ = {
@@ -1227,6 +1268,7 @@
 				D51602201A5421D5003AB6A9 /* ExamPlanCell.xib in Resources */,
 				D58E1CBC1A51B94C00B159ED /* Main.storyboard in Resources */,
 				D53537601AE605130025A1E7 /* DetailGradeCell.xib in Resources */,
+				D592F5061B04941B00095BA5 /* LocationTableViewCell.xib in Resources */,
 				D51602121A542075003AB6A9 /* PartGradeCell.xib in Resources */,
 				D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */,
 				D5529D681AE7B2FC00F5A53E /* OldClassTable.xib in Resources */,
@@ -1251,14 +1293,14 @@
 /* Begin PBXShellScriptBuildPhase section */
 		D56DF0AF1AE19EAB00BEDE9D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Crashlytics.framework/run 8feec9fc30497fa73685d17f490a7a7cdad6b2a1 8df1664dc1bc3830b78c2f7dc2216796333fcc326af81a369aacbf7bec69f778";
 		};
@@ -1306,6 +1348,7 @@
 				D58E1D171A51B98800B159ED /* AFHTTPRequestOperationManager.m in Sources */,
 				D50D823E1AE11AB2001D47DA /* iCarousel.m in Sources */,
 				D5F936C11A52EB5200EA112F /* IndexViewController.m in Sources */,
+				D592F5001B048D2F00095BA5 /* FresherTableViewController.m in Sources */,
 				D58E1D191A51B98800B159ED /* AFNetworkReachabilityManager.m in Sources */,
 				D58E1D2D1A51B98800B159ED /* LJDeviceTool.m in Sources */,
 				D516A8481AE3C03E00C20941 /* MJFoundation.m in Sources */,
@@ -1352,6 +1395,7 @@
 				D57D8C391A8475FB001FA546 /* MJRefreshBaseView.m in Sources */,
 				D57D8C3B1A8475FB001FA546 /* MJRefreshFooterView.m in Sources */,
 				D50C15FD1A5A9D6D009ED8B5 /* MBProgressHUD.m in Sources */,
+				D592F5051B04941B00095BA5 /* SchoolLocationCell.m in Sources */,
 				D50C15FB1A5A9D6D009ED8B5 /* MBProgressHUD+LJ.m in Sources */,
 				D51601F81A541CBB003AB6A9 /* HeaderView.m in Sources */,
 				D58E1D451A51BF5900B159ED /* LoginViewController.m in Sources */,
@@ -1402,7 +1446,6 @@
 				D58E1CBB1A51B94C00B159ED /* Base */,
 			);
 			name = Main.storyboard;
-			path = ../../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1571,6 +1614,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/eduadmin/lib",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = eduadmin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1592,6 +1636,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/eduadmin/lib",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = eduadmin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

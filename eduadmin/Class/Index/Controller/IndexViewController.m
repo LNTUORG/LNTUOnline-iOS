@@ -53,7 +53,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     if (![self.def objectForKey:LOGINTOKEN]) {
-        [self performSegueWithIdentifier:@"index2login" sender:nil];
+//        [self performSegueWithIdentifier:@"index2login" sender:nil];
+        [self logout:nil];
     }
     [self getPhotoAndName];
 }
@@ -125,35 +126,6 @@
     }
 }
 
-
-//判断更新
-//- (void)isNewest
-//{
-
-//    NSString *app_Version = [LJDeviceTool getCurrentAppVersion];
-//    NSString *app_build = [LJDeviceTool getCurrentAppBuild];
-//    
-//    NSString *requestURL = [NSString stringWithFormat:@"%@version/beta?platform=ios",sinaURL];
-//    
-//    [LJHTTPTool getJSONWithURL:requestURL params:nil success:^(id responseJSON) {
-//        
-//        NSDictionary *dict = [NSDictionary dictionaryWithDictionary:responseJSON];
-//        self.dict = dict;
-//        NSString *mesg = [NSString stringWithFormat:@"当前版本为 v%@，有更新的版本%@\n\n%@",app_Version,dict[@"name"],dict[@"message"]];
-//        
-//        NSString *flag = dict[@"build"];
-//        
-//        if ([app_build intValue] < [flag intValue]) {
-//            
-//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"是否更新" message:mesg delegate:self cancelButtonTitle:@"不，谢谢" otherButtonTitles:@"确定", nil];
-//            [alert show];
-//        }
-//        
-//    } failure:^(NSError *error) {
-//        
-//    }];
-//}
-
 #pragma mark alert代理
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
@@ -164,7 +136,7 @@
 
 - (IBAction)logout:(id)sender {
     
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"是否退出登录" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"确定" otherButtonTitles: nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"是否重新登录" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"确定" otherButtonTitles: nil];
     [sheet showInView:self.view];
 }
 
@@ -202,6 +174,10 @@
 
 - (IBAction)oneKeyRate {
     [self performSegueWithIdentifier:@"main2Rate" sender:nil];
+}
+
+- (IBAction)fresher {
+    [self performSegueWithIdentifier:@"main2Fresher" sender:nil];
 }
 
 #pragma mark ActionSheet代理方法

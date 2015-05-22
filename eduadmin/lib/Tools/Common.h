@@ -9,7 +9,7 @@
 #define MAINURL @"http://api.online.lntu.org/" // 主服务器URL
 #define TOKENURL @"http://eduadm.sinaapp.com/"      // 推送服务器 URL
 #define NOTICEURL @"http://60.18.131.131:11180/academic/jwgg.jsp"   // 教务在线公告地址
-#define WANTEDURL @"https://github.com/LNTUORG/Index"     // 招募地址
+#define WANTEDURL @"http://lntu.org/joinin/"     // 招募地址
 #define PUPBOSSURL @"http://pupboss.com"       //  我的网站
 #define WEIBOURL @"http://www.weibo.com/yuanjingkeji"
 #define STOREURL @"https://itunes.apple.com/cn/app/id955004763"

@@ -40,4 +40,6 @@
 
 - (IBAction)oneKeyRate;
 
+- (IBAction)fresher;
+
 @end

@@ -130,6 +130,7 @@
         if (section == 3) return self.information.familys.count;
         else return self.information.disciplinaryActions.count;
     }else {
+        
         return 0;
     }
 }
