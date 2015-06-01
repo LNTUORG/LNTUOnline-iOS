@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -18,15 +18,15 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="countdown" translatesAutoresizingMaskIntoConstraints="NO" id="jjC-7G-RE1">
                         <rect key="frame" x="8" y="42" width="21" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="Zj6-Df-C9f"/>
-                            <constraint firstAttribute="width" constant="21" id="eZt-LA-UnI"/>
+                            <constraint firstAttribute="width" constant="21" id="F4D-Eb-bgG"/>
+                            <constraint firstAttribute="height" constant="21" id="ic4-Bb-5YF"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="软件技术基础尽心阿呆是软件技础" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Znh-58-Vfj">
                         <rect key="frame" x="8" y="8" width="259" height="29"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="29" id="PoW-yC-FgX"/>
-                            <constraint firstAttribute="width" constant="259" id="usV-K4-9Gl"/>
+                            <constraint firstAttribute="height" constant="29" id="NTR-U2-xG9"/>
+                            <constraint firstAttribute="width" constant="259" id="es2-5R-scx"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="highlightedColor"/>
@@ -34,8 +34,8 @@
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014-06-17 13:50--15:50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APw-gn-90f">
                         <rect key="frame" x="39" y="42" width="197" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="d7m-hM-cGo"/>
-                            <constraint firstAttribute="width" constant="197" id="eWq-2x-gg0"/>
+                            <constraint firstAttribute="height" constant="21" id="5sw-3d-k53"/>
+                            <constraint firstAttribute="width" constant="197" id="9M1-Mw-mqJ"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,14 +55,14 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Znh-58-Vfj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="19H-ZM-ZUi"/>
-                    <constraint firstItem="jjC-7G-RE1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="76v-0V-1OD"/>
-                    <constraint firstItem="Znh-58-Vfj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="DyR-ot-eTC"/>
-                    <constraint firstItem="jjC-7G-RE1" firstAttribute="top" secondItem="Znh-58-Vfj" secondAttribute="bottom" constant="5" id="Fzc-Qv-4wK"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="jjC-7G-RE1" secondAttribute="bottom" constant="-1.5" id="1lt-5o-LSb"/>
+                    <constraint firstItem="APw-gn-90f" firstAttribute="leading" secondItem="jjC-7G-RE1" secondAttribute="trailing" constant="10" id="6F7-37-ucQ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="APw-gn-90f" secondAttribute="bottom" constant="-1.5" id="Akh-GR-UFg"/>
+                    <constraint firstItem="Znh-58-Vfj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="JIf-is-zFz"/>
+                    <constraint firstItem="jjC-7G-RE1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="SO1-il-3EN"/>
                     <constraint firstAttribute="trailing" secondItem="Imf-9v-NB5" secondAttribute="trailing" id="YXW-t9-SEH"/>
                     <constraint firstItem="Imf-9v-NB5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bFp-9u-GDr"/>
-                    <constraint firstItem="APw-gn-90f" firstAttribute="top" secondItem="Znh-58-Vfj" secondAttribute="bottom" constant="5" id="dwO-wf-cS9"/>
-                    <constraint firstItem="APw-gn-90f" firstAttribute="leading" secondItem="jjC-7G-RE1" secondAttribute="trailing" constant="10" id="hxB-wB-WxU"/>
+                    <constraint firstItem="Znh-58-Vfj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="cxW-Tu-kiU"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

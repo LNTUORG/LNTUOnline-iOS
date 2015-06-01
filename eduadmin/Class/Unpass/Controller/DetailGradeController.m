@@ -8,6 +8,7 @@
 
 #import "DetailGradeController.h"
 #import "MyGrade.h"
+#import "Common.h"
 
 @interface DetailGradeController ()
 
@@ -35,7 +36,7 @@
     self.score.text = grade.score;
     
     if ([grade.level isEqualToString:@"GREAT"]) {
-        self.score.textColor = [UIColor greenColor];
+        self.score.textColor = LJColor(100, 157, 89);
     }
     else if ([grade.level isEqualToString:@"NORMAL"]) {
         

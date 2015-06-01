@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E17e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jOW-qB-Ta0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jOW-qB-Ta0">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -767,7 +767,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLs-Rt-clC" customClass="UIControl">
                                         <rect key="frame" x="0.0" y="353" width="199.5" height="70"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新生专区" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXP-cw-Sge">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生活专区" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXP-cw-Sge">
                                                 <rect key="frame" x="42" y="14" width="114" height="41"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="8he-L1-fRj"/>
@@ -937,11 +937,11 @@
             </objects>
             <point key="canvasLocation" x="-3744" y="1158"/>
         </scene>
-        <!--新生专区-->
+        <!--热水温度-->
         <scene sceneID="kqg-Wn-OL8">
             <objects>
-                <tableViewController id="L8O-vA-fbw" customClass="FresherTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="161" sectionHeaderHeight="22" sectionFooterHeight="22" id="YsQ-MW-HNv">
+                <tableViewController id="L8O-vA-fbw" customClass="LifeTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="YsQ-MW-HNv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -950,7 +950,7 @@
                             <outlet property="delegate" destination="L8O-vA-fbw" id="chK-SR-z4y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="新生专区" id="ePo-5L-VpK"/>
+                    <navigationItem key="navigationItem" title="热水温度" id="ePo-5L-VpK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yds-WV-PRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

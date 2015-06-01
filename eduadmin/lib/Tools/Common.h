@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 PUPBOSS. All rights reserved.
 //
 
-#define MAINURL @"http://api.online.lntu.org/" // 主服务器URL
-#define TOKENURL @"http://eduadm.sinaapp.com/"      // 推送服务器 URL
+#define MAINURL @"https://api.online.lntu.org/" // 主服务器URL
+#define TOKENURL @"http://lntu.sinaapp.com/"      // 推送服务器 URL
 #define NOTICEURL @"http://60.18.131.131:11180/academic/jwgg.jsp"   // 教务在线公告地址
 #define WANTEDURL @"http://lntu.org/joinin/"     // 招募地址
 #define PUPBOSSURL @"http://pupboss.com"       //  我的网站

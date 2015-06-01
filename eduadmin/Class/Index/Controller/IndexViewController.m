@@ -53,8 +53,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     if (![self.def objectForKey:LOGINTOKEN]) {
-//        [self performSegueWithIdentifier:@"index2login" sender:nil];
-        [self logout:nil];
+        [self performSegueWithIdentifier:@"index2login" sender:nil];
+//        [self logout:nil];
     }
     [self getPhotoAndName];
 }
@@ -63,11 +63,10 @@
  *  推送token
  */
 - (void)sendTokenToServer {
-    
-    
-    NSString *url = [NSString stringWithFormat:@"%@deviceToken?userId=%@&deviceToken=%@",TOKENURL,[self.def objectForKey:USERNAMEKEY],[self.def objectForKey:PUSHTOKENNEW]];
 
-    [LJHTTPTool getHTTPWithURL:url params:nil success:^(id responseHTTP) {
+    NSDictionary *param = @{@"userId": [self.def objectForKey:USERNAMEKEY], @"deviceToken": [self.def objectForKey:PUSHTOKENNEW]};
+    
+    [LJHTTPTool postJSONWithURL:[NSString stringWithFormat:@"%@device-token/insert", TOKENURL] params:param success:^(id responseJSON) {
         
     } failure:^(NSError *error) {
         
