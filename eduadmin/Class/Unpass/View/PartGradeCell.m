@@ -9,6 +9,7 @@
 #import "PartGradeCell.h"
 #import "UnpassGrade.h"
 #import "MyGrade.h"
+#import "Common.h"
 
 @implementation PartGradeCell
 
@@ -33,7 +34,7 @@
     self.credit.text = myGrade.score;
     
     if ([myGrade.level isEqualToString:@"GREAT"]) {
-        self.credit.textColor = [UIColor greenColor];
+        self.credit.textColor = LJColor(100, 157, 89);
     }
     else if ([myGrade.level isEqualToString:@"NORMAL"]) {
         

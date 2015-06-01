@@ -7,6 +7,7 @@
 //
 
 #import "OneKeyRateCell.h"
+#import "Common.h"
 
 @implementation OneKeyRateCell
 
@@ -23,7 +24,7 @@
     } else {
         
         self.statusLable.text = @"已评估";
-        self.statusLable.textColor = [UIColor greenColor];
+        self.statusLable.textColor = LJColor(100, 157, 89);
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import "Common.h"
 #import "LJHTTPTool.h"
@@ -29,7 +30,7 @@
     // Override point for customization after application launch.
     
     // 崩溃分析
-    [Crashlytics startWithAPIKey:@"8feec9fc30497fa73685d17f490a7a7cdad6b2a1"];
+    [Fabric with:@[CrashlyticsKit]];
     
     if (launchOptions) {
         
