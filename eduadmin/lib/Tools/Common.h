@@ -13,6 +13,7 @@
 #define PUPBOSSURL @"http://pupboss.com"       //  我的网站
 #define WEIBOURL @"http://www.weibo.com/yuanjingkeji"
 #define STOREURL @"https://itunes.apple.com/cn/app/id955004763"
+#define FEEDBACKURL @"https://online.lntu.org/q-a/"
 
 #define WAITSTR @"正在玩命加载中~~" // 等待提示语
 #define ERRORSTR @"服务器被外星人搬走了o(╯□╰)o" // 错误提示语

@@ -65,16 +65,17 @@
             info.done = @"1";
             [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
             [MBProgressHUD showSuccess:@"成功"];
+            
+            if (indexPath.row == self.courseArr.count - 1) {
+                
+                [self refreshData];
+                [self ratingApp];
+            }
+            
         } failure:^(NSError *error) {
             
             [MBProgressHUD showError:@"似乎有点不对劲"];
         }];
-    }
-    
-    if (indexPath.row == self.courseArr.count - 1) {
-        
-        [self refreshData];
-        [self ratingApp];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -112,6 +113,46 @@
     if (buttonIndex == 1) {
         NSString *url = STOREURL;
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }
+}
+- (IBAction)oneClickRate:(id)sender {
+    
+    // 串行队列
+    dispatch_queue_t q = dispatch_queue_create("com.pupboss.gcddemo1", DISPATCH_QUEUE_SERIAL);
+    
+    
+    for (int i = 0; i < self.courseArr.count; ++i) {
+        // 异步任务，并发执行，但是如果在串行队列中，仍然会依次顺序执行
+        
+        RatingInfo *info = self.courseArr[i];
+        
+        if ([info.done isEqualToString:@"0"]) {
+            
+            NSDictionary *dict = @{@"evaKey": info.evaKey};
+            
+            dispatch_async(q, ^{
+                
+                [LJHTTPTool postJSONWithURL:[NSString stringWithFormat:@"%@course-eva-info/~self/do:eva", MAINURL] params:dict success:^(id responseJSON) {
+                    
+                    info.done = @"1";
+                    
+                    [MBProgressHUD showSuccess:@"成功"];
+                    
+                    if (i == self.courseArr.count - 1) {
+                        
+                        [self refreshData];
+                        [self ratingApp];
+                    }
+                } failure:^(NSError *error) {
+                    
+                    [MBProgressHUD showError:@"似乎有点不对劲"];
+                }];
+            });
+        } else {
+            
+            [MBProgressHUD showError:@"已经评过了~"];
+        }
+        
     }
 }
 @end

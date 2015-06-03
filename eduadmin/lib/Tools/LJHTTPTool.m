@@ -114,7 +114,12 @@
              failure(operation, error);
              if ([operation.response statusCode] == 401) {
                  [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
-             } else {
+             }
+             if ([operation.response statusCode] == 403) {
+                 
+                 [MBProgressHUD showError:@"可能尚未评课~"];
+             }
+             else {
                  [MBProgressHUD showError:ERRORSTR];
              }
          }

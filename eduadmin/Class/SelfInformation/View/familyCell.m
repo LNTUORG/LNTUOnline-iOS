@@ -24,7 +24,7 @@
 - (void)setTRelationship:(NSString *)tRelationship
 {
     _tRelationship = tRelationship;
-    self.relationship.text = tRelationship;
+    self.relationship.text = [NSString stringWithFormat:@"（%@）", tRelationship];
 }
 
 - (void)setTPoliticalAffiliation:(NSString *)tPoliticalAffiliation
