@@ -56,15 +56,19 @@
     }
     if (indexPath.row == 2) {
         
+        [self performSegueWithIdentifier:@"about2web" sender:FEEDBACKURL];
+    }
+    if (indexPath.row == 3) {
+        
         NSString *url = [NSString stringWithFormat:@"http://wpa.qq.com/msgrd?v=3&uin=%@&site=qq&menu=yes", LJQQ];
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     }
-    if (indexPath.row == 3) {
+    if (indexPath.row == 4) {
         
         [self performSegueWithIdentifier:@"about2web" sender:WEIBOURL];
     }
-    if (indexPath.row == 4) {
+    if (indexPath.row == 5) {
         [self performSegueWithIdentifier:@"about2web" sender:WANTEDURL];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
