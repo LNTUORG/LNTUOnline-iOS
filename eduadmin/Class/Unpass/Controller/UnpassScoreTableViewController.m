@@ -18,7 +18,6 @@
 
 @interface UnpassScoreTableViewController ()
 
-
 @end
 
 @implementation UnpassScoreTableViewController
@@ -83,12 +82,16 @@
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@unpass-course/~self", MAINURL] params:nil success:^(id responseJSON) {
         
         self.gradeArr = [UnpassGrade objectArrayWithKeyValuesArray:responseJSON];
+        
+        if (self.gradeArr.count == 0) {
+            
+            [MBProgressHUD showError:@"居然无挂科，你超神了！"];
+        }
         [self.tableView reloadData];
         [self.tableView headerEndRefreshing];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        [MBProgressHUD showError:@"居然无挂科，你超神了！"];
         [self.tableView headerEndRefreshing];
     }];
 }

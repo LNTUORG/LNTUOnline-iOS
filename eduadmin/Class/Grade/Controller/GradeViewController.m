@@ -79,7 +79,6 @@
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        [MBProgressHUD showError:NULLSTR];
         [self.gradeView headerEndRefreshing];
     }];
 }

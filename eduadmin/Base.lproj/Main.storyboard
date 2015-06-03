@@ -970,7 +970,13 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="一键评课" id="OZh-FC-9Fu"/>
+                    <navigationItem key="navigationItem" title="一键评课" id="OZh-FC-9Fu">
+                        <barButtonItem key="rightBarButtonItem" title="一键评课" id="V8w-on-gT6">
+                            <connections>
+                                <action selector="oneClickRate:" destination="HCz-0G-q47" id="Pt0-lM-0rE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ls2-cE-Ldn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
