@@ -783,10 +783,10 @@
 		D58E1CB01A51B94B00B159ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D58E1CD61A51B98800B159ED /* lib */,
 				D58E1CB11A51B94B00B159ED /* Info.plist */,
 				D58E1CBD1A51B94C00B159ED /* Images.xcassets */,
 				D53E75C51A93996700CBE422 /* Launch Screen.xib */,
-				D58E1CD61A51B98800B159ED /* lib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
