@@ -39,41 +39,29 @@
 - (void)refreshData
 {
     [MBProgressHUD showMessage:@"正在获取中"];
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    if ([def objectForKey:USERNAMEKEY]) {
+    
+    NSString *tm = @"";
+    if ([LJTimeTool getCurrentMonth]>=2 && [LJTimeTool getCurrentMonth]<9) {
         
-        NSString *uName = [def objectForKey:USERNAMEKEY];
-        NSString *pwd = [def objectForKey:PWDKEY];
+        tm = @"春";
+    } else {
         
-        NSDictionary *param = @{@"userId": uName,
-                                @"pwd": pwd,
-                                @"platform": @"ios",
-                                @"version": [LJDeviceTool getCurrentAppBuild],
-                                @"manufacturer": @"Apple",
-                                @"osVer": [NSString stringWithFormat:@"iOS%@",[LJDeviceTool getCurrentSystemVersion]],
-                                @"model": [LJDeviceTool getCurrentDeviceModel]};
-        
-        [LJHTTPTool postHTTPWithURL:@"http://lntuonline.pupboss.com/user/login" params:param success:^(id responseHTTP) {
-            
-            [LJHTTPTool getJSONWithURL:@"http://lntuonline.pupboss.com/curriculum/info" params:nil success:^(id responseJSON) {
-                
-                [MBProgressHUD hideHUD];
-                [self.schScrollView headerEndRefreshing];
-                
-                [LJFileTool writeToFileContent:responseJSON withFileName:scheduleFileName];
-                
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                [MBProgressHUD hideHUD];
-                [self.schScrollView headerEndRefreshing];
-                [MBProgressHUD showError:NULLSTR];
-            }];
-            
-        } failure:^(NSError *error) {
-            [MBProgressHUD hideHUD];
-            [self.schScrollView headerEndRefreshing];
-            [MBProgressHUD showError:NULLSTR];
-        }];
+        tm = @"秋";
     }
+    NSDictionary *dict = @{@"year": @([LJTimeTool getCurrentYear]), @"term": tm};
+    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@class-table/~self", MAINURL] params:dict success:^(id responseJSON) {
+        
+        [MBProgressHUD hideHUD];
+        [self.schScrollView headerEndRefreshing];
+        
+        [LJFileTool writeToFileContent:responseJSON withFileName:scheduleFileName];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        [MBProgressHUD hideHUD];
+        [self.schScrollView headerEndRefreshing];
+    }];
+    
 }
 
 

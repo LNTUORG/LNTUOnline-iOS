@@ -36,7 +36,7 @@
     
     NSString *date = [NSString stringWithFormat:@"%@-%@-%@", arr[0], arr[1], arr2[0]];
     // 剩余天数
-    NSString *lastDay = [NSString stringWithFormat:@"%d",[LJTimeTool dayNumberSinceDateWithFormat_yyyy_MM_dd:date]];
+    NSString *lastDay = [NSString stringWithFormat:@"%d", (int)[LJTimeTool dayNumberSinceDateWithFormat_yyyy_MM_dd:date]];
     
 
     if ([lastDay intValue]<=0) {

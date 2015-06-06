@@ -58,6 +58,8 @@
 		D516A84E1AE3C03E00C20941 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D516A8411AE3C03E00C20941 /* NSObject+MJCoding.m */; };
 		D516A84F1AE3C03E00C20941 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D516A8431AE3C03E00C20941 /* NSObject+MJKeyValue.m */; };
 		D516A8501AE3C03E00C20941 /* NSObject+MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = D516A8451AE3C03E00C20941 /* NSObject+MJMember.m */; };
+		D520E1901B22A23B0053D6AB /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = D520E18F1B22A23B0053D6AB /* Course.m */; };
+		D520E1931B22A24A0053D6AB /* TimeAndPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = D520E1921B22A24A0053D6AB /* TimeAndPlace.m */; };
 		D532242F1B0F6CFA00ED2E87 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D532242E1B0F6CFA00ED2E87 /* Crashlytics.framework */; };
 		D53224311B0F6DE600ED2E87 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53224301B0F6DE600ED2E87 /* Fabric.framework */; };
 		D53537581AE5FD0E0025A1E7 /* UnpassGradeRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = D53537571AE5FD0E0025A1E7 /* UnpassGradeRecord.m */; };
@@ -231,6 +233,10 @@
 		D516A8431AE3C03E00C20941 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
 		D516A8441AE3C03E00C20941 /* NSObject+MJMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJMember.h"; sourceTree = "<group>"; };
 		D516A8451AE3C03E00C20941 /* NSObject+MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJMember.m"; sourceTree = "<group>"; };
+		D520E18E1B22A23B0053D6AB /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		D520E18F1B22A23B0053D6AB /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		D520E1911B22A24A0053D6AB /* TimeAndPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeAndPlace.h; sourceTree = "<group>"; };
+		D520E1921B22A24A0053D6AB /* TimeAndPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeAndPlace.m; sourceTree = "<group>"; };
 		D532242E1B0F6CFA00ED2E87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		D53224301B0F6DE600ED2E87 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		D53537561AE5FD0E0025A1E7 /* UnpassGradeRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnpassGradeRecord.h; sourceTree = "<group>"; };
@@ -725,6 +731,10 @@
 			children = (
 				D55F55711AE1835900A7FD53 /* DayCourse.h */,
 				D55F55721AE1835900A7FD53 /* DayCourse.m */,
+				D520E18E1B22A23B0053D6AB /* Course.h */,
+				D520E18F1B22A23B0053D6AB /* Course.m */,
+				D520E1911B22A24A0053D6AB /* TimeAndPlace.h */,
+				D520E1921B22A24A0053D6AB /* TimeAndPlace.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1199,6 +1209,7 @@
 				D535375B1AE604790025A1E7 /* DetailTableViewController.m in Sources */,
 				D51601E81A541BA7003AB6A9 /* EducationExperience.m in Sources */,
 				D516A8501AE3C03E00C20941 /* NSObject+MJMember.m in Sources */,
+				D520E1931B22A24A0053D6AB /* TimeAndPlace.m in Sources */,
 				D5F936C61A52ED1B00EA112F /* AboutTableViewController.m in Sources */,
 				D57D8C3E1A8475FB001FA546 /* UIScrollView+MJRefresh.m in Sources */,
 				D516A84A1AE3C03E00C20941 /* MJMember.m in Sources */,
@@ -1213,6 +1224,7 @@
 				D58E1D2D1A51B98800B159ED /* LJDeviceTool.m in Sources */,
 				D516A8481AE3C03E00C20941 /* MJFoundation.m in Sources */,
 				D54CF5021AE6460800252371 /* OneKeyRateCell.m in Sources */,
+				D520E1901B22A23B0053D6AB /* Course.m in Sources */,
 				D516021F1A5421D5003AB6A9 /* ExamPlanCell.m in Sources */,
 				D51602151A542109003AB6A9 /* GradeViewController.m in Sources */,
 				D58E1D381A51B9C200B159ED /* main.m in Sources */,

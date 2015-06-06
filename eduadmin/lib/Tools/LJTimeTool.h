@@ -21,6 +21,7 @@
 
 + (NSInteger)getCurrentClass;
 
-+ (int)dayNumberSinceDateWithFormat_yyyy_MM_dd:(NSString *)date;
++ (NSInteger)dayNumberSinceDateWithFormat_yyyy_MM_dd:(NSString *)date;
 
++ (NSInteger)getWeekOfDateWithFormat_yyyy_MM_dd:(NSString *)date;
 @end

@@ -33,7 +33,7 @@
 #define TOKENFORNET [[NSUserDefaults standardUserDefaults] objectForKey:LOGINTOKEN]
 
 #define selfInfoFileName @"selfInfoV2.plist"
-#define scheduleFileName @"scheduleV2.plist"
+#define scheduleFileName @"scheduleV3.plist"
 #define examPlanFileName @"examV2.plist"
 #define selfIconFileName @"selfIcon.png"
 

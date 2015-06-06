@@ -33,7 +33,7 @@
 {
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSUInteger unitFlags = NSYearCalendarUnit;
+    NSUInteger unitFlags = NSCalendarUnitYear;
     NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
     
     return [dateComponent year];
@@ -53,7 +53,7 @@
 {
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSUInteger unitFlags = NSHourCalendarUnit;
+    NSUInteger unitFlags = NSCalendarUnitHour;
     NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
     
     long hour = [dateComponent hour];
@@ -77,7 +77,7 @@
     
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSUInteger unitFlags = NSHourCalendarUnit;
+    NSUInteger unitFlags = NSCalendarUnitHour;
     NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
     
     long hour = [dateComponent hour];
@@ -95,7 +95,7 @@
     else return 6;
 }
 
-+ (int)dayNumberSinceDateWithFormat_yyyy_MM_dd:(NSString *)date
++ (NSInteger)dayNumberSinceDateWithFormat_yyyy_MM_dd:(NSString *)date
 {
     NSDateFormatter * dm = [[NSDateFormatter alloc]init];
     
@@ -107,6 +107,20 @@
     
     int lastDay = (int)reTime/3600/24;
     return lastDay;
+}
+
++ (NSInteger)getWeekOfDateWithFormat_yyyy_MM_dd:(NSString *)date {
+    
+    NSDateFormatter * dm = [[NSDateFormatter alloc]init];
+    
+    [dm setDateFormat:@"yyyy-MM-dd"];
+    NSDate * newdate = [dm dateFromString:date];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags = NSCalendarUnitWeekOfYear;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:newdate];
+    
+    return [dateComponent weekOfYear];
 }
 
 @end
