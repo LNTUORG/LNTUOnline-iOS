@@ -123,6 +123,12 @@
     if ([mgr fileExistsAtPath:filePath]) {
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
         
+        NSString *fullDate = dict[@"firstWeekMondayAt"];
+        NSArray *arr = [fullDate componentsSeparatedByString:@"T"];
+        
+        self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 1;
+        self.navigationItem.title = [NSString stringWithFormat:@"第%d周", self.currentWeek];
+        
         NSArray *courceArr = [Course objectArrayWithKeyValuesArray:dict[@"courses"]];
         
         NSDictionary *tempDict = @{@"1-1": @"",
@@ -171,10 +177,21 @@
                 
                 for (TimeAndPlace *tp in cource.timesAndPlaces) {
                     
-                    if (self.currentWeek > tp.startWeek && self.currentWeek < tp.endWeek) {
+                    if (self.currentWeek >= tp.startWeek && self.currentWeek <= tp.endWeek) {
                         
                         NSString *key = [NSString stringWithFormat:@"%@-%@", [self getCountByWeekday:tp.dayInWeek], tp.stage];
-                        NSString *weeks = [NSString stringWithFormat:@"%d-%d", (int)tp.startWeek, (int)tp.endWeek];
+                        NSString *weeks = @"";
+                        
+                        if ([tp.weekMode isEqualToString:@"ALL"]) {
+                            weeks = [NSString stringWithFormat:@"%d-%d", (int)tp.startWeek, (int)tp.endWeek];
+                        } else if ([tp.weekMode isEqualToString:@"ODD"]) {
+                            
+                            weeks = [NSString stringWithFormat:@"%d-%d(单)", (int)tp.startWeek, (int)tp.endWeek];
+                        } else {
+                            
+                            weeks = [NSString stringWithFormat:@"%d-%d(双)", (int)tp.startWeek, (int)tp.endWeek];
+                        }
+                        
                         NSString *value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", name, weeks, tea, tp.room];
                         
                         [oldFormat setValue:value forKey:key];
@@ -368,10 +385,21 @@
             
             for (TimeAndPlace *tp in cource.timesAndPlaces) {
                 
-                if (self.currentWeek > tp.startWeek && self.currentWeek < tp.endWeek) {
+                if (self.currentWeek >= tp.startWeek && self.currentWeek <= tp.endWeek) {
                     
                     NSString *key = [NSString stringWithFormat:@"%@-%@", [self getCountByWeekday:tp.dayInWeek], tp.stage];
-                    NSString *weeks = [NSString stringWithFormat:@"%d-%d", (int)tp.startWeek, (int)tp.endWeek];
+                    NSString *weeks = @"";
+                    
+                    if ([tp.weekMode isEqualToString:@"ALL"]) {
+                        weeks = [NSString stringWithFormat:@"%d-%d", (int)tp.startWeek, (int)tp.endWeek];
+                    } else if ([tp.weekMode isEqualToString:@"ODD"]) {
+                        
+                        weeks = [NSString stringWithFormat:@"%d-%d(单)", (int)tp.startWeek, (int)tp.endWeek];
+                    } else {
+                        
+                        weeks = [NSString stringWithFormat:@"%d-%d(双)", (int)tp.startWeek, (int)tp.endWeek];
+                    }
+                    
                     NSString *value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", name, weeks, tea, tp.room];
                     
                     [oldFormat setValue:value forKey:key];

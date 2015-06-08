@@ -16,4 +16,6 @@
 @property (nonatomic, copy) NSString *room;
 @property (nonatomic, copy) NSString *stage;
 @property (nonatomic, assign) NSInteger startWeek;
+@property (nonatomic, copy) NSString *weekMode;
+
 @end
