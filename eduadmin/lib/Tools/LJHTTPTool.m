@@ -115,10 +115,6 @@
              if ([operation.response statusCode] == 401) {
                  [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
              }
-             if ([operation.response statusCode] == 403) {
-                 
-                 [MBProgressHUD showError:@"可能尚未评课~"];
-             }
              else {
                  [MBProgressHUD showError:ERRORSTR];
              }
@@ -154,23 +150,6 @@
              }
          }
      }];
-}
-
-+ (void)feedbackError:(NSError *)error
-{
-//    NSString *err = [error description];
-//    NSDictionary *param = @{@"info": err,
-//                            @"platform":@"iOS",
-//                            @"version": [LJDeviceTool getCurrentAppBuild],
-//                            @"osVer": [NSString stringWithFormat:@"iOS%@",[LJDeviceTool getCurrentSystemVersion]],
-//                            @"manufacturer": @"Apple",
-//                            @"model": [LJDeviceTool getCurrentDeviceModel]
-//                            };
-//    
-//    [LJHTTPTool postHTTPWithURL:[NSString stringWithFormat:@"%@feedback/crashLog",sinaURL] params:param loginToken:nil success:^(id responseHTTP) {
-//        
-//    } failure:^(NSError *error) {
-//    }];
 }
 
 @end

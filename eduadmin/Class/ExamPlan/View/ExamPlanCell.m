@@ -34,11 +34,12 @@
     NSString *str = [NSString stringWithFormat:@"%@年%@月%@日 %@:%@-%@:%@", arr[0], arr[1], arr2[0], arr6[0], arr6[1], arr7[0], arr7[1]];
     
     
-    NSString *date = [NSString stringWithFormat:@"%@-%@-%@", arr[0], arr[1], arr2[0]];
+    NSString *date = [NSString stringWithFormat:@"%@-%@-%@ %@:%@", arr[0], arr[1], arr2[0], arr6[0], arr6[1]];
     // 剩余天数
-    NSString *lastDay = [NSString stringWithFormat:@"%d", (int)[LJTimeTool dayNumberSinceDateWithFormat_yyyy_MM_dd:date]];
+    NSInteger baseDay = [LJTimeTool dayNumberSinceDateWithFormat_yyyy_MM_dd_HH_mm:date];
     
-
+    NSString *lastDay = [NSString stringWithFormat:@"%ld", (long)baseDay-1];
+    
     if ([lastDay intValue]<=0) {
         lastDay = @"...";
         [self.countDate setBackgroundColor:[UIColor lightGrayColor]];
