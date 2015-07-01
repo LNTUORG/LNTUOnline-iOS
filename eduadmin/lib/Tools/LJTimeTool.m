@@ -95,33 +95,30 @@
     else return 6;
 }
 
-+ (NSInteger)dayNumberSinceDateWithFormat_yyyy_MM_dd_HH_mm:(NSString *)date
++ (NSInteger)hourNumberSinceDateWithFormat_yyyy_MM_dd_HH_mm:(NSString *)date
 {
     NSDateFormatter * dm = [[NSDateFormatter alloc]init];
     
     [dm setDateFormat:@"yyyy-MM-dd HH:mm"];
     
-    NSDate *oldDate = [dm dateFromString:date];
-    NSDate *newdate = [self convertDateToLocalTime:oldDate];
+    NSDate *newdate = [dm dateFromString:date];
     
     NSTimeInterval reTime = [newdate timeIntervalSinceNow];
     
-    float aa = reTime/3600/24;
-    int lastDay = (int)(aa + 0.5);
-    return lastDay;
+    return (int)reTime/3600;
 }
 
-+(NSDate *)convertDateToLocalTime: (NSDate *)forDate {
-    
-    NSTimeZone *nowTimeZone = [NSTimeZone localTimeZone];
-    
-    int timeOffset = (int)[nowTimeZone secondsFromGMTForDate:forDate];
-    
-    NSDate *newDate = [forDate dateByAddingTimeInterval:timeOffset];
-    
-    return newDate;
-    
-}
+//+(NSDate *)convertDateToLocalTime: (NSDate *)forDate {
+//    
+//    NSTimeZone *nowTimeZone = [NSTimeZone localTimeZone];
+//    
+//    int timeOffset = (int)[nowTimeZone secondsFromGMTForDate:forDate];
+//    
+//    NSDate *newDate = [forDate dateByAddingTimeInterval:timeOffset];
+//    
+//    return newDate;
+//    
+//}
 
 + (NSInteger)getWeekOfDateWithFormat_yyyy_MM_dd:(NSString *)date {
     
