@@ -189,7 +189,7 @@
         
         [UMSocialSnsService presentSnsIconSheetView:self
                                              appKey:@"55ed5b9067e58e9e910021de"
-                                          shareText:@"分享 辽工大教务在线APP"
+                                          shareText:@"我正在使用辽工大教务在线APP，用着还不错，你也来试试吧~下载地址：http://online.lntu.org/q-a/"
                                          shareImage:[UIImage imageNamed:@"JWIcon"]
                                     shareToSnsNames:[NSArray arrayWithObjects:UMShareToQzone, UMShareToQQ, UMShareToWechatSession, UMShareToWechatTimeline, UMShareToSina, nil]
                                            delegate:self];

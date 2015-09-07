@@ -18,6 +18,8 @@
 #import "UMSocial.h"
 #import "UMSocialQQHandler.h"
 #import "UMSocialSinaSSOHandler.h"
+#import "UMSocialWechatHandler.h"
+
 @import WatchKit;
 
 @interface AppDelegate () <UIAlertViewDelegate>
@@ -40,7 +42,9 @@
     
     [UMSocialQQHandler setQQWithAppId:@"1104773299" appKey:@"ub5xOe0tCnVdOdJY" url:@"http://online.lntu.org/q-a/"];
     
-    [UMSocialSinaSSOHandler openNewSinaSSOWithRedirectURL:nil];
+    [UMSocialSinaSSOHandler openNewSinaSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    
+    [UMSocialWechatHandler setWXAppId:@"wx685761e23f9f8a7d" appSecret:@"18cc8223f7456144d48bddae0ba82702" url:@"http://online.lntu.org/q-a/"];
     
     [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline]];
     
