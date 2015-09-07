@@ -90,17 +90,24 @@
     [LJHTTPTool postJSONWithURL:requestURL params:param success:^(id responseJSON) {
         
         NSDictionary *dict = [NSDictionary dictionaryWithDictionary:responseJSON];
+        
+        if([dict[@"userType"] isEqualToString:@"STUDENT"]) {
             
-        [MBProgressHUD hideHUD];
-        [MBProgressHUD showSuccess:@"登录成功"];
-        
-        // 保存 token
-        NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-        [def setObject:dict[@"loginToken"] forKey:LOGINTOKEN];
-        
-        [def synchronize];
-        
-        [self dismissViewControllerAnimated:YES completion:nil];
+            [MBProgressHUD hideHUD];
+            [MBProgressHUD showSuccess:@"登录成功"];
+            
+            // 保存 token
+            NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+            [def setObject:dict[@"loginToken"] forKey:LOGINTOKEN];
+            
+            [def synchronize];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            [MBProgressHUD hideHUD];
+            [MBProgressHUD showError:@"暂不支持教师用户"];
+            
+        }
         
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUD];

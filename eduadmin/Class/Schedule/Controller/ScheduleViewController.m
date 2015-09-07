@@ -11,11 +11,14 @@
 #import "LJTools.h"
 #import "Common.h"
 #import "MJRefresh.h"
+#import "MJExtension.h"
 #import "iCarousel.h"
 #import "DayClassTableViewCell.h"
 #import "NightClassTableViewCell.h"
 #import "DayCourse.h"
 #import "OldClassTableView.h"
+#import "Course.h"
+#import "TimeAndPlace.h"
 
 @interface ScheduleViewController () <iCarouselDataSource, iCarouselDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
@@ -25,13 +28,14 @@
 @property (nonatomic, strong) NSArray *courseArray;
 @property (strong, nonatomic) NSDictionary *dict;
 @property (strong, nonatomic) NSUserDefaults *deft;
+@property (nonatomic, assign) int currentWeek;
 
 @end
 
 @implementation ScheduleViewController
 
-- (void)dealloc
-{
+- (void)dealloc {
+    
     self.iCaView.delegate = nil;
     self.iCaView.dataSource = nil;
 }
@@ -40,8 +44,6 @@
     [super viewDidLoad];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    self.navigationItem.title = [NSString stringWithFormat:@"第%d周", (int)[LJTimeTool getCurrentWeek] - 10];
     
     self.deft = [NSUserDefaults standardUserDefaults];
     
@@ -72,6 +74,12 @@
     
     if ([mgr fileExistsAtPath:filePath]) {
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+        
+        NSString *fullDate = dict[@"firstWeekMondayAt"];
+        NSArray *arr = [fullDate componentsSeparatedByString:@"T"];
+        
+        self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 1;
+        self.navigationItem.title = [NSString stringWithFormat:@"第%d周", self.currentWeek];
         
         self.courseArray = [self getCourseArray:dict];
     }else{
@@ -115,7 +123,93 @@
     if ([mgr fileExistsAtPath:filePath]) {
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
         
-        self.dict = dict;
+        NSString *fullDate = dict[@"firstWeekMondayAt"];
+        NSArray *arr = [fullDate componentsSeparatedByString:@"T"];
+        
+        self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 1;
+        self.navigationItem.title = [NSString stringWithFormat:@"第%d周", self.currentWeek];
+        
+        NSArray *courceArr = [Course objectArrayWithKeyValuesArray:dict[@"courses"]];
+        
+        NSDictionary *tempDict = @{@"1-1": @"",
+                                   @"1-2": @"",
+                                   @"1-3": @"",
+                                   @"1-4": @"",
+                                   @"1-5": @"",
+                                   @"2-1": @"",
+                                   @"2-2": @"",
+                                   @"2-3": @"",
+                                   @"2-4": @"",
+                                   @"2-5": @"",
+                                   @"3-1": @"",
+                                   @"3-2": @"",
+                                   @"3-3": @"",
+                                   @"3-4": @"",
+                                   @"3-5": @"",
+                                   @"4-1": @"",
+                                   @"4-2": @"",
+                                   @"4-3": @"",
+                                   @"4-4": @"",
+                                   @"4-5": @"",
+                                   @"5-1": @"",
+                                   @"5-2": @"",
+                                   @"5-3": @"",
+                                   @"5-4": @"",
+                                   @"5-5": @"",
+                                   @"6-1": @"",
+                                   @"6-2": @"",
+                                   @"6-3": @"",
+                                   @"6-4": @"",
+                                   @"6-5": @"",
+                                   @"7-1": @"",
+                                   @"7-2": @"",
+                                   @"7-3": @"",
+                                   @"7-4": @"",
+                                   @"7-5": @""
+                                   };
+        NSMutableDictionary *oldFormat = [NSMutableDictionary dictionaryWithDictionary:tempDict];
+        
+        for (Course *cource in courceArr) {
+            NSString *name = cource.name;
+            NSString *tea = cource.teacher;
+            
+            if (cource.timesAndPlaces.count) {
+                
+                for (TimeAndPlace *tp in cource.timesAndPlaces) {
+                    
+                    if (self.currentWeek <= tp.endWeek) {
+                        
+                        NSString *key = [NSString stringWithFormat:@"%@-%@", [self getCountByWeekday:tp.dayInWeek], tp.stage];
+                        NSString *weeks = @"";
+                        
+                        if ([tp.weekMode isEqualToString:@"ALL"]) {
+                            weeks = [NSString stringWithFormat:@"%d-%d", (int)tp.startWeek, (int)tp.endWeek];
+                        } else if ([tp.weekMode isEqualToString:@"ODD"]) {
+                            
+                            weeks = [NSString stringWithFormat:@"%d-%d(单)", (int)tp.startWeek, (int)tp.endWeek];
+                        } else {
+                            
+                            weeks = [NSString stringWithFormat:@"%d-%d(双)", (int)tp.startWeek, (int)tp.endWeek];
+                        }
+                        
+                        
+                        NSString *value = @"";
+                        if (self.currentWeek < tp.startWeek) {
+                            
+                            value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@\n未开课", name, weeks, tea, tp.room];
+                        } else {
+                            
+                            value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", name, weeks, tea, tp.room];
+                        }
+                        
+                        [oldFormat setValue:value forKey:key];
+                    }
+                    
+                }
+            }
+        }
+        
+        self.dict = @{@"courses": oldFormat};
     }else{
         [self refreshData];
     }
@@ -251,7 +345,86 @@
 
 - (NSArray *)getCourseArray:(NSDictionary *)dict {
     
-    NSDictionary *courses = dict[@"courses"];
+    NSArray *courceArr = [Course objectArrayWithKeyValuesArray:dict[@"courses"]];
+    
+    NSDictionary *tempDict = @{@"1-1": @"",
+                                @"1-2": @"",
+                                @"1-3": @"",
+                                @"1-4": @"",
+                                @"1-5": @"",
+                                @"2-1": @"",
+                                @"2-2": @"",
+                                @"2-3": @"",
+                                @"2-4": @"",
+                                @"2-5": @"",
+                                @"3-1": @"",
+                                @"3-2": @"",
+                                @"3-3": @"",
+                                @"3-4": @"",
+                                @"3-5": @"",
+                                @"4-1": @"",
+                                @"4-2": @"",
+                                @"4-3": @"",
+                                @"4-4": @"",
+                                @"4-5": @"",
+                                @"5-1": @"",
+                                @"5-2": @"",
+                                @"5-3": @"",
+                                @"5-4": @"",
+                                @"5-5": @"",
+                                @"6-1": @"",
+                                @"6-2": @"",
+                                @"6-3": @"",
+                                @"6-4": @"",
+                                @"6-5": @"",
+                                @"7-1": @"",
+                                @"7-2": @"",
+                                @"7-3": @"",
+                                @"7-4": @"",
+                                @"7-5": @""
+                                };
+    NSMutableDictionary *oldFormat = [NSMutableDictionary dictionaryWithDictionary:tempDict];
+    
+    for (Course *cource in courceArr) {
+        NSString *name = cource.name;
+        NSString *tea = cource.teacher;
+        
+        if (cource.timesAndPlaces.count) {
+            
+            for (TimeAndPlace *tp in cource.timesAndPlaces) {
+                
+                if (self.currentWeek <= tp.endWeek) {
+                    
+                    NSString *key = [NSString stringWithFormat:@"%@-%@", [self getCountByWeekday:tp.dayInWeek], tp.stage];
+                    NSString *weeks = @"";
+                    
+                    if ([tp.weekMode isEqualToString:@"ALL"]) {
+                        weeks = [NSString stringWithFormat:@"%d-%d", (int)tp.startWeek, (int)tp.endWeek];
+                    } else if ([tp.weekMode isEqualToString:@"ODD"]) {
+                        
+                        weeks = [NSString stringWithFormat:@"%d-%d(单)", (int)tp.startWeek, (int)tp.endWeek];
+                    } else {
+                        
+                        weeks = [NSString stringWithFormat:@"%d-%d(双)", (int)tp.startWeek, (int)tp.endWeek];
+                    }
+                    
+                    NSString *value = @"";
+                    if (self.currentWeek < tp.startWeek) {
+                        
+                        value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@\n未开课", name, weeks, tea, tp.room];
+                    } else {
+                        
+                        value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", name, weeks, tea, tp.room];
+                    }
+                    
+                    [oldFormat setValue:value forKey:key];
+                }
+                
+            }
+        }
+    }
+    
+    NSDictionary *courses = oldFormat;
     
     NSArray *arr0 = @[courses[@"7-1"], courses[@"7-2"], courses[@"7-3"], courses[@"7-4"], courses[@"7-5"]];
     NSArray *arr1 = @[courses[@"1-1"], courses[@"1-2"], courses[@"1-3"], courses[@"1-4"], courses[@"1-5"]];
@@ -267,42 +440,62 @@
 
 - (void)refreshData
 {
-    [MBProgressHUD showMessage:@"正在获取中"];
     
-    if ([self.deft objectForKey:USERNAMEKEY]) {
+    NSString *tm = @"";
+    if ([LJTimeTool getCurrentMonth]>=2 && [LJTimeTool getCurrentMonth]<9) {
         
-        NSString *uName = [self.deft objectForKey:USERNAMEKEY];
-        NSString *pwd = [self.deft objectForKey:PWDKEY];
-        
-        NSDictionary *param = @{@"userId": uName,
-                                @"pwd": pwd,
-                                @"platform": @"ios",
-                                @"version": [LJDeviceTool getCurrentAppBuild],
-                                @"manufacturer": @"Apple",
-                                @"osVer": [NSString stringWithFormat:@"iOS%@",[LJDeviceTool getCurrentSystemVersion]],
-                                @"model": [LJDeviceTool getCurrentDeviceModel]};
-        
-        [LJHTTPTool postHTTPWithURL:@"http://lntuonline.pupboss.com/user/login" params:param success:^(id responseHTTP) {
-            
-            [LJHTTPTool getJSONWithURL:@"http://lntuonline.pupboss.com/curriculum/info" params:nil success:^(id responseJSON) {
-                
-                [MBProgressHUD hideHUD];
-                [LJFileTool writeToFileContent:responseJSON withFileName:scheduleFileName];
-                self.courseArray = [self getCourseArray:responseJSON];
-                [self.iCaView reloadData];
-                
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                [MBProgressHUD hideHUD];
-                [MBProgressHUD showError:NULLSTR];
-            }];
-            
-        } failure:^(NSError *error) {
-            [MBProgressHUD hideHUD];
-            [MBProgressHUD showError:NULLSTR];
-        }];
+        tm = @"春";
     } else {
-        [MBProgressHUD hideHUD];
-        [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
+        
+        tm = @"秋";
+    }
+    NSDictionary *dict = @{@"year": @([LJTimeTool getCurrentYear]), @"term": tm};
+    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@class-table/~self", MAINURL] params:dict success:^(id responseJSON) {
+        
+        NSDictionary *dictionary = [NSDictionary dictionaryWithDictionary:responseJSON];
+        [LJFileTool writeToFileContent:dictionary withFileName:scheduleFileName];
+        
+        NSString *fullDate = dictionary[@"firstWeekMondayAt"];
+        NSArray *arr = [fullDate componentsSeparatedByString:@"T"];
+        
+        self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 1;
+        self.navigationItem.title = [NSString stringWithFormat:@"第%d周", self.currentWeek];
+        
+        self.courseArray = [self getCourseArray:dictionary];
+        [self.iCaView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        
+    }];
+}
+
+
+- (NSString *)getCountByWeekday:(NSString *)weekday {
+    
+    if ([weekday isEqualToString:@"Monday"]) {
+        return @"1";
+    }
+    if ([weekday isEqualToString:@"Tuesday"]) {
+        return @"2";
+    }
+    if ([weekday isEqualToString:@"Wednesday"]) {
+        return @"3";
+    }
+    if ([weekday isEqualToString:@"Thursday"]) {
+        return @"4";
+    }
+    if ([weekday isEqualToString:@"Friday"]) {
+        return @"5";
+    }
+    if ([weekday isEqualToString:@"Saturday"]) {
+        return @"6";
+    }
+    if ([weekday isEqualToString:@"Sunday"]) {
+        return @"7";
+    }
+    else {
+        return @"8";
     }
 }
 
@@ -327,8 +520,7 @@
 }
 
 #pragma UIView实现动画
-- (void) animationWithView : (UIView *)view WithAnimationTransition : (UIViewAnimationTransition) transition
-{
+- (void) animationWithView : (UIView *)view WithAnimationTransition : (UIViewAnimationTransition) transition {
     [UIView animateWithDuration:0.7f animations:^{
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationTransition:transition forView:view cache:YES];

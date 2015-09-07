@@ -33,7 +33,7 @@
 {
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSUInteger unitFlags = NSYearCalendarUnit;
+    NSUInteger unitFlags = NSCalendarUnitYear;
     NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
     
     return [dateComponent year];
@@ -53,7 +53,7 @@
 {
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSUInteger unitFlags = NSHourCalendarUnit;
+    NSUInteger unitFlags = NSCalendarUnitHour;
     NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
     
     long hour = [dateComponent hour];
@@ -77,7 +77,7 @@
     
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSUInteger unitFlags = NSHourCalendarUnit;
+    NSUInteger unitFlags = NSCalendarUnitHour;
     NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
     
     long hour = [dateComponent hour];
@@ -95,18 +95,43 @@
     else return 6;
 }
 
-+ (int)dayNumberSinceDateWithFormat_yyyy_MM_dd:(NSString *)date
++ (NSInteger)hourNumberSinceDateWithFormat_yyyy_MM_dd_HH_mm:(NSString *)date
 {
     NSDateFormatter * dm = [[NSDateFormatter alloc]init];
     
-    [dm setDateFormat:@"yyyy-MM-dd"];
+    [dm setDateFormat:@"yyyy-MM-dd HH:mm"];
     
-    NSDate * newdate = [dm dateFromString:date];
+    NSDate *newdate = [dm dateFromString:date];
     
     NSTimeInterval reTime = [newdate timeIntervalSinceNow];
     
-    int lastDay = (int)reTime/3600/24;
-    return lastDay;
+    return (int)reTime/3600;
+}
+
+//+(NSDate *)convertDateToLocalTime: (NSDate *)forDate {
+//    
+//    NSTimeZone *nowTimeZone = [NSTimeZone localTimeZone];
+//    
+//    int timeOffset = (int)[nowTimeZone secondsFromGMTForDate:forDate];
+//    
+//    NSDate *newDate = [forDate dateByAddingTimeInterval:timeOffset];
+//    
+//    return newDate;
+//    
+//}
+
++ (NSInteger)getWeekOfDateWithFormat_yyyy_MM_dd:(NSString *)date {
+    
+    NSDateFormatter * dm = [[NSDateFormatter alloc]init];
+    
+    [dm setDateFormat:@"yyyy-MM-dd"];
+    NSDate * newdate = [dm dateFromString:date];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags = NSCalendarUnitWeekOfYear;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:newdate];
+    
+    return [dateComponent weekOfYear];
 }
 
 @end

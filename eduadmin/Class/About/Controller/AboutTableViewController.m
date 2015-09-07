@@ -35,41 +35,14 @@
     }
     if (indexPath.row == 1) {
         
-        if (![MFMailComposeViewController canSendMail]) return;
-        
-        MFMailComposeViewController *vc = [[MFMailComposeViewController alloc] init];
-        
-        // 设置邮件主题
-        [vc setSubject:@"BUG反馈"];
-        // 设置邮件内容
-        NSString *content = [NSString stringWithFormat:@"系统版本: iOS %@ \n设备型号: %@ \n软件版本: %@ \n\n", [LJDeviceTool getCurrentSystemVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentAppVersion]];
-        [vc setMessageBody:content isHTML:NO];
-        // 设置收件人列表
-        [vc setToRecipients:@[SUPPORTMAIL]];
-        
-        
-        // 设置代理
-        vc.mailComposeDelegate = self;
-        // 显示控制器
-        [self presentViewController:vc animated:YES completion:nil];
-        
+        [self performSegueWithIdentifier:@"about2web" sender:WEIBOURL];
     }
     if (indexPath.row == 2) {
-        
-        [self performSegueWithIdentifier:@"about2web" sender:FEEDBACKURL];
+        [self performSegueWithIdentifier:@"about2web" sender:WANTEDURL];
     }
     if (indexPath.row == 3) {
         
-        NSString *url = [NSString stringWithFormat:@"http://wpa.qq.com/msgrd?v=3&uin=%@&site=qq&menu=yes", LJQQ];
-        
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-    }
-    if (indexPath.row == 4) {
-        
-        [self performSegueWithIdentifier:@"about2web" sender:WEIBOURL];
-    }
-    if (indexPath.row == 5) {
-        [self performSegueWithIdentifier:@"about2web" sender:WANTEDURL];
+        [self performSegueWithIdentifier:@"about2web" sender:FEEDBACKURL];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

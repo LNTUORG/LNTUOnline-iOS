@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DayCourse.h"
+#import "CourseLable.h"
 
 @interface DayClassTableViewCell : UITableViewCell
 
@@ -21,9 +22,9 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *time3;
 
-@property (strong, nonatomic) IBOutlet UILabel *class0;
+@property (strong, nonatomic) IBOutlet CourseLable *class0;
 
-@property (strong, nonatomic) IBOutlet UILabel *class1;
+@property (strong, nonatomic) IBOutlet CourseLable *class1;
 
 @property (strong, nonatomic) DayCourse *course;
 

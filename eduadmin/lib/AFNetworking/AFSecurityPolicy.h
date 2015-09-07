@@ -1,6 +1,5 @@
 // AFSecurityPolicy.h
-//
-// Copyright (c) 2013-2015 AFNetworking (http://afnetworking.com)
+// Copyright (c) 2011–2015 Alamofire Software Foundation (http://alamofire.org/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -34,6 +33,9 @@ typedef NS_ENUM(NSUInteger, AFSSLPinningMode) {
 
  Adding pinned SSL certificates to your app helps prevent man-in-the-middle attacks and other vulnerabilities. Applications dealing with sensitive customer data or financial information are strongly encouraged to route all communication over an HTTPS connection with SSL pinning configured and enabled.
  */
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface AFSecurityPolicy : NSObject
 
 /**
@@ -47,9 +49,9 @@ typedef NS_ENUM(NSUInteger, AFSSLPinningMode) {
 @property (nonatomic, assign) BOOL validatesCertificateChain;
 
 /**
- The certificates used to evaluate server trust according to the SSL pinning mode. By default, this property is set to any (`.cer`) certificates included in the app bundle.
+ The certificates used to evaluate server trust according to the SSL pinning mode. By default, this property is set to any (`.cer`) certificates included in the app bundle. Note that if you create an array with duplicate certificates, the duplicate certificates will be removed.
  */
-@property (nonatomic, strong) NSArray *pinnedCertificates;
+@property (nonatomic, strong, nullable) NSArray *pinnedCertificates;
 
 /**
  Whether or not to trust servers with an invalid or expired SSL certificates. Defaults to `NO`.
@@ -66,7 +68,7 @@ typedef NS_ENUM(NSUInteger, AFSSLPinningMode) {
 ///-----------------------------------------
 
 /**
- Returns the shared default security policy, which does not allow invalid certificates, does not validate domain name, and does not validate against pinned certificates or public keys.
+ Returns the shared default security policy, which does not allow invalid certificates, validates domain name, and does not validate against pinned certificates or public keys.
 
  @return The default security policy.
  */
@@ -113,9 +115,11 @@ typedef NS_ENUM(NSUInteger, AFSSLPinningMode) {
  @return Whether or not to trust the server.
  */
 - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust
-                  forDomain:(NSString *)domain;
+                  forDomain:(nullable NSString *)domain;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 ///----------------
 /// @name Constants
