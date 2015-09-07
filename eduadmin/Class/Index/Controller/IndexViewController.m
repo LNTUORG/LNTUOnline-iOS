@@ -43,10 +43,7 @@
 #pragma mark 推送相关
     
     if ([self.def objectForKey:PUSHTOKENNEW]) {
-        if (![[self.def objectForKey:PUSHTOKENOLD] isEqualToString:[self.def objectForKey:PUSHTOKENNEW]]) {
-            
-            [self sendTokenToServer];
-        }
+        [self sendTokenToServer];
     }
 }
 
@@ -54,7 +51,7 @@
     
     if (![self.def objectForKey:LOGINTOKEN]) {
         [self performSegueWithIdentifier:@"index2login" sender:nil];
-//        [self logout:nil];
+
     }
     [self getPhotoAndName];
 }

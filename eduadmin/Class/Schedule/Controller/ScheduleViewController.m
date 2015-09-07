@@ -34,8 +34,8 @@
 
 @implementation ScheduleViewController
 
-- (void)dealloc
-{
+- (void)dealloc {
+    
     self.iCaView.delegate = nil;
     self.iCaView.dataSource = nil;
 }
@@ -505,8 +505,7 @@
 }
 
 #pragma UIView实现动画
-- (void) animationWithView : (UIView *)view WithAnimationTransition : (UIViewAnimationTransition) transition
-{
+- (void) animationWithView : (UIView *)view WithAnimationTransition : (UIViewAnimationTransition) transition {
     [UIView animateWithDuration:0.7f animations:^{
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationTransition:transition forView:view cache:YES];

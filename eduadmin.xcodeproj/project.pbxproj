@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		712C380B1B9D5F7C00B4140A /* LaunchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 712C380A1B9D5F7C00B4140A /* LaunchImageView.m */; };
 		D500D02B1AE3C33A00247E90 /* DisciplinaryActions.m in Sources */ = {isa = PBXBuildFile; fileRef = D500D02A1AE3C33A00247E90 /* DisciplinaryActions.m */; };
 		D50C15FB1A5A9D6D009ED8B5 /* MBProgressHUD+LJ.m in Sources */ = {isa = PBXBuildFile; fileRef = D50C15F71A5A9D6D009ED8B5 /* MBProgressHUD+LJ.m */; };
 		D50C15FD1A5A9D6D009ED8B5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D50C15FA1A5A9D6D009ED8B5 /* MBProgressHUD.m */; };
@@ -140,6 +141,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		712C38091B9D5F7C00B4140A /* LaunchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchImageView.h; sourceTree = "<group>"; };
+		712C380A1B9D5F7C00B4140A /* LaunchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchImageView.m; sourceTree = "<group>"; };
 		D500D0291AE3C33A00247E90 /* DisciplinaryActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisciplinaryActions.h; sourceTree = "<group>"; };
 		D500D02A1AE3C33A00247E90 /* DisciplinaryActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisciplinaryActions.m; sourceTree = "<group>"; };
 		D50C15F61A5A9D6D009ED8B5 /* MBProgressHUD+LJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+LJ.h"; sourceTree = "<group>"; };
@@ -797,6 +800,8 @@
 				D58E1CB11A51B94B00B159ED /* Info.plist */,
 				D58E1CBD1A51B94C00B159ED /* Images.xcassets */,
 				D53E75C51A93996700CBE422 /* Launch Screen.xib */,
+				712C38091B9D5F7C00B4140A /* LaunchImageView.h */,
+				712C380A1B9D5F7C00B4140A /* LaunchImageView.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1230,6 +1235,7 @@
 				D58E1D381A51B9C200B159ED /* main.m in Sources */,
 				D58E1D1D1A51B98800B159ED /* AFURLResponseSerialization.m in Sources */,
 				D516A84F1AE3C03E00C20941 /* NSObject+MJKeyValue.m in Sources */,
+				712C380B1B9D5F7C00B4140A /* LaunchImageView.m in Sources */,
 				D51601EB1A541BB8003AB6A9 /* EntranceExam.m in Sources */,
 				D57D8C3D1A8475FB001FA546 /* UIScrollView+MJExtension.m in Sources */,
 				D516A8491AE3C03E00C20941 /* MJIvar.m in Sources */,
