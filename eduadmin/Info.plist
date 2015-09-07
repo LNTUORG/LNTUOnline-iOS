@@ -20,6 +20,25 @@
 	<string>2.1.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>tencent1104773299</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>QQ41D980B3</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>wb1990627166</string>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>116</string>
 	<key>Fabric</key>

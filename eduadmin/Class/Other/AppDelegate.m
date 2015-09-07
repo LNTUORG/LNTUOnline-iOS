@@ -15,6 +15,9 @@
 #import "PushViewController.h"
 #import "LJFileTool.h"
 #import "LJTimeTool.h"
+#import "UMSocial.h"
+#import "UMSocialQQHandler.h"
+#import "UMSocialSinaSSOHandler.h"
 @import WatchKit;
 
 @interface AppDelegate () <UIAlertViewDelegate>
@@ -31,6 +34,15 @@
     
     // 崩溃分析
     [Fabric with:@[CrashlyticsKit]];
+    
+    // 友盟
+    [UMSocialData setAppKey:@"55ed5b9067e58e9e910021de"];
+    
+    [UMSocialQQHandler setQQWithAppId:@"1104773299" appKey:@"ub5xOe0tCnVdOdJY" url:@"http://online.lntu.org/q-a/"];
+    
+    [UMSocialSinaSSOHandler openNewSinaSSOWithRedirectURL:nil];
+    
+    [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline]];
     
     if (launchOptions) {
         
@@ -199,6 +211,18 @@
     } else {
         reply(@{@"course": @"error"});
     }
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return  [UMSocialSnsService handleOpenURL:url];
 }
 
 @end

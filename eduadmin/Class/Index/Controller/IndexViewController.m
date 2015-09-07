@@ -10,9 +10,10 @@
 #import "MBProgressHUD+LJ.h"
 #import "AFNetworking.h"
 #import "LJTools.h"
+#import "UMSocial.h"
 #import "Common.h"
 
-@interface IndexViewController () <UIActionSheetDelegate,UIAlertViewDelegate>
+@interface IndexViewController () <UIActionSheetDelegate, UIAlertViewDelegate, UMSocialUIDelegate>
 {
     NSArray *_helloArr;
 }
@@ -132,7 +133,7 @@
 
 - (IBAction)logout:(id)sender {
     
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"是否重新登录" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"确定" otherButtonTitles: nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"教务处APP" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"退出登录" otherButtonTitles: @"分享此软件", nil];
     [sheet showInView:self.view];
 }
 
@@ -180,8 +181,20 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex != 0) return;
-    [self performSegueWithIdentifier:@"index2login" sender:nil];
+    if (buttonIndex == 0) {
+        
+        [self performSegueWithIdentifier:@"index2login" sender:nil];
+    }
+    if (buttonIndex == 1) {
+        
+        [UMSocialSnsService presentSnsIconSheetView:self
+                                             appKey:@"55ed5b9067e58e9e910021de"
+                                          shareText:@"分享 辽工大教务在线APP"
+                                         shareImage:[UIImage imageNamed:@"JWIcon"]
+                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToQzone, UMShareToQQ, UMShareToWechatSession, UMShareToWechatTimeline, UMShareToSina, nil]
+                                           delegate:self];
+    }
+    
 }
 
 @end
