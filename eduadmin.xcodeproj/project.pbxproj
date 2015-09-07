@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		712C380B1B9D5F7C00B4140A /* LaunchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 712C380A1B9D5F7C00B4140A /* LaunchImageView.m */; };
+		71819CD81B9D8AAD00FAF87A /* CourseLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 71819CD71B9D8AAD00FAF87A /* CourseLable.m */; };
+		71819CDB1B9D8CC200FAF87A /* WeekLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 71819CDA1B9D8CC200FAF87A /* WeekLable.m */; };
 		D500D02B1AE3C33A00247E90 /* DisciplinaryActions.m in Sources */ = {isa = PBXBuildFile; fileRef = D500D02A1AE3C33A00247E90 /* DisciplinaryActions.m */; };
 		D50C15FB1A5A9D6D009ED8B5 /* MBProgressHUD+LJ.m in Sources */ = {isa = PBXBuildFile; fileRef = D50C15F71A5A9D6D009ED8B5 /* MBProgressHUD+LJ.m */; };
 		D50C15FD1A5A9D6D009ED8B5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D50C15FA1A5A9D6D009ED8B5 /* MBProgressHUD.m */; };
@@ -143,6 +145,10 @@
 /* Begin PBXFileReference section */
 		712C38091B9D5F7C00B4140A /* LaunchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchImageView.h; sourceTree = "<group>"; };
 		712C380A1B9D5F7C00B4140A /* LaunchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchImageView.m; sourceTree = "<group>"; };
+		71819CD61B9D8AAD00FAF87A /* CourseLable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseLable.h; sourceTree = "<group>"; };
+		71819CD71B9D8AAD00FAF87A /* CourseLable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseLable.m; sourceTree = "<group>"; };
+		71819CD91B9D8CC200FAF87A /* WeekLable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekLable.h; sourceTree = "<group>"; };
+		71819CDA1B9D8CC200FAF87A /* WeekLable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekLable.m; sourceTree = "<group>"; };
 		D500D0291AE3C33A00247E90 /* DisciplinaryActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisciplinaryActions.h; sourceTree = "<group>"; };
 		D500D02A1AE3C33A00247E90 /* DisciplinaryActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisciplinaryActions.m; sourceTree = "<group>"; };
 		D50C15F61A5A9D6D009ED8B5 /* MBProgressHUD+LJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+LJ.h"; sourceTree = "<group>"; };
@@ -725,6 +731,10 @@
 				D5529D671AE7B2FC00F5A53E /* OldClassTable.xib */,
 				D5529D691AE7B36700F5A53E /* OldClassTableView.h */,
 				D5529D6A1AE7B36700F5A53E /* OldClassTableView.m */,
+				71819CD61B9D8AAD00FAF87A /* CourseLable.h */,
+				71819CD71B9D8AAD00FAF87A /* CourseLable.m */,
+				71819CD91B9D8CC200FAF87A /* WeekLable.h */,
+				71819CDA1B9D8CC200FAF87A /* WeekLable.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1214,6 +1224,7 @@
 				D535375B1AE604790025A1E7 /* DetailTableViewController.m in Sources */,
 				D51601E81A541BA7003AB6A9 /* EducationExperience.m in Sources */,
 				D516A8501AE3C03E00C20941 /* NSObject+MJMember.m in Sources */,
+				71819CD81B9D8AAD00FAF87A /* CourseLable.m in Sources */,
 				D520E1931B22A24A0053D6AB /* TimeAndPlace.m in Sources */,
 				D5F936C61A52ED1B00EA112F /* AboutTableViewController.m in Sources */,
 				D57D8C3E1A8475FB001FA546 /* UIScrollView+MJRefresh.m in Sources */,
@@ -1275,6 +1286,7 @@
 				D57D8C3B1A8475FB001FA546 /* MJRefreshFooterView.m in Sources */,
 				D50C15FD1A5A9D6D009ED8B5 /* MBProgressHUD.m in Sources */,
 				D50C15FB1A5A9D6D009ED8B5 /* MBProgressHUD+LJ.m in Sources */,
+				71819CDB1B9D8CC200FAF87A /* WeekLable.m in Sources */,
 				D51601F81A541CBB003AB6A9 /* HeaderView.m in Sources */,
 				D58E1D451A51BF5900B159ED /* LoginViewController.m in Sources */,
 				D516A8461AE3C03E00C20941 /* MJArgument.m in Sources */,

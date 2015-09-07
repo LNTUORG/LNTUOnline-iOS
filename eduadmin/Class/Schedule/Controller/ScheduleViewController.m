@@ -177,7 +177,7 @@
                 
                 for (TimeAndPlace *tp in cource.timesAndPlaces) {
                     
-                    if (self.currentWeek >= tp.startWeek && self.currentWeek <= tp.endWeek) {
+                    if (self.currentWeek <= tp.endWeek) {
                         
                         NSString *key = [NSString stringWithFormat:@"%@-%@", [self getCountByWeekday:tp.dayInWeek], tp.stage];
                         NSString *weeks = @"";
@@ -192,7 +192,15 @@
                             weeks = [NSString stringWithFormat:@"%d-%d(双)", (int)tp.startWeek, (int)tp.endWeek];
                         }
                         
-                        NSString *value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", name, weeks, tea, tp.room];
+                        
+                        NSString *value = @"";
+                        if (self.currentWeek < tp.startWeek) {
+                            
+                            value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@\n未开课", name, weeks, tea, tp.room];
+                        } else {
+                            
+                            value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", name, weeks, tea, tp.room];
+                        }
                         
                         [oldFormat setValue:value forKey:key];
                     }
@@ -385,7 +393,7 @@
             
             for (TimeAndPlace *tp in cource.timesAndPlaces) {
                 
-                if (self.currentWeek >= tp.startWeek && self.currentWeek <= tp.endWeek) {
+                if (self.currentWeek <= tp.endWeek) {
                     
                     NSString *key = [NSString stringWithFormat:@"%@-%@", [self getCountByWeekday:tp.dayInWeek], tp.stage];
                     NSString *weeks = @"";
@@ -400,7 +408,14 @@
                         weeks = [NSString stringWithFormat:@"%d-%d(双)", (int)tp.startWeek, (int)tp.endWeek];
                     }
                     
-                    NSString *value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", name, weeks, tea, tp.room];
+                    NSString *value = @"";
+                    if (self.currentWeek < tp.startWeek) {
+                        
+                        value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@\n未开课", name, weeks, tea, tp.room];
+                    } else {
+                        
+                        value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", name, weeks, tea, tp.room];
+                    }
                     
                     [oldFormat setValue:value forKey:key];
                 }
