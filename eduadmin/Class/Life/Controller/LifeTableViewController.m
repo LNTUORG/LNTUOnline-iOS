@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     
+    [super viewDidLoad];
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     // 下拉刷新

@@ -50,6 +50,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     
+    [super viewDidAppear:animated];
     if (![self.def objectForKey:LOGINTOKEN]) {
         [self performSegueWithIdentifier:@"index2login" sender:nil];
 
