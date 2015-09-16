@@ -2,7 +2,7 @@
 //  DonateTableViewController.h
 //  eduadmin
 //
-//  Created by JieLee on 15/1/18.
+//  Created by Li Jie on 15/1/18.
 //  Copyright (c) 2015年 PUPBOSS. All rights reserved.
 //
 
