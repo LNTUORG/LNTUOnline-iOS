@@ -41,11 +41,6 @@
     
     [self setHelloLableText];
     
-#pragma mark 推送相关
-    
-    if ([[self.def objectForKey:HASSENTTOSERVER] isEqualToString:@"0"]) {
-        [self sendTokenToServer];
-    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -54,8 +49,14 @@
     if (![self.def objectForKey:LOGINTOKEN]) {
         [self performSegueWithIdentifier:@"index2login" sender:nil];
 
+    } else {
+        
+        if ([[self.def objectForKey:HASSENTTOSERVER] isEqualToString:@"0"]) {
+            [self sendTokenToServer];
+        }
+        
+        [self getPhotoAndName];
     }
-    [self getPhotoAndName];
 }
 
 /**
