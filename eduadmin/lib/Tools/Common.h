@@ -23,8 +23,9 @@
 
 #define USERNAMEKEY @"userName"   // 用户名 key
 #define PWDKEY @"pwd"           // 密码 key
-#define PUSHTOKENOLD @"pushTokenOld"  // 旧Token key
-#define PUSHTOKENNEW @"pushTokenNew"
+
+#define PUSHTOKENNEW @"pushTokenNewV2"
+#define HASSENTTOSERVER @"hasSentToServer"
 
 #define LOGINTOKEN @"LOGINTOKEN"
 #define CLASSTABLEMODE @"ClassTableMode"

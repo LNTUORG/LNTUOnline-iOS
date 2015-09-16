@@ -43,7 +43,7 @@
     
 #pragma mark 推送相关
     
-    if ([self.def objectForKey:PUSHTOKENNEW]) {
+    if ([[self.def objectForKey:HASSENTTOSERVER] isEqualToString:@"0"]) {
         [self sendTokenToServer];
     }
 }
@@ -67,6 +67,7 @@
     
     [LJHTTPTool postJSONWithURL:[NSString stringWithFormat:@"%@device-token/insert", TOKENURL] params:param success:^(id responseJSON) {
         
+        [self.def setObject:@"1" forKey:HASSENTTOSERVER];
     } failure:^(NSError *error) {
         
     }];

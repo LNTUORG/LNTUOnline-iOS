@@ -110,17 +110,32 @@
 {
     NSString *getToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    // 从偏好设置读取
+    // read from def
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
-    NSString *newToken = [def objectForKey:PUSHTOKENNEW];
-    if (newToken.length) {
-        [def setObject:newToken forKey:PUSHTOKENOLD];;
+    if ([def objectForKey:PUSHTOKENNEW] == nil) {
+        [def setObject:@"0" forKey:HASSENTTOSERVER];
+        
+        if (getToken.length) {
+            // write to def
+            [def setObject:getToken forKey:PUSHTOKENNEW];
+            [def synchronize];
+        }
+        
+    } else {
+        
+        if (![[def objectForKey:PUSHTOKENNEW] isEqualToString:getToken]) {
+            
+            [def setObject:@"0" forKey:HASSENTTOSERVER];
+            
+            if (getToken.length) {
+                // write to def
+                [def setObject:getToken forKey:PUSHTOKENNEW];
+                [def synchronize];
+            }
+        }
     }
     
-    // 写入偏好设置
-    [def setObject:getToken forKey:PUSHTOKENNEW];
-    [def synchronize];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
