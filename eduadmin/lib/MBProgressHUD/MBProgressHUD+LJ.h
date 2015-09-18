@@ -2,7 +2,7 @@
 //  MBProgressHUD+LJ.h
 //  lntuApp
 //
-//  Created by 李杰 on 15-01-05.
+//  Created by Li Jie on 15-01-05.
 //  Copyright (c) 2015年 PUPBOSS. All rights reserved.
 //
 

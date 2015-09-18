@@ -2,7 +2,7 @@
 //  CellItem.m
 //  教务处
 //
-//  Created by 李杰 on 14-8-10.
+//  Created by Li Jie on 14-8-10.
 //  Copyright (c) 2014年 PUPBOSS. All rights reserved.
 //
 
