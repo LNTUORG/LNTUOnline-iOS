@@ -36,6 +36,8 @@
     
     // 崩溃分析
     [Fabric with:@[CrashlyticsKit]];
+    [Fabric with:@[[Crashlytics class]]];
+
     
     // 友盟
     [UMSocialData setAppKey:@"55ed5b9067e58e9e910021de"];
@@ -175,8 +177,7 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -195,42 +196,6 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
-    
-    NSInteger day = [LJTimeTool getCurrentWeekDay] - 1;
-    if (day == 0) {
-        day =7;
-    }
-    
-    NSInteger classNum = [LJTimeTool getCurrentClass];
-    
-    if (classNum == 6) {
-        reply(@{@"course": @"洗洗睡吧~"});
-    }
-    
-    NSString *filePath = [LJFileTool getFilePath:scheduleFileName];
-    
-    NSString *key = [NSString stringWithFormat:@"%d-%d", (int)day, (int)classNum];
-    
-    NSFileManager *mgr = [NSFileManager defaultManager];
-    
-    if ([mgr fileExistsAtPath:filePath]) {
-        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
-        
-        NSDictionary *courses = dict[@"courses"];
-        
-        if (![courses[key] isEqualToString:@""]) {
-            NSArray *tempArr = [courses[key] componentsSeparatedByString:@"\n"];
-            NSString *course = [NSString stringWithFormat:@"%@\n%@", tempArr[0], tempArr[3]];
-            reply(@{@"course": course});
-        } else {
-            reply(@{@"course": @"下节没课~"});
-        }
-        
-    } else {
-        reply(@{@"course": @"error"});
-    }
-}
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
@@ -243,5 +208,43 @@
 {
     return  [UMSocialSnsService handleOpenURL:url];
 }
+
+//- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
+//
+//    NSInteger day = [LJTimeTool getCurrentWeekDay] - 1;
+//    if (day == 0) {
+//        day =7;
+//    }
+//
+//    NSInteger classNum = [LJTimeTool getCurrentClass];
+//
+//    if (classNum == 6) {
+//        reply(@{@"course": @"洗洗睡吧~"});
+//    }
+//
+//    NSString *filePath = [LJFileTool getFilePath:scheduleFileName];
+//
+//    NSString *key = [NSString stringWithFormat:@"%d-%d", (int)day, (int)classNum];
+//
+//    NSFileManager *mgr = [NSFileManager defaultManager];
+//
+//    if ([mgr fileExistsAtPath:filePath]) {
+//        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+//
+//        NSDictionary *courses = dict[@"courses"];
+//
+//        if (![courses[key] isEqualToString:@""]) {
+//            NSArray *tempArr = [courses[key] componentsSeparatedByString:@"\n"];
+//            NSString *course = [NSString stringWithFormat:@"%@\n%@", tempArr[0], tempArr[3]];
+//            reply(@{@"course": course});
+//        } else {
+//            reply(@{@"course": @"下节没课~"});
+//        }
+//
+//    } else {
+//        reply(@{@"course": @"error"});
+//    }
+//}
+
 
 @end

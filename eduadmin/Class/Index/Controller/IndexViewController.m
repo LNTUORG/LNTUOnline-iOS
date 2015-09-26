@@ -136,7 +136,7 @@
 
 - (IBAction)logout:(id)sender {
     
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"教务处APP" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"退出登录" otherButtonTitles: @"分享此软件", nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"教务处APP" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"退出登录" otherButtonTitles: @"做一些捐赠", nil];
     [sheet showInView:self.view];
 }
 
@@ -169,7 +169,13 @@
 }
 
 - (IBAction)donate {
-    [self performSegueWithIdentifier:@"main2Donate" sender:nil];
+    
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"55ed5b9067e58e9e910021de"
+                                      shareText:@"我正在使用辽工大教务在线APP，用着还不错，你也来试试吧~下载地址：http://online.lntu.org/q-a/"
+                                     shareImage:[UIImage imageNamed:@"JWIcon"]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToQzone, UMShareToQQ, UMShareToWechatSession, UMShareToWechatTimeline, UMShareToSina, nil]
+                                       delegate:self];
 }
 
 - (IBAction)oneKeyRate {
@@ -190,12 +196,7 @@
     }
     if (buttonIndex == 1) {
         
-        [UMSocialSnsService presentSnsIconSheetView:self
-                                             appKey:@"55ed5b9067e58e9e910021de"
-                                          shareText:@"我正在使用辽工大教务在线APP，用着还不错，你也来试试吧~下载地址：http://online.lntu.org/q-a/"
-                                         shareImage:[UIImage imageNamed:@"JWIcon"]
-                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToQzone, UMShareToQQ, UMShareToWechatSession, UMShareToWechatTimeline, UMShareToSina, nil]
-                                           delegate:self];
+        [self performSegueWithIdentifier:@"main2Donate" sender:nil];
     }
     
 }
