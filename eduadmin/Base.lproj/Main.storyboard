@@ -969,6 +969,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="escButton" destination="Qgw-87-cRF" id="hkj-P0-Esd"/>
                         <outlet property="helloLable" destination="A9j-6o-W4C" id="KjZ-GX-OXZ"/>
                         <outlet property="nameLable" destination="Qd0-tf-Jsc" id="mmo-lr-LnV"/>
                         <outlet property="scrollView" destination="nev-4Q-1kK" id="yAA-86-bV5"/>

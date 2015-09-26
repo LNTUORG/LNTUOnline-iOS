@@ -13,7 +13,7 @@
 #import "UMSocial.h"
 #import "Common.h"
 
-@interface IndexViewController () <UIActionSheetDelegate, UIAlertViewDelegate, UMSocialUIDelegate>
+@interface IndexViewController () <UMSocialUIDelegate>
 {
     NSArray *_helloArr;
 }
@@ -126,18 +126,44 @@
     }
 }
 
-#pragma mark alert代理
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        NSString *url = self.dict[@"shopUrl"];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-    }
-}
+//#pragma mark alert代理
+//- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+//    if (buttonIndex == 1) {
+//        NSString *url = self.dict[@"shopUrl"];
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+//    }
+//}
 
 - (IBAction)logout:(id)sender {
     
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"教务处APP" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"退出登录" otherButtonTitles: @"做一些捐赠", nil];
-    [sheet showInView:self.view];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"教务处APP" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *escAction = [UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [self performSegueWithIdentifier:@"index2login" sender:nil];
+    }];
+    
+    [alertController addAction:escAction];
+    
+    UIAlertAction *donateAction = [UIAlertAction actionWithTitle:@"做一些捐赠" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [self performSegueWithIdentifier:@"main2Donate" sender:nil];
+    }];
+    
+    [alertController addAction:donateAction];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [alertController addAction:cancelAction];
+    
+    [alertController setModalPresentationStyle:UIModalPresentationPopover];
+    
+    alertController.popoverPresentationController.barButtonItem = self.escButton;
+    alertController.popoverPresentationController.sourceView = self.view;
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (IBAction)myInfo {
@@ -186,19 +212,5 @@
     [self performSegueWithIdentifier:@"main2Fresher" sender:nil];
 }
 
-#pragma mark ActionSheet代理方法
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 0) {
-        
-        [self performSegueWithIdentifier:@"index2login" sender:nil];
-    }
-    if (buttonIndex == 1) {
-        
-        [self performSegueWithIdentifier:@"main2Donate" sender:nil];
-    }
-    
-}
 
 @end

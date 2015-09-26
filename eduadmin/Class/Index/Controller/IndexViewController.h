@@ -16,6 +16,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *helloLable;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *escButton;
+
 @property (nonatomic, strong) NSDictionary *dict;
 
 @property (strong, nonatomic) NSUserDefaults *def;
