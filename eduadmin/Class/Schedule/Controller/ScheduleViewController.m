@@ -202,7 +202,14 @@
                             value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", name, weeks, tea, tp.room];
                         }
                         
-                        [oldFormat setValue:value forKey:key];
+                        if ([oldFormat[key] length] > 10) {
+                            
+                            NSString *newStr = [NSString stringWithFormat:@"%@\n%@", oldFormat[key], value];
+                            [oldFormat setValue:newStr forKey:key];
+                        } else {
+                            
+                            [oldFormat setValue:value forKey:key];
+                        }
                     }
                     
                 }
@@ -334,12 +341,42 @@
     if (indexPath.row == 0) {
         return 44;
     }
-    if (indexPath.row == 3) {
-        return 106;
+    if (indexPath.row == 1) {
+        
+        NSString *a = self.courseArray[tableView.tag][0];
+        NSString *b = self.courseArray[tableView.tag][1];
+        
+        NSInteger first = [a componentsSeparatedByString:@"\n"].count;
+        NSInteger second = [b componentsSeparatedByString:@"\n"].count;
+        
+        NSInteger time1 = (first / 4 - 1) > 0 ? (first / 4 - 1) : 0;
+        NSInteger time2 = (second / 4 - 1) > 0 ? (second / 4 - 1) : 0;
+        
+        return 212 + (time1 + time2) * 106;
+        
+    }
+    if (indexPath.row == 2) {
+        
+        NSString *a = self.courseArray[tableView.tag][2];
+        NSString *b = self.courseArray[tableView.tag][3];
+        
+        NSInteger first = [a componentsSeparatedByString:@"\n"].count;
+        NSInteger second = [b componentsSeparatedByString:@"\n"].count;
+        
+        NSInteger time1 = (first / 4 - 1) > 0 ? (first / 4 - 1) : 0;
+        NSInteger time2 = (second / 4 - 1) > 0 ? (second / 4 - 1) : 0;
+        
+        return 212 + (time1 + time2) * 106;
     }
     else {
         
-        return 212;
+        NSString *a = self.courseArray[tableView.tag][4];
+        
+        NSInteger first = [a componentsSeparatedByString:@"\n"].count;
+        
+        NSInteger time1 = (first / 4 - 1) > 0 ? (first / 4 - 1) : 0;
+        
+        return 106 + time1 * 106;
     }
 }
 
@@ -417,7 +454,15 @@
                         value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", name, weeks, tea, tp.room];
                     }
                     
-                    [oldFormat setValue:value forKey:key];
+                    if ([oldFormat[key] length] > 10) {
+                        
+                        NSString *newStr = [NSString stringWithFormat:@"%@\n%@", oldFormat[key], value];
+                        [oldFormat setValue:newStr forKey:key];
+                    } else {
+                        
+                        [oldFormat setValue:value forKey:key];
+                    }
+                    
                 }
                 
             }

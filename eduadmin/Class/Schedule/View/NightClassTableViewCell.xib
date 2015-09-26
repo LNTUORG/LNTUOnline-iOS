@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -12,11 +12,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="104.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="countdown" translatesAutoresizingMaskIntoConstraints="NO" id="BOc-7R-isg">
                         <rect key="frame" x="12" y="12" width="21" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Ets-Me-HaE"/>
                             <constraint firstAttribute="width" constant="21" id="euz-jJ-gDz"/>
@@ -24,6 +25,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晚上" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITl-VM-Mkf">
                         <rect key="frame" x="46" y="10" width="45" height="25"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="Xkh-pS-b8c"/>
                             <constraint firstAttribute="width" constant="45" id="Xs4-Fo-jPo"/>
@@ -34,6 +36,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第8节 19:00-19:45" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nq-ve-R3B">
                         <rect key="frame" x="0.0" y="45" width="141" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="141" id="2BE-DM-SqI"/>
                             <constraint firstAttribute="height" constant="21" id="Dsz-L2-IdF"/>
@@ -44,9 +47,10 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERc-fW-uxk">
                         <rect key="frame" x="178" y="9" width="142" height="93"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="142" id="s83-kz-fFE"/>
-                            <constraint firstAttribute="height" constant="93" id="vTB-i5-llf"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="93" id="vTB-i5-llf"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,6 +58,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第9节 19:50-20:35" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDh-jP-O19">
                         <rect key="frame" x="0.0" y="74" width="141" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="141" id="7oy-0T-Oe7"/>
                             <constraint firstAttribute="height" constant="21" id="AYj-Qv-DNn"/>
@@ -63,6 +68,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="BOc-7R-isg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="MnD-Ii-WOv"/>
                     <constraint firstItem="ITl-VM-Mkf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="Q8o-Nb-rqB"/>
@@ -76,6 +82,7 @@
                     <constraint firstItem="2nq-ve-R3B" firstAttribute="top" secondItem="ITl-VM-Mkf" secondAttribute="bottom" constant="10" id="xHf-bM-8qr"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="courseLable" destination="ERc-fW-uxk" id="mJV-ha-7H1"/>
             </connections>

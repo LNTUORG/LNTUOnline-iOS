@@ -37,6 +37,7 @@
 		71819D631B9DA67D00FAF87A /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71819D5E1B9DA67D00FAF87A /* WeiboSDK.bundle */; };
 		71819D651B9DA9D100FAF87A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71819D641B9DA9D100FAF87A /* ImageIO.framework */; };
 		71819D691B9DAA4300FAF87A /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71819D671B9DAA4300FAF87A /* libSocialSina.a */; };
+		718840BF1BB6C999008A1F42 /* NormalFormatSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 718840BE1BB6C999008A1F42 /* NormalFormatSchedule.m */; settings = {ASSET_TAGS = (); }; };
 		71DD8D7E1BABD96900ADBFE6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD8D6C1BABD96900ADBFE6 /* AFHTTPRequestOperation.m */; settings = {ASSET_TAGS = (); }; };
 		71DD8D7F1BABD96900ADBFE6 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD8D6E1BABD96900ADBFE6 /* AFHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		71DD8D801BABD96900ADBFE6 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD8D701BABD96900ADBFE6 /* AFHTTPSessionManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -229,6 +230,8 @@
 		71819D641B9DA9D100FAF87A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		71819D671B9DAA4300FAF87A /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
 		71819D681B9DAA4300FAF87A /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
+		718840BD1BB6C999008A1F42 /* NormalFormatSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalFormatSchedule.h; sourceTree = "<group>"; };
+		718840BE1BB6C999008A1F42 /* NormalFormatSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalFormatSchedule.m; sourceTree = "<group>"; };
 		71DD8D6B1BABD96900ADBFE6 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		71DD8D6C1BABD96900ADBFE6 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		71DD8D6D1BABD96900ADBFE6 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -952,6 +955,8 @@
 				D520E18F1B22A23B0053D6AB /* Course.m */,
 				D520E1911B22A24A0053D6AB /* TimeAndPlace.h */,
 				D520E1921B22A24A0053D6AB /* TimeAndPlace.m */,
+				718840BD1BB6C999008A1F42 /* NormalFormatSchedule.h */,
+				718840BE1BB6C999008A1F42 /* NormalFormatSchedule.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1507,6 +1512,7 @@
 				D57D8C391A8475FB001FA546 /* MJRefreshBaseView.m in Sources */,
 				D57D8C3B1A8475FB001FA546 /* MJRefreshFooterView.m in Sources */,
 				D50C15FD1A5A9D6D009ED8B5 /* MBProgressHUD.m in Sources */,
+				718840BF1BB6C999008A1F42 /* NormalFormatSchedule.m in Sources */,
 				D50C15FB1A5A9D6D009ED8B5 /* MBProgressHUD+LJ.m in Sources */,
 				71819CDB1B9D8CC200FAF87A /* WeekLable.m in Sources */,
 				D51601F81A541CBB003AB6A9 /* HeaderView.m in Sources */,
