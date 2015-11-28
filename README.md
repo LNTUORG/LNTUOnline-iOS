@@ -1,20 +1,24 @@
 Liaoning Technical University(LNTU) Education Administration Management System App for iOS.
 ---
 
+Homepage: [http://online.lntu.org](http://online.lntu.org)
+
+Server: [https://github.com/LNTUORG/LntuOnline-API](https://github.com/LNTUORG/LntuOnline-API)
+
+Android: [https://github.com/LNTUORG/LntuOnline-iOS](https://github.com/LNTUORG/LntuOnline-iOS)
+
 ## Licence
 
-协议用中文写在前面，希望大家明白我意思。
-
-采用了 General Public License version 2 ([GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)).
+Under General Public License version 2 ([GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)).
 
 附加协议：
 
-- 不管用于什么用途，必须遵守 GPLv2 协议
+- 必须遵守 GPLv2 协议
 - 禁止以任何形式参加任何比赛，毕业设计
 
 ```
 Copyright (C) 2015-2016 LNTU.ORG (https://lntu.org)
-Copyright (C) 2013-2015 PUPBOSS <hi@pupboss.com>
+Copyright (C) 2013-2015 PUPBOSS (https://pupboss.com)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -33,15 +37,25 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 ## Requirements
 
-- iOS 7.0+
-- Xcode 6
+- ~~iOS 7.0+~~
+- iOS 8.0+
+- Xcode 7+
 
 ## Feature
 
-- Query self information
-- Query school report
-- One click rating
-- Query heater temprature
+- Query your information
+- Query your report
+- Rate with one click
+
+## Power by
+
+- [Digital Ocean](https://www.digitalocean.com/?refcode=c6314f396546)
+- [Crashlytics](https://www.crashlytics.com)
+- [Umeng](http://www.umeng.com)
+
+## Thanks
+
+- [《印象·工大》葫芦岛校区掠影作品集](http://tieba.baidu.com/p/1424591498)
 
 ## Contact
 
