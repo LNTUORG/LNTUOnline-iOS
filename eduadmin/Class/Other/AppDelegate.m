@@ -15,10 +15,6 @@
 #import "PushViewController.h"
 #import "LJFileTool.h"
 #import "LJTimeTool.h"
-#import "UMSocial.h"
-#import "UMSocialQQHandler.h"
-#import "UMSocialSinaSSOHandler.h"
-#import "UMSocialWechatHandler.h"
 
 @import WatchKit;
 
@@ -38,17 +34,6 @@
     [Fabric with:@[CrashlyticsKit]];
     [Fabric with:@[[Crashlytics class]]];
 
-    
-    // 友盟
-    [UMSocialData setAppKey:@"55ed5b9067e58e9e910021de"];
-    
-    [UMSocialQQHandler setQQWithAppId:@"1104773299" appKey:@"ub5xOe0tCnVdOdJY" url:@"http://online.lntu.org/q-a/"];
-    
-    [UMSocialSinaSSOHandler openNewSinaSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
-    
-    [UMSocialWechatHandler setWXAppId:@"wx685761e23f9f8a7d" appSecret:@"18cc8223f7456144d48bddae0ba82702" url:@"http://online.lntu.org/q-a/"];
-    
-    [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline]];
     
     if (launchOptions) {
         
@@ -196,18 +181,6 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-{
-    return  [UMSocialSnsService handleOpenURL:url];
-}
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation
-{
-    return  [UMSocialSnsService handleOpenURL:url];
-}
 
 //- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
 //

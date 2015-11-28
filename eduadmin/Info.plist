@@ -20,41 +20,8 @@
 	<string>2.1.5</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>tencent1104773299</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>QQ41D980B3</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>wb1990627166</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>wb1990627166</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>wx685761e23f9f8a7d</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>wx685761e23f9f8a7d</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleVersion</key>
-	<string>120</string>
+	<string>121</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
