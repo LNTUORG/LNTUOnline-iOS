@@ -12,9 +12,10 @@
 #import "LJTools.h"
 #import "Common.h"
 
-@interface IndexViewController ()
-{
+@interface IndexViewController () <UIActionSheetDelegate, UIAlertViewDelegate> {
+    
     NSArray *_helloArr;
+    NSInteger _clickTime;
 }
 @end
 
@@ -39,6 +40,7 @@
     _helloArr = @[@"爱生活不爱黑眼圈,快洗洗睡吧",@"一日之计在于晨,上课可别打瞌睡哦",@"坐等下课吃饭去",@"吃个饱饭睡个美容觉,这真是极好的",@"中午养足了精神吗?让我们一起渡过一个愉快的下午茶时间,不过没有茶喝o(╯□╰)o",@"静能生慧.仰观宇宙之大,俯察品类之盛.宇宙之大,每个生命都在孤寂"];
     
     [self setHelloLableText];
+    _clickTime = 0;
     
 }
 
@@ -135,6 +137,8 @@
 
 - (IBAction)logout:(id)sender {
     
+    #ifdef __IPHONE_8_0
+        
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"教务处APP" preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *escAction = [UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -161,6 +165,14 @@
     alertController.popoverPresentationController.sourceView = self.view;
     
     [self presentViewController:alertController animated:YES completion:nil];
+        
+    #else
+    
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"教务处APP" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"退出登录" otherButtonTitles: nil];
+    [sheet showInView:self.view];
+    
+    #endif
+    
 }
 
 - (IBAction)myInfo {
@@ -193,6 +205,19 @@
 
 - (IBAction)donate {
     
+    if (_clickTime == 0) {
+        [MBProgressHUD showError:@"都说了啥都没有...别点了"];
+    }
+    if (_clickTime == 2) {
+        [MBProgressHUD showError:@"我擦，你还点，点也没用"];
+    }
+    if (_clickTime == 3) {
+        [MBProgressHUD showError:@"为啥吧，因为压根就没做啊"];
+    }
+    if (_clickTime == 4) {
+        [MBProgressHUD showError:@"去商店评波分吧(ง •̀灬•́)ง"];
+    }
+    _clickTime ++;
 }
 
 - (IBAction)oneKeyRate {
@@ -203,5 +228,11 @@
     [self performSegueWithIdentifier:@"main2Fresher" sender:nil];
 }
 
+#pragma mark ActionSheet代理方法
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+    [self performSegueWithIdentifier:@"index2login" sender:nil];
+}
 
 @end

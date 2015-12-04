@@ -51,34 +51,32 @@
         
         [self.window.rootViewController performSegueWithIdentifier:@"nav2ab" sender:_msgs];
     }
+    #ifdef __IPHONE_8_0
     
-    if (IOS8) {
-        
-        UIMutableUserNotificationAction *action = [[UIMutableUserNotificationAction alloc] init];
-        action.identifier = @"action";  //按钮的标示
-        action.title=@"查看";  //按钮的标题
-        action.activationMode = UIUserNotificationActivationModeForeground;  //当点击的时候启动程序
-        UIMutableUserNotificationAction *action2 = [[UIMutableUserNotificationAction alloc] init];  //第二按钮
-        action2.identifier = @"action2";
-        action2.title=@"取消";
-        action2.activationMode = UIUserNotificationActivationModeBackground;  //当点击的时候不启动程序，在后台处理
-        action.authenticationRequired = YES;//需要解锁才能处理，如果action.activationMode = UIUserNotificationActivationModeForeground;则这个属性被忽略
-        action.destructive = YES;
-        
-        
-        UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc] init];
-        categorys.identifier = @"alert";//这组动作的唯一标示
-        [categorys setActions:@[action,action2] forContext:(UIUserNotificationActionContextMinimal)];
-        
-        UIUserNotificationSettings *uns = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound) categories:[NSSet setWithObjects:categorys, nil]];
-        
-        [[UIApplication sharedApplication] registerUserNotificationSettings:uns];
-        
-    }else{
-        
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-         (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
-    }
+    UIMutableUserNotificationAction *action = [[UIMutableUserNotificationAction alloc] init];
+    action.identifier = @"action";  //按钮的标示
+    action.title=@"查看";  //按钮的标题
+    action.activationMode = UIUserNotificationActivationModeForeground;  //当点击的时候启动程序
+    UIMutableUserNotificationAction *action2 = [[UIMutableUserNotificationAction alloc] init];  //第二按钮
+    action2.identifier = @"action2";
+    action2.title=@"取消";
+    action2.activationMode = UIUserNotificationActivationModeBackground;  //当点击的时候不启动程序，在后台处理
+    action.authenticationRequired = YES;//需要解锁才能处理，如果action.activationMode = UIUserNotificationActivationModeForeground;则这个属性被忽略
+    action.destructive = YES;
+    
+    
+    UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc] init];
+    categorys.identifier = @"alert";//这组动作的唯一标示
+    [categorys setActions:@[action,action2] forContext:(UIUserNotificationActionContextMinimal)];
+    
+    UIUserNotificationSettings *uns = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound) categories:[NSSet setWithObjects:categorys, nil]];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:uns];
+
+    #else
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    #endif
 
     
     return YES;

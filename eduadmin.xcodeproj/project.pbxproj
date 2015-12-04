@@ -1427,26 +1427,18 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/eduadmin/lib",
-					"$(PROJECT_DIR)/eduadmin/lib/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = eduadmin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/eduadmin/lib/UMSocial_Sdk_4.2.3",
-					"$(PROJECT_DIR)/eduadmin/lib/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
-					"$(PROJECT_DIR)/eduadmin/lib/UMSocial_Sdk_Extra_Frameworks/Wechat",
-					"$(PROJECT_DIR)/eduadmin/lib/UMSocial_Sdk_Extra_Frameworks/Sina",
-					"$(PROJECT_DIR)/eduadmin/lib/UMSocial_Sdk_Extra_Frameworks/SinaSSO",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pupboss.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1469,20 +1461,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/eduadmin/lib",
-					"$(PROJECT_DIR)/eduadmin/lib/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = eduadmin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/eduadmin/lib/UMSocial_Sdk_4.2.3",
-					"$(PROJECT_DIR)/eduadmin/lib/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
-					"$(PROJECT_DIR)/eduadmin/lib/UMSocial_Sdk_Extra_Frameworks/Wechat",
-					"$(PROJECT_DIR)/eduadmin/lib/UMSocial_Sdk_Extra_Frameworks/Sina",
-					"$(PROJECT_DIR)/eduadmin/lib/UMSocial_Sdk_Extra_Frameworks/SinaSSO",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pupboss.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
