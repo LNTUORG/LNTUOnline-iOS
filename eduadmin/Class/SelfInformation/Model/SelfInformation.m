@@ -15,8 +15,8 @@
 
 @implementation SelfInformation
 
-- (NSDictionary *)objectClassInArray
-{
+- (NSDictionary *)objectClassInArray {
+    
     return @{@"entranceExams": [EntranceExam class], @"educationExperiences": [EducationExperience class], @"familys": [Family class], @"disciplinaryActions": [DisciplinaryActions class]};
 }
 

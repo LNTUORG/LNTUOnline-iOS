@@ -11,7 +11,6 @@
 @implementation WeekLable
 
 - (void)setText:(NSString *)text {
-    
     [super setText:text];
     
     if ([text isEqualToString:@""]) {

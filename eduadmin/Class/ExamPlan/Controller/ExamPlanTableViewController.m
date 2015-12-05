@@ -17,7 +17,6 @@
 
 @interface ExamPlanTableViewController ()
 
-
 @end
 
 @implementation ExamPlanTableViewController
@@ -27,7 +26,6 @@
     
     self.tableView.tableFooterView = [[UIView alloc] init];
     
-    // 下拉刷新
     [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"examplan"];
     
     NSString *filePath = [LJFileTool getFilePath:examPlanFileName];
@@ -35,19 +33,21 @@
     NSFileManager *mgr = [NSFileManager defaultManager];
     
     if ([mgr fileExistsAtPath:filePath]) {
+        
         NSArray *dict = [NSArray arrayWithContentsOfFile:filePath];
         
         [self analyticalData:dict];
-    }else{
+        
+    } else {
+        
         [self.tableView headerBeginRefreshing];
     }
-    
 }
 
 
 #pragma mark 解析数据
-- (void)analyticalData:(id)json
-{
+- (void)analyticalData:(id)json {
+    
     self.planArr = [ExamPlan objectArrayWithKeyValuesArray:json];
     
     NSArray *arr = [self.planArr sortedArrayUsingComparator:^NSComparisonResult(ExamPlan *obj1, ExamPlan *obj2) {
@@ -61,8 +61,7 @@
 }
 
 
-- (void)refreshData
-{
+- (void)refreshData {
     
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@exam-plan/~self", MAINURL] params:nil success:^(id responseJSON) {
         
@@ -79,24 +78,24 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return self.planArr.count;
 }
 
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     ExamPlanCell *cell = [tableView dequeueReusableCellWithIdentifier:@"epl"];
     
     if (cell == nil) {
+        
         cell = [ExamPlanCell newExanPlanCell];
     }
     

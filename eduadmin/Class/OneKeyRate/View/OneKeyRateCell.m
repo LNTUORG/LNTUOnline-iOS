@@ -19,8 +19,10 @@
     self.teacherLabel.text = info.teacher;
     
     if ([info.done isEqualToString:@"0"]) {
+        
         self.statusLable.text = @"未评估";
         self.statusLable.textColor = [UIColor redColor];
+        
     } else {
         
         self.statusLable.text = @"已评估";

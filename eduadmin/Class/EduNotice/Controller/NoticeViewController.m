@@ -16,8 +16,7 @@
 
 @implementation NoticeViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     NSURL *url = [NSURL URLWithString:NOTICEURL];
@@ -25,17 +24,17 @@
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     
     [self.webView loadRequest:req];
-    
 }
 
 #pragma mark 浏览器代理
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    
     [MBProgressHUD showError:@"点击右上角用 Safari 访问"];
 }
 
 
 - (IBAction)goToSafari:(id)sender {
+    
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:NOTICEURL]];
 }
 

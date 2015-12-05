@@ -10,7 +10,6 @@
 
 @interface OneKeyTableViewController : UITableViewController
 
-
 - (IBAction)oneClickRate:(id)sender;
 
 @property (strong, nonatomic) NSArray *courseArr;

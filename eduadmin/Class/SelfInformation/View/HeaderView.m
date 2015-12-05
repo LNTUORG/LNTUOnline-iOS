@@ -10,23 +10,27 @@
 #import "Title.h"
 
 @interface HeaderView ()
+
 @property (nonatomic,weak) UIButton *nameView;
+
 @end
 
 @implementation HeaderView
 
-+ (instancetype)headerViewWithTableView:(UITableView *)tableView
-{
++ (instancetype)headerViewWithTableView:(UITableView *)tableView {
+    
     static NSString *ID = @"header";
     HeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:ID];
+    
     if (view == nil) {
+        
         view = [[HeaderView alloc] initWithReuseIdentifier:ID];
     }
     return view;
 }
 
-- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
-{
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {
+    
     if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
         // 1.添加按钮
         UIButton *nameView = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -47,43 +51,46 @@
         
         _nameView = nameView;
         [self.contentView addSubview:nameView];
-        
     }
+    
     return self;
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     [super layoutSubviews];
 
     _nameView.frame = self.bounds;
 }
 
 
-- (void)setTitle:(Title *)title
-{
+- (void)setTitle:(Title *)title {
+    
     _title = title;
     [self.nameView setTitle:title.name forState:UIControlStateNormal];
 }
 
-- (void)viewClick
-{
+- (void)viewClick {
+    
     self.title.open = !self.title.isOpen;
     
     if ([self.delegate respondsToSelector:@selector(headerViewDidClickNameView:)]) {
+        
         [self.delegate headerViewDidClickNameView:self];
     }
     
 }
 
-- (void)didMoveToSuperview
-{
+- (void)didMoveToSuperview {
+    
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.1f];
     
     if (self.title.open) {
+        
         self.nameView.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
+        
     } else {
+        
         self.nameView.imageView.transform = CGAffineTransformMakeRotation(0);
     }
     

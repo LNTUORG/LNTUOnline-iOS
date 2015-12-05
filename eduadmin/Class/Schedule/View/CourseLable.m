@@ -11,8 +11,8 @@
 @implementation CourseLable
 
 - (void)setText:(NSString *)text {
-    
     [super setText:text];
+    
     if ([[[text componentsSeparatedByString:@"\n"] lastObject] isEqualToString:@"未开课"]) {
         
         self.textColor = [UIColor purpleColor];

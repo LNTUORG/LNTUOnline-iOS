@@ -12,7 +12,6 @@
 
 @interface PartGradeCell : UITableViewCell
 
-
 @property (weak, nonatomic) IBOutlet UILabel *name;
 
 @property (weak, nonatomic) IBOutlet UILabel *creditLable;
@@ -25,6 +24,5 @@
 @property (nonatomic, strong) UnpassGrade *unPassGrade;
 
 + (instancetype)newPartGradeCell;
-
 
 @end

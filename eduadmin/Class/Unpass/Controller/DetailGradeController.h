@@ -33,5 +33,4 @@
 
 @property (nonatomic, strong) MyGrade *grade;
 
-
 @end

@@ -32,10 +32,6 @@
     [self.tableView headerBeginRefreshing];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (void)refreshData {
 
@@ -45,6 +41,7 @@
         
         [self.tableView headerEndRefreshing];
         [self.tableView reloadData];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         [self.tableView headerEndRefreshing];
@@ -90,6 +87,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     OneKeyRateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RateCell"];
     
     if (!cell) {
@@ -110,7 +108,9 @@
 
 #pragma mark alert代理
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
     if (buttonIndex == 1) {
+        
         NSString *url = STOREURL;
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     }
@@ -119,7 +119,6 @@
     
     // 串行队列
     dispatch_queue_t q = dispatch_queue_create("com.pupboss.gcddemo1", DISPATCH_QUEUE_SERIAL);
-    
     
     for (int i = 0; i < self.courseArr.count; ++i) {
         // 异步任务，并发执行，但是如果在串行队列中，仍然会依次顺序执行
@@ -148,11 +147,11 @@
                     [MBProgressHUD showError:@"似乎有点不对劲"];
                 }];
             });
+            
         } else {
             
             [MBProgressHUD showError:@"已经评过了~"];
         }
-        
     }
 }
 @end

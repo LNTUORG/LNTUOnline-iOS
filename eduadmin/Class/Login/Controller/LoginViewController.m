@@ -17,13 +17,12 @@
 
 @implementation LoginViewController
 
-- (void)dealloc
-{
+- (void)dealloc {
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     [self appStart];
@@ -34,28 +33,24 @@
 }
 
 
-// 按钮状态实时监听
-- (void)textChange
-{
+- (void)textChange {
+    
     self.loginBtn.enabled = (self.userNameText.text.length && self.pwdText.text.length);
 }
 
-// 程序启动后自动设置账号密码
-- (void)appStart
-{
+- (void)appStart {
     
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
     if ([def objectForKey:USERNAMEKEY]) {
         
         self.userNameText.text = [def objectForKey:USERNAMEKEY];
         self.pwdText.text = [def objectForKey:PWDKEY];
         self.loginBtn.enabled = YES;
     }
-    
 }
 
 
-// 关闭键盘
 - (IBAction)forHelp:(id)sender {
     
     NSString *url = [NSString stringWithFormat:@"http://wpa.qq.com/msgrd?v=3&uin=%@&site=qq&menu=yes", LJQQ];
@@ -64,21 +59,21 @@
 }
 
 - (IBAction)existKeyboard {
+    
     [self.view endEditing:YES];
 }
 
-// 记住密码
-- (void)recordPwd
-{
+
+- (void)recordPwd {
     
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     [def setObject:self.userNameText.text forKey:USERNAMEKEY];
     [def setObject:self.pwdText.text forKey:PWDKEY];
     [def synchronize];
-    
 }
 
 - (IBAction)login {
+    
     [self existKeyboard];
     [self recordPwd];
     [MBProgressHUD showMessage:WAITSTR];
@@ -98,21 +93,22 @@
             
             // 保存 token
             NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+            
             [def setObject:dict[@"loginToken"] forKey:LOGINTOKEN];
-            
             [def synchronize];
-            
+    
             [self dismissViewControllerAnimated:YES completion:nil];
+            
         } else {
+            
             [MBProgressHUD hideHUD];
             [MBProgressHUD showError:@"暂不支持教师用户"];
-            
         }
         
     } failure:^(NSError *error) {
+        
         [MBProgressHUD hideHUD];
     }];
-    
 }
 
 @end

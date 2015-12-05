@@ -37,23 +37,22 @@
             [launchImageView removeFromSuperview];
         }];
     });
-
-    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     PushViewController *con = segue.destinationViewController;
     
     NSArray *array = sender;
     
     if (array.count > 1) {
+        
         con.recievedContent = array[0];
         con.url = array[1];
     } else {
         
         con.recievedContent = array[0];
     }
-    
 }
 
 @end

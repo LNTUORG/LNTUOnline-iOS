@@ -18,8 +18,8 @@
 
 @import WatchKit;
 
-@interface AppDelegate () <UIAlertViewDelegate>
-{
+@interface AppDelegate () <UIAlertViewDelegate> {
+    
     NSMutableArray *_msgs;
 }
 @end
@@ -28,13 +28,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
     // 崩溃分析
     [Fabric with:@[CrashlyticsKit]];
     [Fabric with:@[[Crashlytics class]]];
 
-    
     if (launchOptions) {
         
         [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
@@ -45,7 +43,9 @@
         [_msgs addObject:msg];
         
         NSString *url = launchOptions[@"UIApplicationLaunchOptionsRemoteNotificationKey"][@"aps"][@"link"];
+        
         if (url) {
+            
             [_msgs addObject:url];
         }
         
@@ -77,32 +77,31 @@
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     #endif
-
     
     return YES;
 }
 
 
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
-{
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    
     if (notificationSettings.types != UIUserNotificationTypeNone) {
         // 4
         [application registerForRemoteNotifications];
     }
 }
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
     NSString *getToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    // read from def
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
     if ([def objectForKey:PUSHTOKENNEW] == nil) {
+        
         [def setObject:@"0" forKey:HASSENTTOSERVER];
         
         if (getToken.length) {
-            // write to def
+            
             [def setObject:getToken forKey:PUSHTOKENNEW];
             [def synchronize];
         }
@@ -114,45 +113,49 @@
             [def setObject:@"0" forKey:HASSENTTOSERVER];
             
             if (getToken.length) {
-                // write to def
+                
                 [def setObject:getToken forKey:PUSHTOKENNEW];
                 [def synchronize];
             }
         }
     }
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     
 }
 
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-{
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     
-//    [LJHTTPTool feedbackError:error];
-}
-
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-{
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
     _msgs = [NSMutableArray array];
     NSString *msg = userInfo[@"aps"][@"alert"];
+    
     [_msgs addObject:msg];
     
     NSString *url = userInfo[@"aps"][@"link"];
+    
     if (url) {
+        
         [_msgs addObject:url];
     }
     
     if (application.applicationState == UIApplicationStateActive) {
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"新消息" message:_msgs[0] delegate:self cancelButtonTitle:@"我不看" otherButtonTitles:@"好的", nil];
         [alert show];
+        
     }else {
+        
         [self.window.rootViewController performSegueWithIdentifier:@"nav2ab" sender:_msgs];
     }
 }
 
 #pragma mark alert代理
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
     if (buttonIndex == 1) {
         
         [self.window.rootViewController performSegueWithIdentifier:@"nav2ab" sender:_msgs];
@@ -168,54 +171,16 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
 }
-
-
-//- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
-//
-//    NSInteger day = [LJTimeTool getCurrentWeekDay] - 1;
-//    if (day == 0) {
-//        day =7;
-//    }
-//
-//    NSInteger classNum = [LJTimeTool getCurrentClass];
-//
-//    if (classNum == 6) {
-//        reply(@{@"course": @"洗洗睡吧~"});
-//    }
-//
-//    NSString *filePath = [LJFileTool getFilePath:scheduleFileName];
-//
-//    NSString *key = [NSString stringWithFormat:@"%d-%d", (int)day, (int)classNum];
-//
-//    NSFileManager *mgr = [NSFileManager defaultManager];
-//
-//    if ([mgr fileExistsAtPath:filePath]) {
-//        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
-//
-//        NSDictionary *courses = dict[@"courses"];
-//
-//        if (![courses[key] isEqualToString:@""]) {
-//            NSArray *tempArr = [courses[key] componentsSeparatedByString:@"\n"];
-//            NSString *course = [NSString stringWithFormat:@"%@\n%@", tempArr[0], tempArr[3]];
-//            reply(@{@"course": course});
-//        } else {
-//            reply(@{@"course": @"下节没课~"});
-//        }
-//
-//    } else {
-//        reply(@{@"course": @"error"});
-//    }
-//}
-
 
 @end

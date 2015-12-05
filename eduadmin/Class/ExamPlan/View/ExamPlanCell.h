@@ -11,7 +11,6 @@
 
 @interface ExamPlanCell : UITableViewCell
 
-
 @property (weak, nonatomic) IBOutlet UITextView *timeTextView;
 
 @property (weak, nonatomic) IBOutlet UILabel *courseLable;

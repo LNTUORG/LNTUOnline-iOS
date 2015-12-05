@@ -12,15 +12,13 @@
 
 @interface ShowWebViewController () <UIWebViewDelegate>
 
-
 @end
 
 @implementation ShowWebViewController
 
 @synthesize webURL;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     NSURL *url = [NSURL URLWithString:webURL ];
@@ -33,25 +31,36 @@
 }
 
 #pragma mark 浏览器代理
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    
     if ([self.webView canGoBack]) {
+        
         self.goBackButton.enabled = YES;
-    }else{self.goBackButton.enabled = NO;}
+        
+    } else {
+        
+        self.goBackButton.enabled = NO;
+    }
     
     if ([self.webView canGoForward]) {
+        
         self.goNextButton.enabled = YES;
-    }else{self.goNextButton.enabled = NO;}
+        
+    } else {
+        
+        self.goNextButton.enabled = NO;
+    }
     
     [MBProgressHUD showMessage:WAITSTR];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         [MBProgressHUD hideHUD];
     });
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
     [MBProgressHUD hideHUD];
 }
 
@@ -62,6 +71,7 @@
 }
 
 - (IBAction)goNext:(id)sender {
+    
     [self.webView goForward];
 }
 
@@ -69,7 +79,6 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     [UIApplication sharedApplication].statusBarHidden = NO;
-    
 }
 
 @end

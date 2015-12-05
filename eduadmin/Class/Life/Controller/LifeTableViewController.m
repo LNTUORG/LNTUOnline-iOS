@@ -32,6 +32,7 @@
         self.arr = responseJSON;
         [self.tableView headerEndRefreshing];
         [self.tableView reloadData];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         [self.tableView headerEndRefreshing];
@@ -47,6 +48,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     HeaterTempCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TempCell"];
     
     if (!cell) {

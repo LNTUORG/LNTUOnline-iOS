@@ -53,7 +53,6 @@
     
     self.class0.text = course.class0;
     self.class1.text = course.class1;
-    
 }
 
 + (instancetype)newDayClassCell {

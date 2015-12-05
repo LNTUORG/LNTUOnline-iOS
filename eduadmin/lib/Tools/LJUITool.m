@@ -9,8 +9,8 @@
 
 @implementation LJUITool
 
-+ (CGPoint)getPointWithFrame:(CGRect)rect
-{
++ (CGPoint)getPointWithFrame:(CGRect)rect {
+    
     return CGPointMake(rect.origin.x+rect.size.width*0.5, rect.origin.y+rect.size.height*0.5);
 }
 

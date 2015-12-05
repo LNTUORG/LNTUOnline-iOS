@@ -18,11 +18,8 @@
 
 @synthesize grade;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-
         
     NSString *i = [NSString stringWithFormat:@"%@",grade.serialNum];
     NSString *c = [NSString stringWithFormat:@"%2.1f",grade.credit];
@@ -36,6 +33,7 @@
     self.score.text = grade.score;
     
     if ([grade.level isEqualToString:@"GREAT"]) {
+        
         self.score.textColor = LJColor(100, 157, 89);
     }
     else if ([grade.level isEqualToString:@"NORMAL"]) {

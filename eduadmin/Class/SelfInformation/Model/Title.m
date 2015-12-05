@@ -10,16 +10,17 @@
 
 @implementation Title
 
-- (instancetype)initWithString:(NSString *)str
-{
+- (instancetype)initWithString:(NSString *)str {
+    
     if (self = [super init]) {
+        
         self.name = str;
     }
     return self;
 }
 
-+ (instancetype)titleWithString:(NSString *)str
-{
++ (instancetype)titleWithString:(NSString *)str {
+    
     return [[self alloc] initWithString:str];
 }
 

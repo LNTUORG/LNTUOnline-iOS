@@ -24,13 +24,11 @@
 
 @interface SelfInfoTableViewController () <HeaderViewDelegate>
 
-
 @end
 
 @implementation SelfInfoTableViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     self.tableView.rowHeight = 50;
@@ -44,6 +42,7 @@
     NSMutableArray *arr = [NSMutableArray array];
     
     for (NSString *str in tempArr) {
+        
         Title *ti = [Title titleWithString:str];
         [arr addObject:ti];
     }
@@ -64,15 +63,14 @@
         [self analyticalData:dict];
         
     } else {
+        
         [self refreshData];
     }
-    
 }
 
-#pragma mark 刷新数据
 
-- (void)refreshData
-{
+- (void)refreshData {
+    
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@student/~self", MAINURL] params:nil success:^(id responseJSON) {
         
         [LJFileTool writeToFileContent:responseJSON withFileName:selfInfoFileName];
@@ -84,12 +82,10 @@
         
         [self.tableView headerEndRefreshing];
     }];
-    
 }
 
-#pragma mark 解析数据
-- (void)analyticalData:(id)json
-{
+
+- (void)analyticalData:(id)json {
     SelfInformation *student = [SelfInformation objectWithKeyValues:json];
     
     //基本信息
@@ -100,7 +96,9 @@
     NSString *filePath = [LJFileTool getFilePath:selfIconFileName];
     
     NSFileManager *mgr = [NSFileManager defaultManager];
+    
     if ([mgr fileExistsAtPath:filePath]) {
+        
         self.personalImg.image = [UIImage imageWithContentsOfFile:filePath];
         
     } else {
@@ -114,32 +112,34 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
     return self.titles.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     Title *title = _titles[section];
     
     if (title.isOpen) {
+        
         if (section == 0) return self.basicInfoValue.count;
         if (section == 1) return self.information.entranceExams.count;
         if (section == 2) return self.information.educationExperiences.count * 2;
         if (section == 3) return self.information.familys.count;
         else return self.information.disciplinaryActions.count;
-    }else {
+        
+    } else {
         
         return 0;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     //标识
     static NSString *ID0 = @"cellItem";
     static NSString *ID1 = @"familyCell";
-    
     
     //设置数据
     if (indexPath.section == 0) {
@@ -148,6 +148,7 @@
         CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0];
         
         if (!studentInfo) {
+            
             studentInfo = [CellItem newCellItem];
         }
         
@@ -161,9 +162,9 @@
         CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0];
         
         if (!studentInfo) {
+            
             studentInfo = [CellItem newCellItem];
         }
-        
         
         EntranceExam *exam = _information.entranceExams[indexPath.row];
         
@@ -177,6 +178,7 @@
         CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0];
         
         if (!studentInfo) {
+            
             studentInfo = [CellItem newCellItem];
         }
         
@@ -184,15 +186,19 @@
         NSInteger flag = indexPath.row%2;
         
         EducationExperience *e = _information.educationExperiences[x];
+        
         if (flag == 0) {
+            
             studentInfo.tName = [self transDateToString:e.startTime];
             studentInfo.tValue = [self transDateToString:e.endTime];
-        }else{
+            
+        } else {
+            
             studentInfo.tName =e.schoolInfo;
             studentInfo.tValue = e.witness;
         }
-        return studentInfo;
         
+        return studentInfo;
     }
     else if (indexPath.section == 3) {
         
@@ -200,6 +206,7 @@
         familyCell *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID1];
         
         if (!studentInfo) {
+            
             studentInfo = [familyCell  newFamilyCell];
         }
         
@@ -213,13 +220,14 @@
         studentInfo.tWorkLocation = f.workLocation;
         studentInfo.tTel = f.tel;
         return studentInfo;
-    }
-    else {
+        
+    } else {
         
         //缓存池
         CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0];
         
         if (studentInfo == nil) {
+            
             studentInfo = [CellItem newCellItem];
         }
         
@@ -229,8 +237,8 @@
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (indexPath.section == 3)
         return 130;
     else
@@ -238,16 +246,17 @@
 }
 
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
     HeaderView *header = [HeaderView headerViewWithTableView:tableView];
     header.delegate = self;
     header.title = _titles[section];
+    
     return header;
 }
 
-- (void)headerViewDidClickNameView:(HeaderView *)headerView
-{
+- (void)headerViewDidClickNameView:(HeaderView *)headerView {
+    
     [self.tableView reloadData];
 }
 

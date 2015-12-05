@@ -10,19 +10,19 @@
 
 @implementation CellItem
 
-+ (id)newCellItem
-{
++ (id)newCellItem {
+    
     return [[NSBundle mainBundle] loadNibNamed:@"CellItem" owner:nil options:nil][0];
 }
 
-- (void)setTName:(NSString *)tName
-{
+- (void)setTName:(NSString *)tName {
+    
     _tName = tName;
     self.name.text = tName;
 }
 
-- (void)setTValue:(NSString *)tValue
-{
+- (void)setTValue:(NSString *)tValue {
+    
     _tValue = tValue;
     self.value.text = tValue;
 }

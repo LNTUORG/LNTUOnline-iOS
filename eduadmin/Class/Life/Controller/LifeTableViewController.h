@@ -11,4 +11,5 @@
 @interface LifeTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSArray *arr;
+
 @end

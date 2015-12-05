@@ -11,8 +11,8 @@
 @implementation MBProgressHUD (LJ)
 
 #pragma mark 显示信息
-+ (void)show:(NSString *)text icon:(NSString *)icon view:(UIView *)view
-{
++ (void)show:(NSString *)text icon:(NSString *)icon view:(UIView *)view {
+    
     if (view == nil) view = [[UIApplication sharedApplication].windows lastObject];
     
     // 快速显示一个提示信息
@@ -61,28 +61,28 @@
     return hud;
 }
 
-+ (void)showSuccess:(NSString *)success
-{
++ (void)showSuccess:(NSString *)success {
+    
     [self showSuccess:success toView:nil];
 }
 
-+ (void)showError:(NSString *)error
-{
++ (void)showError:(NSString *)error {
+    
     [self showError:error toView:nil];
 }
 
-+ (MBProgressHUD *)showMessage:(NSString *)message
-{
++ (MBProgressHUD *)showMessage:(NSString *)message {
+    
     return [self showMessage:message toView:nil];
 }
 
-+ (void)hideHUDForView:(UIView *)view
-{
++ (void)hideHUDForView:(UIView *)view {
+    
     [self hideHUDForView:view animated:YES];
 }
 
-+ (void)hideHUD
-{
++ (void)hideHUD {
+    
     UIView *view = [[UIApplication sharedApplication].windows lastObject];
     [self hideHUDForView:view];
 }

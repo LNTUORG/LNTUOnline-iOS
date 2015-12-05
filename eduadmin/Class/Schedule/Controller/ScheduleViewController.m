@@ -50,6 +50,7 @@
     if (![self.deft objectForKey:CLASSTABLEMODE]) {
         
         [self createNewClassView];
+        
     } else {
         
         [self createOldClassView];
@@ -73,6 +74,7 @@
     NSFileManager *mgr = [NSFileManager defaultManager];
     
     if ([mgr fileExistsAtPath:filePath]) {
+        
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
         
         NSString *fullDate = dict[@"firstWeekMondayAt"];
@@ -82,7 +84,9 @@
         self.navigationItem.title = [NSString stringWithFormat:@"第%d周", self.currentWeek];
         
         self.courseArray = [self getCourseArray:dict];
-    }else{
+        
+    } else {
+        
         [self refreshData];
     }
     
@@ -104,7 +108,6 @@
     [self.view addSubview:self.iCaView];
     
     self.titleArray = @[@"星期日", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六"];
-    
 }
 
 
@@ -112,7 +115,6 @@
  *  旧版课表
  */
 - (void)createOldClassView {
-
     
     OldClassTableView *oldClassTable = [OldClassTableView newOldClassTable];
     
@@ -121,6 +123,7 @@
     NSFileManager *mgr = [NSFileManager defaultManager];
     
     if ([mgr fileExistsAtPath:filePath]) {
+        
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
         
         NSString *fullDate = dict[@"firstWeekMondayAt"];
@@ -170,6 +173,7 @@
         NSMutableDictionary *oldFormat = [NSMutableDictionary dictionaryWithDictionary:tempDict];
         
         for (Course *cource in courceArr) {
+            
             NSString *name = cource.name;
             NSString *tea = cource.teacher;
             
@@ -183,10 +187,13 @@
                         NSString *weeks = @"";
                         
                         if ([tp.weekMode isEqualToString:@"ALL"]) {
+                            
                             weeks = [NSString stringWithFormat:@"%d-%d", (int)tp.startWeek, (int)tp.endWeek];
+                            
                         } else if ([tp.weekMode isEqualToString:@"ODD"]) {
                             
                             weeks = [NSString stringWithFormat:@"%d-%d(单)", (int)tp.startWeek, (int)tp.endWeek];
+                            
                         } else {
                             
                             weeks = [NSString stringWithFormat:@"%d-%d(双)", (int)tp.startWeek, (int)tp.endWeek];
@@ -194,9 +201,11 @@
                         
                         
                         NSString *value = @"";
+                        
                         if (self.currentWeek < tp.startWeek) {
                             
                             value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@\n未开课", name, weeks, tea, tp.room];
+                            
                         } else {
                             
                             value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", name, weeks, tea, tp.room];
@@ -206,18 +215,19 @@
                             
                             NSString *newStr = [NSString stringWithFormat:@"%@\n%@", oldFormat[key], value];
                             [oldFormat setValue:newStr forKey:key];
+                            
                         } else {
                             
                             [oldFormat setValue:value forKey:key];
                         }
                     }
-                    
                 }
             }
         }
-        
         self.dict = @{@"courses": oldFormat};
-    }else{
+        
+    } else {
+        
         [self refreshData];
     }
     
@@ -235,29 +245,28 @@
     [self.view addSubview:oldClassTable];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
+    
     self.iCaView = nil;
     self.oldView = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    
     return YES;
 }
 
 
 #pragma mark iCarousel methods
 
-
-- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
-{
+- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
+    
     return 7;
 }
 
-- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
-{
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
+    
     NSInteger HEIGHT = [UIScreen mainScreen].bounds.size.height - 40 - 64;
     NSInteger WIDTH = [UIScreen mainScreen].bounds.size.width - 30;
     
@@ -276,18 +285,18 @@
 
 #pragma mark Table methods
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return 4;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (indexPath.row == 0) {
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"head"];
-        if (!cell)
-        {
+        if (!cell) {
+            
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"head"];
         }
         
@@ -299,6 +308,7 @@
         
         DayClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"day"];
         if (!cell) {
+            
             cell = [DayClassTableViewCell newDayClassCell];
         }
         
@@ -311,6 +321,7 @@
         
         DayClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"day"];
         if (!cell) {
+            
             cell = [DayClassTableViewCell newDayClassCell];
         }
         
@@ -326,6 +337,7 @@
     
         NightClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"night"];
         if (!cell) {
+            
             cell = [NightClassTableViewCell newNightClassCell];
         }
         
@@ -339,6 +351,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.row == 0) {
+        
         return 44;
     }
     if (indexPath.row == 1) {
@@ -420,9 +433,11 @@
                                 @"7-4": @"",
                                 @"7-5": @""
                                 };
+    
     NSMutableDictionary *oldFormat = [NSMutableDictionary dictionaryWithDictionary:tempDict];
     
     for (Course *cource in courceArr) {
+        
         NSString *name = cource.name;
         NSString *tea = cource.teacher;
         
@@ -436,19 +451,24 @@
                     NSString *weeks = @"";
                     
                     if ([tp.weekMode isEqualToString:@"ALL"]) {
+                        
                         weeks = [NSString stringWithFormat:@"%d-%d", (int)tp.startWeek, (int)tp.endWeek];
+                        
                     } else if ([tp.weekMode isEqualToString:@"ODD"]) {
                         
                         weeks = [NSString stringWithFormat:@"%d-%d(单)", (int)tp.startWeek, (int)tp.endWeek];
+                        
                     } else {
                         
                         weeks = [NSString stringWithFormat:@"%d-%d(双)", (int)tp.startWeek, (int)tp.endWeek];
                     }
                     
                     NSString *value = @"";
+                    
                     if (self.currentWeek < tp.startWeek) {
                         
                         value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@\n未开课", name, weeks, tea, tp.room];
+                        
                     } else {
                         
                         value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", name, weeks, tea, tp.room];
@@ -458,13 +478,12 @@
                         
                         NSString *newStr = [NSString stringWithFormat:@"%@\n%@", oldFormat[key], value];
                         [oldFormat setValue:newStr forKey:key];
+                        
                     } else {
                         
                         [oldFormat setValue:value forKey:key];
                     }
-                    
                 }
-                
             }
         }
     }
@@ -483,17 +502,18 @@
     return array;
 }
 
-- (void)refreshData
-{
+- (void)refreshData {
     
     NSString *tm = @"";
     if ([LJTimeTool getCurrentMonth]>=2 && [LJTimeTool getCurrentMonth]<9) {
         
         tm = @"春";
+        
     } else {
         
         tm = @"秋";
     }
+    
     NSDictionary *dict = @{@"year": @([LJTimeTool getCurrentYear]), @"term": tm};
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@class-table/~self", MAINURL] params:dict success:^(id responseJSON) {
         
@@ -511,7 +531,6 @@
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        
     }];
 }
 
@@ -519,27 +538,35 @@
 - (NSString *)getCountByWeekday:(NSString *)weekday {
     
     if ([weekday isEqualToString:@"Monday"]) {
+        
         return @"1";
     }
     if ([weekday isEqualToString:@"Tuesday"]) {
+        
         return @"2";
     }
     if ([weekday isEqualToString:@"Wednesday"]) {
+        
         return @"3";
     }
     if ([weekday isEqualToString:@"Thursday"]) {
+        
         return @"4";
     }
     if ([weekday isEqualToString:@"Friday"]) {
+        
         return @"5";
     }
     if ([weekday isEqualToString:@"Saturday"]) {
+        
         return @"6";
     }
     if ([weekday isEqualToString:@"Sunday"]) {
+        
         return @"7";
-    }
-    else {
+        
+    } else {
+        
         return @"8";
     }
 }
@@ -553,6 +580,7 @@
         [self.iCaView removeFromSuperview];
         [self createOldClassView];
         [self.deft setObject:@"1" forKey:CLASSTABLEMODE];
+        
     } else {
         
         [self.oldView removeFromSuperview];
@@ -566,7 +594,9 @@
 
 #pragma UIView实现动画
 - (void) animationWithView : (UIView *)view WithAnimationTransition : (UIViewAnimationTransition) transition {
+    
     [UIView animateWithDuration:0.7f animations:^{
+        
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationTransition:transition forView:view cache:YES];
     }];
@@ -577,6 +607,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     if (buttonIndex == 0) {
+        
         [self.deft setObject:@"1" forKey:KNOWOLDCLASSTABLE];
     }
 }

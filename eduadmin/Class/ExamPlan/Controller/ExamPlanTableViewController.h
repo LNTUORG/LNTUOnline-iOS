@@ -11,4 +11,5 @@
 @interface ExamPlanTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSArray *planArr;
+
 @end

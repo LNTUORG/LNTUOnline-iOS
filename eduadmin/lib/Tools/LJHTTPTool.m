@@ -13,8 +13,8 @@
 
 @implementation LJHTTPTool
 
-+ (void)postJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
-{
++ (void)postJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
@@ -25,27 +25,35 @@
     // 2.发送请求
     [mgr POST:url parameters:params
       success:^(AFHTTPRequestOperation *operation, id responseObject) {
+          
           if (success) {
+              
               success(responseObject);
           }
+          
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          
           if (failure) {
+              
               failure(error);
               if ([operation.response statusCode] == 401) {
+                  
                   [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
               }
               if ([operation.response statusCode] == 400) {
+                  
                   [MBProgressHUD showError:@"用户名密码错误"];
-              }
-              else {
+                  
+              } else {
+                  
                   [MBProgressHUD showError:ERRORSTR];
               }
           }
       }];
 }
 
-+ (void)postHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
-{
++ (void)postHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     if (TOKENFORNET) {
@@ -58,43 +66,57 @@
     // 2.发送请求
     [mgr POST:url parameters:params
       success:^(AFHTTPRequestOperation *operation, id responseObject) {
+          
           if (success) {
+              
               success(responseObject);
           }
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          
           if (failure) {
+              
               failure(error);
               if ([operation.response statusCode] == 401) {
+                  
                   [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
+                  
               } else {
+                  
                   [MBProgressHUD showError:ERRORSTR];
               }
           }
       }];
 }
 
-+ (void)postWithURL:(NSString *)url params:(NSDictionary *)params formDataArray:(NSArray *)formDataArray success:(void (^)(id))success failure:(void (^)(NSError *))failure
-{
++ (void)postWithURL:(NSString *)url params:(NSDictionary *)params formDataArray:(NSArray *)formDataArray success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
     // 2.发送请求
     [mgr POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> totalFormData) {
+        
         for (LJFormData *formData in formDataArray) {
+            
             [totalFormData appendPartWithFileData:formData.data name:formData.name fileName:formData.filename mimeType:formData.mimeType];
         }
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
         if (success) {
+            
             success(responseObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
         if (failure) {
-            failure(error);        }
+            
+            failure(error);
+        }
     }];
 }
 
-+ (void)getJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *))failure
-{
++ (void)getJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *))failure {
+    
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
@@ -106,24 +128,31 @@
     // 2.发送请求
     [mgr GET:url parameters:params
      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         
          if (success) {
+             
              success(responseObject);
          }
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         
          if (failure) {
+             
              failure(operation, error);
+             
              if ([operation.response statusCode] == 401) {
+                 
                  [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
-             }
-             else {
+                 
+             } else {
+                 
                  [MBProgressHUD showError:ERRORSTR];
              }
          }
      }];
 }
 
-+ (void)getHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
-{
++ (void)getHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
@@ -137,15 +166,23 @@
     // 2.发送请求
     [mgr GET:url parameters:params
      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         
          if (success) {
+             
              success(responseObject);
          }
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         
          if (failure) {
+             
              failure(error);
+             
              if ([operation.response statusCode] == 401) {
+                 
                  [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
+                 
              } else {
+                 
                  [MBProgressHUD showError:ERRORSTR];
              }
          }

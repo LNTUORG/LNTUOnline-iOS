@@ -18,7 +18,6 @@
 
 @interface GradeViewController () <UIAlertViewDelegate, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
-
 @end
 
 @implementation GradeViewController
@@ -47,6 +46,7 @@
     if ([LJTimeTool getCurrentMonth]>=5 && [LJTimeTool getCurrentMonth]<11) {
         
         self.term = self.termArr[0];
+        
     } else {
         
         self.term = self.termArr[1];
@@ -60,11 +60,10 @@
     [self.gradeView addHeaderWithTarget:self action:@selector(getGradeInfo) dateKey:@"grade"];
     
     [self.gradeView headerBeginRefreshing];
-    
 }
 
-- (void)getGradeInfo
-{
+- (void)getGradeInfo {
+    
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@grades/~self", MAINURL] params:nil success:^(id responseJSON) {
         
         self.allGradeArr = [MyGrade objectArrayWithKeyValuesArray:responseJSON[@"courseScores"]];
@@ -98,38 +97,37 @@
 
 #pragma mark pickerView 代理方法 and 数据源
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    
     return 2;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    
     if (component == 0) {
         
         return self.yearArr.count;
+        
     } else {
         
         return self.termArr.count;
     }
 }
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     
     if (component == 0) {
         
         NSString *str = [NSString stringWithFormat:@"%@年",self.yearArr[row]];
         return str;
+        
     } else {
         
         NSString *str = [NSString stringWithFormat:@"%@",self.termArr[row]];
         return str;
     }
-    
 }
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
     if (component == 0) {
         
@@ -162,33 +160,33 @@
     return label;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return self.currentGradeArr.count;
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     PartGradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"part"];
     
     if (cell == nil) {
+        
         cell = [PartGradeCell newPartGradeCell];
     }
-    
     cell.myGrade = self.currentGradeArr[indexPath.row];
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     [self performSegueWithIdentifier:@"grade2dtl" sender:self.currentGradeArr[indexPath.row]];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     DetailGradeController *con = segue.destinationViewController;
     con.grade = sender;
 }
@@ -199,8 +197,11 @@
     CGRect pickerR = self.pickerDevice.frame;
     
     if (pickerR.origin.y >0) {
+        
         pickerR.origin.y -= 165;
-    }else{
+        
+    } else {
+        
         pickerR.origin.y += 165;
     }
     
@@ -211,8 +212,8 @@
 }
 
 
-- (void)movePicker:(NSInteger)y
-{
+- (void)movePicker:(NSInteger)y {
+    
     CGRect pickerR = self.pickerDevice.frame;
     pickerR.origin.y = y;
     self.pickerDevice.frame = pickerR;

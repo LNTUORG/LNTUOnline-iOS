@@ -12,6 +12,7 @@
 @protocol HeaderViewDelegate <NSObject>
 @optional
 - (void)headerViewDidClickNameView:(HeaderView *)headerView;
+
 @end
 
 @interface HeaderView : UITableViewHeaderFooterView
@@ -20,4 +21,5 @@
 
 @property (nonatomic,copy) Title *title;
 @property (nonatomic,weak) id<HeaderViewDelegate> delegate;
+
 @end

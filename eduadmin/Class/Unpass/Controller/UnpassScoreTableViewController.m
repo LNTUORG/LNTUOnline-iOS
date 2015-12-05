@@ -31,7 +31,6 @@
     [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"unpass"];
     
     [self.tableView headerBeginRefreshing];
-    
 }
 
 - (void)refreshData {
@@ -41,43 +40,41 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return _gradeArr.count;
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     PartGradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"part"];
     
     if (cell == nil) {
+        
         cell = [PartGradeCell newPartGradeCell];
     }
-    
     cell.unPassGrade = _gradeArr[indexPath.row];
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UnpassGrade *grade = self.gradeArr[indexPath.row];
     
     [self performSegueWithIdentifier:@"unpass2detail" sender:grade.records];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     DetailTableViewController *con = segue.destinationViewController;
     con.records = sender;
 }
 
 
-- (void)getUnpassCoursesInfo
-{
+- (void)getUnpassCoursesInfo {
     
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@unpass-course/~self", MAINURL] params:nil success:^(id responseJSON) {
         

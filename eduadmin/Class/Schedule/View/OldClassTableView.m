@@ -26,14 +26,12 @@
     for (UILabel *lable in self.bigView.subviews) {
         lable.numberOfLines = 0;
     }
-    
 }
 
 - (void)awakeFromNib {
     
     // 下拉刷新
     [self.schScrollView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"classtable"];
-    
 }
 
 - (void)refreshData
@@ -41,6 +39,7 @@
     [MBProgressHUD showMessage:@"正在获取中"];
     
     NSString *tm = @"";
+    
     if ([LJTimeTool getCurrentMonth]>=2 && [LJTimeTool getCurrentMonth]<9) {
         
         tm = @"春";
@@ -48,7 +47,9 @@
         
         tm = @"秋";
     }
+    
     NSDictionary *dict = @{@"year": @([LJTimeTool getCurrentYear]), @"term": tm};
+    
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@class-table/~self", MAINURL] params:dict success:^(id responseJSON) {
         
         [MBProgressHUD hideHUD];
@@ -61,7 +62,6 @@
         [MBProgressHUD hideHUD];
         [self.schScrollView headerEndRefreshing];
     }];
-    
 }
 
 

@@ -10,7 +10,6 @@
 
 @interface TimeAndPlace : NSObject
 
-
 @property (nonatomic, copy) NSString *dayInWeek;
 @property (nonatomic, assign) NSInteger endWeek;
 @property (nonatomic, copy) NSString *room;

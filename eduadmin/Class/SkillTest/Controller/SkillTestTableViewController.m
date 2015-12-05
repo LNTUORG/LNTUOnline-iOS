@@ -17,7 +17,6 @@
 
 @interface SkillTestTableViewController ()
 
-
 @end
 
 @implementation SkillTestTableViewController
@@ -31,8 +30,6 @@
     [self.tableView headerBeginRefreshing];
     
     self.tableView.tableFooterView = [[UIView alloc] init];
-    
-    
 }
 
 - (void)refreshData {
@@ -52,27 +49,26 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return self.skillArr.count;
 }
 
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     SkillTestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"skill"];
     
     if (cell == nil) {
+        
         cell = [SkillTestCell newSkillTestCell];
     }
-    
     cell.sTest = self.skillArr[indexPath.row];
     
     return cell;

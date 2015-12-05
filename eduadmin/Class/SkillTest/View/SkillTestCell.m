@@ -11,10 +11,8 @@
 
 @implementation SkillTestCell
 
-
-
-- (void)setSTest:(SkillTest *)sTest
-{
+- (void)setSTest:(SkillTest *)sTest {
+    
     _sTest = sTest;
     
     self.courseLable.text = sTest.name;
@@ -23,8 +21,8 @@
     [self.countButton setTitle:sTest.score forState:UIControlStateNormal];
 }
 
-+ (instancetype)newSkillTestCell
-{
++ (instancetype)newSkillTestCell {
+    
     return [[NSBundle mainBundle] loadNibNamed:@"SkillTestCell" owner:nil options:nil][0];
 }
 

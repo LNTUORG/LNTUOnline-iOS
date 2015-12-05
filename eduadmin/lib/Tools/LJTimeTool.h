@@ -24,4 +24,5 @@
 + (NSInteger)hourNumberSinceDateWithFormat_yyyy_MM_dd_HH_mm:(NSString *)date;
 
 + (NSInteger)getWeekOfDateWithFormat_yyyy_MM_dd:(NSString *)date;
+
 @end

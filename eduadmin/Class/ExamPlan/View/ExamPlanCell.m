@@ -13,8 +13,8 @@
 
 @implementation ExamPlanCell
 
-- (void)setPlan:(ExamPlan *)plan
-{
+- (void)setPlan:(ExamPlan *)plan {
+    
     _plan = plan;
     
     NSArray *arr = [plan.startTime componentsSeparatedByString:@"-"];
@@ -41,11 +41,15 @@
     NSString *lastDay = @"";
     
     if (baseHour < 0) {
+        
         lastDay = @"...";
         [self.countDate setBackgroundColor:[UIColor lightGrayColor]];
+        
     } else if (baseHour > 0 && baseHour <24) {
+        
         lastDay = @"<1";
         [self.countDate setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        
     } else {
         
         lastDay = [NSString stringWithFormat:@"%d", (int)(baseHour/24 + 0.5)];

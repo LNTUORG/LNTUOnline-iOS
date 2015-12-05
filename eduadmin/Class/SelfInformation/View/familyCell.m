@@ -10,52 +10,51 @@
 
 @implementation familyCell
 
-+ (id)newFamilyCell
-{
++ (id)newFamilyCell {
+    
     return [[NSBundle mainBundle] loadNibNamed:@"familyCell" owner:nil options:nil][0];
 }
 
-- (void)setTName:(NSString *)tName
-{
+- (void)setTName:(NSString *)tName {
+    
     _tName = tName;
     self.name.text = tName;
 }
 
-- (void)setTRelationship:(NSString *)tRelationship
-{
+- (void)setTRelationship:(NSString *)tRelationship {
+    
     _tRelationship = tRelationship;
     self.relationship.text = [NSString stringWithFormat:@"（%@）", tRelationship];
 }
 
-- (void)setTPoliticalAffiliation:(NSString *)tPoliticalAffiliation
-{
+- (void)setTPoliticalAffiliation:(NSString *)tPoliticalAffiliation {
+    
     _tPoliticalAffiliation = tPoliticalAffiliation;
     self.politicalAffiliation.text = tPoliticalAffiliation;
 }
 
-- (void)setTJob:(NSString *)tJob
-{
+- (void)setTJob:(NSString *)tJob {
+    
     _tJob = tJob;
     self.job.text = tJob;
 }
 
-- (void)setTPost:(NSString *)tPost
-{
+- (void)setTPost:(NSString *)tPost {
+    
     _tPost = tPost;
     self.post.text = tPost;
 }
 
-- (void)setTWorkLocation:(NSString *)tWorkLocation
-{
+- (void)setTWorkLocation:(NSString *)tWorkLocation {
+    
     _tWorkLocation = tWorkLocation;
     self.workLocation.text = tWorkLocation;
 }
 
-- (void)setTTel:(NSString *)tTel
-{
+- (void)setTTel:(NSString *)tTel {
+    
     _tTel = tTel;
     self.tel.text = tTel;
 }
-
 
 @end

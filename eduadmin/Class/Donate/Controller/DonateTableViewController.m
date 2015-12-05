@@ -10,8 +10,8 @@
 #import "MBProgressHUD+LJ.h"
 #import "Common.h"
 
-@interface DonateTableViewController () <SKProductsRequestDelegate, SKPaymentTransactionObserver>
-{
+@interface DonateTableViewController () <SKProductsRequestDelegate, SKPaymentTransactionObserver> {
+    
     NSArray *_productArr;
     NSMutableArray *_purchasedArr;
 }
@@ -31,7 +31,6 @@
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
 
     [self getProduct];
-    
 }
 
 - (void)getProduct {
@@ -48,10 +47,8 @@
     }else {
     
         UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"访问限制" message:@"您已经禁止应用内购买" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
-        
         [view show];
     }
-
 }
 
 - (void)buyProduct:(SKProduct *)product {
@@ -60,24 +57,24 @@
     
     // 添加到队列
     [[SKPaymentQueue defaultQueue] addPayment:payment];
-    
 }
 
 #pragma mark - StoreKit
 
-- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
-{
+- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
+    
     _productArr = response.products;
     
     [MBProgressHUD hideHUD];
     [self.tableView reloadData];
 }
 
-- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
-{
+- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
+    
     for (SKPaymentTransaction *trans in transactions) {
         
         switch (trans.transactionState) {
+                
             case SKPaymentTransactionStatePurchased:
                 
                 [self completeTransaction:trans];
@@ -97,13 +94,11 @@
             default:
                 break;
         }
-        
     }
-
 }
 
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
-
+    
     // 处理 id
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     
@@ -148,11 +143,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     if (section == 0) {
+        
         return _productArr.count;
+        
     }else {
+        
         return _purchasedArr.count;
     }
-    
 }
 
 
@@ -165,6 +162,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"donate"];
         
         if (cell == nil) {
+            
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"donate"];
         }
         
@@ -181,7 +179,8 @@
         }
         
         return cell;
-    }else {
+        
+    } else {
         
         NSString *str = _purchasedArr[indexPath.row];
         
@@ -190,32 +189,32 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"purchased"];
         
         if (cell == nil) {
+            
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"purchased"];
         }
-        
         cell.textLabel.text = [NSString stringWithFormat:@"已捐赠的项目是￥%@", arr[2]];
-        
         cell.userInteractionEnabled = NO;
+
         return cell;
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     SKProduct *pro = _productArr[indexPath.row];
     
     [self buyProduct:pro];
-    
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
+        
         return @"可选择的捐赠项";
-    }else {
+        
+    } else {
     
         return @"已捐赠的项目";
     }

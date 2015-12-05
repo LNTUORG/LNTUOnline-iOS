@@ -13,8 +13,8 @@
 
 @implementation PartGradeCell
 
-- (void)setUnPassGrade:(UnpassGrade *)unPassGrade
-{
+- (void)setUnPassGrade:(UnpassGrade *)unPassGrade {
+    
     _unPassGrade = unPassGrade;
     
     self.name.text = unPassGrade.name;
@@ -34,6 +34,7 @@
     self.credit.text = myGrade.score;
     
     if ([myGrade.level isEqualToString:@"GREAT"]) {
+        
         self.credit.textColor = LJColor(100, 157, 89);
     }
     else if ([myGrade.level isEqualToString:@"NORMAL"]) {
@@ -48,8 +49,8 @@
     self.selectType.text = [NSString stringWithFormat:@"%@年%@", myGrade.year, myGrade.term];
 }
 
-+ (instancetype)newPartGradeCell
-{
++ (instancetype)newPartGradeCell {
+    
     return [[NSBundle mainBundle] loadNibNamed:@"PartGradeCell" owner:nil options:nil][0];
 }
 
