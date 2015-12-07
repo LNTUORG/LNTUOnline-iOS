@@ -35,28 +35,28 @@
         year -= 1;
     }
     
-    self.yearArr = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%d", (int)year],[NSString stringWithFormat:@"%d", (int)year-1],[NSString stringWithFormat:@"%d", (int)year-2],[NSString stringWithFormat:@"%d", (int)year-3],[NSString stringWithFormat:@"%d", (int)year-4],[NSString stringWithFormat:@"%d", (int)year-5], nil];
+    self.yearArr = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%d", (int)year], [NSString stringWithFormat:@"%d", (int)year-1], [NSString stringWithFormat:@"%d", (int)year-2], [NSString stringWithFormat:@"%d", (int)year-3], [NSString stringWithFormat:@"%d", (int)year-4], [NSString stringWithFormat:@"%d", (int)year-5], nil];
     
-    self.termArr = [NSArray arrayWithObjects:@"春",@"秋",nil];
+    self.termArr = [NSArray arrayWithObjects:@"春", @"秋", nil];
     
     self.currentGradeArr = [NSMutableArray array];
     
-    self.year = self.yearArr[0];
+    self.yearIndex = 0;
     
     if ([LJTimeTool getCurrentMonth]>=5 && [LJTimeTool getCurrentMonth]<11) {
         
-        self.term = self.termArr[0];
+        self.termIndex = 0;
         
     } else {
         
-        self.term = self.termArr[1];
+        self.termIndex = 1;
     }
     
-    self.yearLable.text = [NSString stringWithFormat:@"%@年", self.year];
-    self.termLable.text = self.term;
-
+    self.yearLable.text = [NSString stringWithFormat:@"%@年", self.yearArr[self.yearIndex]];
+    self.termLable.text = self.termArr[self.termIndex];
     
-    // 下拉刷新
+    [self.pickView selectRow:self.termIndex inComponent:1 animated:NO];
+
     self.gradeView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getGradeInfo)];
     
     [self.gradeView.mj_header beginRefreshing];
@@ -88,7 +88,7 @@
     
     for (MyGrade *grade in self.allGradeArr) {
         
-        if ([grade.year isEqualToString:self.year] && [grade.term isEqualToString:self.term]) {
+        if ([grade.year isEqualToString:self.yearArr[self.yearIndex]] && [grade.term isEqualToString:self.termArr[self.termIndex]]) {
             
             [self.currentGradeArr addObject:grade];
         }
@@ -117,13 +117,11 @@
     
     if (component == 0) {
         
-        NSString *str = [NSString stringWithFormat:@"%@年",self.yearArr[row]];
-        return str;
+        return [NSString stringWithFormat:@"%@年",self.yearArr[row]];
         
     } else {
         
-        NSString *str = [NSString stringWithFormat:@"%@",self.termArr[row]];
-        return str;
+        return [NSString stringWithFormat:@"%@",self.termArr[row]];
     }
 }
 
@@ -131,23 +129,24 @@
     
     if (component == 0) {
         
-        self.year = self.yearArr[row];
+        self.yearIndex = row;
         
         [self initTheCurrentScoreArr];
         [self.gradeView reloadData];
         
-        self.yearLable.text = [NSString stringWithFormat:@"%@年", self.year];
+        self.yearLable.text = [NSString stringWithFormat:@"%@年", self.yearArr[self.yearIndex]];
         
     } else {
         
-        self.term = self.termArr[row];
+        self.termIndex = row;
         
         [self initTheCurrentScoreArr];
         [self.gradeView reloadData];
         
-        self.termLable.text = self.term;
+        self.termLable.text = self.termArr[self.termIndex];
     }
 }
+
 #pragma mark - Table view data source
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

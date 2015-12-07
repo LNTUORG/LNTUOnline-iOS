@@ -15,8 +15,8 @@
 @property (strong, nonatomic) NSArray *yearArr;
 @property (strong, nonatomic) NSArray *termArr;
 
-@property (copy, nonatomic) NSString *year;
-@property (copy, nonatomic) NSString *term;
+@property (assign, nonatomic) NSInteger yearIndex;
+@property (assign, nonatomic) NSInteger termIndex;
 
 @property (copy, nonatomic) NSString *averageCredit;
 
