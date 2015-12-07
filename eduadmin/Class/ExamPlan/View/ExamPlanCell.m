@@ -44,15 +44,20 @@
         
         lastDay = @"...";
         [self.countDate setBackgroundColor:[UIColor lightGrayColor]];
-        
-    } else if (baseHour > 0 && baseHour <24) {
-        
+    }
+    else if (baseHour > 0 && baseHour < 24) {
+    
         lastDay = @"<1";
+        [self.countDate setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    }
+    else if (baseHour > 24 && baseHour < 48) {
+        
+        lastDay = [NSString stringWithFormat:@"%d", (int)(baseHour/24.00 + 0.5)];
         [self.countDate setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         
     } else {
         
-        lastDay = [NSString stringWithFormat:@"%d", (int)(baseHour/24 + 0.5)];
+        lastDay = [NSString stringWithFormat:@"%d", (int)(baseHour/24.00 + 0.5)];
     }
     
     [self.countDate setTitle:lastDay forState:UIControlStateNormal];
