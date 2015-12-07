@@ -11,6 +11,7 @@
 @interface NoticeViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+
 - (IBAction)goToSafari:(id)sender;
 
 @end
