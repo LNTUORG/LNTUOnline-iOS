@@ -11,6 +11,7 @@
 
 @protocol HeaderViewDelegate <NSObject>
 @optional
+
 - (void)headerViewDidClickNameView:(HeaderView *)headerView;
 
 @end
@@ -19,7 +20,8 @@
 
 + (instancetype)headerViewWithTableView: (UITableView *)tableView;
 
-@property (nonatomic,copy) Title *title;
-@property (nonatomic,weak) id<HeaderViewDelegate> delegate;
+@property (nonatomic, assign) NSInteger section;
+@property (nonatomic, copy) Title *title;
+@property (nonatomic, weak) id<HeaderViewDelegate> delegate;
 
 @end

@@ -439,7 +439,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                                                 <animations/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="indexIcon" translatesAutoresizingMaskIntoConstraints="NO" id="BSn-qh-qID">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BSn-qh-qID" customClass="CircleHeadImageView">
                                                 <rect key="frame" x="10" y="140" width="90" height="90"/>
                                                 <animations/>
                                             </imageView>
@@ -1651,7 +1651,6 @@
         <image name="clock" width="64" height="64"/>
         <image name="goRight" width="20" height="41"/>
         <image name="gradeBackground" width="277" height="389"/>
-        <image name="indexIcon" width="80" height="80"/>
         <image name="loginMe" width="30" height="30"/>
         <image name="logo_2x" width="131" height="27"/>
         <image name="mainTitle" width="320" height="240"/>

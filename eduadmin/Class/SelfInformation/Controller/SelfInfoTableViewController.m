@@ -123,11 +123,26 @@
     
     if (title.isOpen) {
         
-        if (section == 0) return self.basicInfoValue.count;
-        if (section == 1) return self.information.entranceExams.count;
-        if (section == 2) return self.information.educationExperiences.count * 2;
-        if (section == 3) return self.information.familys.count;
-        else return self.information.disciplinaryActions.count;
+        if (section == 0) {
+            
+            return self.basicInfoValue.count;
+        }
+        if (section == 1) {
+        
+            return self.information.entranceExams.count;
+        }
+        if (section == 2) {
+        
+            return self.information.educationExperiences.count * 2;
+        }
+        if (section == 3) {
+        
+            return self.information.familys.count;
+            
+        } else {
+            
+            return self.information.disciplinaryActions.count;
+        }
         
     } else {
         
@@ -251,13 +266,14 @@
     HeaderView *header = [HeaderView headerViewWithTableView:tableView];
     header.delegate = self;
     header.title = _titles[section];
+    header.section = section;
     
     return header;
 }
 
 - (void)headerViewDidClickNameView:(HeaderView *)headerView {
     
-    [self.tableView reloadData];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:headerView.section] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (NSString *)transDateToString:(NSString *)date {
