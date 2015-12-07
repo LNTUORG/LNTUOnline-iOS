@@ -108,65 +108,6 @@
             </objects>
             <point key="canvasLocation" x="-5461" y="1351"/>
         </scene>
-        <!--Donate Table View Controller-->
-        <scene sceneID="45k-Y8-f2p">
-            <objects>
-                <tableViewController id="091-QU-ePs" customClass="DonateTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="yU6-yD-DBs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                        <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="GWO-ZL-dVP">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <animations/>
-                            <items>
-                                <barButtonItem title="关闭" id="QXf-MZ-UXu">
-                                    <connections>
-                                        <action selector="close:" destination="091-QU-ePs" id="WZR-EL-dfw"/>
-                                    </connections>
-                                </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="9DN-Ug-wqM"/>
-                                <barButtonItem title="恢复以前捐赠" id="Stk-VT-ryf">
-                                    <connections>
-                                        <action selector="restore:" destination="091-QU-ePs" id="n7p-cS-4Qu"/>
-                                    </connections>
-                                </barButtonItem>
-                            </items>
-                        </toolbar>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="RkI-XA-ARb">
-                            <rect key="frame" x="0.0" y="44" width="600" height="125"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="此项目是一个公益项目，没有盈利模式 甚至连广告都没有 却要处理每天几十万次的请求，高峰期一度瘫痪 维护此项目，需要一定的投入 在此之前一直是我们在捐赠 为了此项目存活久一些，欢迎新鲜血液的注入 捐一瓶可乐，还是中杯星巴克，你说了算！" translatesAutoresizingMaskIntoConstraints="NO" id="1cV-A3-CTl">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="125"/>
-                                    <animations/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
-                            </subviews>
-                            <animations/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="1cV-A3-CTl" firstAttribute="leading" secondItem="RkI-XA-ARb" secondAttribute="leading" id="4Qu-pe-52B"/>
-                                <constraint firstAttribute="trailing" secondItem="1cV-A3-CTl" secondAttribute="trailing" id="iUr-xy-Mw3"/>
-                                <constraint firstAttribute="bottom" secondItem="1cV-A3-CTl" secondAttribute="bottom" id="u8K-VI-7Ax"/>
-                                <constraint firstItem="1cV-A3-CTl" firstAttribute="top" secondItem="RkI-XA-ARb" secondAttribute="top" id="ycn-mS-sOQ"/>
-                            </constraints>
-                        </view>
-                        <connections>
-                            <outlet property="dataSource" destination="091-QU-ePs" id="bCI-xI-HMx"/>
-                            <outlet property="delegate" destination="091-QU-ePs" id="3Vy-zF-UUN"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hHr-XL-Y5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3744" y="2671"/>
-        </scene>
         <!--关于软件-->
         <scene sceneID="Ikb-6t-gOF">
             <objects>
@@ -864,7 +805,6 @@
                         <segue destination="hfY-k1-urd" kind="show" identifier="main2Grade" id="1Hh-d5-LJx"/>
                         <segue destination="7A0-cS-P8P" kind="show" identifier="main2Exam" id="ie1-Au-vMw"/>
                         <segue destination="B7n-Ql-IZp" kind="show" identifier="main2Skill" id="eB5-rK-nNu"/>
-                        <segue destination="091-QU-ePs" kind="presentation" identifier="main2Donate" id="4bF-S2-i08"/>
                         <segue destination="HCz-0G-q47" kind="show" identifier="main2Rate" id="wIh-la-kOa"/>
                         <segue destination="L8O-vA-fbw" kind="show" identifier="main2Fresher" id="ErA-KM-DMV"/>
                         <segue destination="yXO-A4-eSO" kind="presentation" identifier="index2login" id="HeW-RW-jNk"/>
@@ -1641,7 +1581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqc-aH-6vB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4221" y="2343"/>
+            <point key="canvasLocation" x="-4821" y="2015"/>
         </scene>
     </scenes>
     <resources>

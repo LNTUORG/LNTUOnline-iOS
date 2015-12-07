@@ -136,13 +136,6 @@
     
     [alertController addAction:escAction];
     
-    UIAlertAction *donateAction = [UIAlertAction actionWithTitle:@"做一些捐赠" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-        [self performSegueWithIdentifier:@"main2Donate" sender:nil];
-    }];
-    
-    [alertController addAction:donateAction];
-    
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     
     [alertController addAction:cancelAction];
