@@ -41,7 +41,6 @@
     self.tableView.sectionHeaderHeight = 44;
     self.tableView.tableFooterView = [[UIView alloc] init];
     
-    // 下拉刷新
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
     
     NSArray *tempArr = @[@"基本信息", @"高考科目", @"个人简历", @"家庭情况"];
@@ -149,7 +148,6 @@
             
             return self.information.disciplinaryActions.count;
         }
-        
     } else {
         
         return 0;

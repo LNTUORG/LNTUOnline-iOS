@@ -10,7 +10,7 @@
 
 @implementation familyCell
 
-+ (id)newFamilyCell {
++ (instancetype)newFamilyCell {
     
     return [[NSBundle mainBundle] loadNibNamed:@"familyCell" owner:nil options:nil][0];
 }

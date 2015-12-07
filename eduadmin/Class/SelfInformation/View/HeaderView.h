@@ -10,8 +10,8 @@
 @class HeaderView,Title;
 
 @protocol HeaderViewDelegate <NSObject>
-@optional
 
+@optional
 - (void)headerViewDidClickNameView:(HeaderView *)headerView;
 
 @end

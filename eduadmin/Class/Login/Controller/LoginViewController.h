@@ -10,18 +10,17 @@
 
 @interface LoginViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *userNameText; // 用户名文本框
+@property (weak, nonatomic) IBOutlet UITextField *userNameText;
 
-@property (weak, nonatomic) IBOutlet UITextField *pwdText; // 密码文本框
+@property (weak, nonatomic) IBOutlet UITextField *pwdText;
 
-@property (weak, nonatomic) IBOutlet UIButton *loginBtn; // 登录按钮
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 
 - (IBAction)forHelp:(id)sender;
 
-- (IBAction)existKeyboard; // 关闭键盘
+- (IBAction)existKeyboard;
 
-- (IBAction)login; //登录事件
-
+- (IBAction)login;
 
 @end

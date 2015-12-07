@@ -10,28 +10,28 @@
 
 @interface familyCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (nonatomic, weak) IBOutlet UILabel *name;
 
-@property (weak, nonatomic) IBOutlet UILabel *relationship;
+@property (nonatomic, weak) IBOutlet UILabel *relationship;
 
-@property (weak, nonatomic) IBOutlet UILabel *politicalAffiliation;
+@property (nonatomic, weak) IBOutlet UILabel *politicalAffiliation;
 
-@property (weak, nonatomic) IBOutlet UILabel *job;
+@property (nonatomic, weak) IBOutlet UILabel *job;
 
-@property (weak, nonatomic) IBOutlet UILabel *post;
+@property (nonatomic, weak) IBOutlet UILabel *post;
 
-@property (weak, nonatomic) IBOutlet UILabel *workLocation;
+@property (nonatomic, weak) IBOutlet UILabel *workLocation;
 
-@property (weak, nonatomic) IBOutlet UILabel *tel;
+@property (nonatomic, weak) IBOutlet UILabel *tel;
 
-@property (nonatomic,copy) NSString *tName;
-@property (nonatomic,copy) NSString *tRelationship;
-@property (nonatomic,copy) NSString *tPoliticalAffiliation;
-@property (nonatomic,copy) NSString *tJob;
-@property (nonatomic,copy) NSString *tPost;
-@property (nonatomic,copy) NSString *tWorkLocation;
-@property (nonatomic,copy) NSString *tTel;
+@property (nonatomic, copy) NSString *tName;
+@property (nonatomic, copy) NSString *tRelationship;
+@property (nonatomic, copy) NSString *tPoliticalAffiliation;
+@property (nonatomic, copy) NSString *tJob;
+@property (nonatomic, copy) NSString *tPost;
+@property (nonatomic, copy) NSString *tWorkLocation;
+@property (nonatomic, copy) NSString *tTel;
 
-+ (id)newFamilyCell;
++ (instancetype)newFamilyCell;
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation CellItem
 
-+ (id)newCellItem {
++ (instancetype)newCellItem {
     
     return [[NSBundle mainBundle] loadNibNamed:@"CellItem" owner:nil options:nil][0];
 }
