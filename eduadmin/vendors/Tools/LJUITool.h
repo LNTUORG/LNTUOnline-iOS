@@ -12,4 +12,6 @@
 
 + (CGPoint)getPointWithFrame:(CGRect)rect;
 
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
+
 @end

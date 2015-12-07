@@ -31,6 +31,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIImage *originImage = [UIImage imageNamed:@"bgimage"];
+    
+    UIImage *newImage = [LJUITool imageWithImage:originImage scaledToSize:self.tableView.tableHeaderView.frame.size];
+    
+    self.tableView.tableHeaderView.backgroundColor = [UIColor colorWithPatternImage:newImage];
+    
     self.tableView.rowHeight = 50;
     self.tableView.sectionHeaderHeight = 44;
     self.tableView.tableFooterView = [[UIView alloc] init];
