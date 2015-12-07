@@ -363,10 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				71EF03D91C1574B800BCBF4A /* AFNetworking */,
-				71EF03ED1C1574B800BCBF4A /* iCarousel */,
-				71EF03EE1C1574B800BCBF4A /* MBProgressHUD */,
-				71EF03F21C1574B800BCBF4A /* MJExtension */,
-				71EF03F31C1574B800BCBF4A /* MJRefresh */,
+				71EF03EE1C1574B800BCBF4A /* MBProgressHUD+LJ */,
 				71EF03F41C1574B800BCBF4A /* Tools */,
 			);
 			path = vendors;
@@ -398,35 +395,15 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
-		71EF03ED1C1574B800BCBF4A /* iCarousel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = iCarousel;
-			sourceTree = "<group>";
-		};
-		71EF03EE1C1574B800BCBF4A /* MBProgressHUD */ = {
+		71EF03EE1C1574B800BCBF4A /* MBProgressHUD+LJ */ = {
 			isa = PBXGroup;
 			children = (
 				71EF03EF1C1574B800BCBF4A /* MBProgressHUD+LJ.h */,
 				71EF03F01C1574B800BCBF4A /* MBProgressHUD+LJ.m */,
 				71EF03F11C1574B800BCBF4A /* MBProgressHUD.bundle */,
 			);
+			name = "MBProgressHUD+LJ";
 			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		71EF03F21C1574B800BCBF4A /* MJExtension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MJExtension;
-			sourceTree = "<group>";
-		};
-		71EF03F31C1574B800BCBF4A /* MJRefresh */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MJRefresh;
 			sourceTree = "<group>";
 		};
 		71EF03F41C1574B800BCBF4A /* Tools */ = {
@@ -1401,7 +1378,7 @@
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = eduadmin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
@@ -1433,7 +1410,7 @@
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = eduadmin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (

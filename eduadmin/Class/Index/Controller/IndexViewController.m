@@ -204,17 +204,19 @@
         
         [MBProgressHUD showError:@"都说了啥都没有...别点了"];
     }
-    if (_clickTime == 2) {
+    if (_clickTime == 1) {
         
         [MBProgressHUD showError:@"我擦，你还点，点也没用"];
     }
-    if (_clickTime == 3) {
+    if (_clickTime == 2) {
         
         [MBProgressHUD showError:@"为啥吧，因为压根就没做啊"];
     }
-    if (_clickTime == 4) {
+    if (_clickTime == 3) {
         
-        [MBProgressHUD showError:@"去商店评波分吧(ง •̀灬•́)ง"];
+        UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"既然你时间这么多" message:@"去商店评波分吧(ง •̀灬•́)ง" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
+        
+        [view show];
     }
     _clickTime ++;
 }
@@ -229,11 +231,22 @@
     [self performSegueWithIdentifier:@"main2Fresher" sender:nil];
 }
 
-#pragma mark ActionSheet代理方法
+#pragma mark ActionSheet Delegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 
     [self performSegueWithIdentifier:@"index2login" sender:nil];
+}
+
+#pragma AlertView Delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 0) {
+        
+        NSString *url = STOREURL;
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }
 }
 
 @end

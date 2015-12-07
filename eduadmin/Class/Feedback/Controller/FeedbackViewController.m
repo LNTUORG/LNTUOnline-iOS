@@ -49,7 +49,7 @@
 //                            @"contact":self.contactTextField.text
 //                            };
 //    
-//    [LJHTTPTool postHTTPWithURL:[NSString stringWithFormat:@"%@feedback/advice",sinaURL] params:param success:^(id responseHTTP) {
+//    [LJHTTPTool postHTTPWithURL:[NSString stringWithFormat:@"%@crash-log",MAINURL] params:param success:^(id responseHTTP) {
 //        
 //        NSString *flag = [[NSString alloc] initWithData:responseHTTP encoding:NSUTF8StringEncoding];
 //        
@@ -67,7 +67,6 @@
 //    } failure:^(NSError *error) {
 //        
 //        [MBProgressHUD hideHUD];
-//        [MBProgressHUD showError:errorStr];
 //    }];
 }
 

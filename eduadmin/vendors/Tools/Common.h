@@ -9,8 +9,8 @@
 #define MAINURL @"https://api.online.lntu.org/" // 主服务器URL
 #define TOKENURL @"http://lntu.sinaapp.com/"      // 推送服务器 URL
 #define NOTICEURL @"http://60.18.131.131:11180/academic/jwgg.jsp"   // 教务在线公告地址
-#define WANTEDURL @"http://lntu.org/joinin/"     // 招募地址
-#define PUPBOSSURL @"http://pupboss.com"       //  我的网站
+#define WANTEDURL @"https://www.lntu.org"     // 招募地址
+#define PUPBOSSURL @"https://www.pupboss.com"       //  我的网站
 #define WEIBOURL @"http://www.weibo.com/yuanjingkeji"
 #define STOREURL @"https://itunes.apple.com/cn/app/id955004763"
 #define FEEDBACKURL @"https://online.lntu.org/q-a/"
@@ -19,7 +19,7 @@
 #define ERRORSTR @"服务器被外星人搬走了o(╯□╰)o" // 错误提示语
 #define NULLSTR @"暂无此类数据"
 #define LJQQ @"10771533"
-#define SUPPORTMAIL @"support@pupboss.com"
+#define SUPPORTMAIL @"hi@pupboss.com"
 
 #define USERNAMEKEY @"userName"   // 用户名 key
 #define PWDKEY @"pwd"           // 密码 key

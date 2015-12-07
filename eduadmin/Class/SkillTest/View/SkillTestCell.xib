@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -12,30 +12,33 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="countdown" translatesAutoresizingMaskIntoConstraints="NO" id="jjC-7G-RE1">
-                        <rect key="frame" x="8" y="42" width="21" height="21"/>
+                        <rect key="frame" x="15" y="42" width="21" height="21"/>
+                        <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="21" id="F4D-Eb-bgG"/>
-                            <constraint firstAttribute="height" constant="21" id="ic4-Bb-5YF"/>
+                            <constraint firstAttribute="width" constant="21" id="63f-ll-dm1"/>
+                            <constraint firstAttribute="height" constant="21" id="Mmb-tI-Ezl"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="软件技术基础尽心阿呆是软件技础" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Znh-58-Vfj">
-                        <rect key="frame" x="8" y="8" width="259" height="29"/>
+                        <rect key="frame" x="15" y="8" width="252" height="29"/>
+                        <animations/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="29" id="NTR-U2-xG9"/>
-                            <constraint firstAttribute="width" constant="259" id="es2-5R-scx"/>
+                            <constraint firstAttribute="width" constant="252" id="B3c-BC-kpQ"/>
+                            <constraint firstAttribute="height" constant="29" id="aVL-Rk-WIS"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014-06-17 13:50--15:50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APw-gn-90f">
-                        <rect key="frame" x="39" y="42" width="197" height="21"/>
+                        <rect key="frame" x="47" y="42" width="197" height="21"/>
+                        <animations/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="5sw-3d-k53"/>
-                            <constraint firstAttribute="width" constant="197" id="9M1-Mw-mqJ"/>
+                            <constraint firstAttribute="height" constant="21" id="469-DJ-ah0"/>
+                            <constraint firstAttribute="width" constant="197" id="tuZ-Lo-AW1"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,7 +46,8 @@
                     </label>
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imf-9v-NB5">
                         <rect key="frame" x="266" y="0.0" width="54" height="70"/>
-                        <color key="backgroundColor" red="0.8666666666666667" green="0.47058823529411764" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.0" green="0.66694822460000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="54" id="tag-R8-zcS"/>
                         </constraints>
@@ -54,17 +58,19 @@
                         </state>
                     </button>
                 </subviews>
+                <animations/>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="jjC-7G-RE1" secondAttribute="bottom" constant="-1.5" id="1lt-5o-LSb"/>
-                    <constraint firstItem="APw-gn-90f" firstAttribute="leading" secondItem="jjC-7G-RE1" secondAttribute="trailing" constant="10" id="6F7-37-ucQ"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="APw-gn-90f" secondAttribute="bottom" constant="-1.5" id="Akh-GR-UFg"/>
-                    <constraint firstItem="Znh-58-Vfj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="JIf-is-zFz"/>
-                    <constraint firstItem="jjC-7G-RE1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="SO1-il-3EN"/>
+                    <constraint firstItem="Znh-58-Vfj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="5A4-r7-8xW"/>
+                    <constraint firstItem="jjC-7G-RE1" firstAttribute="top" secondItem="Znh-58-Vfj" secondAttribute="bottom" constant="5" id="MK2-RC-1mo"/>
+                    <constraint firstItem="APw-gn-90f" firstAttribute="top" secondItem="Znh-58-Vfj" secondAttribute="bottom" constant="5" id="Mga-gn-uFm"/>
+                    <constraint firstItem="APw-gn-90f" firstAttribute="leading" secondItem="jjC-7G-RE1" secondAttribute="trailing" constant="11" id="Q84-Bb-N2b"/>
+                    <constraint firstItem="jjC-7G-RE1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="UfO-jT-E5x"/>
                     <constraint firstAttribute="trailing" secondItem="Imf-9v-NB5" secondAttribute="trailing" id="YXW-t9-SEH"/>
                     <constraint firstItem="Imf-9v-NB5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bFp-9u-GDr"/>
-                    <constraint firstItem="Znh-58-Vfj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="cxW-Tu-kiU"/>
+                    <constraint firstItem="Znh-58-Vfj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="rwa-Wi-y6U"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="countButton" destination="Imf-9v-NB5" id="fJS-1w-lSW"/>
                 <outlet property="courseLable" destination="Znh-58-Vfj" id="aXr-km-ZZk"/>

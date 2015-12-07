@@ -42,7 +42,20 @@
     }
     if (indexPath.row == 3) {
         
-        [self performSegueWithIdentifier:@"about2web" sender:FEEDBACKURL];
+        if (![MFMailComposeViewController canSendMail]) return;
+        
+        MFMailComposeViewController *vc = [[MFMailComposeViewController alloc] init];
+        
+        [vc setSubject:@"Hello, I saw your App!"];
+        
+        NSString *content = [NSString stringWithFormat:@"Version: %@ \n\n", [LJDeviceTool getCurrentAppVersion]];
+        [vc setMessageBody:content isHTML:NO];
+        
+        [vc setToRecipients:@[SUPPORTMAIL]];
+        
+        vc.mailComposeDelegate = self;
+        
+        [self presentViewController:vc animated:YES completion:nil];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
