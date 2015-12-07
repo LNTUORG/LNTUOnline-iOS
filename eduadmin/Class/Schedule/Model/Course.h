@@ -11,9 +11,7 @@
 @interface Course : NSObject
 
 @property (nonatomic, copy) NSString *name;
-
 @property (nonatomic, copy) NSString *teacher;
-
 @property (nonatomic, strong) NSArray *timesAndPlaces;
 
 @end

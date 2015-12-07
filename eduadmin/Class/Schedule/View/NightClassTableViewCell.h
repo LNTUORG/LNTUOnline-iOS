@@ -10,9 +10,9 @@
 
 @interface NightClassTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UILabel *courseLable;
+@property (nonatomic, strong) IBOutlet UILabel *courseLable;
 
-@property (strong, nonatomic) NSString *course;
+@property (nonatomic, strong) NSString *course;
 
 + (instancetype)newNightClassCell;
 

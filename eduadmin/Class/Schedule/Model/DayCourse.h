@@ -10,8 +10,7 @@
 
 @interface DayCourse : NSObject
 
-@property (copy, nonatomic) NSString *class0;
-
-@property (copy, nonatomic) NSString *class1;
+@property (nonatomic, copy) NSString *class0;
+@property (nonatomic, copy) NSString *class1;
 
 @end

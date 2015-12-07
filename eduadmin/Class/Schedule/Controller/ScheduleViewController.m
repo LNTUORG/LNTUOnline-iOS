@@ -77,13 +77,7 @@
         
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
         
-        NSString *fullDate = dict[@"firstWeekMondayAt"];
-        NSArray *arr = [fullDate componentsSeparatedByString:@"T"];
-        
-        self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 1;
-        self.navigationItem.title = [NSString stringWithFormat:@"第%d周", self.currentWeek];
-        
-        self.courseArray = [self getCourseArray:dict];
+        [self setCourseArrayForNewVersion:dict];
         
     } else {
         
@@ -125,106 +119,8 @@
     if ([mgr fileExistsAtPath:filePath]) {
         
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
-        
-        NSString *fullDate = dict[@"firstWeekMondayAt"];
-        NSArray *arr = [fullDate componentsSeparatedByString:@"T"];
-        
-        self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 1;
-        self.navigationItem.title = [NSString stringWithFormat:@"第%d周", self.currentWeek];
-        
-        NSArray *courceArr = [Course mj_objectArrayWithKeyValuesArray:dict[@"courses"]];
-        
-        NSDictionary *tempDict = @{@"1-1": @"",
-                                   @"1-2": @"",
-                                   @"1-3": @"",
-                                   @"1-4": @"",
-                                   @"1-5": @"",
-                                   @"2-1": @"",
-                                   @"2-2": @"",
-                                   @"2-3": @"",
-                                   @"2-4": @"",
-                                   @"2-5": @"",
-                                   @"3-1": @"",
-                                   @"3-2": @"",
-                                   @"3-3": @"",
-                                   @"3-4": @"",
-                                   @"3-5": @"",
-                                   @"4-1": @"",
-                                   @"4-2": @"",
-                                   @"4-3": @"",
-                                   @"4-4": @"",
-                                   @"4-5": @"",
-                                   @"5-1": @"",
-                                   @"5-2": @"",
-                                   @"5-3": @"",
-                                   @"5-4": @"",
-                                   @"5-5": @"",
-                                   @"6-1": @"",
-                                   @"6-2": @"",
-                                   @"6-3": @"",
-                                   @"6-4": @"",
-                                   @"6-5": @"",
-                                   @"7-1": @"",
-                                   @"7-2": @"",
-                                   @"7-3": @"",
-                                   @"7-4": @"",
-                                   @"7-5": @""
-                                   };
-        NSMutableDictionary *oldFormat = [NSMutableDictionary dictionaryWithDictionary:tempDict];
-        
-        for (Course *cource in courceArr) {
-            
-            NSString *name = cource.name;
-            NSString *tea = cource.teacher;
-            
-            if (cource.timesAndPlaces.count) {
-                
-                for (TimeAndPlace *tp in cource.timesAndPlaces) {
-                    
-                    if (self.currentWeek <= tp.endWeek) {
-                        
-                        NSString *key = [NSString stringWithFormat:@"%@-%@", [self getCountByWeekday:tp.dayInWeek], tp.stage];
-                        NSString *weeks = @"";
-                        
-                        if ([tp.weekMode isEqualToString:@"ALL"]) {
-                            
-                            weeks = [NSString stringWithFormat:@"%d-%d", (int)tp.startWeek, (int)tp.endWeek];
-                            
-                        } else if ([tp.weekMode isEqualToString:@"ODD"]) {
-                            
-                            weeks = [NSString stringWithFormat:@"%d-%d(单)", (int)tp.startWeek, (int)tp.endWeek];
-                            
-                        } else {
-                            
-                            weeks = [NSString stringWithFormat:@"%d-%d(双)", (int)tp.startWeek, (int)tp.endWeek];
-                        }
-                        
-                        
-                        NSString *value = @"";
-                        
-                        if (self.currentWeek < tp.startWeek) {
-                            
-                            value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@\n未开课", name, weeks, tea, tp.room];
-                            
-                        } else {
-                            
-                            value = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", name, weeks, tea, tp.room];
-                        }
-                        
-                        if ([oldFormat[key] length] > 10) {
-                            
-                            NSString *newStr = [NSString stringWithFormat:@"%@\n%@", oldFormat[key], value];
-                            [oldFormat setValue:newStr forKey:key];
-                            
-                        } else {
-                            
-                            [oldFormat setValue:value forKey:key];
-                        }
-                    }
-                }
-            }
-        }
-        self.dict = @{@"courses": oldFormat};
+
+        self.dict = @{@"courses": [self getCourseGeneralDict:dict]};
         
     } else {
         
@@ -257,143 +153,28 @@
     return YES;
 }
 
+- (void)setCourseArrayForNewVersion:(NSDictionary *)dict {
 
-#pragma mark iCarousel methods
-
-- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
+    NSDictionary *courses = [self getCourseGeneralDict:dict];
     
-    return 7;
+    NSArray *arr0 = @[courses[@"7-1"], courses[@"7-2"], courses[@"7-3"], courses[@"7-4"], courses[@"7-5"]];
+    NSArray *arr1 = @[courses[@"1-1"], courses[@"1-2"], courses[@"1-3"], courses[@"1-4"], courses[@"1-5"]];
+    NSArray *arr2 = @[courses[@"2-1"], courses[@"2-2"], courses[@"2-3"], courses[@"2-4"], courses[@"2-5"]];
+    NSArray *arr3 = @[courses[@"3-1"], courses[@"3-2"], courses[@"3-3"], courses[@"3-4"], courses[@"3-5"]];
+    NSArray *arr4 = @[courses[@"4-1"], courses[@"4-2"], courses[@"4-3"], courses[@"4-4"], courses[@"4-5"]];
+    NSArray *arr5 = @[courses[@"5-1"], courses[@"5-2"], courses[@"5-3"], courses[@"5-4"], courses[@"5-5"]];
+    NSArray *arr6 = @[courses[@"6-1"], courses[@"6-2"], courses[@"6-3"], courses[@"6-4"], courses[@"6-5"]];
+    
+    self.courseArray = @[arr0, arr1, arr2, arr3, arr4, arr5, arr6];
 }
 
-- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
+- (NSDictionary *)getCourseGeneralDict:(NSDictionary *)dict {
     
-    NSInteger HEIGHT = [UIScreen mainScreen].bounds.size.height - 40 - 64;
-    NSInteger WIDTH = [UIScreen mainScreen].bounds.size.width - 30;
+    NSString *fullDate = dict[@"firstWeekMondayAt"];
+    NSArray *arr = [fullDate componentsSeparatedByString:@"T"];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStylePlain];
-    
-    tableView.tag = index;
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    tableView.allowsSelection = NO;
-    tableView.tableFooterView = [[UIView alloc] init];
-    tableView.alwaysBounceVertical = NO;
-    tableView.backgroundColor = [UIColor colorWithRed:214/255.0 green:227/255.0 blue:181/255.0 alpha:1];
-
-    return tableView;
-}
-
-#pragma mark Table methods
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 4;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.row == 0) {
-        
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"head"];
-        if (!cell) {
-            
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"head"];
-        }
-        
-        cell.backgroundColor = [UIColor clearColor];
-        cell.textLabel.text = self.titleArray[tableView.tag];
-        return cell;
-    }
-    if (indexPath.row == 1) {
-        
-        DayClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"day"];
-        if (!cell) {
-            
-            cell = [DayClassTableViewCell newDayClassCell];
-        }
-        
-        cell.course0 = self.courseArray[tableView.tag][0];
-        cell.course1 = self.courseArray[tableView.tag][1];
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_morning"]];
-        return  cell;
-    }
-    if (indexPath.row == 2) {
-        
-        DayClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"day"];
-        if (!cell) {
-            
-            cell = [DayClassTableViewCell newDayClassCell];
-        }
-        
-        DayCourse *course = [DayCourse new];
-        course.class0 = self.courseArray[tableView.tag][2];
-        course.class1 = self.courseArray[tableView.tag][3];
-        
-        cell.course = course;
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_afternoon"]];
-        return  cell;
-    }
-    else {
-    
-        NightClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"night"];
-        if (!cell) {
-            
-            cell = [NightClassTableViewCell newNightClassCell];
-        }
-        
-        cell.course = self.courseArray[tableView.tag][4];
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_night"]];
-        return cell;
-    }
-    
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.row == 0) {
-        
-        return 44;
-    }
-    if (indexPath.row == 1) {
-        
-        NSString *a = self.courseArray[tableView.tag][0];
-        NSString *b = self.courseArray[tableView.tag][1];
-        
-        NSInteger first = [a componentsSeparatedByString:@"\n"].count;
-        NSInteger second = [b componentsSeparatedByString:@"\n"].count;
-        
-        NSInteger time1 = (first / 4 - 1) > 0 ? (first / 4 - 1) : 0;
-        NSInteger time2 = (second / 4 - 1) > 0 ? (second / 4 - 1) : 0;
-        
-        return 212 + (time1 + time2) * 106;
-        
-    }
-    if (indexPath.row == 2) {
-        
-        NSString *a = self.courseArray[tableView.tag][2];
-        NSString *b = self.courseArray[tableView.tag][3];
-        
-        NSInteger first = [a componentsSeparatedByString:@"\n"].count;
-        NSInteger second = [b componentsSeparatedByString:@"\n"].count;
-        
-        NSInteger time1 = (first / 4 - 1) > 0 ? (first / 4 - 1) : 0;
-        NSInteger time2 = (second / 4 - 1) > 0 ? (second / 4 - 1) : 0;
-        
-        return 212 + (time1 + time2) * 106;
-    }
-    else {
-        
-        NSString *a = self.courseArray[tableView.tag][4];
-        
-        NSInteger first = [a componentsSeparatedByString:@"\n"].count;
-        
-        NSInteger time1 = (first / 4 - 1) > 0 ? (first / 4 - 1) : 0;
-        
-        return 106 + time1 * 106;
-    }
-}
-
-- (NSArray *)getCourseArray:(NSDictionary *)dict {
+    self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 1;
+    self.navigationItem.title = [NSString stringWithFormat:@"第%d周", self.currentWeek];
     
     NSArray *courceArr = [Course mj_objectArrayWithKeyValuesArray:dict[@"courses"]];
     
@@ -487,19 +268,8 @@
             }
         }
     }
-    
-    NSDictionary *courses = oldFormat;
-    
-    NSArray *arr0 = @[courses[@"7-1"], courses[@"7-2"], courses[@"7-3"], courses[@"7-4"], courses[@"7-5"]];
-    NSArray *arr1 = @[courses[@"1-1"], courses[@"1-2"], courses[@"1-3"], courses[@"1-4"], courses[@"1-5"]];
-    NSArray *arr2 = @[courses[@"2-1"], courses[@"2-2"], courses[@"2-3"], courses[@"2-4"], courses[@"2-5"]];
-    NSArray *arr3 = @[courses[@"3-1"], courses[@"3-2"], courses[@"3-3"], courses[@"3-4"], courses[@"3-5"]];
-    NSArray *arr4 = @[courses[@"4-1"], courses[@"4-2"], courses[@"4-3"], courses[@"4-4"], courses[@"4-5"]];
-    NSArray *arr5 = @[courses[@"5-1"], courses[@"5-2"], courses[@"5-3"], courses[@"5-4"], courses[@"5-5"]];
-    NSArray *arr6 = @[courses[@"6-1"], courses[@"6-2"], courses[@"6-3"], courses[@"6-4"], courses[@"6-5"]];
-    
-    NSArray *array = @[arr0, arr1, arr2, arr3, arr4, arr5, arr6];
-    return array;
+
+    return [NSDictionary dictionaryWithDictionary:oldFormat];
 }
 
 - (void)refreshData {
@@ -526,7 +296,7 @@
         self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 1;
         self.navigationItem.title = [NSString stringWithFormat:@"第%d周", self.currentWeek];
         
-        self.courseArray = [self getCourseArray:dictionary];
+        [self setCourseArrayForNewVersion:dictionary];
         [self.iCaView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -588,8 +358,8 @@
         
         [self.deft setObject:nil forKey:CLASSTABLEMODE];
     }
-    [self.deft synchronize];
     
+    [self.deft synchronize];
 }
 
 #pragma UIView实现动画
@@ -600,6 +370,140 @@
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationTransition:transition forView:view cache:YES];
     }];
+}
+
+#pragma mark iCarousel methods
+
+- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
+    
+    return 7;
+}
+
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
+    
+    NSInteger HEIGHT = [UIScreen mainScreen].bounds.size.height - 40 - 64;
+    NSInteger WIDTH = [UIScreen mainScreen].bounds.size.width - 30;
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStylePlain];
+    
+    tableView.tag = index;
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    tableView.allowsSelection = NO;
+    tableView.tableFooterView = [[UIView alloc] init];
+    tableView.alwaysBounceVertical = NO;
+    tableView.backgroundColor = [UIColor colorWithRed:214/255.0 green:227/255.0 blue:181/255.0 alpha:1];
+    
+    return tableView;
+}
+
+#pragma mark Table methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 4;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == 0) {
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"head"];
+        if (!cell) {
+            
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"head"];
+        }
+        
+        cell.backgroundColor = [UIColor clearColor];
+        cell.textLabel.text = self.titleArray[tableView.tag];
+        return cell;
+    }
+    if (indexPath.row == 1) {
+        
+        DayClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"day"];
+        if (!cell) {
+            
+            cell = [DayClassTableViewCell newDayClassCell];
+        }
+        
+        cell.course0 = self.courseArray[tableView.tag][0];
+        cell.course1 = self.courseArray[tableView.tag][1];
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_morning"]];
+        return  cell;
+    }
+    if (indexPath.row == 2) {
+        
+        DayClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"day"];
+        if (!cell) {
+            
+            cell = [DayClassTableViewCell newDayClassCell];
+        }
+        
+        DayCourse *course = [DayCourse new];
+        course.class0 = self.courseArray[tableView.tag][2];
+        course.class1 = self.courseArray[tableView.tag][3];
+        
+        cell.course = course;
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_afternoon"]];
+        return  cell;
+        
+    } else {
+        
+        NightClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"night"];
+        if (!cell) {
+            
+            cell = [NightClassTableViewCell newNightClassCell];
+        }
+        
+        cell.course = self.courseArray[tableView.tag][4];
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_night"]];
+        return cell;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == 0) {
+        
+        return 44;
+    }
+    if (indexPath.row == 1) {
+        
+        NSString *a = self.courseArray[tableView.tag][0];
+        NSString *b = self.courseArray[tableView.tag][1];
+        
+        NSInteger first = [a componentsSeparatedByString:@"\n"].count;
+        NSInteger second = [b componentsSeparatedByString:@"\n"].count;
+        
+        NSInteger time1 = (first / 4 - 1) > 0 ? (first / 4 - 1) : 0;
+        NSInteger time2 = (second / 4 - 1) > 0 ? (second / 4 - 1) : 0;
+        
+        return 212 + (time1 + time2) * 106;
+        
+    }
+    if (indexPath.row == 2) {
+        
+        NSString *a = self.courseArray[tableView.tag][2];
+        NSString *b = self.courseArray[tableView.tag][3];
+        
+        NSInteger first = [a componentsSeparatedByString:@"\n"].count;
+        NSInteger second = [b componentsSeparatedByString:@"\n"].count;
+        
+        NSInteger time1 = (first / 4 - 1) > 0 ? (first / 4 - 1) : 0;
+        NSInteger time2 = (second / 4 - 1) > 0 ? (second / 4 - 1) : 0;
+        
+        return 212 + (time1 + time2) * 106;
+        
+    } else {
+        
+        NSString *a = self.courseArray[tableView.tag][4];
+        
+        NSInteger first = [a componentsSeparatedByString:@"\n"].count;
+        
+        NSInteger time1 = (first / 4 - 1) > 0 ? (first / 4 - 1) : 0;
+        
+        return 106 + time1 * 106;
+    }
 }
 
 #pragma AlertView Delegate

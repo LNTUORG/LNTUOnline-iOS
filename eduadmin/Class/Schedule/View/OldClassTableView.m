@@ -17,10 +17,8 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    //内容尺寸
     self.schScrollView.contentSize = CGSizeMake(444,672);
     
-    //隐藏滚动条
     self.schScrollView.showsHorizontalScrollIndicator = YES;
     
     for (UILabel *lable in self.bigView.subviews) {
@@ -30,7 +28,6 @@
 
 - (void)awakeFromNib {
     
-    // 下拉刷新
     self.schScrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
 }
 
