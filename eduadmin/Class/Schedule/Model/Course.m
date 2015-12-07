@@ -7,14 +7,12 @@
 //
 
 #import "Course.h"
-#import "MJExtension.h"
-#import "TimeAndPlace.h"
 
 @implementation Course
 
-- (NSDictionary *)objectClassInArray {
++ (NSDictionary *)mj_objectClassInArray {
     
-    return @{@"timesAndPlaces": [TimeAndPlace class]};
+    return @{@"timesAndPlaces": @"TimeAndPlace"};
 }
 
 @end

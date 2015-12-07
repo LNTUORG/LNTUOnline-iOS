@@ -57,16 +57,16 @@
 
     
     // 下拉刷新
-    [self.gradeView addHeaderWithTarget:self action:@selector(getGradeInfo) dateKey:@"grade"];
+    self.gradeView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getGradeInfo)];
     
-    [self.gradeView headerBeginRefreshing];
+    [self.gradeView.mj_header beginRefreshing];
 }
 
 - (void)getGradeInfo {
     
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@grades/~self", MAINURL] params:nil success:^(id responseJSON) {
         
-        self.allGradeArr = [MyGrade objectArrayWithKeyValuesArray:responseJSON[@"courseScores"]];
+        self.allGradeArr = [MyGrade mj_objectArrayWithKeyValuesArray:responseJSON[@"courseScores"]];
         
         NSDictionary *dict = responseJSON[@"averageCredit"];
         self.averageCredit = dict[@"summary"];
@@ -74,11 +74,11 @@
         [self initTheCurrentScoreArr];
         
         [self.gradeView reloadData];
-        [self.gradeView headerEndRefreshing];
+        [self.gradeView.mj_header endRefreshing];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        [self.gradeView headerEndRefreshing];
+        [self.gradeView.mj_header endRefreshing];
     }];
 }
 

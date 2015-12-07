@@ -36,7 +36,7 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     // 下拉刷新
-    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"selfinfo"];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
     
     NSArray *tempArr = @[@"基本信息", @"高考科目", @"个人简历", @"家庭情况"];
     NSMutableArray *arr = [NSMutableArray array];
@@ -76,17 +76,17 @@
         [LJFileTool writeToFileContent:responseJSON withFileName:selfInfoFileName];
         
         [self analyticalData:responseJSON];
-        [self.tableView headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        [self.tableView headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
     }];
 }
 
 
 - (void)analyticalData:(id)json {
-    SelfInformation *student = [SelfInformation objectWithKeyValues:json];
+    SelfInformation *student = [SelfInformation mj_objectWithKeyValues:json];
     
     //基本信息
     self.basicInfoValue = @[json[@"id"], student.name, student.englishName, student.idCardType, student.idCardNum, student.sex, student.college, student.classInfo, student.entranceExamArea, student.entranceExamNum, student.foreignLanguage, [self transDateToString:student.admissionTime], [self transDateToString: student.graduationTime], student.homeAddress, student.tel, student.studentInfoTableNum, student.whereaboutsAftergraduation, student.nationality, student.birthplace, [self transDateToString:student.birthday], student.politicalAffiliation, student.travelRange, student.nation, student.major, student.studentType, student.entranceExamScore, student.graduateSchool, student.admissionNum, student.admissionType, student.educationType, student.zipCode, student.email, student.sourceOfStudent, student.remarks];

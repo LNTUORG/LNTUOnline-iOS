@@ -132,7 +132,7 @@
         self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 1;
         self.navigationItem.title = [NSString stringWithFormat:@"第%d周", self.currentWeek];
         
-        NSArray *courceArr = [Course objectArrayWithKeyValuesArray:dict[@"courses"]];
+        NSArray *courceArr = [Course mj_objectArrayWithKeyValuesArray:dict[@"courses"]];
         
         NSDictionary *tempDict = @{@"1-1": @"",
                                    @"1-2": @"",
@@ -395,7 +395,7 @@
 
 - (NSArray *)getCourseArray:(NSDictionary *)dict {
     
-    NSArray *courceArr = [Course objectArrayWithKeyValuesArray:dict[@"courses"]];
+    NSArray *courceArr = [Course mj_objectArrayWithKeyValuesArray:dict[@"courses"]];
     
     NSDictionary *tempDict = @{@"1-1": @"",
                                 @"1-2": @"",

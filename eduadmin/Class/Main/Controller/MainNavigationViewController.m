@@ -49,6 +49,7 @@
         
         con.recievedContent = array[0];
         con.url = array[1];
+        
     } else {
         
         con.recievedContent = array[0];

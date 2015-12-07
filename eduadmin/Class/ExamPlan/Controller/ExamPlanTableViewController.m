@@ -26,7 +26,7 @@
     
     self.tableView.tableFooterView = [[UIView alloc] init];
     
-    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"examplan"];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
     
     NSString *filePath = [LJFileTool getFilePath:examPlanFileName];
     
@@ -40,7 +40,7 @@
         
     } else {
         
-        [self.tableView headerBeginRefreshing];
+        [self.tableView.mj_header beginRefreshing];
     }
 }
 
@@ -48,7 +48,7 @@
 #pragma mark 解析数据
 - (void)analyticalData:(id)json {
     
-    self.planArr = [ExamPlan objectArrayWithKeyValuesArray:json];
+    self.planArr = [ExamPlan mj_objectArrayWithKeyValuesArray:json];
     
     NSArray *arr = [self.planArr sortedArrayUsingComparator:^NSComparisonResult(ExamPlan *obj1, ExamPlan *obj2) {
         
@@ -67,12 +67,12 @@
         
         [LJFileTool writeToFileContent:responseJSON withFileName:examPlanFileName];
         [self analyticalData:responseJSON];
-        [self.tableView headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         [MBProgressHUD showError:NULLSTR];
-        [self.tableView headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
     }];
 }
 

@@ -27,9 +27,10 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     // 下拉刷新
-    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"onekey"];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+
     
-    [self.tableView headerBeginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 
@@ -37,14 +38,14 @@
 
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@course-eva-info/~self", MAINURL] params:nil success:^(id responseJSON) {
         
-        self.courseArr = [RatingInfo objectArrayWithKeyValuesArray:responseJSON];
+        self.courseArr = [RatingInfo mj_objectArrayWithKeyValuesArray:responseJSON];
         
-        [self.tableView headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
         [self.tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        [self.tableView headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
         [MBProgressHUD showError:NULLSTR];
     }];
 }

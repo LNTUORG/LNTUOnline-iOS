@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"veins"]];
     [self appStart];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.userNameText];
@@ -91,7 +92,6 @@
             [MBProgressHUD hideHUD];
             [MBProgressHUD showSuccess:@"登录成功"];
             
-            // 保存 token
             NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
             
             [def setObject:dict[@"loginToken"] forKey:LOGINTOKEN];

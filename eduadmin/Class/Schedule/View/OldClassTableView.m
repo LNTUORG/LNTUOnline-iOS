@@ -31,7 +31,7 @@
 - (void)awakeFromNib {
     
     // 下拉刷新
-    [self.schScrollView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"classtable"];
+    self.schScrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
 }
 
 - (void)refreshData
@@ -53,14 +53,14 @@
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@class-table/~self", MAINURL] params:dict success:^(id responseJSON) {
         
         [MBProgressHUD hideHUD];
-        [self.schScrollView headerEndRefreshing];
+        [self.schScrollView.mj_header endRefreshing];
         
         [LJFileTool writeToFileContent:responseJSON withFileName:scheduleFileName];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         [MBProgressHUD hideHUD];
-        [self.schScrollView headerEndRefreshing];
+        [self.schScrollView.mj_header endRefreshing];
     }];
 }
 

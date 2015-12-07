@@ -7,17 +7,12 @@
 //
 
 #import "SelfInformation.h"
-#import "MJExtension.h"
-#import "EntranceExam.h"
-#import "EducationExperience.h"
-#import "Family.h"
-#import "DisciplinaryActions.h"
 
 @implementation SelfInformation
 
-- (NSDictionary *)objectClassInArray {
++ (NSDictionary *)mj_objectClassInArray {
     
-    return @{@"entranceExams": [EntranceExam class], @"educationExperiences": [EducationExperience class], @"familys": [Family class], @"disciplinaryActions": [DisciplinaryActions class]};
+    return @{@"entranceExams": @"EntranceExam", @"educationExperiences": @"EducationExperience", @"familys": @"Family", @"disciplinaryActions": @"DisciplinaryActions"};
 }
 
 @end

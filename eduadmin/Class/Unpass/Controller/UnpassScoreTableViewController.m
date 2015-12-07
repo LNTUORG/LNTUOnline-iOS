@@ -28,9 +28,9 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     // 下拉刷新
-    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"unpass"];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
     
-    [self.tableView headerBeginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)refreshData {
@@ -78,18 +78,18 @@
     
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@unpass-course/~self", MAINURL] params:nil success:^(id responseJSON) {
         
-        self.gradeArr = [UnpassGrade objectArrayWithKeyValuesArray:responseJSON];
+        self.gradeArr = [UnpassGrade mj_objectArrayWithKeyValuesArray:responseJSON];
         
         if (self.gradeArr.count == 0) {
             
             [MBProgressHUD showError:@"居然无挂科，你超神了！"];
         }
         [self.tableView reloadData];
-        [self.tableView headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        [self.tableView headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
     }];
 }
 

@@ -20,9 +20,9 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     // 下拉刷新
-    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"heater_temp"];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
     
-    [self.tableView headerBeginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)refreshData {
@@ -30,12 +30,12 @@
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@heater-temp/read", TOKENURL] params:nil success:^(id responseJSON) {
         
         self.arr = responseJSON;
-        [self.tableView headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
         [self.tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        [self.tableView headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
     }];
 }
 

@@ -25,9 +25,9 @@
     [super viewDidLoad];
     
     // 下拉刷新
-    [self.tableView addHeaderWithTarget:self action:@selector(refreshData) dateKey:@"skill"];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
     
-    [self.tableView headerBeginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
     
     self.tableView.tableFooterView = [[UIView alloc] init];
 }
@@ -36,14 +36,14 @@
     
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@skill-test-score/~self", MAINURL] params:nil success:^(id responseJSON) {
         
-        self.skillArr = [SkillTest objectArrayWithKeyValuesArray:responseJSON];
+        self.skillArr = [SkillTest mj_objectArrayWithKeyValuesArray:responseJSON];
         [self.tableView reloadData];
-        [self.tableView headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         [MBProgressHUD showError:NULLSTR];
-        [self.tableView headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
     }];
 }
 
