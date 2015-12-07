@@ -10,8 +10,8 @@
 
 @interface EducationExperience : NSObject
 
-@property (nonatomic, strong) NSDate *startTime; // 开始日期
-@property (nonatomic, strong) NSDate *endTime; // 终止日期
+@property (nonatomic, copy) NSString *startTime; // 开始日期
+@property (nonatomic, copy) NSString *endTime; // 终止日期
 @property (nonatomic, copy) NSString *schoolInfo; // 学校名
 @property (nonatomic, copy) NSString *witness; // 班主任
 

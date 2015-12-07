@@ -14,7 +14,7 @@
 
 @property (nonatomic, copy) NSString *createReason;
 
-@property (nonatomic, strong) NSDate *createTime;
+@property (nonatomic, copy) NSString *createTime;
 
 @property (nonatomic, copy) NSString *level;
 

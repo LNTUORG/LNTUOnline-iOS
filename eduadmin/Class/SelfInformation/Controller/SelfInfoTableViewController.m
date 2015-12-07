@@ -260,7 +260,7 @@
     [self.tableView reloadData];
 }
 
-- (NSString *)transDateToString:(NSDate *)date {
+- (NSString *)transDateToString:(NSString *)date {
     
     NSArray *arr = [date.description componentsSeparatedByString:@"T"];
     
