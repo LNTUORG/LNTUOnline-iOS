@@ -50,29 +50,10 @@
         [self performSegueWithIdentifier:@"index2login" sender:nil];
 
     } else {
-        
-        if ([[self.def objectForKey:HASSENTTOSERVER] isEqualToString:@"0"]) {
-            
-            [self sendTokenToServer];
-        }
+
         [self getPhotoAndName];
     }
 }
-
-
-- (void)sendTokenToServer {
-
-    NSDictionary *param = @{@"userId": [self.def objectForKey:USERNAMEKEY], @"deviceToken": [self.def objectForKey:PUSHTOKENNEW]};
-    
-    [LJHTTPTool postJSONWithURL:[NSString stringWithFormat:@"%@device-token/insert", TOKENURL] params:param success:^(id responseJSON) {
-        
-        [self.def setObject:@"1" forKey:HASSENTTOSERVER];
-        
-    } failure:^(NSError *error) {
-        
-    }];
-}
-
 
 - (void)setHelloLableText {
     

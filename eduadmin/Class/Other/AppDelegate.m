@@ -51,6 +51,8 @@
         
         [self.window.rootViewController performSegueWithIdentifier:@"nav2ab" sender:_msgs];
     }
+
+    
     #ifdef __IPHONE_8_0
     
     UIMutableUserNotificationAction *action = [[UIMutableUserNotificationAction alloc] init];
@@ -98,27 +100,36 @@
     
     if ([def objectForKey:PUSHTOKENNEW] == nil) {
         
-        [def setObject:@"0" forKey:HASSENTTOSERVER];
-        
-        if (getToken.length) {
+        if (getToken.length && [def objectForKey:USERNAMEKEY] != nil) {
             
             [def setObject:getToken forKey:PUSHTOKENNEW];
             [def synchronize];
+            [self sendTokenToServerWithUserId:[def objectForKey:USERNAMEKEY] andToken:getToken];
         }
         
     } else {
         
         if (![[def objectForKey:PUSHTOKENNEW] isEqualToString:getToken]) {
             
-            [def setObject:@"0" forKey:HASSENTTOSERVER];
-            
-            if (getToken.length) {
+            if (getToken.length && [def objectForKey:USERNAMEKEY] != nil) {
                 
                 [def setObject:getToken forKey:PUSHTOKENNEW];
                 [def synchronize];
+                [self sendTokenToServerWithUserId:[def objectForKey:USERNAMEKEY] andToken:getToken];
             }
         }
     }
+}
+
+- (void)sendTokenToServerWithUserId:(NSString *)userId andToken:(NSString *)deviceToken {
+    
+    NSDictionary *param = @{@"userId": userId, @"deviceToken": deviceToken};
+    
+    [LJHTTPTool postJSONWithURL:[NSString stringWithFormat:@"%@device-token/insert", TOKENURL] params:param success:^(id responseJSON) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
