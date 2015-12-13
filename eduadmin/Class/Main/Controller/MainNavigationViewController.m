@@ -20,7 +20,7 @@
     
     UIImageView *launchImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
     
-    NSString *imageName = [NSString stringWithFormat:@"startimg0%d", arc4random() % 6];
+    NSString *imageName = [NSString stringWithFormat:@"startimg0%d", arc4random() % 15];
     
     launchImageView.image = [UIImage imageNamed:imageName];
     
