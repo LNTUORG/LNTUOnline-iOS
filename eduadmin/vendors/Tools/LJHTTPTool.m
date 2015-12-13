@@ -22,6 +22,9 @@
         
         [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
     }
+    
+    [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
+    
     // 2.发送请求
     [mgr POST:url parameters:params
       success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -61,6 +64,8 @@
         [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
     }
     
+    [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
+    
     mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
     
     // 2.发送请求
@@ -93,6 +98,8 @@
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
+    [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
+    
     // 2.发送请求
     [mgr POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> totalFormData) {
         
@@ -124,6 +131,8 @@
         
         [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
     }
+    
+    [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
     
     // 2.发送请求
     [mgr GET:url parameters:params
@@ -160,6 +169,8 @@
         
         [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
     }
+    
+    [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
     
     mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
     
