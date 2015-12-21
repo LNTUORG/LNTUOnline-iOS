@@ -72,8 +72,6 @@
 		D51602341A542364003AB6A9 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602331A542364003AB6A9 /* FeedbackViewController.m */; };
 		D520E1901B22A23B0053D6AB /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = D520E18F1B22A23B0053D6AB /* Course.m */; };
 		D520E1931B22A24A0053D6AB /* TimeAndPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = D520E1921B22A24A0053D6AB /* TimeAndPlace.m */; };
-		D532242F1B0F6CFA00ED2E87 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D532242E1B0F6CFA00ED2E87 /* Crashlytics.framework */; };
-		D53224311B0F6DE600ED2E87 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53224301B0F6DE600ED2E87 /* Fabric.framework */; };
 		D53537581AE5FD0E0025A1E7 /* UnpassGradeRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = D53537571AE5FD0E0025A1E7 /* UnpassGradeRecord.m */; };
 		D535375B1AE604790025A1E7 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D535375A1AE604790025A1E7 /* DetailTableViewController.m */; };
 		D535375F1AE605130025A1E7 /* DetailGradeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D535375D1AE605130025A1E7 /* DetailGradeCell.m */; };
@@ -249,8 +247,6 @@
 		D520E18F1B22A23B0053D6AB /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		D520E1911B22A24A0053D6AB /* TimeAndPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeAndPlace.h; sourceTree = "<group>"; };
 		D520E1921B22A24A0053D6AB /* TimeAndPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeAndPlace.m; sourceTree = "<group>"; };
-		D532242E1B0F6CFA00ED2E87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
-		D53224301B0F6DE600ED2E87 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		D53537561AE5FD0E0025A1E7 /* UnpassGradeRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnpassGradeRecord.h; sourceTree = "<group>"; };
 		D53537571AE5FD0E0025A1E7 /* UnpassGradeRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnpassGradeRecord.m; sourceTree = "<group>"; };
 		D53537591AE604790025A1E7 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
@@ -313,11 +309,9 @@
 				D50D82421AE13FEA001D47DA /* CoreGraphics.framework in Frameworks */,
 				71819D3E1B9D9A4000FAF87A /* SystemConfiguration.framework in Frameworks */,
 				71819D3A1B9D99E800FAF87A /* Security.framework in Frameworks */,
-				D53224311B0F6DE600ED2E87 /* Fabric.framework in Frameworks */,
 				D50D82461AE14076001D47DA /* Foundation.framework in Frameworks */,
 				D50D82441AE14065001D47DA /* UIKit.framework in Frameworks */,
 				D50D82401AE13FDA001D47DA /* QuartzCore.framework in Frameworks */,
-				D532242F1B0F6CFA00ED2E87 /* Crashlytics.framework in Frameworks */,
 				D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */,
 				154F02790FD5275011419063 /* libPods.a in Frameworks */,
 			);
@@ -822,8 +816,6 @@
 				71819D411B9D9A6100FAF87A /* CoreTelephony.framework */,
 				71819D3D1B9D9A4000FAF87A /* SystemConfiguration.framework */,
 				71819D391B9D99E800FAF87A /* Security.framework */,
-				D53224301B0F6DE600ED2E87 /* Fabric.framework */,
-				D532242E1B0F6CFA00ED2E87 /* Crashlytics.framework */,
 				D50D82451AE14076001D47DA /* Foundation.framework */,
 				D50D82431AE14065001D47DA /* UIKit.framework */,
 				D50D82411AE13FEA001D47DA /* CoreGraphics.framework */,
@@ -1156,7 +1148,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 8feec9fc30497fa73685d17f490a7a7cdad6b2a1 8df1664dc1bc3830b78c2f7dc2216796333fcc326af81a369aacbf7bec69f778";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 8feec9fc30497fa73685d17f490a7a7cdad6b2a1 8df1664dc1bc3830b78c2f7dc2216796333fcc326af81a369aacbf7bec69f778";
 		};
 		D64907C138E49289ABDA4131 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

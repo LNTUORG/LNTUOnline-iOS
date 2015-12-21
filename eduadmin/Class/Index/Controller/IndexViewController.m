@@ -107,34 +107,35 @@
 - (IBAction)logout:(id)sender {
     
     #ifdef __IPHONE_8_0
+    if (IOS8) {
         
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"教务处APP" preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    UIAlertAction *escAction = [UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"教务处APP" preferredStyle:UIAlertControllerStyleActionSheet];
         
-        [self performSegueWithIdentifier:@"index2login" sender:nil];
-    }];
-    
-    [alertController addAction:escAction];
-    
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    
-    [alertController addAction:cancelAction];
-    
-    [alertController setModalPresentationStyle:UIModalPresentationPopover];
-    
-    alertController.popoverPresentationController.barButtonItem = self.escButton;
-    alertController.popoverPresentationController.sourceView = self.view;
-    
-    [self presentViewController:alertController animated:YES completion:nil];
+        UIAlertAction *escAction = [UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            [self performSegueWithIdentifier:@"index2login" sender:nil];
+        }];
         
+        [alertController addAction:escAction];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        
+        [alertController addAction:cancelAction];
+        
+        [alertController setModalPresentationStyle:UIModalPresentationPopover];
+        
+        alertController.popoverPresentationController.barButtonItem = self.escButton;
+        alertController.popoverPresentationController.sourceView = self.view;
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
     #else
-    
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"教务处APP" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"退出登录" otherButtonTitles: nil];
-    [sheet showInView:self.view];
-    
+    else {
+        
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"教务处APP" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"退出登录" otherButtonTitles: nil];
+        [sheet showInView:self.view];
+    }
     #endif
-    
 }
 
 - (IBAction)myInfo {
@@ -188,7 +189,7 @@
     }
     if (_clickTime == 3) {
         
-        UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"既然你时间这么多" message:@"去商店评波分吧(ง •̀灬•́)ง" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
+        UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"既然你这么闲的无聊" message:@"不如去商店评波分(ง •̀灬•́)ง" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
         
         [view show];
     }
