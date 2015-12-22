@@ -54,8 +54,8 @@
         
         [LJFileTool writeToFileContent:responseJSON withFileName:scheduleFileName];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+       
         [MBProgressHUD hideHUD];
         [self.schScrollView.mj_header endRefreshing];
     }];

@@ -33,8 +33,8 @@
         [self.tableView.mj_header endRefreshing];
         [self.tableView reloadData];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+       
         [self.tableView.mj_header endRefreshing];
     }];
 }

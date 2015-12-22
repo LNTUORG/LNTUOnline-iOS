@@ -16,7 +16,7 @@
 + (void)postJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     
     // 1.创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
     
     if (TOKENFORNET) {
         
@@ -25,107 +25,75 @@
     
     [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
     
-    // 2.发送请求
-    [mgr POST:url parameters:params
-      success:^(AFHTTPRequestOperation *operation, id responseObject) {
-          
-          if (success) {
-              
-              success(responseObject);
-          }
-          
-      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-          
-          if (failure) {
-              
-              failure(error);
-              if ([operation.response statusCode] == 401) {
-                  
-                  [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
-              }
-              if ([operation.response statusCode] == 400) {
-                  
-                  [MBProgressHUD showError:@"用户名密码错误"];
-                  
-              } else {
-                  
-                  [MBProgressHUD showError:ERRORSTR];
-              }
-          }
-      }];
-}
-
-+ (void)postHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
-    
-    // 1.创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    if (TOKENFORNET) {
-        
-        [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
-    }
-    
-    [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
-    
-    mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
-    
-    // 2.发送请求
-    [mgr POST:url parameters:params
-      success:^(AFHTTPRequestOperation *operation, id responseObject) {
-          
-          if (success) {
-              
-              success(responseObject);
-          }
-      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-          
-          if (failure) {
-              
-              failure(error);
-              if ([operation.response statusCode] == 401) {
-                  
-                  [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
-                  
-              } else {
-                  
-                  [MBProgressHUD showError:ERRORSTR];
-              }
-          }
-      }];
-}
-
-+ (void)postWithURL:(NSString *)url params:(NSDictionary *)params formDataArray:(NSArray *)formDataArray success:(void (^)(id))success failure:(void (^)(NSError *))failure {
-    
-    // 1.创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
-    [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
-    
-    // 2.发送请求
-    [mgr POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> totalFormData) {
-        
-        for (LJFormData *formData in formDataArray) {
-            
-            [totalFormData appendPartWithFileData:formData.data name:formData.name fileName:formData.filename mimeType:formData.mimeType];
-        }
-    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [mgr POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         if (success) {
             
             success(responseObject);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       
         if (failure) {
             
             failure(error);
+            if ([(NSHTTPURLResponse *)task.response statusCode] == 401) {
+                
+                [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
+            }
+            if ([(NSHTTPURLResponse *)task.response statusCode] == 400) {
+                
+                [MBProgressHUD showError:@"用户名密码错误"];
+                
+            } else {
+                
+                [MBProgressHUD showError:ERRORSTR];
+            }
         }
     }];
 }
 
-+ (void)getJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *))failure {
++ (void)postHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     
     // 1.创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    if (TOKENFORNET) {
+        
+        [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
+    }
+    
+    [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
+    
+    mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    [mgr POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        if (success) {
+            
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        if (failure) {
+            
+            failure(error);
+            if ([(NSHTTPURLResponse *)task.response statusCode] == 401) {
+                
+                [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
+                
+            } else {
+                
+                [MBProgressHUD showError:ERRORSTR];
+            }
+        }
+    }];
+}
+
+
++ (void)getJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSURLSessionDataTask *task, NSError *))failure {
+    
+    // 1.创建请求管理对象
+    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
     
     if (TOKENFORNET) {
         
@@ -134,36 +102,34 @@
     
     [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
     
-    // 2.发送请求
-    [mgr GET:url parameters:params
-     success:^(AFHTTPRequestOperation *operation, id responseObject) {
-         
-         if (success) {
-             
-             success(responseObject);
-         }
-     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         
-         if (failure) {
-             
-             failure(operation, error);
-             
-             if ([operation.response statusCode] == 401) {
-                 
-                 [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
-                 
-             } else {
-                 
-                 [MBProgressHUD showError:ERRORSTR];
-             }
-         }
-     }];
+    [mgr GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        if (success) {
+            
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        if (failure) {
+            
+            failure(task, error);
+            
+            if ([(NSHTTPURLResponse *)task.response statusCode] == 401) {
+                
+                [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
+                
+            } else {
+                
+                [MBProgressHUD showError:ERRORSTR];
+            }
+        }
+    }];
 }
 
 + (void)getHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     
     // 1.创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
     
     if (TOKENFORNET) {
         
@@ -174,37 +140,28 @@
     
     mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
     
-    // 2.发送请求
-    [mgr GET:url parameters:params
-     success:^(AFHTTPRequestOperation *operation, id responseObject) {
-         
-         if (success) {
-             
-             success(responseObject);
-         }
-     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         
-         if (failure) {
-             
-             failure(error);
-             
-             if ([operation.response statusCode] == 401) {
-                 
-                 [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
-                 
-             } else {
-                 
-                 [MBProgressHUD showError:ERRORSTR];
-             }
-         }
-     }];
+    [mgr GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        if (success) {
+            
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        if (failure) {
+            
+            failure(error);
+            
+            if ([(NSHTTPURLResponse *)task.response statusCode] == 401) {
+                
+                [MBProgressHUD showError:@"授权已经过期，重新登陆可以解决"];
+                
+            } else {
+                
+                [MBProgressHUD showError:ERRORSTR];
+            }
+        }
+    }];
 }
-
-@end
-
-/**
- *  用来封装文件数据的模型
- */
-@implementation LJFormData
 
 @end

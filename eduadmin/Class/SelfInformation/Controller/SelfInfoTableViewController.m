@@ -82,8 +82,7 @@
         
         [self analyticalData:responseJSON];
         [self.tableView.mj_header endRefreshing];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
         [self.tableView.mj_header endRefreshing];
     }];

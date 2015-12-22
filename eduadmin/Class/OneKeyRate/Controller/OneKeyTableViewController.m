@@ -43,7 +43,7 @@
         [self.tableView.mj_header endRefreshing];
         [self.tableView reloadData];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
         [self.tableView.mj_header endRefreshing];
         [MBProgressHUD showError:NULLSTR];

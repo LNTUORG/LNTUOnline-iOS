@@ -299,7 +299,7 @@
         [self setCourseArrayForNewVersion:dictionary];
         [self.iCaView reloadData];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
     }];
 }

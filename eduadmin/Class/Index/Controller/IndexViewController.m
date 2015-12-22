@@ -98,7 +98,8 @@
             [LJFileTool writeImageToFileName:selfIconFileName withImgURL:dict[@"photoUrl"]];
             self.nameLable.text = [NSString stringWithFormat:@"%@好,%@",[LJTimeTool getCurrentInterval],dict[@"name"]];
             
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
             
         }];
     }

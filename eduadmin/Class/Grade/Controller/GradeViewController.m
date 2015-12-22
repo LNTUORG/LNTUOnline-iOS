@@ -76,7 +76,7 @@
         [self.gradeView reloadData];
         [self.gradeView.mj_header endRefreshing];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
         [self.gradeView.mj_header endRefreshing];
     }];
