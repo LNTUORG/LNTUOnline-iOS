@@ -369,8 +369,8 @@
 		D51601C71A5419AA003AB6A9 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				D55F55651AE1726D00A7FD53 /* View */,
 				D51601C81A5419AA003AB6A9 /* Controller */,
+				D55F55651AE1726D00A7FD53 /* View */,
 				D55F55701AE1831B00A7FD53 /* Model */,
 			);
 			path = Schedule;

@@ -173,7 +173,17 @@
     NSString *fullDate = dict[@"firstWeekMondayAt"];
     NSArray *arr = [fullDate componentsSeparatedByString:@"T"];
     
-    self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 1;
+    NSInteger year = [[(NSString *)arr[0] componentsSeparatedByString:@"-"][0] integerValue];
+    
+    if (year == [LJTimeTool getCurrentYear]) {
+        
+        self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 1;
+        
+    } else {
+        
+        self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 53;
+    }
+    
     self.navigationItem.title = [NSString stringWithFormat:@"第%d周", self.currentWeek];
     
     NSArray *courceArr = [Course mj_objectArrayWithKeyValuesArray:dict[@"courses"]];
@@ -289,12 +299,6 @@
         
         NSDictionary *dictionary = [NSDictionary dictionaryWithDictionary:responseJSON];
         [LJFileTool writeToFileContent:dictionary withFileName:scheduleFileName];
-        
-        NSString *fullDate = dictionary[@"firstWeekMondayAt"];
-        NSArray *arr = [fullDate componentsSeparatedByString:@"T"];
-        
-        self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 1;
-        self.navigationItem.title = [NSString stringWithFormat:@"第%d周", self.currentWeek];
         
         [self setCourseArrayForNewVersion:dictionary];
         [self.iCaView reloadData];
