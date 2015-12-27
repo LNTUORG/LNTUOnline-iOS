@@ -136,30 +136,19 @@
     return (int)reTime/3600;
 }
 
-//+(NSDate *)convertDateToLocalTime: (NSDate *)forDate {
-//    
-//    NSTimeZone *nowTimeZone = [NSTimeZone localTimeZone];
-//    
-//    int timeOffset = (int)[nowTimeZone secondsFromGMTForDate:forDate];
-//    
-//    NSDate *newDate = [forDate dateByAddingTimeInterval:timeOffset];
-//    
-//    return newDate;
-//    
-//}
-
-+ (NSInteger)getWeekOfDateWithFormat_yyyy_MM_dd:(NSString *)date {
++ (NSInteger)weeksWithDateFormat_yyyy_MM_ddFromDate:(NSString *)fromDateString {
     
     NSDateFormatter * dm = [[NSDateFormatter alloc]init];
-    
     [dm setDateFormat:@"yyyy-MM-dd"];
-    NSDate * newdate = [dm dateFromString:date];
+    
+    NSDate *startDate = [dm dateFromString:fromDateString];
+    NSDate *endDate = [NSDate date];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSUInteger unitFlags = NSCalendarUnitWeekOfYear;
-    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:newdate];
     
-    return [dateComponent weekOfYear];
+    NSDateComponents *dateComponent = [calendar components:NSCalendarUnitDay fromDate:startDate toDate:endDate options:0];
+    
+    return dateComponent.day / 7 + 1;
 }
 
 @end

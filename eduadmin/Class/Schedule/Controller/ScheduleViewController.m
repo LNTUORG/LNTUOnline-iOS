@@ -28,7 +28,7 @@
 @property (nonatomic, strong) NSArray *courseArray;
 @property (strong, nonatomic) NSDictionary *dict;
 @property (strong, nonatomic) NSUserDefaults *deft;
-@property (nonatomic, assign) int currentWeek;
+@property (nonatomic, assign) NSInteger currentWeek;
 
 @end
 
@@ -172,19 +172,9 @@
     
     NSString *fullDate = dict[@"firstWeekMondayAt"];
     NSArray *arr = [fullDate componentsSeparatedByString:@"T"];
-    
-    NSInteger year = [[(NSString *)arr[0] componentsSeparatedByString:@"-"][0] integerValue];
-    
-    if (year == [LJTimeTool getCurrentYear]) {
-        
-        self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 1;
-        
-    } else {
-        
-        self.currentWeek = (int)[LJTimeTool getCurrentWeek] - (int)[LJTimeTool getWeekOfDateWithFormat_yyyy_MM_dd:arr[0]] + 53;
-    }
-    
-    self.navigationItem.title = [NSString stringWithFormat:@"第%d周", self.currentWeek];
+
+    self.currentWeek = [LJTimeTool weeksWithDateFormat_yyyy_MM_ddFromDate:arr[0]];
+    self.navigationItem.title = [NSString stringWithFormat:@"第%ld周", (long)self.currentWeek];
     
     NSArray *courceArr = [Course mj_objectArrayWithKeyValuesArray:dict[@"courses"]];
     
