@@ -274,6 +274,7 @@
 
 - (void)refreshData {
     
+    NSInteger year = [LJTimeTool getCurrentYear];
     NSString *tm = @"";
     if ([LJTimeTool getCurrentMonth]>=2 && [LJTimeTool getCurrentMonth]<9) {
         
@@ -281,10 +282,11 @@
         
     } else {
         
+        year--;
         tm = @"秋";
     }
     
-    NSDictionary *dict = @{@"year": @([LJTimeTool getCurrentYear]), @"term": tm};
+    NSDictionary *dict = @{@"year": @(year), @"term": tm};
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@class-table/~self", MAINURL] params:dict success:^(id responseJSON) {
         
         NSDictionary *dictionary = [NSDictionary dictionaryWithDictionary:responseJSON];

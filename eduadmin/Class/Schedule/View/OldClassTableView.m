@@ -35,17 +35,19 @@
 {
     [MBProgressHUD showMessage:@"正在获取中"];
     
+    NSInteger year = [LJTimeTool getCurrentYear];
     NSString *tm = @"";
-    
     if ([LJTimeTool getCurrentMonth]>=2 && [LJTimeTool getCurrentMonth]<9) {
         
         tm = @"春";
+        
     } else {
         
+        year--;
         tm = @"秋";
     }
     
-    NSDictionary *dict = @{@"year": @([LJTimeTool getCurrentYear]), @"term": tm};
+    NSDictionary *dict = @{@"year": @(year), @"term": tm};
     
     [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@class-table/~self", MAINURL] params:dict success:^(id responseJSON) {
         
