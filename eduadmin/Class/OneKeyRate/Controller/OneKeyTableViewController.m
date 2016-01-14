@@ -29,7 +29,6 @@
     // 下拉刷新
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
 
-    
     [self.tableView.mj_header beginRefreshing];
 }
 
