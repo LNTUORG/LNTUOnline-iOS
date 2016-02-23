@@ -10,6 +10,7 @@
 #import "ExamPlan.h"
 #import "SkillTest.h"
 #import "LJTools.h"
+#import "Common.h"
 
 @implementation ExamPlanCell
 
@@ -40,6 +41,7 @@
     
     NSString *lastDay = @"";
     
+    [self.countDate setBackgroundColor:LJColor(134, 169, 111)];
     if (baseHour < 0) {
         
         lastDay = @"...";
@@ -68,8 +70,8 @@
 }
 
 
-+ (id)newExanPlanCell
-{
++ (id)newExanPlanCell {
+    
     return [[NSBundle mainBundle] loadNibNamed:@"ExamPlanCell" owner:nil options:nil][0];
 }
 
