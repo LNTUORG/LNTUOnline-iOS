@@ -20,7 +20,7 @@
 #import "Course.h"
 #import "TimeAndPlace.h"
 
-@interface ScheduleViewController () <iCarouselDataSource, iCarouselDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@interface ScheduleViewController () <iCarouselDataSource, iCarouselDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, OldClassTableDelegate>
 
 @property (strong, nonatomic) iCarousel *iCaView;
 @property (strong, nonatomic) OldClassTableView *oldView;
@@ -500,6 +500,11 @@
         
         return 106 + time1 * 106;
     }
+}
+
+- (void)updateData:(NSDictionary *)dict {
+    
+    self.oldView.dict = @{@"courses": [self getCourseGeneralDict:dict]};
 }
 
 #pragma AlertView Delegate

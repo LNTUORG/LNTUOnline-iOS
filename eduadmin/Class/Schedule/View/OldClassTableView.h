@@ -9,7 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "WeekLable.h"
 
+@protocol OldClassTableDelegate <NSObject>
+
+@required
+- (void)updateData:(NSDictionary *)dict;
+
+@end
+
 @interface OldClassTableView : UIView
+
+@property (nonatomic, weak) id<OldClassTableDelegate> delegate;
 
 @property (nonatomic, weak) IBOutlet UIView *bigView;
 

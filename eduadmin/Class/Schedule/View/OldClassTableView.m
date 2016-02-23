@@ -54,6 +54,7 @@
         [MBProgressHUD hideHUD];
         [self.schScrollView.mj_header endRefreshing];
         
+        [self.delegate updateData:responseJSON];
         [LJFileTool writeToFileContent:responseJSON withFileName:scheduleFileName];
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
