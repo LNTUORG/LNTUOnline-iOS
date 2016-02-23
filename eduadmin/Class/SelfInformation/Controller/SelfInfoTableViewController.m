@@ -37,7 +37,6 @@
     
     self.tableView.tableHeaderView.backgroundColor = [UIColor colorWithPatternImage:newImage];
     
-    self.tableView.rowHeight = 50;
     self.tableView.sectionHeaderHeight = 44;
     self.tableView.tableFooterView = [[UIView alloc] init];
     
@@ -163,12 +162,7 @@
     if (indexPath.section == 0) {
         
         //缓存池
-        CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0];
-        
-        if (!studentInfo) {
-            
-            studentInfo = [CellItem newCellItem];
-        }
+        CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0 forIndexPath:indexPath];
         
         studentInfo.tName = self.basicInfoKey[indexPath.row];
         studentInfo.tValue = self.basicInfoValue[indexPath.row];
@@ -176,13 +170,7 @@
     }
     else if (indexPath.section == 1) {
         
-        //缓存池
-        CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0];
-        
-        if (!studentInfo) {
-            
-            studentInfo = [CellItem newCellItem];
-        }
+        CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0 forIndexPath:indexPath];
         
         EntranceExam *exam = _information.entranceExams[indexPath.row];
         
@@ -192,13 +180,7 @@
     }
     else if (indexPath.section == 2) {
         
-        //缓存池
-        CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0];
-        
-        if (!studentInfo) {
-            
-            studentInfo = [CellItem newCellItem];
-        }
+        CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0 forIndexPath:indexPath];
         
         NSInteger x = indexPath.row/2;
         NSInteger flag = indexPath.row%2;
@@ -220,13 +202,7 @@
     }
     else if (indexPath.section == 3) {
         
-        //缓存池
-        familyCell *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID1];
-        
-        if (!studentInfo) {
-            
-            studentInfo = [familyCell  newFamilyCell];
-        }
+        familyCell *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID1 forIndexPath:indexPath];
         
         Family *f = _information.familys[indexPath.row];
         
@@ -241,13 +217,7 @@
         
     } else {
         
-        //缓存池
-        CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0];
-        
-        if (studentInfo == nil) {
-            
-            studentInfo = [CellItem newCellItem];
-        }
+        CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0 forIndexPath:indexPath];
         
         studentInfo.tName =@"error";
         studentInfo.tValue = @"error";
@@ -257,10 +227,14 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.section == 3)
+    if (indexPath.section == 3){
+    
         return 130;
-    else
+        
+    } else {
+    
         return 44;
+    }
 }
 
 

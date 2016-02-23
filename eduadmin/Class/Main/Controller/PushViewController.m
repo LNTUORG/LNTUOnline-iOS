@@ -7,6 +7,7 @@
 //
 
 #import "PushViewController.h"
+#import "LJTimeTool.h"
 
 @interface PushViewController ()
 
@@ -27,6 +28,7 @@
         
         self.textView.text = recievedContent;
     }
+    self.footLabel.text = [NSString stringWithFormat:@"Copyright © 2013-%ld PUPBOSS. All rights reserved", (long)[LJTimeTool getCurrentYear]];
 }
 
 @end

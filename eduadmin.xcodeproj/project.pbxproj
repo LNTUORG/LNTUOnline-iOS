@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		154F02790FD5275011419063 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE2EBF4D73D02C27A30BBDA /* libPods.a */; };
+		4327BF19DE1052245632E4AD /* libPods-eduadmin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B227BF23853339B6E704319E /* libPods-eduadmin.a */; };
 		71819CD81B9D8AAD00FAF87A /* CourseLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 71819CD71B9D8AAD00FAF87A /* CourseLable.m */; };
 		71819CDB1B9D8CC200FAF87A /* WeekLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 71819CDA1B9D8CC200FAF87A /* WeekLable.m */; };
 		71819D3A1B9D99E800FAF87A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71819D391B9D99E800FAF87A /* Security.framework */; };
@@ -37,8 +37,6 @@
 		D51601EB1A541BB8003AB6A9 /* EntranceExam.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601EA1A541BB8003AB6A9 /* EntranceExam.m */; };
 		D51601EE1A541BC9003AB6A9 /* Family.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601ED1A541BC9003AB6A9 /* Family.m */; };
 		D51601F11A541BDC003AB6A9 /* Title.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601F01A541BDC003AB6A9 /* Title.m */; };
-		D51601F61A541CBB003AB6A9 /* CellItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D51601F21A541CBB003AB6A9 /* CellItem.xib */; };
-		D51601F71A541CBB003AB6A9 /* familyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D51601F31A541CBB003AB6A9 /* familyCell.xib */; };
 		D51601F81A541CBB003AB6A9 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601F51A541CBB003AB6A9 /* HeaderView.m */; };
 		D51601FD1A541CC7003AB6A9 /* CellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601FA1A541CC7003AB6A9 /* CellItem.m */; };
 		D51601FE1A541CC7003AB6A9 /* familyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601FC1A541CC7003AB6A9 /* familyCell.m */; };
@@ -151,9 +149,8 @@
 		71EF04001C1574B800BCBF4A /* LJUITool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJUITool.m; sourceTree = "<group>"; };
 		71EF04011C1574B800BCBF4A /* UIImage+LJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LJ.h"; sourceTree = "<group>"; };
 		71EF04021C1574B800BCBF4A /* UIImage+LJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LJ.m"; sourceTree = "<group>"; };
-		7BE2EBF4D73D02C27A30BBDA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		84400162501EE01BF1C185EA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		860621BAE609B3AF766AD4A0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		998E138FB522F8ADD4B9ABD0 /* Pods-eduadmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eduadmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-eduadmin/Pods-eduadmin.release.xcconfig"; sourceTree = "<group>"; };
+		B227BF23853339B6E704319E /* libPods-eduadmin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eduadmin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D500D0291AE3C33A00247E90 /* DisciplinaryActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisciplinaryActions.h; sourceTree = "<group>"; };
 		D500D02A1AE3C33A00247E90 /* DisciplinaryActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisciplinaryActions.m; sourceTree = "<group>"; };
 		D50D823F1AE13FDA001D47DA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -172,8 +169,6 @@
 		D51601ED1A541BC9003AB6A9 /* Family.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Family.m; sourceTree = "<group>"; };
 		D51601EF1A541BDC003AB6A9 /* Title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Title.h; sourceTree = "<group>"; };
 		D51601F01A541BDC003AB6A9 /* Title.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Title.m; sourceTree = "<group>"; };
-		D51601F21A541CBB003AB6A9 /* CellItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellItem.xib; sourceTree = "<group>"; };
-		D51601F31A541CBB003AB6A9 /* familyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = familyCell.xib; sourceTree = "<group>"; };
 		D51601F41A541CBB003AB6A9 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		D51601F51A541CBB003AB6A9 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		D51601F91A541CC7003AB6A9 /* CellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellItem.h; sourceTree = "<group>"; };
@@ -269,6 +264,7 @@
 		D5FC7F3A1B17A8B000F056C5 /* HeaterTempCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaterTempCell.h; sourceTree = "<group>"; };
 		D5FC7F3B1B17A8B000F056C5 /* HeaterTempCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaterTempCell.m; sourceTree = "<group>"; };
 		D5FC7F3C1B17A8B000F056C5 /* HeaterTempCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaterTempCell.xib; sourceTree = "<group>"; };
+		F9590CE3D05CC7C72D69D595 /* Pods-eduadmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eduadmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eduadmin/Pods-eduadmin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,7 +281,7 @@
 				D50D82441AE14065001D47DA /* UIKit.framework in Frameworks */,
 				D50D82401AE13FDA001D47DA /* QuartzCore.framework in Frameworks */,
 				D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */,
-				154F02790FD5275011419063 /* libPods.a in Frameworks */,
+				4327BF19DE1052245632E4AD /* libPods-eduadmin.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,21 +295,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C7A34619C5F77E70D83AA83 /* Frameworks */ = {
+		0C3184DB01E638C357D2C9A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7BE2EBF4D73D02C27A30BBDA /* libPods.a */,
+				B227BF23853339B6E704319E /* libPods-eduadmin.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5AD7DB178DE30604CAA6C65D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				84400162501EE01BF1C185EA /* Pods.debug.xcconfig */,
-				860621BAE609B3AF766AD4A0 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		71EF03541C155B3F00BCBF4A /* View */ = {
@@ -595,10 +582,8 @@
 			children = (
 				D51601F91A541CC7003AB6A9 /* CellItem.h */,
 				D51601FA1A541CC7003AB6A9 /* CellItem.m */,
-				D51601F21A541CBB003AB6A9 /* CellItem.xib */,
 				D51601FB1A541CC7003AB6A9 /* familyCell.h */,
 				D51601FC1A541CC7003AB6A9 /* familyCell.m */,
-				D51601F31A541CBB003AB6A9 /* familyCell.xib */,
 				D51601F41A541CBB003AB6A9 /* HeaderView.h */,
 				D51601F51A541CBB003AB6A9 /* HeaderView.m */,
 			);
@@ -701,8 +686,8 @@
 				D58E1CAF1A51B94B00B159ED /* eduadmin */,
 				D58E1CC91A51B94C00B159ED /* eduadminTests */,
 				D58E1CAE1A51B94B00B159ED /* Products */,
-				5AD7DB178DE30604CAA6C65D /* Pods */,
-				0C7A34619C5F77E70D83AA83 /* Frameworks */,
+				F61E17EE9B1B41AC9165F71E /* Pods */,
+				0C3184DB01E638C357D2C9A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -929,6 +914,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		F61E17EE9B1B41AC9165F71E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9590CE3D05CC7C72D69D595 /* Pods-eduadmin.debug.xcconfig */,
+				998E138FB522F8ADD4B9ABD0 /* Pods-eduadmin.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -936,14 +930,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D58E1CD01A51B94C00B159ED /* Build configuration list for PBXNativeTarget "eduadmin" */;
 			buildPhases = (
-				A471AF3573E16F8F6FCCD019 /* Check Pods Manifest.lock */,
+				69BEA055514B6EFBFB821BFB /* Check Pods Manifest.lock */,
 				D58E1CA91A51B94B00B159ED /* Sources */,
 				D58E1CAA1A51B94B00B159ED /* Frameworks */,
 				D58E1CAB1A51B94B00B159ED /* Resources */,
 				D56DF0AF1AE19EAB00BEDE9D /* ShellScript */,
 				D5380D5B1AEA7FEE004BCD90 /* Embed App Extensions */,
-				D64907C138E49289ABDA4131 /* Embed Pods Frameworks */,
-				2F3281002080999BB948C630 /* Copy Pods Resources */,
+				0C47CA57A3E5531B323FCD31 /* Embed Pods Frameworks */,
+				DBD7F40133C242489A96512E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1024,7 +1018,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D51601F61A541CBB003AB6A9 /* CellItem.xib in Resources */,
 				D5FC7F3E1B17A8B000F056C5 /* HeaterTempCell.xib in Resources */,
 				71EF040D1C1574B800BCBF4A /* MBProgressHUD.bundle in Resources */,
 				D54CF5031AE6460800252371 /* OneKeyRateCell.xib in Resources */,
@@ -1034,7 +1027,6 @@
 				D51602121A542075003AB6A9 /* PartGradeCell.xib in Resources */,
 				D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */,
 				D5529D681AE7B2FC00F5A53E /* OldClassTable.xib in Resources */,
-				D51601F71A541CBB003AB6A9 /* familyCell.xib in Resources */,
 				D55F556A1AE1727900A7FD53 /* DayClassTableViewCell.xib in Resources */,
 				D58E1CBE1A51B94C00B159ED /* Images.xcassets in Resources */,
 				D53E75C61A93996700CBE422 /* Launch Screen.xib in Resources */,
@@ -1052,22 +1044,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2F3281002080999BB948C630 /* Copy Pods Resources */ = {
+		0C47CA57A3E5531B323FCD31 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eduadmin/Pods-eduadmin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A471AF3573E16F8F6FCCD019 /* Check Pods Manifest.lock */ = {
+		69BEA055514B6EFBFB821BFB /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1095,19 +1087,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 8feec9fc30497fa73685d17f490a7a7cdad6b2a1 8df1664dc1bc3830b78c2f7dc2216796333fcc326af81a369aacbf7bec69f778";
 		};
-		D64907C138E49289ABDA4131 /* Embed Pods Frameworks */ = {
+		DBD7F40133C242489A96512E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eduadmin/Pods-eduadmin-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1291,7 +1283,7 @@
 		};
 		D58E1CD11A51B94C00B159ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84400162501EE01BF1C185EA /* Pods.debug.xcconfig */;
+			baseConfigurationReference = F9590CE3D05CC7C72D69D595 /* Pods-eduadmin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1323,7 +1315,7 @@
 		};
 		D58E1CD21A51B94C00B159ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 860621BAE609B3AF766AD4A0 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 998E138FB522F8ADD4B9ABD0 /* Pods-eduadmin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

@@ -10,11 +10,6 @@
 
 @implementation familyCell
 
-+ (instancetype)newFamilyCell {
-    
-    return [[NSBundle mainBundle] loadNibNamed:@"familyCell" owner:nil options:nil][0];
-}
-
 - (void)setTName:(NSString *)tName {
     
     _tName = tName;

@@ -17,6 +17,4 @@
 @property (nonatomic, copy) NSString *tName;
 @property (nonatomic, copy) NSString *tValue;
 
-+ (instancetype)newCellItem;
-
 @end

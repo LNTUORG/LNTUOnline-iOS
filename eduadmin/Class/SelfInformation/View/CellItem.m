@@ -10,11 +10,6 @@
 
 @implementation CellItem
 
-+ (instancetype)newCellItem {
-    
-    return [[NSBundle mainBundle] loadNibNamed:@"CellItem" owner:nil options:nil][0];
-}
-
 - (void)setTName:(NSString *)tName {
     
     _tName = tName;

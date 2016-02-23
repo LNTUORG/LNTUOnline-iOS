@@ -32,6 +32,4 @@
 @property (nonatomic, copy) NSString *tWorkLocation;
 @property (nonatomic, copy) NSString *tTel;
 
-+ (instancetype)newFamilyCell;
-
 @end
