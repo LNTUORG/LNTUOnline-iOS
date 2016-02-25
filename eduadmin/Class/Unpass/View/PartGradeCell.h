@@ -23,6 +23,4 @@
 @property (nonatomic, strong) MyGrade *myGrade;
 @property (nonatomic, strong) UnpassGrade *unPassGrade;
 
-+ (instancetype)newPartGradeCell;
-
 @end

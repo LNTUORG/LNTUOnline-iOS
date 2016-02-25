@@ -7,4 +7,5 @@ pod 'FDFullscreenPopGesture', '1.1'
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'AFNetworking'
+pod 'UITableView+FDTemplateLayoutCell'
 end

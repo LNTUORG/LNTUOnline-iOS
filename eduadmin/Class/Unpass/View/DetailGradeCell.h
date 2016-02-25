@@ -24,6 +24,4 @@
 
 @property (nonatomic, strong) UnpassGradeRecord *records;
 
-+ (instancetype)newDetailGradeCell;
-
 @end

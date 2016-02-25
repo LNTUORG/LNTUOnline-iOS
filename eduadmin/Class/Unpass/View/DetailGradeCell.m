@@ -22,9 +22,4 @@
     self.remark.text = records.remarks;
 }
 
-+ (instancetype)newDetailGradeCell {
-    
-    return [[NSBundle mainBundle] loadNibNamed:@"DetailGradeCell" owner:nil options:nil][0];
-}
-
 @end

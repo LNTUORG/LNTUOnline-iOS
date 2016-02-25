@@ -46,7 +46,6 @@
 		D516020C1A542035003AB6A9 /* MyGrade.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602091A542035003AB6A9 /* MyGrade.m */; };
 		D516020D1A542035003AB6A9 /* UnpassGrade.m in Sources */ = {isa = PBXBuildFile; fileRef = D516020B1A542035003AB6A9 /* UnpassGrade.m */; };
 		D51602111A542075003AB6A9 /* PartGradeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D516020F1A542075003AB6A9 /* PartGradeCell.m */; };
-		D51602121A542075003AB6A9 /* PartGradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D51602101A542075003AB6A9 /* PartGradeCell.xib */; };
 		D51602151A542109003AB6A9 /* GradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602141A542109003AB6A9 /* GradeViewController.m */; };
 		D51602181A542131003AB6A9 /* RatingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602171A542131003AB6A9 /* RatingInfo.m */; };
 		D516021B1A542158003AB6A9 /* DetailGradeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D516021A1A542158003AB6A9 /* DetailGradeController.m */; };
@@ -64,7 +63,6 @@
 		D53537581AE5FD0E0025A1E7 /* UnpassGradeRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = D53537571AE5FD0E0025A1E7 /* UnpassGradeRecord.m */; };
 		D535375B1AE604790025A1E7 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D535375A1AE604790025A1E7 /* DetailTableViewController.m */; };
 		D535375F1AE605130025A1E7 /* DetailGradeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D535375D1AE605130025A1E7 /* DetailGradeCell.m */; };
-		D53537601AE605130025A1E7 /* DetailGradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D535375E1AE605130025A1E7 /* DetailGradeCell.xib */; };
 		D53537671AE63EDB0025A1E7 /* OneKeyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D53537661AE63EDB0025A1E7 /* OneKeyTableViewController.m */; };
 		D53E75C61A93996700CBE422 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53E75C51A93996700CBE422 /* Launch Screen.xib */; };
 		D54CF5021AE6460800252371 /* OneKeyRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D54CF5001AE6460800252371 /* OneKeyRateCell.m */; };
@@ -187,7 +185,6 @@
 		D516020B1A542035003AB6A9 /* UnpassGrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnpassGrade.m; sourceTree = "<group>"; };
 		D516020E1A542075003AB6A9 /* PartGradeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartGradeCell.h; sourceTree = "<group>"; };
 		D516020F1A542075003AB6A9 /* PartGradeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartGradeCell.m; sourceTree = "<group>"; };
-		D51602101A542075003AB6A9 /* PartGradeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartGradeCell.xib; sourceTree = "<group>"; };
 		D51602131A542109003AB6A9 /* GradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradeViewController.h; sourceTree = "<group>"; };
 		D51602141A542109003AB6A9 /* GradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeViewController.m; sourceTree = "<group>"; };
 		D51602161A542131003AB6A9 /* RatingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RatingInfo.h; path = ../../Grade/Model/RatingInfo.h; sourceTree = "<group>"; };
@@ -220,7 +217,6 @@
 		D535375A1AE604790025A1E7 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
 		D535375C1AE605130025A1E7 /* DetailGradeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGradeCell.h; sourceTree = "<group>"; };
 		D535375D1AE605130025A1E7 /* DetailGradeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGradeCell.m; sourceTree = "<group>"; };
-		D535375E1AE605130025A1E7 /* DetailGradeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailGradeCell.xib; sourceTree = "<group>"; };
 		D53537651AE63EDB0025A1E7 /* OneKeyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneKeyTableViewController.h; sourceTree = "<group>"; };
 		D53537661AE63EDB0025A1E7 /* OneKeyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneKeyTableViewController.m; sourceTree = "<group>"; };
 		D53E75C51A93996700CBE422 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "Class/Main/View/Launch Screen.xib"; sourceTree = "<group>"; };
@@ -426,10 +422,8 @@
 			children = (
 				D516020E1A542075003AB6A9 /* PartGradeCell.h */,
 				D516020F1A542075003AB6A9 /* PartGradeCell.m */,
-				D51602101A542075003AB6A9 /* PartGradeCell.xib */,
 				D535375C1AE605130025A1E7 /* DetailGradeCell.h */,
 				D535375D1AE605130025A1E7 /* DetailGradeCell.m */,
-				D535375E1AE605130025A1E7 /* DetailGradeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1023,8 +1017,6 @@
 				D54CF5031AE6460800252371 /* OneKeyRateCell.xib in Resources */,
 				D51602201A5421D5003AB6A9 /* ExamPlanCell.xib in Resources */,
 				D58E1CBC1A51B94C00B159ED /* Main.storyboard in Resources */,
-				D53537601AE605130025A1E7 /* DetailGradeCell.xib in Resources */,
-				D51602121A542075003AB6A9 /* PartGradeCell.xib in Resources */,
 				D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */,
 				D5529D681AE7B2FC00F5A53E /* OldClassTable.xib in Resources */,
 				D55F556A1AE1727900A7FD53 /* DayClassTableViewCell.xib in Resources */,

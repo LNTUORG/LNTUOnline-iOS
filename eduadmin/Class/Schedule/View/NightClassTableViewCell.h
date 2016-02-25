@@ -14,6 +14,4 @@
 
 @property (nonatomic, strong) NSString *course;
 
-+ (instancetype)newNightClassCell;
-
 @end

@@ -48,12 +48,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    PartGradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"part"];
+    PartGradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"part" forIndexPath:indexPath];
     
-    if (cell == nil) {
-        
-        cell = [PartGradeCell newPartGradeCell];
-    }
     cell.unPassGrade = _gradeArr[indexPath.row];
     
     return cell;

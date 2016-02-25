@@ -390,6 +390,10 @@
     tableView.alwaysBounceVertical = NO;
     tableView.backgroundColor = [UIColor colorWithRed:214/255.0 green:227/255.0 blue:181/255.0 alpha:1];
     
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"head"];
+    [tableView registerNib:[UINib nibWithNibName:@"DayClassTableViewCell" bundle:nil] forCellReuseIdentifier:@"day"];
+    [tableView registerNib:[UINib nibWithNibName:@"NightClassTableViewCell" bundle:nil] forCellReuseIdentifier:@"night"];
+    
     return tableView;
 }
 
@@ -404,11 +408,7 @@
     
     if (indexPath.row == 0) {
         
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"head"];
-        if (!cell) {
-            
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"head"];
-        }
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"head" forIndexPath:indexPath];
         
         cell.backgroundColor = [UIColor clearColor];
         cell.textLabel.text = self.titleArray[tableView.tag];
@@ -416,11 +416,7 @@
     }
     if (indexPath.row == 1) {
         
-        DayClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"day"];
-        if (!cell) {
-            
-            cell = [DayClassTableViewCell newDayClassCell];
-        }
+        DayClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"day" forIndexPath:indexPath];
         
         cell.course0 = self.courseArray[tableView.tag][0];
         cell.course1 = self.courseArray[tableView.tag][1];
@@ -429,11 +425,7 @@
     }
     if (indexPath.row == 2) {
         
-        DayClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"day"];
-        if (!cell) {
-            
-            cell = [DayClassTableViewCell newDayClassCell];
-        }
+        DayClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"day" forIndexPath:indexPath];
         
         DayCourse *course = [DayCourse new];
         course.class0 = self.courseArray[tableView.tag][2];
@@ -445,11 +437,7 @@
         
     } else {
         
-        NightClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"night"];
-        if (!cell) {
-            
-            cell = [NightClassTableViewCell newNightClassCell];
-        }
+        NightClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"night" forIndexPath:indexPath];
         
         cell.course = self.courseArray[tableView.tag][4];
         cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_night"]];

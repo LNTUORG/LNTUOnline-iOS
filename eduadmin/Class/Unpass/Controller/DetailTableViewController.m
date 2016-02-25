@@ -37,11 +37,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    DetailGradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"det"];
-    
-    if (cell == nil) {
-        cell = [DetailGradeCell newDetailGradeCell];
-    }
+    DetailGradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"det" forIndexPath:indexPath];
     
     cell.records = records[indexPath.row];
     

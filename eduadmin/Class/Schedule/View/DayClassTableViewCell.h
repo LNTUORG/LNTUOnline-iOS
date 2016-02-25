@@ -31,6 +31,4 @@
 @property (nonatomic, strong) NSString *course0;
 @property (nonatomic, strong) NSString *course1;
 
-+ (instancetype)newDayClassCell;
-
 @end

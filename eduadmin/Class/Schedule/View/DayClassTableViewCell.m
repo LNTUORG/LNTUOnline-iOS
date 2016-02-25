@@ -55,9 +55,4 @@
     self.class1.text = course.class1;
 }
 
-+ (instancetype)newDayClassCell {
-    
-    return [[NSBundle mainBundle] loadNibNamed:@"DayClassTableViewCell" owner:nil options:nil][0];
-}
-
 @end

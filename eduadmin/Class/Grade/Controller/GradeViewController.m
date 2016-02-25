@@ -167,12 +167,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    PartGradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"part"];
-    
-    if (cell == nil) {
-        
-        cell = [PartGradeCell newPartGradeCell];
-    }
+    PartGradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"part" forIndexPath:indexPath];
+
     cell.myGrade = self.currentGradeArr[indexPath.row];
     
     return cell;

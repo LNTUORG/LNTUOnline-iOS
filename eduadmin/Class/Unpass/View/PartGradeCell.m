@@ -49,9 +49,4 @@
     self.selectType.text = [NSString stringWithFormat:@"%@年%@", myGrade.year, myGrade.term];
 }
 
-+ (instancetype)newPartGradeCell {
-    
-    return [[NSBundle mainBundle] loadNibNamed:@"PartGradeCell" owner:nil options:nil][0];
-}
-
 @end
