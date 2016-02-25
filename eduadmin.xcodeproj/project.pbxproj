@@ -17,6 +17,7 @@
 		718840BF1BB6C999008A1F42 /* NormalFormatSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 718840BE1BB6C999008A1F42 /* NormalFormatSchedule.m */; };
 		71BD4C251C1A6B0F00B30419 /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD4C221C1A6B0F00B30419 /* MainNavigationViewController.m */; };
 		71BD4C261C1A6B0F00B30419 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD4C241C1A6B0F00B30419 /* PushViewController.m */; };
+		71CDA21D1C7E89F8007A36BC /* DayClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CDA21C1C7E89F8007A36BC /* DayClassTableViewCell.xib */; };
 		71EF03571C155B5000BCBF4A /* CircleHeadImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EF03561C155B5000BCBF4A /* CircleHeadImageView.m */; };
 		71EF040C1C1574B800BCBF4A /* MBProgressHUD+LJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EF03F01C1574B800BCBF4A /* MBProgressHUD+LJ.m */; };
 		71EF040D1C1574B800BCBF4A /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71EF03F11C1574B800BCBF4A /* MBProgressHUD.bundle */; };
@@ -71,7 +72,6 @@
 		D5529D681AE7B2FC00F5A53E /* OldClassTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5529D671AE7B2FC00F5A53E /* OldClassTable.xib */; };
 		D5529D6B1AE7B36700F5A53E /* OldClassTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5529D6A1AE7B36700F5A53E /* OldClassTableView.m */; };
 		D55F55691AE1727900A7FD53 /* DayClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F55671AE1727900A7FD53 /* DayClassTableViewCell.m */; };
-		D55F556A1AE1727900A7FD53 /* DayClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F55681AE1727900A7FD53 /* DayClassTableViewCell.xib */; };
 		D55F556E1AE1728F00A7FD53 /* NightClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F556C1AE1728F00A7FD53 /* NightClassTableViewCell.m */; };
 		D55F556F1AE1728F00A7FD53 /* NightClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */; };
 		D55F55731AE1835900A7FD53 /* DayCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = D55F55721AE1835900A7FD53 /* DayCourse.m */; };
@@ -128,6 +128,7 @@
 		71BD4C221C1A6B0F00B30419 /* MainNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
 		71BD4C231C1A6B0F00B30419 /* PushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
 		71BD4C241C1A6B0F00B30419 /* PushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
+		71CDA21C1C7E89F8007A36BC /* DayClassTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayClassTableViewCell.xib; sourceTree = "<group>"; };
 		71EF03551C155B5000BCBF4A /* CircleHeadImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleHeadImageView.h; sourceTree = "<group>"; };
 		71EF03561C155B5000BCBF4A /* CircleHeadImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleHeadImageView.m; sourceTree = "<group>"; };
 		71EF03EF1C1574B800BCBF4A /* MBProgressHUD+LJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+LJ.h"; sourceTree = "<group>"; };
@@ -229,7 +230,6 @@
 		D5529D6A1AE7B36700F5A53E /* OldClassTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldClassTableView.m; sourceTree = "<group>"; };
 		D55F55661AE1727900A7FD53 /* DayClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayClassTableViewCell.h; sourceTree = "<group>"; };
 		D55F55671AE1727900A7FD53 /* DayClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayClassTableViewCell.m; sourceTree = "<group>"; };
-		D55F55681AE1727900A7FD53 /* DayClassTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayClassTableViewCell.xib; sourceTree = "<group>"; };
 		D55F556B1AE1728F00A7FD53 /* NightClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NightClassTableViewCell.h; sourceTree = "<group>"; };
 		D55F556C1AE1728F00A7FD53 /* NightClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NightClassTableViewCell.m; sourceTree = "<group>"; };
 		D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NightClassTableViewCell.xib; sourceTree = "<group>"; };
@@ -644,7 +644,7 @@
 			children = (
 				D55F55661AE1727900A7FD53 /* DayClassTableViewCell.h */,
 				D55F55671AE1727900A7FD53 /* DayClassTableViewCell.m */,
-				D55F55681AE1727900A7FD53 /* DayClassTableViewCell.xib */,
+				71CDA21C1C7E89F8007A36BC /* DayClassTableViewCell.xib */,
 				D55F556B1AE1728F00A7FD53 /* NightClassTableViewCell.h */,
 				D55F556C1AE1728F00A7FD53 /* NightClassTableViewCell.m */,
 				D55F556D1AE1728F00A7FD53 /* NightClassTableViewCell.xib */,
@@ -1019,7 +1019,7 @@
 				D58E1CBC1A51B94C00B159ED /* Main.storyboard in Resources */,
 				D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */,
 				D5529D681AE7B2FC00F5A53E /* OldClassTable.xib in Resources */,
-				D55F556A1AE1727900A7FD53 /* DayClassTableViewCell.xib in Resources */,
+				71CDA21D1C7E89F8007A36BC /* DayClassTableViewCell.xib in Resources */,
 				D58E1CBE1A51B94C00B159ED /* Images.xcassets in Resources */,
 				D53E75C61A93996700CBE422 /* Launch Screen.xib in Resources */,
 				D55F556F1AE1728F00A7FD53 /* NightClassTableViewCell.xib in Resources */,

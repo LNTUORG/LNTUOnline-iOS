@@ -53,7 +53,7 @@
     }
 
     
-    #ifdef __IPHONE_8_0
+#ifdef __IPHONE_8_0
     
     if (IOS8) {
         
@@ -77,14 +77,14 @@
         
         [[UIApplication sharedApplication] registerUserNotificationSettings:uns];
     }
-    #else
+#else
     else {
         
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
          (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     }
     
-    #endif
+#endif
     
     return YES;
 }
@@ -99,6 +99,10 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+#ifdef DEBUG
+    NSLog(@"%@", [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""]);
+#else
     
     NSString *getToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
     
@@ -125,6 +129,7 @@
             }
         }
     }
+#endif
 }
 
 - (void)sendTokenToServerWithUserId:(NSString *)userId andToken:(NSString *)deviceToken {
