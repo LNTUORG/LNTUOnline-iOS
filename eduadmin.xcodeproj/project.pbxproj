@@ -51,13 +51,11 @@
 		D51602181A542131003AB6A9 /* RatingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602171A542131003AB6A9 /* RatingInfo.m */; };
 		D516021B1A542158003AB6A9 /* DetailGradeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D516021A1A542158003AB6A9 /* DetailGradeController.m */; };
 		D516021F1A5421D5003AB6A9 /* ExamPlanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D516021D1A5421D5003AB6A9 /* ExamPlanCell.m */; };
-		D51602201A5421D5003AB6A9 /* ExamPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D516021E1A5421D5003AB6A9 /* ExamPlanCell.xib */; };
 		D51602231A5421DC003AB6A9 /* ExamPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602221A5421DC003AB6A9 /* ExamPlan.m */; };
 		D51602261A5421E1003AB6A9 /* ExamPlanTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602251A5421E1003AB6A9 /* ExamPlanTableViewController.m */; };
 		D51602291A54225B003AB6A9 /* SkillTestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602281A54225B003AB6A9 /* SkillTestTableViewController.m */; };
 		D516022C1A54227B003AB6A9 /* SkillTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D516022B1A54227B003AB6A9 /* SkillTest.m */; };
 		D51602301A542285003AB6A9 /* SkillTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D516022E1A542285003AB6A9 /* SkillTestCell.m */; };
-		D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D516022F1A542285003AB6A9 /* SkillTestCell.xib */; };
 		D51602341A542364003AB6A9 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602331A542364003AB6A9 /* FeedbackViewController.m */; };
 		D520E1901B22A23B0053D6AB /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = D520E18F1B22A23B0053D6AB /* Course.m */; };
 		D520E1931B22A24A0053D6AB /* TimeAndPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = D520E1921B22A24A0053D6AB /* TimeAndPlace.m */; };
@@ -67,7 +65,6 @@
 		D53537671AE63EDB0025A1E7 /* OneKeyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D53537661AE63EDB0025A1E7 /* OneKeyTableViewController.m */; };
 		D53E75C61A93996700CBE422 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53E75C51A93996700CBE422 /* Launch Screen.xib */; };
 		D54CF5021AE6460800252371 /* OneKeyRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D54CF5001AE6460800252371 /* OneKeyRateCell.m */; };
-		D54CF5031AE6460800252371 /* OneKeyRateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54CF5011AE6460800252371 /* OneKeyRateCell.xib */; };
 		D55248BA1A6A97730073942F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55248B91A6A97730073942F /* StoreKit.framework */; };
 		D5529D681AE7B2FC00F5A53E /* OldClassTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5529D671AE7B2FC00F5A53E /* OldClassTable.xib */; };
 		D5529D6B1AE7B36700F5A53E /* OldClassTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5529D6A1AE7B36700F5A53E /* OldClassTableView.m */; };
@@ -87,7 +84,6 @@
 		D5F936C61A52ED1B00EA112F /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F936C51A52ED1B00EA112F /* AboutTableViewController.m */; };
 		D5F936C91A52ED7900EA112F /* ShowWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F936C81A52ED7900EA112F /* ShowWebViewController.m */; };
 		D5FC7F3D1B17A8B000F056C5 /* HeaterTempCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC7F3B1B17A8B000F056C5 /* HeaterTempCell.m */; };
-		D5FC7F3E1B17A8B000F056C5 /* HeaterTempCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5FC7F3C1B17A8B000F056C5 /* HeaterTempCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,7 +190,6 @@
 		D516021A1A542158003AB6A9 /* DetailGradeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailGradeController.m; path = ../../Unpass/Controller/DetailGradeController.m; sourceTree = "<group>"; };
 		D516021C1A5421D5003AB6A9 /* ExamPlanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamPlanCell.h; sourceTree = "<group>"; };
 		D516021D1A5421D5003AB6A9 /* ExamPlanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamPlanCell.m; sourceTree = "<group>"; };
-		D516021E1A5421D5003AB6A9 /* ExamPlanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExamPlanCell.xib; sourceTree = "<group>"; };
 		D51602211A5421DC003AB6A9 /* ExamPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamPlan.h; sourceTree = "<group>"; };
 		D51602221A5421DC003AB6A9 /* ExamPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamPlan.m; sourceTree = "<group>"; };
 		D51602241A5421E1003AB6A9 /* ExamPlanTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamPlanTableViewController.h; sourceTree = "<group>"; };
@@ -205,7 +200,6 @@
 		D516022B1A54227B003AB6A9 /* SkillTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillTest.m; sourceTree = "<group>"; };
 		D516022D1A542285003AB6A9 /* SkillTestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillTestCell.h; sourceTree = "<group>"; };
 		D516022E1A542285003AB6A9 /* SkillTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillTestCell.m; sourceTree = "<group>"; };
-		D516022F1A542285003AB6A9 /* SkillTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillTestCell.xib; sourceTree = "<group>"; };
 		D51602321A542364003AB6A9 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		D51602331A542364003AB6A9 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		D520E18E1B22A23B0053D6AB /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
@@ -223,7 +217,6 @@
 		D53E75C51A93996700CBE422 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "Class/Main/View/Launch Screen.xib"; sourceTree = "<group>"; };
 		D54CF4FF1AE6460800252371 /* OneKeyRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneKeyRateCell.h; sourceTree = "<group>"; };
 		D54CF5001AE6460800252371 /* OneKeyRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneKeyRateCell.m; sourceTree = "<group>"; };
-		D54CF5011AE6460800252371 /* OneKeyRateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneKeyRateCell.xib; sourceTree = "<group>"; };
 		D55248B91A6A97730073942F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D5529D671AE7B2FC00F5A53E /* OldClassTable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OldClassTable.xib; sourceTree = "<group>"; };
 		D5529D691AE7B36700F5A53E /* OldClassTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldClassTableView.h; sourceTree = "<group>"; };
@@ -259,7 +252,6 @@
 		D5F936C81A52ED7900EA112F /* ShowWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowWebViewController.m; sourceTree = "<group>"; };
 		D5FC7F3A1B17A8B000F056C5 /* HeaterTempCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaterTempCell.h; sourceTree = "<group>"; };
 		D5FC7F3B1B17A8B000F056C5 /* HeaterTempCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaterTempCell.m; sourceTree = "<group>"; };
-		D5FC7F3C1B17A8B000F056C5 /* HeaterTempCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaterTempCell.xib; sourceTree = "<group>"; };
 		F9590CE3D05CC7C72D69D595 /* Pods-eduadmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eduadmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eduadmin/Pods-eduadmin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -490,7 +482,6 @@
 			children = (
 				D516021C1A5421D5003AB6A9 /* ExamPlanCell.h */,
 				D516021D1A5421D5003AB6A9 /* ExamPlanCell.m */,
-				D516021E1A5421D5003AB6A9 /* ExamPlanCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -528,7 +519,6 @@
 			children = (
 				D516022D1A542285003AB6A9 /* SkillTestCell.h */,
 				D516022E1A542285003AB6A9 /* SkillTestCell.m */,
-				D516022F1A542285003AB6A9 /* SkillTestCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -634,7 +624,6 @@
 			children = (
 				D54CF4FF1AE6460800252371 /* OneKeyRateCell.h */,
 				D54CF5001AE6460800252371 /* OneKeyRateCell.m */,
-				D54CF5011AE6460800252371 /* OneKeyRateCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -850,7 +839,6 @@
 			children = (
 				D5FC7F3A1B17A8B000F056C5 /* HeaterTempCell.h */,
 				D5FC7F3B1B17A8B000F056C5 /* HeaterTempCell.m */,
-				D5FC7F3C1B17A8B000F056C5 /* HeaterTempCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1012,12 +1000,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5FC7F3E1B17A8B000F056C5 /* HeaterTempCell.xib in Resources */,
 				71EF040D1C1574B800BCBF4A /* MBProgressHUD.bundle in Resources */,
-				D54CF5031AE6460800252371 /* OneKeyRateCell.xib in Resources */,
-				D51602201A5421D5003AB6A9 /* ExamPlanCell.xib in Resources */,
 				D58E1CBC1A51B94C00B159ED /* Main.storyboard in Resources */,
-				D51602311A542285003AB6A9 /* SkillTestCell.xib in Resources */,
 				D5529D681AE7B2FC00F5A53E /* OldClassTable.xib in Resources */,
 				71CDA21D1C7E89F8007A36BC /* DayClassTableViewCell.xib in Resources */,
 				D58E1CBE1A51B94C00B159ED /* Images.xcassets in Resources */,

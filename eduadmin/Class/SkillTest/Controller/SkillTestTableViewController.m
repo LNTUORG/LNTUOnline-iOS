@@ -63,12 +63,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    SkillTestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"skill"];
+    SkillTestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SkillCell" forIndexPath:indexPath];
     
-    if (cell == nil) {
-        
-        cell = [SkillTestCell newSkillTestCell];
-    }
     cell.sTest = self.skillArr[indexPath.row];
     
     return cell;

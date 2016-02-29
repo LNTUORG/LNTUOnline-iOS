@@ -29,10 +29,4 @@
         self.statusLable.textColor = LJColor(100, 157, 89);
     }
 }
-
-+ (instancetype)newOneKeyCell {
-    
-    return [[NSBundle mainBundle] loadNibNamed:@"OneKeyRateCell" owner:nil options:nil][0];
-}
-
 @end

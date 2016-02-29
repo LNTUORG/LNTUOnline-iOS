@@ -155,8 +155,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //标识
-    static NSString *ID0 = @"cellItem";
-    static NSString *ID1 = @"familyCell";
+    static NSString *ID0 = @"NormalCell";
+    static NSString *ID1 = @"FamilyCell";
     
     //设置数据
     if (indexPath.section == 0) {

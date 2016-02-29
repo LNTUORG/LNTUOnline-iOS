@@ -19,10 +19,4 @@
     self.tempLabel.text = [NSString stringWithFormat:@"%@°C", info[2]];
     self.countLabel.text = [NSString stringWithFormat:@"大约%@人在排队(仅供参考)", info[3]];
 }
-
-+ (instancetype)newHeaterTempCell {
-    
-    return [[NSBundle mainBundle] loadNibNamed:@"HeaterTempCell" owner:nil options:nil][0];
-}
-
 @end

@@ -20,7 +20,4 @@
 @property (weak, nonatomic) IBOutlet UIButton *countDate;
 
 @property (nonatomic,strong) ExamPlan *plan;
-
-+ (id)newExanPlanCell;
-
 @end

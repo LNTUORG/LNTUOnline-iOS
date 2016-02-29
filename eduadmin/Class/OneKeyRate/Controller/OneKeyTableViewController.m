@@ -88,12 +88,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    OneKeyRateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RateCell"];
-    
-    if (!cell) {
-        
-        cell = [OneKeyRateCell newOneKeyCell];
-    }
+    OneKeyRateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RateCell" forIndexPath:indexPath];
     
     cell.info = self.courseArr[indexPath.row];
     

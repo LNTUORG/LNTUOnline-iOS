@@ -42,6 +42,7 @@
     NSString *lastDay = @"";
     
     [self.countDate setBackgroundColor:LJColor(134, 169, 111)];
+    [self.countDate setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     if (baseHour < 0) {
         
         lastDay = @"...";
@@ -67,12 +68,6 @@
     self.timeTextView.text = str;
     self.courseLable.text = plan.course;
     self.locationLable.text = plan.location;
-}
-
-
-+ (id)newExanPlanCell {
-    
-    return [[NSBundle mainBundle] loadNibNamed:@"ExamPlanCell" owner:nil options:nil][0];
 }
 
 @end

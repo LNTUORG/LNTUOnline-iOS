@@ -51,11 +51,6 @@
     
     HeaterTempCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TempCell"];
     
-    if (!cell) {
-        
-        cell = [HeaterTempCell newHeaterTempCell];
-    }
-    
     NSArray *newArr = self.arr[indexPath.row];
     cell.info = newArr;
     

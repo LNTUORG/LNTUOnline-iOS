@@ -18,7 +18,4 @@
 @property (weak, nonatomic) IBOutlet UIButton *countButton;
 
 @property (nonatomic,strong) SkillTest *sTest;
-
-+ (instancetype)newSkillTestCell;
-
 @end

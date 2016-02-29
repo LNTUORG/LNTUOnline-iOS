@@ -20,10 +20,4 @@
     
     [self.countButton setTitle:sTest.score forState:UIControlStateNormal];
 }
-
-+ (instancetype)newSkillTestCell {
-    
-    return [[NSBundle mainBundle] loadNibNamed:@"SkillTestCell" owner:nil options:nil][0];
-}
-
 @end

@@ -92,12 +92,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ExamPlanCell *cell = [tableView dequeueReusableCellWithIdentifier:@"epl"];
-    
-    if (cell == nil) {
-        
-        cell = [ExamPlanCell newExanPlanCell];
-    }
+    ExamPlanCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlanCell" forIndexPath:indexPath];
     
     cell.plan = self.planArr[indexPath.row];
     

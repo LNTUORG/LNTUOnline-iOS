@@ -48,7 +48,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    PartGradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"part" forIndexPath:indexPath];
+    PartGradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UnpassCell" forIndexPath:indexPath];
     
     cell.unPassGrade = _gradeArr[indexPath.row];
     

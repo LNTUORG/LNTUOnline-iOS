@@ -18,7 +18,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *statusLable;
 
 @property (strong, nonatomic) RatingInfo *info;
-
-+ (instancetype)newOneKeyCell;
-
 @end

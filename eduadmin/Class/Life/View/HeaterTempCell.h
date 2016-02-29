@@ -18,9 +18,5 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
 
-
 @property (strong, nonatomic) NSArray *info;
-
-+ (instancetype)newHeaterTempCell;
-
 @end

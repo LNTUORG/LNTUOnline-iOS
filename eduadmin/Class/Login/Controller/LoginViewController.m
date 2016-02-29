@@ -28,15 +28,15 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"veins"]];
     [self appStart];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.userNameText];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.pwdText];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.userNameTextField];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.passwordTextField];
     
 }
 
 
 - (void)textChange {
     
-    self.loginBtn.enabled = (self.userNameText.text.length && self.pwdText.text.length);
+    self.loginButton.enabled = (self.userNameTextField.text.length && self.passwordTextField.text.length);
 }
 
 - (void)appStart {
@@ -45,43 +45,43 @@
     
     if ([def objectForKey:USERNAMEKEY]) {
         
-        self.userNameText.text = [def objectForKey:USERNAMEKEY];
-        self.pwdText.text = [def objectForKey:PWDKEY];
-        self.loginBtn.enabled = YES;
+        self.userNameTextField.text = [def objectForKey:USERNAMEKEY];
+        self.passwordTextField.text = [def objectForKey:PWDKEY];
+        self.loginButton.enabled = YES;
     }
 }
 
 
-- (IBAction)forHelp:(id)sender {
+- (IBAction)forHelpAction:(id)sender {
     
     NSString *url = [NSString stringWithFormat:@"http://wpa.qq.com/msgrd?v=3&uin=%@&site=qq&menu=yes", LJQQ];
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
-- (IBAction)existKeyboard {
+- (IBAction)existKeyboardAction {
     
     [self.view endEditing:YES];
 }
 
 
-- (void)recordPwd {
+- (void)recordPassword {
     
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    [def setObject:self.userNameText.text forKey:USERNAMEKEY];
-    [def setObject:self.pwdText.text forKey:PWDKEY];
+    [def setObject:self.userNameTextField.text forKey:USERNAMEKEY];
+    [def setObject:self.passwordTextField.text forKey:PWDKEY];
     [def synchronize];
 }
 
-- (IBAction)login {
+- (IBAction)loginAction {
     
-    [self existKeyboard];
-    [self recordPwd];
+    [self existKeyboardAction];
+    [self recordPassword];
     [MBProgressHUD showMessage:WAITSTR];
     
     NSString *requestURL = [NSString stringWithFormat:@"%@account/login", MAINURL];
-    NSDictionary *param = @{@"userId": self.userNameText.text,
-                            @"password": self.pwdText.text};
+    NSDictionary *param = @{@"userId": self.userNameTextField.text,
+                            @"password": self.passwordTextField.text};
 
     [LJHTTPTool postJSONWithURL:requestURL params:param success:^(id responseJSON) {
         

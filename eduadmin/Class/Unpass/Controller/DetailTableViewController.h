@@ -11,5 +11,4 @@
 @interface DetailTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray *records;
-
 @end
