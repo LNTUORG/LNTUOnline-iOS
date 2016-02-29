@@ -5,7 +5,7 @@ Homepage: [http://online.lntu.org](http://online.lntu.org)
 
 Server: [https://github.com/LNTUORG/LntuOnline-API](https://github.com/LNTUORG/LntuOnline-API)
 
-Android: [https://github.com/LNTUORG/LntuOnline-iOS](https://github.com/LNTUORG/LntuOnline-iOS)
+Android: [https://github.com/LNTUORG/LNTUOnline-Android](https://github.com/LNTUORG/LNTUOnline-Android)
 
 ## Licence
 
@@ -37,8 +37,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 ## Requirements
 
-- ~~iOS 7.0+~~
-- iOS 8.0+
+- iOS 7.0+
 - Xcode 7+
 
 ## Feature
@@ -51,7 +50,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 - [Digital Ocean](https://www.digitalocean.com/?refcode=c6314f396546)
 - [Crashlytics](https://www.crashlytics.com)
-- [Umeng](http://www.umeng.com)
 
 ## Thanks
 
@@ -60,7 +58,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ## Contact
 
 - [hi@pupboss.com](mailto:hi@pupboss.com)
-- [PUPBOSS.COM](https://pupboss.com)
+- [PUPBOSS.COM](https://www.pupboss.com)
 
 ## Screenshot
 

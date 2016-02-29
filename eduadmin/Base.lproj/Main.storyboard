@@ -875,10 +875,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70n-bk-zVc">
-                                            <rect key="frame" x="8" y="39" width="56" height="21"/>
+                                            <rect key="frame" x="8" y="39" width="260" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="mL5-LT-1Xq"/>
-                                                <constraint firstAttribute="width" constant="56" id="ruG-B5-Tru"/>
+                                                <constraint firstAttribute="width" constant="260" id="ruG-B5-Tru"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
