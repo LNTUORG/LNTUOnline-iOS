@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 @class AFHTTPRequestOperation;
+@class AFHTTPSessionManager;
 
 @interface LJHTTPTool : NSObject
 

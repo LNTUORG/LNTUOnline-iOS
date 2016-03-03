@@ -11,21 +11,26 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD+LJ.h"
 
+AFHTTPSessionManager *_mgr;
+
 @implementation LJHTTPTool
 
 + (void)postJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     
     // 1.创建请求管理对象
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    if (!_mgr) {
+        
+        _mgr = [AFHTTPSessionManager manager];
+    }
     
     if (TOKENFORNET) {
         
-        [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
+        [_mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
     }
     
-    [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
+    [_mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
     
-    [mgr POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [_mgr POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         if (success) {
             
@@ -56,17 +61,21 @@
 + (void)postHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     
     // 1.创建请求管理对象
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
-    if (TOKENFORNET) {
+    if (!_mgr) {
         
-        [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
+        _mgr = [AFHTTPSessionManager manager];
     }
     
-    [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
+    if (TOKENFORNET) {
+        
+        [_mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
+    }
     
-    mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [_mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
     
-    [mgr POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    _mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    [_mgr POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         if (success) {
             
@@ -93,16 +102,19 @@
 + (void)getJSONWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSURLSessionDataTask *task, NSError *))failure {
     
     // 1.创建请求管理对象
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    if (!_mgr) {
+        
+        _mgr = [AFHTTPSessionManager manager];
+    }
     
     if (TOKENFORNET) {
         
-        [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
+        [_mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
     }
     
-    [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
+    [_mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
     
-    [mgr GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [_mgr GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         if (success) {
             
@@ -129,18 +141,21 @@
 + (void)getHTTPWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     
     // 1.创建请求管理对象
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    if (!_mgr) {
+        
+        _mgr = [AFHTTPSessionManager manager];
+    }
     
     if (TOKENFORNET) {
         
-        [mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
+        [_mgr.requestSerializer setValue:TOKENFORNET forHTTPHeaderField:@"Authorization"];
     }
     
-    [mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
+    [_mgr.requestSerializer setValue:[NSString stringWithFormat:@"eduadmin/%@ (%@; iOS%@)", [LJDeviceTool getCurrentAppVersion], [LJDeviceTool getCurrentDeviceModel], [LJDeviceTool getCurrentSystemVersion]] forHTTPHeaderField:@"User-Agent"];
     
-    mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
+    _mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
     
-    [mgr GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [_mgr GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         if (success) {
             
