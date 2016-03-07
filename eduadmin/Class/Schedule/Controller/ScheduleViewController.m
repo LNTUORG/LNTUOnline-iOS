@@ -22,12 +22,12 @@
 
 @interface ScheduleViewController () <iCarouselDataSource, iCarouselDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, OldClassTableDelegate>
 
-@property (strong, nonatomic) iCarousel *iCaView;
-@property (strong, nonatomic) OldClassTableView *oldView;
-@property (nonatomic, strong) NSArray *titleArray;
-@property (nonatomic, strong) NSArray *courseArray;
-@property (strong, nonatomic) NSDictionary *dict;
-@property (strong, nonatomic) NSUserDefaults *deft;
+@property (nonatomic, strong) iCarousel *iCaView;
+@property (nonatomic, strong) OldClassTableView *oldView;
+@property (nonatomic, copy) NSArray *titleArray;
+@property (nonatomic, copy) NSArray *courseArray;
+@property (nonatomic, copy) NSDictionary *dict;
+@property (nonatomic, strong) NSUserDefaults *deft;
 @property (nonatomic, assign) NSInteger currentWeek;
 
 @end

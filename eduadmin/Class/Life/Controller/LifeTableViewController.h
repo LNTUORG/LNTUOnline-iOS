@@ -10,6 +10,6 @@
 
 @interface LifeTableViewController : UITableViewController
 
-@property (strong, nonatomic) NSArray *arr;
+@property (nonatomic, copy) NSArray *arr;
 
 @end

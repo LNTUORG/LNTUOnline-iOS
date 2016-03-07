@@ -10,16 +10,15 @@
 
 @interface ShowWebViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *goBackButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *goNextButton;
-
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *goBackButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *goNextButton;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 
 - (IBAction)goBack:(id)sender;
 
 - (IBAction)goNext:(id)sender;
 
 - (IBAction)disappear:(id)sender;
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @property (nonatomic, copy) NSString *webURL;
 

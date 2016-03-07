@@ -785,7 +785,7 @@
                                                 <constraint firstAttribute="width" constant="103" id="XhM-S9-SR6"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近更新于2015-06-01T15:35" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsU-f7-pam">

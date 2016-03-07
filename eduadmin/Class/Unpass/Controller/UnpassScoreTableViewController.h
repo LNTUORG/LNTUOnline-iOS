@@ -10,6 +10,6 @@
 
 @interface UnpassScoreTableViewController : UITableViewController
 
-@property (strong, nonatomic) NSArray *gradeArr;
+@property (nonatomic, copy) NSArray *gradeArr;
 
 @end

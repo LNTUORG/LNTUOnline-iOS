@@ -29,9 +29,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // 崩溃分析
     [Fabric with:@[CrashlyticsKit]];
-    [Fabric with:@[[Crashlytics class]]];
 
     if (launchOptions) {
         

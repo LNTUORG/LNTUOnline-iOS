@@ -11,11 +11,11 @@
 
 @interface SkillTestCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *courseLable;
+@property (strong, nonatomic) IBOutlet UILabel *courseLable;
 
-@property (weak, nonatomic) IBOutlet UILabel *timeLable;
+@property (strong, nonatomic) IBOutlet UILabel *timeLable;
 
-@property (weak, nonatomic) IBOutlet UIButton *countButton;
+@property (strong, nonatomic) IBOutlet UIButton *countButton;
 
-@property (nonatomic,strong) SkillTest *sTest;
+@property (nonatomic, strong) SkillTest *sTest;
 @end

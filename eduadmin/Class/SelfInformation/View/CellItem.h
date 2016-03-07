@@ -10,9 +10,9 @@
 
 @interface CellItem : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *name;
+@property (strong, nonatomic) IBOutlet UILabel *name;
 
-@property (nonatomic, weak) IBOutlet UILabel *value;
+@property (strong, nonatomic) IBOutlet UILabel *value;
 
 @property (nonatomic, copy) NSString *tName;
 @property (nonatomic, copy) NSString *tValue;

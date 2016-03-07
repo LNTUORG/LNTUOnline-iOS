@@ -10,8 +10,8 @@
 
 @interface PushViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextView *textView;
-@property (weak, nonatomic) IBOutlet UILabel *footLabel;
+@property (strong, nonatomic) IBOutlet UITextView *textView;
+@property (strong, nonatomic) IBOutlet UILabel *footLabel;
 
 
 @property (nonatomic, copy) NSString *recievedContent;

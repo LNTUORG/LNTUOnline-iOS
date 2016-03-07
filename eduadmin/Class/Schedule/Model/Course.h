@@ -12,6 +12,6 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *teacher;
-@property (nonatomic, strong) NSArray *timesAndPlaces;
+@property (nonatomic, copy) NSArray *timesAndPlaces;
 
 @end

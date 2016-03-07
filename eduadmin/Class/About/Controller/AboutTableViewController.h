@@ -10,8 +10,8 @@
 
 @interface AboutTableViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *versionLable;
+@property (strong, nonatomic) IBOutlet UILabel *versionLable;
 
-@property (weak, nonatomic) IBOutlet UILabel *rightsLable;
+@property (strong, nonatomic) IBOutlet UILabel *rightsLable;
 
 @end

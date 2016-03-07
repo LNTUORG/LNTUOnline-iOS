@@ -12,6 +12,6 @@
 
 - (IBAction)oneClickRate:(id)sender;
 
-@property (strong, nonatomic) NSArray *courseArr;
+@property (nonatomic, copy) NSArray *courseArr;
 
 @end

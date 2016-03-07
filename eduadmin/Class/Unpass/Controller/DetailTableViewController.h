@@ -10,5 +10,5 @@
 
 @interface DetailTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *records;
+@property (nonatomic, copy) NSArray *records;
 @end

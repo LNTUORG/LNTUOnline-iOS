@@ -12,23 +12,23 @@
 
 @interface DayClassTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *timeInterval;
+@property (strong, nonatomic) IBOutlet UILabel *timeInterval;
 
-@property (nonatomic, strong) IBOutlet UILabel *time0;
+@property (strong, nonatomic) IBOutlet UILabel *time0;
 
-@property (nonatomic, strong) IBOutlet UILabel *time1;
+@property (strong, nonatomic) IBOutlet UILabel *time1;
 
-@property (nonatomic, strong) IBOutlet UILabel *time2;
+@property (strong, nonatomic) IBOutlet UILabel *time2;
 
-@property (nonatomic, strong) IBOutlet UILabel *time3;
+@property (strong, nonatomic) IBOutlet UILabel *time3;
 
-@property (nonatomic, strong) IBOutlet CourseLable *class0;
+@property (strong, nonatomic) IBOutlet CourseLable *class0;
 
-@property (nonatomic, strong) IBOutlet CourseLable *class1;
+@property (strong, nonatomic) IBOutlet CourseLable *class1;
 
 @property (nonatomic, strong) DayCourse *course;
 
-@property (nonatomic, strong) NSString *course0;
-@property (nonatomic, strong) NSString *course1;
+@property (nonatomic, copy) NSString *course0;
+@property (nonatomic, copy) NSString *course1;
 
 @end

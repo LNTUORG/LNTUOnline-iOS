@@ -10,11 +10,11 @@
 
 @interface LoginViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *userNameTextField;
 
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 
-@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (strong, nonatomic) IBOutlet UIButton *loginButton;
 
 
 - (IBAction)forHelpAction:(id)sender;

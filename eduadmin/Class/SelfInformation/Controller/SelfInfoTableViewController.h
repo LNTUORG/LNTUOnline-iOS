@@ -11,16 +11,16 @@
 
 @interface SelfInfoTableViewController : UITableViewController
 
-@property (strong, nonatomic) NSArray *titles;
+@property (nonatomic, copy) NSArray *titles;
 
-@property (strong, nonatomic) NSArray *basicInfoKey;
+@property (nonatomic, copy) NSArray *basicInfoKey;
 
-@property (strong, nonatomic) NSArray *basicInfoValue;
+@property (nonatomic, copy) NSArray *basicInfoValue;
 
-@property (strong, nonatomic) NSArray *disActKey;
+@property (nonatomic, copy) NSArray *disActKey;
 
-@property (strong, nonatomic) SelfInformation *information;
+@property (nonatomic, strong) SelfInformation *information;
 
-@property (weak, nonatomic) IBOutlet UIImageView *personalImg;
+@property (strong, nonatomic) IBOutlet UIImageView *personalImg;
 
 @end

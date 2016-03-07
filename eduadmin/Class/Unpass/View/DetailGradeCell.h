@@ -11,15 +11,15 @@
 
 @interface DetailGradeCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *score;
+@property (strong, nonatomic) IBOutlet UILabel *score;
 
-@property (weak, nonatomic) IBOutlet UILabel *examType;
+@property (strong, nonatomic) IBOutlet UILabel *examType;
 
-@property (weak, nonatomic) IBOutlet UILabel *term;
+@property (strong, nonatomic) IBOutlet UILabel *term;
 
-@property (weak, nonatomic) IBOutlet UILabel *year;
+@property (strong, nonatomic) IBOutlet UILabel *year;
 
-@property (weak, nonatomic) IBOutlet UILabel *remark;
+@property (strong, nonatomic) IBOutlet UILabel *remark;
 
 
 @property (nonatomic, strong) UnpassGradeRecord *records;

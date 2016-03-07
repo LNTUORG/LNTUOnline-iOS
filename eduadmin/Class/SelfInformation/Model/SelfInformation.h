@@ -46,8 +46,8 @@
 @property (nonatomic, copy) NSString *remarks; // 备注
 @property (nonatomic, copy) NSString *photoUrl; // 照片 URL
 
-@property (nonatomic, strong) NSArray *entranceExams; // 高考分数
-@property (nonatomic, strong) NSArray *educationExperiences; // 教育经历
-@property (nonatomic, strong) NSArray *familys; // 家庭成员
-@property (nonatomic, strong) NSArray *disciplinaryActions; // 惩处信息
+@property (nonatomic, copy) NSArray *entranceExams; // 高考分数
+@property (nonatomic, copy) NSArray *educationExperiences; // 教育经历
+@property (nonatomic, copy) NSArray *familys; // 家庭成员
+@property (nonatomic, copy) NSArray *disciplinaryActions; // 惩处信息
 @end

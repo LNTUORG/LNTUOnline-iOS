@@ -11,11 +11,11 @@
 
 @interface OneKeyRateCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *teacherLabel;
+@property (strong, nonatomic) IBOutlet UILabel *teacherLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *statusLable;
+@property (strong, nonatomic) IBOutlet UILabel *statusLable;
 
-@property (strong, nonatomic) RatingInfo *info;
+@property (nonatomic, strong) RatingInfo *info;
 @end

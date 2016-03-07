@@ -12,13 +12,13 @@
 
 @interface PartGradeCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (strong, nonatomic) IBOutlet UILabel *name;
 
-@property (weak, nonatomic) IBOutlet UILabel *creditLable;
+@property (strong, nonatomic) IBOutlet UILabel *creditLable;
 
-@property (weak, nonatomic) IBOutlet UILabel *credit;
+@property (strong, nonatomic) IBOutlet UILabel *credit;
 
-@property (weak, nonatomic) IBOutlet UILabel *selectType;
+@property (strong, nonatomic) IBOutlet UILabel *selectType;
 
 @property (nonatomic, strong) MyGrade *myGrade;
 @property (nonatomic, strong) UnpassGrade *unPassGrade;

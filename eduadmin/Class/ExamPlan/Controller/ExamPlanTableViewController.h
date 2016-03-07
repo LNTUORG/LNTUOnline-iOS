@@ -10,6 +10,6 @@
 
 @interface ExamPlanTableViewController : UITableViewController
 
-@property (strong, nonatomic) NSArray *planArr;
+@property (nonatomic, copy) NSArray *planArr;
 
 @end

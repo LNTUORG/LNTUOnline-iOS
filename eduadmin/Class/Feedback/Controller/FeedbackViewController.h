@@ -10,11 +10,11 @@
 
 @interface FeedbackViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextView *infoTextView;
+@property (strong, nonatomic) IBOutlet UITextView *infoTextView;
 
-@property (weak, nonatomic) IBOutlet UITextField *contactTextField;
+@property (strong, nonatomic) IBOutlet UITextField *contactTextField;
 
-@property (weak, nonatomic) IBOutlet UIButton *uploadBtn;
+@property (strong, nonatomic) IBOutlet UIButton *uploadBtn;
 
 - (IBAction)endEditing;
 

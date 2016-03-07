@@ -21,7 +21,7 @@
 + (instancetype)headerViewWithTableView: (UITableView *)tableView;
 
 @property (nonatomic, assign) NSInteger section;
-@property (nonatomic, copy) Title *title;
+@property (nonatomic, strong) Title *title;
 @property (nonatomic, weak) id<HeaderViewDelegate> delegate;
 
 @end

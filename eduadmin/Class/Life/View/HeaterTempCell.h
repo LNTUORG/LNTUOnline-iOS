@@ -10,13 +10,13 @@
 
 @interface HeaterTempCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *locateLabel;
+@property (strong, nonatomic) IBOutlet UILabel *locateLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *tempLabel;
+@property (strong, nonatomic) IBOutlet UILabel *tempLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *countLabel;
+@property (strong, nonatomic) IBOutlet UILabel *countLabel;
 
-@property (strong, nonatomic) NSArray *info;
+@property (nonatomic, copy) NSArray *info;
 @end

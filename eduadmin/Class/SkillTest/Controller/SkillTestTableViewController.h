@@ -10,5 +10,5 @@
 
 @interface SkillTestTableViewController : UITableViewController
 
-@property (strong, nonatomic) NSArray *skillArr;
+@property (nonatomic, copy) NSArray *skillArr;
 @end

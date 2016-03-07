@@ -10,8 +10,8 @@
 
 @interface SkillTest : NSObject
 
-@property (nonatomic,copy) NSString *name;
-@property (nonatomic,copy) NSString *time;
-@property (nonatomic,copy) NSString *score;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *time;
+@property (nonatomic, copy) NSString *score;
 
 @end

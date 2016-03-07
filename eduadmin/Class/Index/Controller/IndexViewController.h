@@ -10,17 +10,17 @@
 
 @interface IndexViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, copy) NSDictionary *dict;
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLable;
+@property (nonatomic, strong) NSUserDefaults *def;
 
-@property (weak, nonatomic) IBOutlet UILabel *helloLable;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *escButton;
+@property (strong, nonatomic) IBOutlet UILabel *nameLable;
 
-@property (nonatomic, strong) NSDictionary *dict;
+@property (strong, nonatomic) IBOutlet UILabel *helloLable;
 
-@property (strong, nonatomic) NSUserDefaults *def;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *escButton;
 
 - (IBAction)logout:(id)sender;
 

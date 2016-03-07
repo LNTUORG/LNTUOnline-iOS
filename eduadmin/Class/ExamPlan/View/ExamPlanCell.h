@@ -11,13 +11,13 @@
 
 @interface ExamPlanCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UITextView *timeTextView;
+@property (strong, nonatomic) IBOutlet UITextView *timeTextView;
 
-@property (weak, nonatomic) IBOutlet UILabel *courseLable;
+@property (strong, nonatomic) IBOutlet UILabel *courseLable;
 
-@property (weak, nonatomic) IBOutlet UILabel *locationLable;
+@property (strong, nonatomic) IBOutlet UILabel *locationLable;
 
-@property (weak, nonatomic) IBOutlet UIButton *countDate;
+@property (strong, nonatomic) IBOutlet UIButton *countDate;
 
-@property (nonatomic,strong) ExamPlan *plan;
+@property (nonatomic, strong) ExamPlan *plan;
 @end

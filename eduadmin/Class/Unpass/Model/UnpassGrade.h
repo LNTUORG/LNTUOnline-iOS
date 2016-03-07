@@ -16,6 +16,6 @@
 @property (nonatomic, assign) float credit; // 学分
 @property (nonatomic, copy) NSString *selectType; // 选课属性
 
-@property (strong, nonatomic) NSArray *records;
+@property (nonatomic, copy) NSArray *records;
 
 @end
