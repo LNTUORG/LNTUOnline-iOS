@@ -117,7 +117,9 @@ AFHTTPSessionManager *_mgr;
     [_mgr GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         if (success) {
-            
+#ifdef DEBUG
+            NSLog(@"%@", responseObject);
+#endif
             success(responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

@@ -21,7 +21,7 @@
 #define LJQQ @"10771533"
 #define SUPPORTMAIL @"hi@pupboss.com"
 
-#define COPYRIGHTSTRING [NSString stringWithFormat:@"Copyright © 2013-%ld LNTU.ORG All rights reserved.",(long)[LJTimeTool getCurrentYear]];
+#define COPYRIGHTSTRING [NSString stringWithFormat:@"Copyright © 2013-%ld LNTU.ORG All rights reserved.", (long)[LJTimeTool getCurrentYear]];
 
 #define USERNAMEKEY @"userName"   // 用户名 key
 #define PWDKEY @"pwd"           // 密码 key

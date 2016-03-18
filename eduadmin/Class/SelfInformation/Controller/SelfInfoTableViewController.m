@@ -13,8 +13,7 @@
 #import "Family.h"
 #import "Title.h"
 #import "MJExtension.h"
-#import "familyCell.h"
-#import "CellItem.h"
+#import "SelfInfoTableViewCell.h"
 #import "HeaderView.h"
 #import "LJTools.h"
 #import "Common.h"
@@ -136,7 +135,7 @@
         }
         if (section == 2) {
         
-            return self.information.educationExperiences.count * 2;
+            return self.information.educationExperiences.count;
         }
         if (section == 3) {
         
@@ -155,88 +154,74 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //标识
-    static NSString *ID0 = @"NormalCell";
-    static NSString *ID1 = @"FamilyCell";
+    static NSString *normalIdentifier = @"InfoNormalCell";
+    static NSString *eduIdentifier = @"InfoEduCell";
+    static NSString *familyIdentifier = @"InfoFamilyCell";
     
-    //设置数据
-    if (indexPath.section == 0) {
-        
-        //缓存池
-        CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0 forIndexPath:indexPath];
-        
-        studentInfo.tName = self.basicInfoKey[indexPath.row];
-        studentInfo.tValue = self.basicInfoValue[indexPath.row];
-        return studentInfo;
-    }
-    else if (indexPath.section == 1) {
-        
-        CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0 forIndexPath:indexPath];
-        
-        EntranceExam *exam = _information.entranceExams[indexPath.row];
-        
-        studentInfo.tName =exam.name;
-        studentInfo.tValue = exam.score;
-        return studentInfo;
-    }
-    else if (indexPath.section == 2) {
-        
-        CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0 forIndexPath:indexPath];
-        
-        NSInteger x = indexPath.row/2;
-        NSInteger flag = indexPath.row%2;
-        
-        EducationExperience *e = _information.educationExperiences[x];
-        
-        if (flag == 0) {
+    switch (indexPath.section) {
+        case 0: {
             
-            studentInfo.tName = [self transDateToString:e.startTime];
-            studentInfo.tValue = [self transDateToString:e.endTime];
-            
-        } else {
-            
-            studentInfo.tName =e.schoolInfo;
-            studentInfo.tValue = e.witness;
+            SelfInfoNormalTableViewCell *studentInfo = [tableView dequeueReusableCellWithIdentifier:normalIdentifier forIndexPath:indexPath];
+            studentInfo.keyLabel.text = self.basicInfoKey[indexPath.row];
+            studentInfo.valueLabel.text = self.basicInfoValue[indexPath.row];
+            return studentInfo;
+            break;
         }
-        
-        return studentInfo;
-    }
-    else if (indexPath.section == 3) {
-        
-        familyCell *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID1 forIndexPath:indexPath];
-        
-        Family *f = _information.familys[indexPath.row];
-        
-        studentInfo.tName =f.name;
-        studentInfo.tRelationship = f.relationship;
-        studentInfo.tPoliticalAffiliation = f.politicalAffiliation;
-        studentInfo.tJob = f.job;
-        studentInfo.tPost = f.post;
-        studentInfo.tWorkLocation = f.workLocation;
-        studentInfo.tTel = f.tel;
-        return studentInfo;
-        
-    } else {
-        
-        CellItem *studentInfo = [tableView dequeueReusableCellWithIdentifier:ID0 forIndexPath:indexPath];
-        
-        studentInfo.tName =@"error";
-        studentInfo.tValue = @"error";
-        return studentInfo;
+        case 1: {
+            EntranceExam *exam = _information.entranceExams[indexPath.row];
+            SelfInfoNormalTableViewCell *examCell = [tableView dequeueReusableCellWithIdentifier:normalIdentifier forIndexPath:indexPath];
+            examCell.keyLabel.text = exam.name;
+            examCell.valueLabel.text = exam.score;
+            return examCell;
+            break;
+        }
+        case 2: {
+            EducationExperience *edu = _information.educationExperiences[indexPath.row];
+            SelfInfoEduTableViewCell *eduCell = [tableView dequeueReusableCellWithIdentifier:eduIdentifier forIndexPath:indexPath];
+            eduCell.startTimeLabel.text = [self transDateToString:edu.startTime];
+            eduCell.endTimeLabel.text = [self transDateToString:edu.endTime];
+            eduCell.schoolInfoLabel.text = edu.schoolInfo;
+            eduCell.witnessLabel.text = edu.witness;
+            return eduCell;
+            break;
+        }
+        case 3: {
+            Family *family = _information.familys[indexPath.row];
+            SelfInfoFamilyTableViewCell * familyCell = [tableView dequeueReusableCellWithIdentifier:familyIdentifier forIndexPath:indexPath];
+            familyCell.nameLabel.text = [NSString stringWithFormat:@"%@（%@）", family.name, family.relationship];
+            familyCell.politicalAffiliationLabel.text = family.politicalAffiliation;
+            familyCell.jobLabel.text = [NSString stringWithFormat:@"%@  %@", family.job, family.post];
+            familyCell.workLocationLabel.text = family.workLocation;
+            familyCell.phoneLabel.text = family.tel;
+            return familyCell;
+            break;
+        }
+        default:
+            return nil;
+            break;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.section == 3){
-    
-        return 130;
-        
-    } else {
-    
-        return 44;
+    switch (indexPath.section) {
+        case 0:
+            return 60;
+            break;
+        case 1:
+            return 60;
+            break;
+        case 2:
+            return 78;
+            break;
+        case 3:
+            return 120;
+            break;
+        default:
+            return 60;
+            break;
     }
 }
-
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     

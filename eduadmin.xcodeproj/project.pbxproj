@@ -39,8 +39,7 @@
 		D51601EE1A541BC9003AB6A9 /* Family.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601ED1A541BC9003AB6A9 /* Family.m */; };
 		D51601F11A541BDC003AB6A9 /* Title.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601F01A541BDC003AB6A9 /* Title.m */; };
 		D51601F81A541CBB003AB6A9 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601F51A541CBB003AB6A9 /* HeaderView.m */; };
-		D51601FD1A541CC7003AB6A9 /* CellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601FA1A541CC7003AB6A9 /* CellItem.m */; };
-		D51601FE1A541CC7003AB6A9 /* familyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601FC1A541CC7003AB6A9 /* familyCell.m */; };
+		D51601FD1A541CC7003AB6A9 /* SelfInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D51601FA1A541CC7003AB6A9 /* SelfInfoTableViewCell.m */; };
 		D51602011A541EFE003AB6A9 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602001A541EFE003AB6A9 /* ScheduleViewController.m */; };
 		D51602041A541F9A003AB6A9 /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602031A541F9A003AB6A9 /* NoticeViewController.m */; };
 		D51602071A54200A003AB6A9 /* UnpassScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51602061A54200A003AB6A9 /* UnpassScoreTableViewController.m */; };
@@ -166,10 +165,8 @@
 		D51601F01A541BDC003AB6A9 /* Title.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Title.m; sourceTree = "<group>"; };
 		D51601F41A541CBB003AB6A9 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		D51601F51A541CBB003AB6A9 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
-		D51601F91A541CC7003AB6A9 /* CellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellItem.h; sourceTree = "<group>"; };
-		D51601FA1A541CC7003AB6A9 /* CellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellItem.m; sourceTree = "<group>"; };
-		D51601FB1A541CC7003AB6A9 /* familyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = familyCell.h; sourceTree = "<group>"; };
-		D51601FC1A541CC7003AB6A9 /* familyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = familyCell.m; sourceTree = "<group>"; };
+		D51601F91A541CC7003AB6A9 /* SelfInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfInfoTableViewCell.h; sourceTree = "<group>"; };
+		D51601FA1A541CC7003AB6A9 /* SelfInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfInfoTableViewCell.m; sourceTree = "<group>"; };
 		D51601FF1A541EFE003AB6A9 /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		D51602001A541EFE003AB6A9 /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		D51602021A541F9A003AB6A9 /* NoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
@@ -564,10 +561,8 @@
 		D51601DD1A541A30003AB6A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D51601F91A541CC7003AB6A9 /* CellItem.h */,
-				D51601FA1A541CC7003AB6A9 /* CellItem.m */,
-				D51601FB1A541CC7003AB6A9 /* familyCell.h */,
-				D51601FC1A541CC7003AB6A9 /* familyCell.m */,
+				D51601F91A541CC7003AB6A9 /* SelfInfoTableViewCell.h */,
+				D51601FA1A541CC7003AB6A9 /* SelfInfoTableViewCell.m */,
 				D51601F41A541CBB003AB6A9 /* HeaderView.h */,
 				D51601F51A541CBB003AB6A9 /* HeaderView.m */,
 			);
@@ -1137,9 +1132,8 @@
 				D51602301A542285003AB6A9 /* SkillTestCell.m in Sources */,
 				D51602041A541F9A003AB6A9 /* NoticeViewController.m in Sources */,
 				D5529D6B1AE7B36700F5A53E /* OldClassTableView.m in Sources */,
-				D51601FD1A541CC7003AB6A9 /* CellItem.m in Sources */,
+				D51601FD1A541CC7003AB6A9 /* SelfInfoTableViewCell.m in Sources */,
 				D5C536171A6BC3A100BD2821 /* DonateTableViewController.m in Sources */,
-				D51601FE1A541CC7003AB6A9 /* familyCell.m in Sources */,
 				718840BF1BB6C999008A1F42 /* NormalFormatSchedule.m in Sources */,
 				71819CDB1B9D8CC200FAF87A /* WeekLable.m in Sources */,
 				D51601F81A541CBB003AB6A9 /* HeaderView.m in Sources */,
