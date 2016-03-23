@@ -137,6 +137,7 @@
     oldClassTable.frame = newFrame;
     
     self.oldView = oldClassTable;
+    self.oldView.delegate = self;
     
     [self.view addSubview:oldClassTable];
 }
