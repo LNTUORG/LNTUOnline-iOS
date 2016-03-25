@@ -6,20 +6,17 @@
 //
 
 #import <Foundation/Foundation.h>
-@class UIViewController;
 
 @interface LJDeviceTool : NSObject
 
-//获得设备型号
+
++ (NSString *)getCurrentAppName;
+
 + (NSString *)getCurrentDeviceModel;
 
-//获得系统版本
 + (NSString *)getCurrentSystemVersion;
 
-//获得软件版本
 + (NSString *)getCurrentAppVersion;
 
-//获得build版本
 + (NSString *)getCurrentAppBuild;
-
 @end
