@@ -134,7 +134,7 @@
     
     NSDictionary *param = @{@"userId": userId, @"deviceToken": deviceToken};
     
-    [LJHTTPTool postJSONWithURL:[NSString stringWithFormat:@"%@/account/push-token", TOKENURL] params:param success:^(id responseJSON) {
+    [LJHTTPTool postJSONWithURL:[NSString stringWithFormat:@"%@/account/push-token", MAINURL] params:param success:^(id responseJSON) {
         
     } failure:^(NSError *error) {
         
