@@ -106,17 +106,15 @@
     
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
-    if ([def objectForKey:PUSHTOKENNEW] == nil) {
-        
+    if ([def objectForKey:SENTTOSERVER] == nil) {
         if (getToken.length && [def objectForKey:USERNAMEKEY] != nil) {
             
             [def setObject:getToken forKey:PUSHTOKENNEW];
             [def synchronize];
             [self sendTokenToServerWithUserId:[def objectForKey:USERNAMEKEY] andToken:getToken];
         }
-        
     } else {
-        
+    
         if (![[def objectForKey:PUSHTOKENNEW] isEqualToString:getToken]) {
             
             if (getToken.length && [def objectForKey:USERNAMEKEY] != nil) {
@@ -133,9 +131,12 @@
 - (void)sendTokenToServerWithUserId:(NSString *)userId andToken:(NSString *)deviceToken {
     
     NSDictionary *param = @{@"userId": userId, @"deviceToken": deviceToken};
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
-    [LJHTTPTool postJSONWithURL:[NSString stringWithFormat:@"%@/account/push-token", MAINURL] params:param success:^(id responseJSON) {
+    [LJHTTPTool postJSONWithURL:[NSString stringWithFormat:@"%@account/push-token", MAINURL] params:param success:^(id responseJSON) {
         
+        [def setObject:@"1" forKey:SENTTOSERVER];
+        [def synchronize];
     } failure:^(NSError *error) {
         
     }];

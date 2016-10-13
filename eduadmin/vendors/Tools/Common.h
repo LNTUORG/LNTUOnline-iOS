@@ -26,6 +26,7 @@
 #define PWDKEY @"pwd"           // 密码 key
 
 #define PUSHTOKENNEW @"pushTokenNewV2"
+#define SENTTOSERVER @"sentToServer"
 
 #define LOGINTOKEN @"LOGINTOKEN"
 #define CLASSTABLEMODE @"ClassTableMode"

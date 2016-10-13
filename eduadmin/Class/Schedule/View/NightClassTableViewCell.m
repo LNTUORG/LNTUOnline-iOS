@@ -11,7 +11,8 @@
 @implementation NightClassTableViewCell
 
 - (void)awakeFromNib {
-
+    [super awakeFromNib];
+    
     self.courseLable.numberOfLines = 0;
 }
 

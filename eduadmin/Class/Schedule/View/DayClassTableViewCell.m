@@ -12,7 +12,7 @@
 @implementation DayClassTableViewCell
 
 - (void)awakeFromNib {
-    
+    [super awakeFromNib];
     self.class1.numberOfLines = 0;
     self.class0.numberOfLines = 0;
 }

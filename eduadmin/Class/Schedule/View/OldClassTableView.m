@@ -27,7 +27,7 @@
 }
 
 - (void)awakeFromNib {
-    
+    [super awakeFromNib];
     self.schScrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
 }
 

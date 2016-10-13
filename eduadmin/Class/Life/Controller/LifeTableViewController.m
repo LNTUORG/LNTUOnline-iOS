@@ -27,16 +27,16 @@
 
 - (void)refreshData {
 
-    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@heater-temp/read", TOKENURL] params:nil success:^(id responseJSON) {
-        
-        self.arr = responseJSON;
-        [self.tableView.mj_header endRefreshing];
-        [self.tableView reloadData];
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-       
-        [self.tableView.mj_header endRefreshing];
-    }];
+//    [LJHTTPTool getJSONWithURL:[NSString stringWithFormat:@"%@heater-temp/read", TOKENURL] params:nil success:^(id responseJSON) {
+//        
+//        self.arr = responseJSON;
+//        [self.tableView.mj_header endRefreshing];
+//        [self.tableView reloadData];
+//        
+//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//       
+//        [self.tableView.mj_header endRefreshing];
+//    }];
 }
 
 #pragma mark - Table view data source
