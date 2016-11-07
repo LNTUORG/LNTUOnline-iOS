@@ -14,11 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
-  - Crashlytics (3.8.2):
+  - Crashlytics (3.8.3):
     - Fabric (~> 1.6.3)
-  - Fabric (1.6.9)
+  - Fabric (1.6.11)
   - FDFullscreenPopGesture (1.1)
-  - iCarousel (1.8.2)
+  - iCarousel (1.8.3)
   - MBProgressHUD (0.9.2)
   - MJExtension (3.0.13)
   - MJRefresh (3.0.8)
@@ -37,15 +37,15 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
-  Crashlytics: 27acca95a01b042a8294291dd6dff27f8f6af6d7
-  Fabric: bc5bec42cef4bcf1ee3ce0e218fc518e4b44dfbb
+  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  iCarousel: 67c8a43da5a46795b56aadfc96cd36a16f6149b2
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
-PODFILE CHECKSUM: 79caf60132eccdc6825a350fb7a848d4c4a8d481
+PODFILE CHECKSUM: a2992eef2871dd49af6f6b9f3330bcb96c9fb1e6
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
