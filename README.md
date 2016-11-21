@@ -1,16 +1,16 @@
-# Liaoning Technical University(LNTU) Education Administration Management System App for iOS.
+## Liaoning Technical University(LNTU) Education Administration Management System App for iOS.
 
 [![GitHub release](https://img.shields.io/github/release/LNTUORG/LNTUOnline-iOS.svg)](https://github.com/LNTUORG/LNTUOnline-iOS/releases) [![Build Status](https://travis-ci.org/LNTUORG/LNTUOnline-iOS.svg?branch=master)](https://travis-ci.org/LNTUORG/LNTUOnline-iOS) [![GitHub issues](https://img.shields.io/github/issues/LNTUORG/LNTUOnline-iOS.svg)](https://github.com/LNTUORG/LNTUOnline-iOS/issues) [![GitHub license](https://img.shields.io/badge/license-AGPLv3-blue.svg)](https://raw.githubusercontent.com/LNTUORG/LNTUOnline-iOS/master/LICENSE)
 
 Homepage: [http://online.lntu.org](http://online.lntu.org)
 
-Server: [https://github.com/LNTUORG/LntuOnline-API](https://github.com/LNTUORG/LntuOnline-API)
+Server: [https://github.com/LNTUORG/LNTUOnline-API-Nodejs](https://github.com/LNTUORG/LNTUOnline-API-Nodejs)
 
 Android: [https://github.com/LNTUORG/LNTUOnline-Android](https://github.com/LNTUORG/LNTUOnline-Android)
 
 ## Licence
 
-Under General Public License version 2 ([GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)).
+Under General Public License version 3 ([GPLv3](http://www.gnu.org/licenses/gpl-3.0.txt)).
 
 附加协议：
 
@@ -18,8 +18,8 @@ Under General Public License version 2 ([GPLv2](http://www.gnu.org/licenses/old-
 - 禁止以任何形式参加任何比赛，毕业设计
 
 ```
-Copyright (C) 2015-2016 LNTU.ORG (https://lntu.org)
-Copyright (C) 2013-2015 PUPBOSS (https://pupboss.com)
+Copyright (C) 2015-2017 LNTU.ORG (https://lntu.org)
+Copyright (C) 2013-2017 PUPBOSS (https://pupboss.com)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
