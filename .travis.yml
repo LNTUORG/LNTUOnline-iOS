@@ -1,0 +1,4 @@
+language: objective-c
+xcode_workspace: eduadmin.xcworkspace
+xcode_scheme: eduadmin
+
