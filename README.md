@@ -1,6 +1,6 @@
 # Liaoning Technical University(LNTU) Education Administration Management System App for iOS.
 
-[![GitHub release](https://img.shields.io/github/release/LNTUORG/LNTUOnline-iOS.svg)](https://github.com/LNTUORG/LNTUOnline-iOS/releases) [![GitHub issues](https://img.shields.io/github/issues/LNTUORG/LNTUOnline-iOS.svg)](https://github.com/LNTUORG/LNTUOnline-iOS/issues) [![GitHub license](https://img.shields.io/badge/license-AGPLv3-blue.svg)](https://raw.githubusercontent.com/LNTUORG/LNTUOnline-iOS/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/LNTUORG/LNTUOnline-iOS.svg)](https://github.com/LNTUORG/LNTUOnline-iOS/releases) [![Build Status](https://travis-ci.org/LNTUORG/LNTUOnline-iOS.svg?branch=master)](https://travis-ci.org/LNTUORG/LNTUOnline-iOS) [![GitHub issues](https://img.shields.io/github/issues/LNTUORG/LNTUOnline-iOS.svg)](https://github.com/LNTUORG/LNTUOnline-iOS/issues) [![GitHub license](https://img.shields.io/badge/license-AGPLv3-blue.svg)](https://raw.githubusercontent.com/LNTUORG/LNTUOnline-iOS/master/LICENSE)
 
 Homepage: [http://online.lntu.org](http://online.lntu.org)
 
